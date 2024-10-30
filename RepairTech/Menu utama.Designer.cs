@@ -37,9 +37,10 @@
             // 
             // button1
             // 
-            button1.Location = new Point(200, 186);
+            button1.Location = new Point(39, 103);
+            button1.Margin = new Padding(2, 2, 2, 2);
             button1.Name = "button1";
-            button1.Size = new Size(187, 138);
+            button1.Size = new Size(131, 83);
             button1.TabIndex = 0;
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
@@ -47,17 +48,19 @@
             // button3
             // 
             button3.FlatStyle = FlatStyle.System;
-            button3.Location = new Point(806, 505);
+            button3.Location = new Point(526, 103);
+            button3.Margin = new Padding(2, 2, 2, 2);
             button3.Name = "button3";
-            button3.Size = new Size(187, 138);
+            button3.Size = new Size(131, 83);
             button3.TabIndex = 3;
             button3.UseVisualStyleBackColor = true;
             // 
             // button5
             // 
-            button5.Location = new Point(506, 345);
+            button5.Location = new Point(292, 103);
+            button5.Margin = new Padding(2, 2, 2, 2);
             button5.Name = "button5";
-            button5.Size = new Size(187, 138);
+            button5.Size = new Size(131, 83);
             button5.TabIndex = 5;
             button5.UseVisualStyleBackColor = true;
             // 
@@ -67,9 +70,10 @@
             linkLabel1.Font = new Font("Cambria", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
             linkLabel1.ForeColor = Color.Transparent;
             linkLabel1.LinkColor = Color.White;
-            linkLabel1.Location = new Point(399, 20);
+            linkLabel1.Location = new Point(279, 12);
+            linkLabel1.Margin = new Padding(2, 0, 2, 0);
             linkLabel1.Name = "linkLabel1";
-            linkLabel1.Size = new Size(323, 57);
+            linkLabel1.Size = new Size(212, 37);
             linkLabel1.TabIndex = 6;
             linkLabel1.TabStop = true;
             linkLabel1.Text = "TECH REPAIR";
@@ -77,22 +81,24 @@
             // panel1
             // 
             panel1.BackColor = Color.Magenta;
-            panel1.Location = new Point(0, 103);
+            panel1.Location = new Point(0, 62);
+            panel1.Margin = new Padding(2, 2, 2, 2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1100, 28);
+            panel1.Size = new Size(770, 17);
             panel1.TabIndex = 7;
             // 
             // Menu_utama
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.MenuHighlight;
-            ClientSize = new Size(1098, 747);
+            ClientSize = new Size(769, 448);
             Controls.Add(panel1);
             Controls.Add(linkLabel1);
             Controls.Add(button5);
             Controls.Add(button3);
             Controls.Add(button1);
+            Margin = new Padding(2, 2, 2, 2);
             Name = "Menu_utama";
             Text = "Menu_utama";
             ResumeLayout(false);
