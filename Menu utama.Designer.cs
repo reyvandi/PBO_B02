@@ -155,9 +155,9 @@
             // 
             pictureBoxJASAPERBA.BackgroundImage = (Image)resources.GetObject("pictureBoxJASAPERBA.BackgroundImage");
             pictureBoxJASAPERBA.BackgroundImageLayout = ImageLayout.Zoom;
-            pictureBoxJASAPERBA.Location = new Point(709, 141);
+            pictureBoxJASAPERBA.Location = new Point(709, 130);
             pictureBoxJASAPERBA.Name = "pictureBoxJASAPERBA";
-            pictureBoxJASAPERBA.Size = new Size(197, 193);
+            pictureBoxJASAPERBA.Size = new Size(209, 204);
             pictureBoxJASAPERBA.TabIndex = 22;
             pictureBoxJASAPERBA.TabStop = false;
             // 
