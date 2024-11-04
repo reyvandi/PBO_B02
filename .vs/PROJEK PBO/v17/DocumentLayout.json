@@ -1,0 +1,89 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\reyy\\source\\repos\\PROJECT PBO\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{853A8DBB-3FAA-46F8-8336-8791BFC98C9C}|PROJECT PBO.csproj|c:\\users\\reyy\\source\\repos\\project pbo\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{853A8DBB-3FAA-46F8-8336-8791BFC98C9C}|PROJECT PBO.csproj|solutionrelative:login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{853A8DBB-3FAA-46F8-8336-8791BFC98C9C}|PROJECT PBO.csproj|c:\\users\\reyy\\source\\repos\\project pbo\\menu utama.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{853A8DBB-3FAA-46F8-8336-8791BFC98C9C}|PROJECT PBO.csproj|solutionrelative:menu utama.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{853A8DBB-3FAA-46F8-8336-8791BFC98C9C}|PROJECT PBO.csproj|c:\\users\\reyy\\source\\repos\\project pbo\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{853A8DBB-3FAA-46F8-8336-8791BFC98C9C}|PROJECT PBO.csproj|solutionrelative:login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{853A8DBB-3FAA-46F8-8336-8791BFC98C9C}|PROJECT PBO.csproj|c:\\users\\reyy\\source\\repos\\project pbo\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{853A8DBB-3FAA-46F8-8336-8791BFC98C9C}|PROJECT PBO.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "LOGIN.cs",
+              "DocumentMoniker": "C:\\Users\\reyy\\source\\repos\\PROJECT PBO\\LOGIN.cs",
+              "RelativeDocumentMoniker": "LOGIN.cs",
+              "ToolTip": "C:\\Users\\reyy\\source\\repos\\PROJECT PBO\\LOGIN.cs*",
+              "RelativeToolTip": "LOGIN.cs*",
+              "ViewState": "AgIAACkAAAAAAAAAAAAgwD4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-04T09:43:30.523Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Menu utama.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\reyy\\source\\repos\\PROJECT PBO\\Menu utama.cs",
+              "RelativeDocumentMoniker": "Menu utama.cs",
+              "ToolTip": "C:\\Users\\reyy\\source\\repos\\PROJECT PBO\\Menu utama.cs [Design]",
+              "RelativeToolTip": "Menu utama.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-04T09:40:00.855Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "LOGIN.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\reyy\\source\\repos\\PROJECT PBO\\LOGIN.cs",
+              "RelativeDocumentMoniker": "LOGIN.cs",
+              "ToolTip": "C:\\Users\\reyy\\source\\repos\\PROJECT PBO\\LOGIN.cs [Design]*",
+              "RelativeToolTip": "LOGIN.cs [Design]*",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-04T09:39:55.803Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Form1.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\reyy\\source\\repos\\PROJECT PBO\\Form1.cs",
+              "RelativeDocumentMoniker": "Form1.cs",
+              "ToolTip": "C:\\Users\\reyy\\source\\repos\\PROJECT PBO\\Form1.cs [Design]",
+              "RelativeToolTip": "Form1.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-04T09:39:40.934Z",
+              "EditorCaption": " [Design]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
