@@ -29,91 +29,114 @@
         private void InitializeComponent()
         {
             button1 = new Button();
-            button3 = new Button();
-            button5 = new Button();
-            linkLabel1 = new LinkLabel();
             panel1 = new Panel();
+            label1 = new Label();
+            button2 = new Button();
+            button3 = new Button();
+            button4 = new Button();
+            button5 = new Button();
+            button6 = new Button();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // button1
             // 
-            button1.Location = new Point(39, 103);
-            button1.Margin = new Padding(2, 2, 2, 2);
+            button1.Location = new Point(12, 31);
             button1.Name = "button1";
-            button1.Size = new Size(131, 83);
+            button1.Size = new Size(236, 76);
             button1.TabIndex = 0;
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
-            // button3
-            // 
-            button3.FlatStyle = FlatStyle.System;
-            button3.Location = new Point(526, 103);
-            button3.Margin = new Padding(2, 2, 2, 2);
-            button3.Name = "button3";
-            button3.Size = new Size(131, 83);
-            button3.TabIndex = 3;
-            button3.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            button5.Location = new Point(292, 103);
-            button5.Margin = new Padding(2, 2, 2, 2);
-            button5.Name = "button5";
-            button5.Size = new Size(131, 83);
-            button5.TabIndex = 5;
-            button5.UseVisualStyleBackColor = true;
-            // 
-            // linkLabel1
-            // 
-            linkLabel1.AutoSize = true;
-            linkLabel1.Font = new Font("Cambria", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            linkLabel1.ForeColor = Color.Transparent;
-            linkLabel1.LinkColor = Color.White;
-            linkLabel1.Location = new Point(279, 12);
-            linkLabel1.Margin = new Padding(2, 0, 2, 0);
-            linkLabel1.Name = "linkLabel1";
-            linkLabel1.Size = new Size(212, 37);
-            linkLabel1.TabIndex = 6;
-            linkLabel1.TabStop = true;
-            linkLabel1.Text = "TECH REPAIR";
-            // 
             // panel1
             // 
             panel1.BackColor = Color.Magenta;
-            panel1.Location = new Point(0, 62);
-            panel1.Margin = new Padding(2, 2, 2, 2);
+            panel1.Controls.Add(button6);
+            panel1.Controls.Add(button5);
+            panel1.Controls.Add(button4);
+            panel1.Controls.Add(button3);
+            panel1.Controls.Add(button2);
+            panel1.Controls.Add(label1);
+            panel1.Controls.Add(button1);
+            panel1.Location = new Point(0, 1);
             panel1.Name = "panel1";
-            panel1.Size = new Size(770, 17);
+            panel1.Size = new Size(264, 703);
             panel1.TabIndex = 7;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.Location = new Point(12, 163);
+            label1.Name = "label1";
+            label1.Size = new Size(56, 30);
+            label1.TabIndex = 1;
+            label1.Text = "Fitur";
+            label1.Click += label1_Click;
+            // 
+            // button2
+            // 
+            button2.Location = new Point(12, 228);
+            button2.Name = "button2";
+            button2.Size = new Size(237, 39);
+            button2.TabIndex = 8;
+            button2.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            button3.Location = new Point(12, 273);
+            button3.Name = "button3";
+            button3.Size = new Size(237, 39);
+            button3.TabIndex = 9;
+            button3.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            button4.Location = new Point(12, 318);
+            button4.Name = "button4";
+            button4.Size = new Size(237, 39);
+            button4.TabIndex = 9;
+            button4.UseVisualStyleBackColor = true;
+            // 
+            // button5
+            // 
+            button5.Location = new Point(11, 363);
+            button5.Name = "button5";
+            button5.Size = new Size(237, 39);
+            button5.TabIndex = 9;
+            button5.UseVisualStyleBackColor = true;
+            // 
+            // button6
+            // 
+            button6.Location = new Point(11, 651);
+            button6.Name = "button6";
+            button6.Size = new Size(237, 39);
+            button6.TabIndex = 9;
+            button6.UseVisualStyleBackColor = true;
             // 
             // Menu_utama
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.MenuHighlight;
-            ClientSize = new Size(769, 448);
+            ClientSize = new Size(1099, 747);
             Controls.Add(panel1);
-            Controls.Add(linkLabel1);
-            Controls.Add(button5);
-            Controls.Add(button3);
-            Controls.Add(button1);
-            Margin = new Padding(2, 2, 2, 2);
             Name = "Menu_utama";
             Text = "Menu_utama";
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
 
         private Button button1;
         private Button button2;
-        private Button button3;
         private Button button4;
-        private Button button5;
         private Button button6;
-        private LinkLabel linkLabel1;
         private Panel panel1;
+        private Label label1;
+        private Button button5;
+        private Button button3;
     }
 }

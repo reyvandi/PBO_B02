@@ -19,7 +19,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LOGIN));
             panel1 = new Panel();
-            panel2 = new Panel();
             buttonLOGIN = new Button();
             textBoxPASSWORD = new TextBox();
             textBoxUSERNAME = new TextBox();
@@ -27,6 +26,7 @@
             labelUSERNAME = new Label();
             labelLOGIN = new Label();
             showPasswordCheckBox = new CheckBox();
+            panel2 = new Panel();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -44,14 +44,6 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(564, 527);
             panel1.TabIndex = 0;
-            // 
-            // panel2
-            // 
-            panel2.BackColor = Color.Magenta;
-            panel2.Location = new Point(270, 147);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(564, 16);
-            panel2.TabIndex = 6;
             // 
             // buttonLOGIN
             // 
@@ -117,12 +109,20 @@
             // 
             showPasswordCheckBox.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             showPasswordCheckBox.ForeColor = SystemColors.Control;
-            showPasswordCheckBox.Location = new Point(185, 312);
+            showPasswordCheckBox.Location = new Point(174, 318);
             showPasswordCheckBox.Name = "showPasswordCheckBox";
-            showPasswordCheckBox.Size = new Size(183, 29);
+            showPasswordCheckBox.Size = new Size(191, 40);
             showPasswordCheckBox.TabIndex = 7;
             showPasswordCheckBox.Text = "Show Password";
             showPasswordCheckBox.CheckedChanged += showPasswordCheckBox_CheckedChanged;
+            // 
+            // panel2
+            // 
+            panel2.BackColor = Color.Magenta;
+            panel2.Location = new Point(270, 147);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(564, 16);
+            panel2.TabIndex = 6;
             // 
             // LOGIN
             // 
@@ -130,11 +130,12 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(1098, 747);
+            ClientSize = new Size(1102, 747);
             Controls.Add(panel2);
             Controls.Add(panel1);
             Name = "LOGIN";
             Text = "Form1";
+            Load += LOGIN_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ResumeLayout(false);

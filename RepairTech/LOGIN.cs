@@ -27,7 +27,7 @@ namespace PROJECT_PBO
 
             if (ValidateLogin(username, password))
             {
-                Menu_utama menu_Utama = new Menu_utama();   
+                Menu_utama menu_Utama = new Menu_utama();
                 menu_Utama.Show();
                 this.Hide();
             }
@@ -84,6 +84,11 @@ namespace PROJECT_PBO
                 }
             }
             return isValid;
+        }
+
+        private void LOGIN_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
