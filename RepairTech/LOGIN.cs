@@ -7,7 +7,7 @@ namespace PROJECT_PBO
     public partial class LOGIN : Form
     {
         // Koneksi ke database PostgreSQL
-        private string connectionString = "Host=localhost;Username=postgres;Password=Aditya03;Database=RepairTech"; // Sesuaikan dengan konfigurasi Anda
+        private string connectionString = "Host=localhost;Username=postgres;Password=1;Database=RepairTech"; // Sesuaikan dengan konfigurasi Anda
 
         public LOGIN()
         {
@@ -107,11 +107,6 @@ namespace PROJECT_PBO
             formRegister.Show();
 
             this.Hide();
-        }
-
-        private void LOGIN_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

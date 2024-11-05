@@ -120,12 +120,34 @@
             // 
             showPasswordCheckBox.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             showPasswordCheckBox.ForeColor = SystemColors.Control;
-            showPasswordCheckBox.Location = new Point(185, 312);
+            showPasswordCheckBox.Location = new Point(148, 250);
+            showPasswordCheckBox.Margin = new Padding(2);
             showPasswordCheckBox.Name = "showPasswordCheckBox";
-            showPasswordCheckBox.Size = new Size(183, 29);
+            showPasswordCheckBox.Size = new Size(146, 23);
             showPasswordCheckBox.TabIndex = 7;
             showPasswordCheckBox.Text = "Show Password";
             showPasswordCheckBox.CheckedChanged += showPasswordCheckBox_CheckedChanged;
+            // 
+            // panel2
+            // 
+            panel2.BackColor = Color.Magenta;
+            panel2.Location = new Point(216, 118);
+            panel2.Margin = new Padding(2);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(451, 13);
+            panel2.TabIndex = 6;
+            // 
+            // linkLabel1
+            // 
+            linkLabel1.AutoSize = true;
+            linkLabel1.LinkColor = Color.Black;
+            linkLabel1.Location = new Point(255, 253);
+            linkLabel1.Name = "linkLabel1";
+            linkLabel1.Size = new Size(63, 20);
+            linkLabel1.TabIndex = 8;
+            linkLabel1.TabStop = true;
+            linkLabel1.Text = "Register";
+            linkLabel1.LinkClicked += linkLabel1_LinkClicked;
             // 
             // LOGIN
             // 
@@ -133,13 +155,12 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(1098, 747);
+            ClientSize = new Size(878, 598);
             Controls.Add(panel2);
             Controls.Add(panel1);
             Margin = new Padding(2);
             Name = "LOGIN";
             Text = "Form1";
-            Load += LOGIN_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ResumeLayout(false);
