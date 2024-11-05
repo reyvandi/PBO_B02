@@ -7,7 +7,7 @@ namespace PROJECT_PBO
     public partial class LOGIN : Form
     {
         // Koneksi ke database PostgreSQL
-        private string connectionString = "Host=localhost;Username=postgres;Password=1;Database=RepairTech"; // Sesuaikan dengan konfigurasi Anda
+        private string connectionString = "Host=localhost;Username=postgres;Password=ipan061204;Database=RepairTech"; // Sesuaikan dengan konfigurasi Anda
 
         public LOGIN()
         {
@@ -25,11 +25,23 @@ namespace PROJECT_PBO
             string username = textBoxUSERNAME.Text.Trim();
             string password = textBoxPASSWORD.Text.Trim();
 
-            if (ValidateLogin(username, password))
+            string role = ValidateLogin(username, password);
+            if (!string.IsNullOrEmpty(role))
             {
-                Menu_utama menu_Utama = new Menu_utama();   
-                menu_Utama.Show();
-                this.Hide();
+                MessageBox.Show($"Login berhasil sebagai {role}", "Login Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                if (role == "admin")
+                {
+                    FormAdmin formAdmin = new FormAdmin(); // Form khusus untuk Admin
+                    formAdmin.Show();
+                }
+                else if (role == "pelanggan")
+                {
+                    FormPelanggan formPelanggan = new FormPelanggan(); // Form khusus untuk User
+                    formPelanggan.Show();
+                }
+
+                this.Hide(); // Menutup form login setelah login berhasil
             }
             else
             {
@@ -40,19 +52,12 @@ namespace PROJECT_PBO
         // Logika untuk checkbox yang mengubah visibilitas password
         private void showPasswordCheckBox_CheckedChanged(object sender, EventArgs e)
         {
-            if (showPasswordCheckBox.Checked)
-            {
-                textBoxPASSWORD.PasswordChar = '\0'; // Password terlihat
-            }
-            else
-            {
-                textBoxPASSWORD.PasswordChar = '*'; // Kembali ke tanda bintang
-            }
+            textBoxPASSWORD.PasswordChar = showPasswordCheckBox.Checked ? '\0' : '*';
         }
 
-        private bool ValidateLogin(string username, string password)
+        private string ValidateLogin(string username, string password)
         {
-            bool isValid = false;
+            string role = null;
 
             // Membuka koneksi ke database PostgreSQL
             using (NpgsqlConnection conn = new NpgsqlConnection(connectionString))
@@ -61,20 +66,19 @@ namespace PROJECT_PBO
                 {
                     conn.Open();
 
-                    // Query untuk mengecek apakah username dan password cocok
-                    string query = "SELECT COUNT(1) FROM admin WHERE Username = @username AND Password = @password";
+                    // Query untuk mengecek apakah username dan password cocok dan mengambil perannya
+                    string query = "SELECT Role FROM akun WHERE Username = @username AND Password = @password";
                     using (NpgsqlCommand cmd = new NpgsqlCommand(query, conn))
                     {
                         // Menghindari SQL Injection dengan parameterized query
                         cmd.Parameters.AddWithValue("@username", username);
                         cmd.Parameters.AddWithValue("@password", password);
 
-                        // Mengeksekusi query
-                        int count = Convert.ToInt32(cmd.ExecuteScalar());
-
-                        if (count == 1)
+                        // Mengeksekusi query dan mengambil role
+                        object result = cmd.ExecuteScalar();
+                        if (result != null)
                         {
-                            isValid = true;
+                            role = result.ToString(); // Menyimpan role yang ditemukan
                         }
                     }
                 }
@@ -83,7 +87,26 @@ namespace PROJECT_PBO
                     MessageBox.Show("Terjadi kesalahan: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            return isValid;
+
+            return role;
+        }
+
+        private void textBoxPASSWORD_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxUSERNAME_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            FormRegister formRegister = new FormRegister(); // Form khusus untuk Register
+            formRegister.Show();
+
+            this.Hide();
         }
     }
 }
