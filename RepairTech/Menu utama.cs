@@ -61,5 +61,10 @@ namespace PROJECT_PBO
         {
 
         }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
