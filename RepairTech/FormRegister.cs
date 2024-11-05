@@ -14,7 +14,7 @@ namespace PROJECT_PBO
     public partial class FormRegister : Form
     {
 
-        private string connectionString = "Host=localhost;Username=postgres;Password=ipan061204;Database=RepairTech"; // Sesuaikan dengan konfigurasi Anda
+        private string connectionString = "Host=localhost;Username=postgres;Password=1;Database=RepairTech"; // Sesuaikan dengan konfigurasi Anda
 
         public FormRegister()
         {
