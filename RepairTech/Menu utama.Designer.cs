@@ -102,7 +102,7 @@
             button6.FlatStyle = FlatStyle.Flat;
             button6.Font = new Font("Nirmala UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button6.ForeColor = SystemColors.ButtonHighlight;
-            button6.Image = Properties.Resources.home_9187548;
+            //button6.Image = Properties.Resources.home_9187548;
             button6.Location = new Point(-3, 332);
             button6.Name = "button6";
             button6.Size = new Size(185, 42);
@@ -118,7 +118,7 @@
             button4.FlatStyle = FlatStyle.Flat;
             button4.Font = new Font("Nirmala UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button4.ForeColor = SystemColors.ButtonHighlight;
-            button4.Image = Properties.Resources.home_9187548;
+            //button4.Image = Properties.Resources.home_9187548;
             button4.Location = new Point(-3, 287);
             button4.Name = "button4";
             button4.Size = new Size(185, 42);
@@ -135,7 +135,7 @@
             button3.FlatStyle = FlatStyle.Flat;
             button3.Font = new Font("Nirmala UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button3.ForeColor = SystemColors.ButtonHighlight;
-            button3.Image = Properties.Resources.home_9187548;
+            //button3.Image = Properties.Resources.home_9187548;
             button3.Location = new Point(-3, 239);
             button3.Name = "button3";
             button3.Size = new Size(185, 42);
@@ -212,7 +212,7 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = Properties.Resources.user;
+            //pictureBox1.Image = Properties.Resources.user;
             pictureBox1.Location = new Point(57, 9);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(63, 63);
