@@ -67,5 +67,16 @@ namespace PROJECT_PBO.Controller
             return count > 0;
 
         }
+
+        public DataTable GetAkunByUsernamePassword(string username, string password)
+        {
+            string query = $"SELECT id_akun, username, password, role, email FROM {table} WHERE username = @username AND password = @password";
+            NpgsqlParameter[] parameters =
+            {
+            new NpgsqlParameter("@username", username),
+            new NpgsqlParameter("@password", password)
+        };
+            return queryExecutor(query, parameters);
+        }
     }
 }
