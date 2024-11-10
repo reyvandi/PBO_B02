@@ -33,7 +33,7 @@ namespace PROJECT_PBO.Controller
 
         public void RegisterAkun(M_Akun newAkun)
         {
-            string query = $"INSERT INTO {table} (username, password, role, email) VALUES(@username, @password, pelanggan, @email)";
+            string query = $"INSERT INTO {table} (username, password, role, email) VALUES(@username, @password, 'pelanggan', @email)";
 
             NpgsqlParameter[] parameters =
             {
@@ -58,10 +58,10 @@ namespace PROJECT_PBO.Controller
         
         public static bool IsUsernameExist(string username)
         {
-            string query = "SELECT COUNT(*) FROM akun WHERE Email = @username";
+            string query = "SELECT COUNT(*) FROM akun WHERE username = @username";
             NpgsqlParameter[] parameters =
             {
-                new NpgsqlParameter("@email", username)
+                new NpgsqlParameter("@username", username)
             };
             int count = DatabaseWrapper.executeScalar(query, parameters);
             return count > 0;

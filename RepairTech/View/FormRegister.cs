@@ -1,5 +1,5 @@
-﻿using Npgsql;
-using PROJECT_PBO.Controller;
+﻿using PROJECT_PBO.Controller;
+using PROJECT_PBO.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,19 +11,18 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using PROJECT_PBO.Model;
 
-namespace PROJECT_PBO
+namespace PROJECT_PBO.View
 {
     public partial class FormRegister : Form
     {
         private AkunContext akun;
-
         public FormRegister()
         {
             InitializeComponent();
             akun = new AkunContext();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void buttonRegistrasi_Click(object sender, EventArgs e)
         {
             string email = textBoxEmail.Text.Trim();
             string username = textBoxUsername.Text.Trim();
@@ -72,5 +71,4 @@ namespace PROJECT_PBO
             }
         }
     }
-
 }

@@ -3,6 +3,7 @@ using Npgsql;
 using System.Windows.Forms;
 using PROJECT_PBO.Controller;
 using PROJECT_PBO.Model;
+using PROJECT_PBO.View;
 
 namespace PROJECT_PBO
 {
