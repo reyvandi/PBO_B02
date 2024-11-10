@@ -16,5 +16,10 @@ namespace PROJECT_PBO
         {
             InitializeComponent();
         }
+
+        private void FormPelanggan_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

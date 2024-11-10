@@ -1,13 +1,15 @@
 using System;
 using Npgsql;
 using System.Windows.Forms;
+using PROJECT_PBO.Controller;
+using PROJECT_PBO.Model;
 
 namespace PROJECT_PBO
 {
     public partial class LOGIN : Form
     {
         // Koneksi ke database PostgreSQL
-        private string connectionString = "Host=localhost;Username=postgres;Password=1;Database=RepairTech"; // Sesuaikan dengan konfigurasi Anda
+        private string connectionString = "Host=localhost;Username=postgres;Password=ipan061204;Database=RepairTech"; // Sesuaikan dengan konfigurasi Anda
 
         public LOGIN()
         {
@@ -107,6 +109,21 @@ namespace PROJECT_PBO
             formRegister.Show();
 
             this.Hide();
+        }
+
+        private void buttonLOGIN_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void LOGIN_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

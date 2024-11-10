@@ -1,4 +1,5 @@
-﻿namespace PROJECT_PBO
+﻿
+namespace PROJECT_PBO
 {
     partial class FormRegister
     {
@@ -123,5 +124,7 @@
         private Label label4;
         private TextBox textBoxPassword;
         private Button button1;
+        private EventHandler textBox3_TextChanged;
+        private EventHandler textBoxEmail4_TextChanged;
     }
 }
