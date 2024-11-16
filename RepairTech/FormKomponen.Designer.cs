@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormKomponen));
             sidebar = new FlowLayoutPanel();
             panelSidebar = new Panel();
             label1 = new Label();
@@ -44,6 +43,8 @@
             buttonTeknisi = new FontAwesome.Sharp.IconButton();
             timerSidebar = new System.Windows.Forms.Timer(components);
             panel5 = new Panel();
+            iconButton1 = new FontAwesome.Sharp.IconButton();
+            panel6 = new Panel();
             sidebar.SuspendLayout();
             panelSidebar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)buttonMenu).BeginInit();
@@ -51,6 +52,7 @@
             panel2.SuspendLayout();
             panel3.SuspendLayout();
             panel4.SuspendLayout();
+            panel5.SuspendLayout();
             SuspendLayout();
             // 
             // sidebar
@@ -94,7 +96,7 @@
             // buttonMenu
             // 
             buttonMenu.Cursor = Cursors.Hand;
-            buttonMenu.Image = (Image)resources.GetObject("buttonMenu.Image");
+            buttonMenu.Image = Properties.Resources.menu;
             buttonMenu.Location = new Point(3, 26);
             buttonMenu.Name = "buttonMenu";
             buttonMenu.Size = new Size(38, 40);
@@ -136,6 +138,7 @@
             // panel2
             // 
             panel2.BackColor = Color.FromArgb(31, 30, 68);
+            panel2.Controls.Add(panel6);
             panel2.Controls.Add(buttonKomponen);
             panel2.Location = new Point(3, 166);
             panel2.Name = "panel2";
@@ -150,16 +153,16 @@
             buttonKomponen.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             buttonKomponen.ForeColor = SystemColors.Control;
             buttonKomponen.IconChar = FontAwesome.Sharp.IconChar.Laptop;
-            buttonKomponen.IconColor = Color.White;
+            buttonKomponen.IconColor = Color.FromArgb(255, 128, 255);
             buttonKomponen.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            buttonKomponen.IconSize = 32;
-            buttonKomponen.ImageAlign = ContentAlignment.MiddleLeft;
+            buttonKomponen.IconSize = 36;
+            buttonKomponen.ImageAlign = ContentAlignment.MiddleRight;
             buttonKomponen.Location = new Point(0, 3);
             buttonKomponen.Name = "buttonKomponen";
             buttonKomponen.Size = new Size(162, 41);
             buttonKomponen.TabIndex = 1;
             buttonKomponen.Text = "Komponen";
-            buttonKomponen.TextAlign = ContentAlignment.MiddleRight;
+            buttonKomponen.TextAlign = ContentAlignment.MiddleLeft;
             buttonKomponen.UseVisualStyleBackColor = false;
             buttonKomponen.Click += buttonKomponen_Click;
             // 
@@ -229,11 +232,40 @@
             // panel5
             // 
             panel5.BackColor = Color.FromArgb(31, 30, 68);
+            panel5.Controls.Add(iconButton1);
             panel5.Dock = DockStyle.Top;
             panel5.Location = new Point(165, 0);
             panel5.Name = "panel5";
-            panel5.Size = new Size(940, 69);
+            panel5.Size = new Size(940, 60);
             panel5.TabIndex = 2;
+            // 
+            // iconButton1
+            // 
+            iconButton1.BackColor = Color.FromArgb(31, 30, 68);
+            iconButton1.FlatAppearance.BorderSize = 0;
+            iconButton1.FlatStyle = FlatStyle.Flat;
+            iconButton1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            iconButton1.ForeColor = SystemColors.Control;
+            iconButton1.IconChar = FontAwesome.Sharp.IconChar.Laptop;
+            iconButton1.IconColor = Color.FromArgb(255, 128, 255);
+            iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconButton1.IconSize = 50;
+            iconButton1.ImageAlign = ContentAlignment.MiddleLeft;
+            iconButton1.Location = new Point(6, 6);
+            iconButton1.Name = "iconButton1";
+            iconButton1.Size = new Size(162, 41);
+            iconButton1.TabIndex = 2;
+            iconButton1.Text = "Komponen";
+            iconButton1.TextAlign = ContentAlignment.MiddleRight;
+            iconButton1.UseVisualStyleBackColor = false;
+            // 
+            // panel6
+            // 
+            panel6.BackColor = Color.FromArgb(255, 128, 255);
+            panel6.Location = new Point(0, 3);
+            panel6.Name = "panel6";
+            panel6.Size = new Size(5, 51);
+            panel6.TabIndex = 3;
             // 
             // FormKomponen
             // 
@@ -256,6 +288,7 @@
             panel2.ResumeLayout(false);
             panel3.ResumeLayout(false);
             panel4.ResumeLayout(false);
+            panel5.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -275,5 +308,7 @@
         private FontAwesome.Sharp.IconButton buttonTeknisi;
         private System.Windows.Forms.Timer timerSidebar;
         private Panel panel5;
+        private Panel panel6;
+        private FontAwesome.Sharp.IconButton iconButton1;
     }
 }

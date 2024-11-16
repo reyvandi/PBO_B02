@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAdmin1));
             sidebar = new FlowLayoutPanel();
             panelSidebar = new Panel();
             label1 = new Label();
@@ -43,6 +42,9 @@
             panel4 = new Panel();
             buttonTeknisi = new FontAwesome.Sharp.IconButton();
             timerSidebar = new System.Windows.Forms.Timer(components);
+            panel5 = new Panel();
+            panel6 = new Panel();
+            iconButton1 = new FontAwesome.Sharp.IconButton();
             sidebar.SuspendLayout();
             panelSidebar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)buttonMenu).BeginInit();
@@ -50,11 +52,12 @@
             panel2.SuspendLayout();
             panel3.SuspendLayout();
             panel4.SuspendLayout();
+            panel5.SuspendLayout();
             SuspendLayout();
             // 
             // sidebar
             // 
-            sidebar.BackColor = SystemColors.ActiveCaption;
+            sidebar.BackColor = Color.FromArgb(31, 30, 68);
             sidebar.Controls.Add(panelSidebar);
             sidebar.Controls.Add(panel1);
             sidebar.Controls.Add(panel2);
@@ -71,7 +74,7 @@
             // 
             // panelSidebar
             // 
-            panelSidebar.BackColor = SystemColors.ActiveCaption;
+            panelSidebar.BackColor = Color.FromArgb(31, 30, 68);
             panelSidebar.Controls.Add(label1);
             panelSidebar.Controls.Add(buttonMenu);
             panelSidebar.Location = new Point(3, 3);
@@ -83,6 +86,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = SystemColors.Control;
             label1.Location = new Point(63, 35);
             label1.Name = "label1";
             label1.Size = new Size(54, 21);
@@ -92,7 +96,7 @@
             // buttonMenu
             // 
             buttonMenu.Cursor = Cursors.Hand;
-            buttonMenu.Image = (Image)resources.GetObject("buttonMenu.Image");
+            buttonMenu.Image = Properties.Resources.menu;
             buttonMenu.Location = new Point(3, 26);
             buttonMenu.Name = "buttonMenu";
             buttonMenu.Size = new Size(38, 40);
@@ -103,6 +107,7 @@
             // 
             // panel1
             // 
+            panel1.Controls.Add(panel6);
             panel1.Controls.Add(buttonTransaksi);
             panel1.Location = new Point(3, 109);
             panel1.Name = "panel1";
@@ -111,21 +116,22 @@
             // 
             // buttonTransaksi
             // 
-            buttonTransaksi.BackColor = SystemColors.ActiveCaption;
+            buttonTransaksi.BackColor = Color.FromArgb(31, 30, 68);
             buttonTransaksi.FlatAppearance.BorderSize = 0;
             buttonTransaksi.FlatStyle = FlatStyle.Flat;
             buttonTransaksi.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            buttonTransaksi.ForeColor = SystemColors.Control;
             buttonTransaksi.IconChar = FontAwesome.Sharp.IconChar.CartShopping;
-            buttonTransaksi.IconColor = Color.Black;
+            buttonTransaksi.IconColor = Color.DeepSkyBlue;
             buttonTransaksi.IconFont = FontAwesome.Sharp.IconFont.Auto;
             buttonTransaksi.IconSize = 32;
-            buttonTransaksi.ImageAlign = ContentAlignment.MiddleLeft;
+            buttonTransaksi.ImageAlign = ContentAlignment.MiddleRight;
             buttonTransaksi.Location = new Point(-1, 3);
             buttonTransaksi.Name = "buttonTransaksi";
             buttonTransaksi.Size = new Size(147, 41);
             buttonTransaksi.TabIndex = 1;
             buttonTransaksi.Text = "Transaksi";
-            buttonTransaksi.TextAlign = ContentAlignment.MiddleRight;
+            buttonTransaksi.TextAlign = ContentAlignment.MiddleLeft;
             buttonTransaksi.UseVisualStyleBackColor = false;
             // 
             // panel2
@@ -138,12 +144,13 @@
             // 
             // buttonKomponen
             // 
-            buttonKomponen.BackColor = SystemColors.ActiveCaption;
+            buttonKomponen.BackColor = Color.FromArgb(31, 30, 68);
             buttonKomponen.FlatAppearance.BorderSize = 0;
             buttonKomponen.FlatStyle = FlatStyle.Flat;
             buttonKomponen.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            buttonKomponen.ForeColor = SystemColors.Control;
             buttonKomponen.IconChar = FontAwesome.Sharp.IconChar.Laptop;
-            buttonKomponen.IconColor = Color.Black;
+            buttonKomponen.IconColor = Color.White;
             buttonKomponen.IconFont = FontAwesome.Sharp.IconFont.Auto;
             buttonKomponen.IconSize = 32;
             buttonKomponen.ImageAlign = ContentAlignment.MiddleLeft;
@@ -166,12 +173,13 @@
             // 
             // buttonJasa
             // 
-            buttonJasa.BackColor = SystemColors.ActiveCaption;
+            buttonJasa.BackColor = Color.FromArgb(31, 30, 68);
             buttonJasa.FlatAppearance.BorderSize = 0;
             buttonJasa.FlatStyle = FlatStyle.Flat;
             buttonJasa.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            buttonJasa.ForeColor = SystemColors.Control;
             buttonJasa.IconChar = FontAwesome.Sharp.IconChar.Screwdriver;
-            buttonJasa.IconColor = Color.Black;
+            buttonJasa.IconColor = Color.White;
             buttonJasa.IconFont = FontAwesome.Sharp.IconFont.Auto;
             buttonJasa.IconSize = 32;
             buttonJasa.ImageAlign = ContentAlignment.MiddleLeft;
@@ -193,12 +201,13 @@
             // 
             // buttonTeknisi
             // 
-            buttonTeknisi.BackColor = SystemColors.ActiveCaption;
+            buttonTeknisi.BackColor = Color.FromArgb(31, 30, 68);
             buttonTeknisi.FlatAppearance.BorderSize = 0;
             buttonTeknisi.FlatStyle = FlatStyle.Flat;
             buttonTeknisi.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            buttonTeknisi.ForeColor = SystemColors.Control;
             buttonTeknisi.IconChar = FontAwesome.Sharp.IconChar.Users;
-            buttonTeknisi.IconColor = Color.Black;
+            buttonTeknisi.IconColor = Color.White;
             buttonTeknisi.IconFont = FontAwesome.Sharp.IconFont.Auto;
             buttonTeknisi.IconSize = 32;
             buttonTeknisi.ImageAlign = ContentAlignment.MiddleLeft;
@@ -215,11 +224,50 @@
             timerSidebar.Interval = 10;
             timerSidebar.Tick += timerSidebar_Tick;
             // 
+            // panel5
+            // 
+            panel5.BackColor = Color.FromArgb(31, 30, 68);
+            panel5.Controls.Add(iconButton1);
+            panel5.Dock = DockStyle.Top;
+            panel5.Location = new Point(165, 0);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(940, 60);
+            panel5.TabIndex = 3;
+            // 
+            // panel6
+            // 
+            panel6.BackColor = Color.DeepSkyBlue;
+            panel6.Location = new Point(0, 3);
+            panel6.Name = "panel6";
+            panel6.Size = new Size(5, 51);
+            panel6.TabIndex = 4;
+            // 
+            // iconButton1
+            // 
+            iconButton1.BackColor = Color.FromArgb(31, 30, 68);
+            iconButton1.FlatAppearance.BorderSize = 0;
+            iconButton1.FlatStyle = FlatStyle.Flat;
+            iconButton1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            iconButton1.ForeColor = SystemColors.Control;
+            iconButton1.IconChar = FontAwesome.Sharp.IconChar.CartShopping;
+            iconButton1.IconColor = Color.DeepSkyBlue;
+            iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconButton1.IconSize = 50;
+            iconButton1.ImageAlign = ContentAlignment.MiddleLeft;
+            iconButton1.Location = new Point(6, 12);
+            iconButton1.Name = "iconButton1";
+            iconButton1.Size = new Size(147, 41);
+            iconButton1.TabIndex = 2;
+            iconButton1.Text = "Transaksi";
+            iconButton1.TextAlign = ContentAlignment.MiddleRight;
+            iconButton1.UseVisualStyleBackColor = false;
+            // 
             // FormAdmin1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1105, 620);
+            Controls.Add(panel5);
             Controls.Add(sidebar);
             FormBorderStyle = FormBorderStyle.None;
             Name = "FormAdmin1";
@@ -234,6 +282,7 @@
             panel2.ResumeLayout(false);
             panel3.ResumeLayout(false);
             panel4.ResumeLayout(false);
+            panel5.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -252,5 +301,8 @@
         private FontAwesome.Sharp.IconButton buttonKomponen;
         private FontAwesome.Sharp.IconButton buttonJasa;
         private FontAwesome.Sharp.IconButton buttonTeknisi;
+        private Panel panel5;
+        private Panel panel6;
+        private FontAwesome.Sharp.IconButton iconButton1;
     }
 }

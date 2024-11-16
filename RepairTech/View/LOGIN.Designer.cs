@@ -35,7 +35,7 @@
             pictureBox1.Image = Properties.Resources.Frame_4;
             pictureBox1.Location = new Point(0, 0);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(627, 582);
+            pictureBox1.Size = new Size(653, 621);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;
@@ -44,7 +44,7 @@
             // 
             showPasswordCheckBox.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             showPasswordCheckBox.ForeColor = SystemColors.ActiveCaptionText;
-            showPasswordCheckBox.Location = new Point(814, 312);
+            showPasswordCheckBox.Location = new Point(836, 364);
             showPasswordCheckBox.Name = "showPasswordCheckBox";
             showPasswordCheckBox.Size = new Size(136, 26);
             showPasswordCheckBox.TabIndex = 7;
@@ -57,7 +57,7 @@
             labelLOGIN.BackColor = Color.Transparent;
             labelLOGIN.Font = new Font("Hanson", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             labelLOGIN.ForeColor = Color.Magenta;
-            labelLOGIN.Location = new Point(814, 117);
+            labelLOGIN.Location = new Point(836, 169);
             labelLOGIN.Margin = new Padding(2, 0, 2, 0);
             labelLOGIN.Name = "labelLOGIN";
             labelLOGIN.Size = new Size(118, 34);
@@ -69,7 +69,7 @@
             labelUSERNAME.AutoSize = true;
             labelUSERNAME.Font = new Font("Calibri", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             labelUSERNAME.ForeColor = SystemColors.ActiveCaptionText;
-            labelUSERNAME.Location = new Point(739, 177);
+            labelUSERNAME.Location = new Point(761, 229);
             labelUSERNAME.Margin = new Padding(2, 0, 2, 0);
             labelUSERNAME.Name = "labelUSERNAME";
             labelUSERNAME.Size = new Size(91, 23);
@@ -81,7 +81,7 @@
             labelPASSWORD.AutoSize = true;
             labelPASSWORD.Font = new Font("Calibri", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
             labelPASSWORD.ForeColor = SystemColors.ActiveCaptionText;
-            labelPASSWORD.Location = new Point(739, 243);
+            labelPASSWORD.Location = new Point(761, 295);
             labelPASSWORD.Margin = new Padding(2, 0, 2, 0);
             labelPASSWORD.Name = "labelPASSWORD";
             labelPASSWORD.Size = new Size(86, 23);
@@ -90,7 +90,7 @@
             // 
             // textBoxUSERNAME
             // 
-            textBoxUSERNAME.Location = new Point(739, 204);
+            textBoxUSERNAME.Location = new Point(761, 256);
             textBoxUSERNAME.Margin = new Padding(2);
             textBoxUSERNAME.Multiline = true;
             textBoxUSERNAME.Name = "textBoxUSERNAME";
@@ -100,7 +100,7 @@
             // 
             // textBoxPASSWORD
             // 
-            textBoxPASSWORD.Location = new Point(739, 268);
+            textBoxPASSWORD.Location = new Point(761, 320);
             textBoxPASSWORD.Margin = new Padding(2);
             textBoxPASSWORD.Multiline = true;
             textBoxPASSWORD.Name = "textBoxPASSWORD";
@@ -113,7 +113,7 @@
             buttonLOGIN.BackColor = Color.Magenta;
             buttonLOGIN.BackgroundImage = (Image)resources.GetObject("buttonLOGIN.BackgroundImage");
             buttonLOGIN.BackgroundImageLayout = ImageLayout.Zoom;
-            buttonLOGIN.Location = new Point(814, 356);
+            buttonLOGIN.Location = new Point(836, 408);
             buttonLOGIN.Margin = new Padding(2);
             buttonLOGIN.Name = "buttonLOGIN";
             buttonLOGIN.Size = new Size(131, 25);
@@ -125,7 +125,7 @@
             // 
             linkLabel1.AutoSize = true;
             linkLabel1.LinkColor = Color.Black;
-            linkLabel1.Location = new Point(856, 399);
+            linkLabel1.Location = new Point(878, 451);
             linkLabel1.Name = "linkLabel1";
             linkLabel1.Size = new Size(49, 15);
             linkLabel1.TabIndex = 8;
@@ -139,7 +139,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             BackgroundImageLayout = ImageLayout.None;
-            ClientSize = new Size(1089, 581);
+            ClientSize = new Size(1105, 620);
             Controls.Add(linkLabel1);
             Controls.Add(pictureBox1);
             Controls.Add(buttonLOGIN);
@@ -150,7 +150,7 @@
             Controls.Add(showPasswordCheckBox);
             Controls.Add(labelUSERNAME);
             FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(2, 2, 2, 2);
+            Margin = new Padding(2);
             Name = "LOGIN";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
