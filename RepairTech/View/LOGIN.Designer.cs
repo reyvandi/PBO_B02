@@ -18,168 +18,157 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LOGIN));
-            panel1 = new Panel();
-            linkLabel1 = new LinkLabel();
-            buttonLOGIN = new Button();
-            textBoxPASSWORD = new TextBox();
-            textBoxUSERNAME = new TextBox();
-            labelPASSWORD = new Label();
-            labelUSERNAME = new Label();
-            labelLOGIN = new Label();
+            pictureBox1 = new PictureBox();
             showPasswordCheckBox = new CheckBox();
-            panel2 = new Panel();
-            panel1.SuspendLayout();
+            labelLOGIN = new Label();
+            labelUSERNAME = new Label();
+            labelPASSWORD = new Label();
+            textBoxUSERNAME = new TextBox();
+            textBoxPASSWORD = new TextBox();
+            buttonLOGIN = new Button();
+            linkLabel1 = new LinkLabel();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
-            // panel1
+            // pictureBox1
             // 
-            panel1.BackColor = SystemColors.MenuHighlight;
-            panel1.Controls.Add(linkLabel1);
-            panel1.Controls.Add(buttonLOGIN);
-            panel1.Controls.Add(textBoxPASSWORD);
-            panel1.Controls.Add(textBoxUSERNAME);
-            panel1.Controls.Add(labelPASSWORD);
-            panel1.Controls.Add(labelUSERNAME);
-            panel1.Controls.Add(labelLOGIN);
-            panel1.Controls.Add(showPasswordCheckBox);
-            panel1.Location = new Point(216, 64);
-            panel1.Margin = new Padding(2, 3, 2, 3);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(451, 421);
-            panel1.TabIndex = 0;
-            panel1.Paint += panel1_Paint;
+            pictureBox1.Image = Properties.Resources.Frame_4;
+            pictureBox1.Location = new Point(0, 0);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(627, 582);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 1;
+            pictureBox1.TabStop = false;
             // 
-            // linkLabel1
+            // showPasswordCheckBox
             // 
-            linkLabel1.AutoSize = true;
-            linkLabel1.LinkColor = Color.Black;
-            linkLabel1.Location = new Point(205, 381);
-            linkLabel1.Name = "linkLabel1";
-            linkLabel1.Size = new Size(63, 20);
-            linkLabel1.TabIndex = 8;
-            linkLabel1.TabStop = true;
-            linkLabel1.Text = "Register";
-            linkLabel1.LinkClicked += linkLabel1_LinkClicked;
+            showPasswordCheckBox.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            showPasswordCheckBox.ForeColor = SystemColors.ActiveCaptionText;
+            showPasswordCheckBox.Location = new Point(814, 312);
+            showPasswordCheckBox.Name = "showPasswordCheckBox";
+            showPasswordCheckBox.Size = new Size(136, 26);
+            showPasswordCheckBox.TabIndex = 7;
+            showPasswordCheckBox.Text = "Show Password";
+            showPasswordCheckBox.CheckedChanged += showPasswordCheckBox_CheckedChanged;
+            // 
+            // labelLOGIN
+            // 
+            labelLOGIN.AutoSize = true;
+            labelLOGIN.BackColor = Color.Transparent;
+            labelLOGIN.Font = new Font("Hanson", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelLOGIN.ForeColor = Color.Magenta;
+            labelLOGIN.Location = new Point(814, 117);
+            labelLOGIN.Margin = new Padding(2, 0, 2, 0);
+            labelLOGIN.Name = "labelLOGIN";
+            labelLOGIN.Size = new Size(118, 34);
+            labelLOGIN.TabIndex = 0;
+            labelLOGIN.Text = "Login";
+            // 
+            // labelUSERNAME
+            // 
+            labelUSERNAME.AutoSize = true;
+            labelUSERNAME.Font = new Font("Calibri", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelUSERNAME.ForeColor = SystemColors.ActiveCaptionText;
+            labelUSERNAME.Location = new Point(739, 177);
+            labelUSERNAME.Margin = new Padding(2, 0, 2, 0);
+            labelUSERNAME.Name = "labelUSERNAME";
+            labelUSERNAME.Size = new Size(91, 23);
+            labelUSERNAME.TabIndex = 1;
+            labelUSERNAME.Text = "Username";
+            // 
+            // labelPASSWORD
+            // 
+            labelPASSWORD.AutoSize = true;
+            labelPASSWORD.Font = new Font("Calibri", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelPASSWORD.ForeColor = SystemColors.ActiveCaptionText;
+            labelPASSWORD.Location = new Point(739, 243);
+            labelPASSWORD.Margin = new Padding(2, 0, 2, 0);
+            labelPASSWORD.Name = "labelPASSWORD";
+            labelPASSWORD.Size = new Size(86, 23);
+            labelPASSWORD.TabIndex = 2;
+            labelPASSWORD.Text = "Password";
+            // 
+            // textBoxUSERNAME
+            // 
+            textBoxUSERNAME.Location = new Point(739, 204);
+            textBoxUSERNAME.Margin = new Padding(2);
+            textBoxUSERNAME.Multiline = true;
+            textBoxUSERNAME.Name = "textBoxUSERNAME";
+            textBoxUSERNAME.Size = new Size(272, 25);
+            textBoxUSERNAME.TabIndex = 3;
+            textBoxUSERNAME.TextChanged += textBoxUSERNAME_TextChanged;
+            // 
+            // textBoxPASSWORD
+            // 
+            textBoxPASSWORD.Location = new Point(739, 268);
+            textBoxPASSWORD.Margin = new Padding(2);
+            textBoxPASSWORD.Multiline = true;
+            textBoxPASSWORD.Name = "textBoxPASSWORD";
+            textBoxPASSWORD.Size = new Size(272, 24);
+            textBoxPASSWORD.TabIndex = 4;
+            textBoxPASSWORD.TextChanged += textBoxPASSWORD_TextChanged;
             // 
             // buttonLOGIN
             // 
             buttonLOGIN.BackColor = Color.Magenta;
             buttonLOGIN.BackgroundImage = (Image)resources.GetObject("buttonLOGIN.BackgroundImage");
             buttonLOGIN.BackgroundImageLayout = ImageLayout.Zoom;
-            buttonLOGIN.Location = new Point(161, 315);
-            buttonLOGIN.Margin = new Padding(2, 3, 2, 3);
+            buttonLOGIN.Location = new Point(814, 356);
+            buttonLOGIN.Margin = new Padding(2);
             buttonLOGIN.Name = "buttonLOGIN";
-            buttonLOGIN.Size = new Size(150, 33);
+            buttonLOGIN.Size = new Size(131, 25);
             buttonLOGIN.TabIndex = 5;
             buttonLOGIN.UseVisualStyleBackColor = false;
             buttonLOGIN.Click += buttonLOGIN_Click_1;
             // 
-            // textBoxPASSWORD
+            // linkLabel1
             // 
-            textBoxPASSWORD.Location = new Point(139, 205);
-            textBoxPASSWORD.Margin = new Padding(2, 3, 2, 3);
-            textBoxPASSWORD.Multiline = true;
-            textBoxPASSWORD.Name = "textBoxPASSWORD";
-            textBoxPASSWORD.Size = new Size(191, 31);
-            textBoxPASSWORD.TabIndex = 4;
-            textBoxPASSWORD.TextChanged += textBoxPASSWORD_TextChanged;
-            // 
-            // textBoxUSERNAME
-            // 
-            textBoxUSERNAME.Location = new Point(139, 131);
-            textBoxUSERNAME.Margin = new Padding(2, 3, 2, 3);
-            textBoxUSERNAME.Multiline = true;
-            textBoxUSERNAME.Name = "textBoxUSERNAME";
-            textBoxUSERNAME.Size = new Size(191, 32);
-            textBoxUSERNAME.TabIndex = 3;
-            textBoxUSERNAME.TextChanged += textBoxUSERNAME_TextChanged;
-            // 
-            // labelPASSWORD
-            // 
-            labelPASSWORD.AutoSize = true;
-            labelPASSWORD.Font = new Font("Calibri", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            labelPASSWORD.ForeColor = SystemColors.Control;
-            labelPASSWORD.Location = new Point(139, 175);
-            labelPASSWORD.Margin = new Padding(2, 0, 2, 0);
-            labelPASSWORD.Name = "labelPASSWORD";
-            labelPASSWORD.Size = new Size(111, 29);
-            labelPASSWORD.TabIndex = 2;
-            labelPASSWORD.Text = "Password";
-            // 
-            // labelUSERNAME
-            // 
-            labelUSERNAME.AutoSize = true;
-            labelUSERNAME.Font = new Font("Calibri", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            labelUSERNAME.ForeColor = SystemColors.Control;
-            labelUSERNAME.Location = new Point(139, 99);
-            labelUSERNAME.Margin = new Padding(2, 0, 2, 0);
-            labelUSERNAME.Name = "labelUSERNAME";
-            labelUSERNAME.Size = new Size(117, 29);
-            labelUSERNAME.TabIndex = 1;
-            labelUSERNAME.Text = "Username";
-            // 
-            // labelLOGIN
-            // 
-            labelLOGIN.AutoSize = true;
-            labelLOGIN.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            labelLOGIN.ForeColor = SystemColors.Control;
-            labelLOGIN.Location = new Point(200, 12);
-            labelLOGIN.Margin = new Padding(2, 0, 2, 0);
-            labelLOGIN.Name = "labelLOGIN";
-            labelLOGIN.Size = new Size(64, 28);
-            labelLOGIN.TabIndex = 0;
-            labelLOGIN.Text = "Login";
-            // 
-            // showPasswordCheckBox
-            // 
-            showPasswordCheckBox.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            showPasswordCheckBox.ForeColor = SystemColors.Control;
-            showPasswordCheckBox.Location = new Point(139, 256);
-            showPasswordCheckBox.Margin = new Padding(3, 4, 3, 4);
-            showPasswordCheckBox.Name = "showPasswordCheckBox";
-            showPasswordCheckBox.Size = new Size(155, 35);
-            showPasswordCheckBox.TabIndex = 7;
-            showPasswordCheckBox.Text = "Show Password";
-            showPasswordCheckBox.CheckedChanged += showPasswordCheckBox_CheckedChanged;
-            // 
-            // panel2
-            // 
-            panel2.BackColor = Color.Magenta;
-            panel2.Location = new Point(216, 117);
-            panel2.Margin = new Padding(2, 3, 2, 3);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(451, 13);
-            panel2.TabIndex = 6;
+            linkLabel1.AutoSize = true;
+            linkLabel1.LinkColor = Color.Black;
+            linkLabel1.Location = new Point(856, 399);
+            linkLabel1.Name = "linkLabel1";
+            linkLabel1.Size = new Size(49, 15);
+            linkLabel1.TabIndex = 8;
+            linkLabel1.TabStop = true;
+            linkLabel1.Text = "Register";
+            linkLabel1.LinkClicked += linkLabel1_LinkClicked;
             // 
             // LOGIN
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
-            BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(878, 597);
-            Controls.Add(panel2);
-            Controls.Add(panel1);
-            Margin = new Padding(2, 3, 2, 3);
+            BackColor = Color.White;
+            BackgroundImageLayout = ImageLayout.None;
+            ClientSize = new Size(1089, 581);
+            Controls.Add(linkLabel1);
+            Controls.Add(pictureBox1);
+            Controls.Add(buttonLOGIN);
+            Controls.Add(textBoxPASSWORD);
+            Controls.Add(labelLOGIN);
+            Controls.Add(textBoxUSERNAME);
+            Controls.Add(labelPASSWORD);
+            Controls.Add(showPasswordCheckBox);
+            Controls.Add(labelUSERNAME);
+            FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(2, 2, 2, 2);
             Name = "LOGIN";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
             Load += LOGIN_Load;
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
-
-        private Panel panel1;
-        private Label labelUSERNAME;
+        private PictureBox pictureBox1;
+        private CheckBox showPasswordCheckBox;
         private Label labelLOGIN;
-        private Panel panel2;
-        private Button buttonLOGIN;
-        private TextBox textBoxPASSWORD;
-        private TextBox textBoxUSERNAME;
+        private Label labelUSERNAME;
         private Label labelPASSWORD;
-        private CheckBox showPasswordCheckBox; // Deklarasi checkbox di sini
+        private TextBox textBoxUSERNAME;
+        private TextBox textBoxPASSWORD;
+        private Button buttonLOGIN;
         private LinkLabel linkLabel1;
     }
 }
