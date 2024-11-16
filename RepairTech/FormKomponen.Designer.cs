@@ -1,6 +1,6 @@
 ﻿namespace PROJECT_PBO
 {
-    partial class FormAdmin1
+    partial class FormKomponen
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAdmin1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormKomponen));
             sidebar = new FlowLayoutPanel();
             panelSidebar = new Panel();
             label1 = new Label();
@@ -43,6 +43,7 @@
             panel4 = new Panel();
             buttonTeknisi = new FontAwesome.Sharp.IconButton();
             timerSidebar = new System.Windows.Forms.Timer(components);
+            panel5 = new Panel();
             sidebar.SuspendLayout();
             panelSidebar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)buttonMenu).BeginInit();
@@ -54,7 +55,7 @@
             // 
             // sidebar
             // 
-            sidebar.BackColor = SystemColors.ActiveCaption;
+            sidebar.BackColor = Color.FromArgb(31, 30, 68);
             sidebar.Controls.Add(panelSidebar);
             sidebar.Controls.Add(panel1);
             sidebar.Controls.Add(panel2);
@@ -66,12 +67,12 @@
             sidebar.MinimumSize = new Size(53, 620);
             sidebar.Name = "sidebar";
             sidebar.Size = new Size(165, 620);
-            sidebar.TabIndex = 0;
-            sidebar.Paint += flowLayoutPanel1_Paint;
+            sidebar.TabIndex = 1;
+            sidebar.Paint += sidebar_Paint;
             // 
             // panelSidebar
             // 
-            panelSidebar.BackColor = SystemColors.ActiveCaption;
+            panelSidebar.BackColor = Color.FromArgb(31, 30, 68);
             panelSidebar.Controls.Add(label1);
             panelSidebar.Controls.Add(buttonMenu);
             panelSidebar.Location = new Point(3, 3);
@@ -83,6 +84,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = SystemColors.Control;
             label1.Location = new Point(63, 35);
             label1.Name = "label1";
             label1.Size = new Size(54, 21);
@@ -99,10 +101,11 @@
             buttonMenu.SizeMode = PictureBoxSizeMode.StretchImage;
             buttonMenu.TabIndex = 1;
             buttonMenu.TabStop = false;
-            buttonMenu.Click += buttonMenu_Click;
+            buttonMenu.Click += buttonMenu_Click_1;
             // 
             // panel1
             // 
+            panel1.BackColor = Color.FromArgb(31, 30, 68);
             panel1.Controls.Add(buttonTransaksi);
             panel1.Location = new Point(3, 109);
             panel1.Name = "panel1";
@@ -111,12 +114,13 @@
             // 
             // buttonTransaksi
             // 
-            buttonTransaksi.BackColor = SystemColors.ActiveCaption;
+            buttonTransaksi.BackColor = Color.FromArgb(31, 30, 68);
             buttonTransaksi.FlatAppearance.BorderSize = 0;
             buttonTransaksi.FlatStyle = FlatStyle.Flat;
             buttonTransaksi.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            buttonTransaksi.ForeColor = SystemColors.Control;
             buttonTransaksi.IconChar = FontAwesome.Sharp.IconChar.CartShopping;
-            buttonTransaksi.IconColor = Color.Black;
+            buttonTransaksi.IconColor = SystemColors.Control;
             buttonTransaksi.IconFont = FontAwesome.Sharp.IconFont.Auto;
             buttonTransaksi.IconSize = 32;
             buttonTransaksi.ImageAlign = ContentAlignment.MiddleLeft;
@@ -127,9 +131,11 @@
             buttonTransaksi.Text = "Transaksi";
             buttonTransaksi.TextAlign = ContentAlignment.MiddleRight;
             buttonTransaksi.UseVisualStyleBackColor = false;
+            buttonTransaksi.Click += buttonTransaksi_Click;
             // 
             // panel2
             // 
+            panel2.BackColor = Color.FromArgb(31, 30, 68);
             panel2.Controls.Add(buttonKomponen);
             panel2.Location = new Point(3, 166);
             panel2.Name = "panel2";
@@ -138,12 +144,13 @@
             // 
             // buttonKomponen
             // 
-            buttonKomponen.BackColor = SystemColors.ActiveCaption;
+            buttonKomponen.BackColor = Color.FromArgb(31, 30, 68);
             buttonKomponen.FlatAppearance.BorderSize = 0;
             buttonKomponen.FlatStyle = FlatStyle.Flat;
             buttonKomponen.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            buttonKomponen.ForeColor = SystemColors.Control;
             buttonKomponen.IconChar = FontAwesome.Sharp.IconChar.Laptop;
-            buttonKomponen.IconColor = Color.Black;
+            buttonKomponen.IconColor = Color.White;
             buttonKomponen.IconFont = FontAwesome.Sharp.IconFont.Auto;
             buttonKomponen.IconSize = 32;
             buttonKomponen.ImageAlign = ContentAlignment.MiddleLeft;
@@ -166,12 +173,13 @@
             // 
             // buttonJasa
             // 
-            buttonJasa.BackColor = SystemColors.ActiveCaption;
+            buttonJasa.BackColor = Color.FromArgb(31, 30, 68);
             buttonJasa.FlatAppearance.BorderSize = 0;
             buttonJasa.FlatStyle = FlatStyle.Flat;
             buttonJasa.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            buttonJasa.ForeColor = SystemColors.Control;
             buttonJasa.IconChar = FontAwesome.Sharp.IconChar.Screwdriver;
-            buttonJasa.IconColor = Color.Black;
+            buttonJasa.IconColor = SystemColors.Control;
             buttonJasa.IconFont = FontAwesome.Sharp.IconFont.Auto;
             buttonJasa.IconSize = 32;
             buttonJasa.ImageAlign = ContentAlignment.MiddleLeft;
@@ -182,6 +190,7 @@
             buttonJasa.Text = "Jasa Servis";
             buttonJasa.TextAlign = ContentAlignment.MiddleRight;
             buttonJasa.UseVisualStyleBackColor = false;
+            buttonJasa.Click += buttonJasa_Click;
             // 
             // panel4
             // 
@@ -193,12 +202,13 @@
             // 
             // buttonTeknisi
             // 
-            buttonTeknisi.BackColor = SystemColors.ActiveCaption;
+            buttonTeknisi.BackColor = Color.FromArgb(31, 30, 68);
             buttonTeknisi.FlatAppearance.BorderSize = 0;
             buttonTeknisi.FlatStyle = FlatStyle.Flat;
             buttonTeknisi.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            buttonTeknisi.ForeColor = SystemColors.Control;
             buttonTeknisi.IconChar = FontAwesome.Sharp.IconChar.Users;
-            buttonTeknisi.IconColor = Color.Black;
+            buttonTeknisi.IconColor = SystemColors.Control;
             buttonTeknisi.IconFont = FontAwesome.Sharp.IconFont.Auto;
             buttonTeknisi.IconSize = 32;
             buttonTeknisi.ImageAlign = ContentAlignment.MiddleLeft;
@@ -209,23 +219,35 @@
             buttonTeknisi.Text = "Teknisi";
             buttonTeknisi.TextAlign = ContentAlignment.MiddleRight;
             buttonTeknisi.UseVisualStyleBackColor = false;
+            buttonTeknisi.Click += buttonTeknisi_Click;
             // 
             // timerSidebar
             // 
             timerSidebar.Interval = 10;
-            timerSidebar.Tick += timerSidebar_Tick;
+            timerSidebar.Tick += timerSidebar_Tick_1;
             // 
-            // FormAdmin1
+            // panel5
+            // 
+            panel5.BackColor = Color.FromArgb(31, 30, 68);
+            panel5.Dock = DockStyle.Top;
+            panel5.Location = new Point(165, 0);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(940, 69);
+            panel5.TabIndex = 2;
+            // 
+            // FormKomponen
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(46, 51, 73);
             ClientSize = new Size(1105, 620);
+            Controls.Add(panel5);
             Controls.Add(sidebar);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "FormAdmin1";
+            Name = "FormKomponen";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "FormAdmin1";
-            Load += FormAdmin1_Load;
+            Text = "FormKomponen";
+            Load += FormKomponen_Load;
             sidebar.ResumeLayout(false);
             panelSidebar.ResumeLayout(false);
             panelSidebar.PerformLayout();
@@ -241,16 +263,17 @@
 
         private FlowLayoutPanel sidebar;
         private Panel panelSidebar;
-        private PictureBox buttonMenu;
         private Label label1;
-        private System.Windows.Forms.Timer timerSidebar;
+        private PictureBox buttonMenu;
         private Panel panel1;
-        private Panel panel2;
-        private Panel panel3;
-        private Panel panel4;
         private FontAwesome.Sharp.IconButton buttonTransaksi;
+        private Panel panel2;
         private FontAwesome.Sharp.IconButton buttonKomponen;
+        private Panel panel3;
         private FontAwesome.Sharp.IconButton buttonJasa;
+        private Panel panel4;
         private FontAwesome.Sharp.IconButton buttonTeknisi;
+        private System.Windows.Forms.Timer timerSidebar;
+        private Panel panel5;
     }
 }
