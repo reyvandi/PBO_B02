@@ -52,6 +52,9 @@ namespace PROJECT_PBO
 
         private void buttonTransaksi_Click(object sender, EventArgs e)
         {
+            FormAdmin1 formTransaksi = new FormAdmin1();
+            formTransaksi.Show();
+            this.Hide();
 
         }
 
@@ -62,12 +65,16 @@ namespace PROJECT_PBO
 
         private void buttonJasa_Click(object sender, EventArgs e)
         {
-
+            FormJasaServis formJasa = new FormJasaServis();
+            formJasa.Show();
+            this.Hide();
         }
 
         private void buttonTeknisi_Click(object sender, EventArgs e)
         {
-
+            FormTeknisi formTeknisi = new FormTeknisi();
+            formTeknisi.Show();
+            this.Hide();
         }
 
         bool sidebarExpand;
@@ -91,6 +98,11 @@ namespace PROJECT_PBO
                     timerSidebar.Stop();
                 }
             }
+
+        }
+
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
 
         }
     }

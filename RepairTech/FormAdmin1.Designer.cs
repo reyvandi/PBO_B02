@@ -34,6 +34,7 @@
             label1 = new Label();
             buttonMenu = new PictureBox();
             panel1 = new Panel();
+            panel6 = new Panel();
             buttonTransaksi = new FontAwesome.Sharp.IconButton();
             panel2 = new Panel();
             buttonKomponen = new FontAwesome.Sharp.IconButton();
@@ -43,8 +44,12 @@
             buttonTeknisi = new FontAwesome.Sharp.IconButton();
             timerSidebar = new System.Windows.Forms.Timer(components);
             panel5 = new Panel();
-            panel6 = new Panel();
+            pictureBox1 = new PictureBox();
             iconButton1 = new FontAwesome.Sharp.IconButton();
+            textBox1 = new TextBox();
+            buttonSearch = new FontAwesome.Sharp.IconButton();
+            dataGridView1 = new DataGridView();
+            buttonTambah = new FontAwesome.Sharp.IconButton();
             sidebar.SuspendLayout();
             panelSidebar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)buttonMenu).BeginInit();
@@ -53,6 +58,8 @@
             panel3.SuspendLayout();
             panel4.SuspendLayout();
             panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // sidebar
@@ -79,7 +86,7 @@
             panelSidebar.Controls.Add(buttonMenu);
             panelSidebar.Location = new Point(3, 3);
             panelSidebar.Name = "panelSidebar";
-            panelSidebar.Size = new Size(190, 100);
+            panelSidebar.Size = new Size(162, 100);
             panelSidebar.TabIndex = 0;
             // 
             // label1
@@ -114,6 +121,14 @@
             panel1.Size = new Size(162, 51);
             panel1.TabIndex = 5;
             // 
+            // panel6
+            // 
+            panel6.BackColor = Color.DeepSkyBlue;
+            panel6.Location = new Point(0, 3);
+            panel6.Name = "panel6";
+            panel6.Size = new Size(5, 51);
+            panel6.TabIndex = 4;
+            // 
             // buttonTransaksi
             // 
             buttonTransaksi.BackColor = Color.FromArgb(31, 30, 68);
@@ -133,6 +148,7 @@
             buttonTransaksi.Text = "Transaksi";
             buttonTransaksi.TextAlign = ContentAlignment.MiddleLeft;
             buttonTransaksi.UseVisualStyleBackColor = false;
+            buttonTransaksi.Click += buttonTransaksi_Click;
             // 
             // panel2
             // 
@@ -190,6 +206,7 @@
             buttonJasa.Text = "Jasa Servis";
             buttonJasa.TextAlign = ContentAlignment.MiddleRight;
             buttonJasa.UseVisualStyleBackColor = false;
+            buttonJasa.Click += buttonJasa_Click;
             // 
             // panel4
             // 
@@ -218,6 +235,7 @@
             buttonTeknisi.Text = "Teknisi";
             buttonTeknisi.TextAlign = ContentAlignment.MiddleRight;
             buttonTeknisi.UseVisualStyleBackColor = false;
+            buttonTeknisi.Click += buttonTeknisi_Click;
             // 
             // timerSidebar
             // 
@@ -226,7 +244,9 @@
             // 
             // panel5
             // 
-            panel5.BackColor = Color.FromArgb(31, 30, 68);
+            panel5.BackColor = Color.FromArgb(24, 23, 80);
+            panel5.BackgroundImage = Properties.Resources.Frame_5c;
+            panel5.Controls.Add(pictureBox1);
             panel5.Controls.Add(iconButton1);
             panel5.Dock = DockStyle.Top;
             panel5.Location = new Point(165, 0);
@@ -234,20 +254,22 @@
             panel5.Size = new Size(940, 60);
             panel5.TabIndex = 3;
             // 
-            // panel6
+            // pictureBox1
             // 
-            panel6.BackColor = Color.DeepSkyBlue;
-            panel6.Location = new Point(0, 3);
-            panel6.Name = "panel6";
-            panel6.Size = new Size(5, 51);
-            panel6.TabIndex = 4;
+            pictureBox1.Image = Properties.Resources.rpimg;
+            pictureBox1.Location = new Point(764, 2);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(176, 57);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 8;
+            pictureBox1.TabStop = false;
             // 
             // iconButton1
             // 
-            iconButton1.BackColor = Color.FromArgb(31, 30, 68);
+            iconButton1.BackColor = Color.FromArgb(24, 23, 80);
             iconButton1.FlatAppearance.BorderSize = 0;
             iconButton1.FlatStyle = FlatStyle.Flat;
-            iconButton1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            iconButton1.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             iconButton1.ForeColor = SystemColors.Control;
             iconButton1.IconChar = FontAwesome.Sharp.IconChar.CartShopping;
             iconButton1.IconColor = Color.DeepSkyBlue;
@@ -256,19 +278,79 @@
             iconButton1.ImageAlign = ContentAlignment.MiddleLeft;
             iconButton1.Location = new Point(6, 12);
             iconButton1.Name = "iconButton1";
-            iconButton1.Size = new Size(147, 41);
+            iconButton1.Size = new Size(177, 41);
             iconButton1.TabIndex = 2;
             iconButton1.Text = "Transaksi";
             iconButton1.TextAlign = ContentAlignment.MiddleRight;
             iconButton1.UseVisualStyleBackColor = false;
             // 
+            // textBox1
+            // 
+            textBox1.BackColor = Color.Silver;
+            textBox1.Location = new Point(473, 80);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(317, 23);
+            textBox1.TabIndex = 4;
+            // 
+            // buttonSearch
+            // 
+            buttonSearch.BackColor = Color.FromArgb(24, 23, 80);
+            buttonSearch.FlatAppearance.BorderSize = 0;
+            buttonSearch.FlatStyle = FlatStyle.Flat;
+            buttonSearch.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            buttonSearch.IconChar = FontAwesome.Sharp.IconChar.Search;
+            buttonSearch.IconColor = Color.White;
+            buttonSearch.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            buttonSearch.IconSize = 18;
+            buttonSearch.ImageAlign = ContentAlignment.MiddleRight;
+            buttonSearch.Location = new Point(796, 80);
+            buttonSearch.Name = "buttonSearch";
+            buttonSearch.Size = new Size(75, 23);
+            buttonSearch.TabIndex = 5;
+            buttonSearch.Text = "Search";
+            buttonSearch.TextAlign = ContentAlignment.MiddleLeft;
+            buttonSearch.UseVisualStyleBackColor = false;
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(180, 112);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.Size = new Size(913, 455);
+            dataGridView1.TabIndex = 6;
+            // 
+            // buttonTambah
+            // 
+            buttonTambah.BackColor = Color.Green;
+            buttonTambah.FlatAppearance.BorderSize = 0;
+            buttonTambah.FlatStyle = FlatStyle.Flat;
+            buttonTambah.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            buttonTambah.IconChar = FontAwesome.Sharp.IconChar.Add;
+            buttonTambah.IconColor = Color.White;
+            buttonTambah.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            buttonTambah.IconSize = 17;
+            buttonTambah.ImageAlign = ContentAlignment.MiddleRight;
+            buttonTambah.Location = new Point(575, 578);
+            buttonTambah.Name = "buttonTambah";
+            buttonTambah.Size = new Size(183, 30);
+            buttonTambah.TabIndex = 7;
+            buttonTambah.Text = "Tambah Transaksi";
+            buttonTambah.TextAlign = ContentAlignment.MiddleLeft;
+            buttonTambah.UseVisualStyleBackColor = false;
+            // 
             // FormAdmin1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(46, 51, 73);
             ClientSize = new Size(1105, 620);
+            Controls.Add(buttonTambah);
+            Controls.Add(dataGridView1);
+            Controls.Add(buttonSearch);
+            Controls.Add(textBox1);
             Controls.Add(panel5);
             Controls.Add(sidebar);
+            ForeColor = SystemColors.Control;
             FormBorderStyle = FormBorderStyle.None;
             Name = "FormAdmin1";
             StartPosition = FormStartPosition.CenterScreen;
@@ -283,7 +365,10 @@
             panel3.ResumeLayout(false);
             panel4.ResumeLayout(false);
             panel5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -304,5 +389,10 @@
         private Panel panel5;
         private Panel panel6;
         private FontAwesome.Sharp.IconButton iconButton1;
+        private PictureBox pictureBox1;
+        private TextBox textBox1;
+        private FontAwesome.Sharp.IconButton buttonSearch;
+        private DataGridView dataGridView1;
+        private FontAwesome.Sharp.IconButton buttonTambah;
     }
 }

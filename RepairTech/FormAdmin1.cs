@@ -75,5 +75,34 @@ namespace PROJECT_PBO
             formKomponen.Show();
             this.Hide();
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonTransaksi_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonJasa_Click(object sender, EventArgs e)
+        {
+            FormJasaServis formJasa = new FormJasaServis();
+            formJasa.Show();
+            this.Hide();
+        }
+
+        private void buttonTeknisi_Click(object sender, EventArgs e)
+        {
+            FormTeknisi formTeknisi = new FormTeknisi();
+            formTeknisi.Show();
+            this.Hide();
+        }
     }
 }

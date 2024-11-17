@@ -17,7 +17,6 @@
 
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LOGIN));
             pictureBox1 = new PictureBox();
             showPasswordCheckBox = new CheckBox();
             labelLOGIN = new Label();
@@ -32,7 +31,7 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = Properties.Resources.Frame_4;
+            pictureBox1.Image = Properties.Resources.Frame_4a;
             pictureBox1.Location = new Point(0, 0);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(653, 621);
@@ -55,12 +54,12 @@
             // 
             labelLOGIN.AutoSize = true;
             labelLOGIN.BackColor = Color.Transparent;
-            labelLOGIN.Font = new Font("Hanson", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelLOGIN.Font = new Font("Hanson", 21.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             labelLOGIN.ForeColor = Color.Magenta;
             labelLOGIN.Location = new Point(836, 169);
             labelLOGIN.Margin = new Padding(2, 0, 2, 0);
             labelLOGIN.Name = "labelLOGIN";
-            labelLOGIN.Size = new Size(118, 34);
+            labelLOGIN.Size = new Size(127, 37);
             labelLOGIN.TabIndex = 0;
             labelLOGIN.Text = "Login";
             // 
@@ -90,6 +89,7 @@
             // 
             // textBoxUSERNAME
             // 
+            textBoxUSERNAME.ForeColor = Color.Silver;
             textBoxUSERNAME.Location = new Point(761, 256);
             textBoxUSERNAME.Margin = new Padding(2);
             textBoxUSERNAME.Multiline = true;
@@ -110,14 +110,18 @@
             // 
             // buttonLOGIN
             // 
-            buttonLOGIN.BackColor = Color.Magenta;
-            buttonLOGIN.BackgroundImage = (Image)resources.GetObject("buttonLOGIN.BackgroundImage");
+            buttonLOGIN.BackColor = Color.FromArgb(31, 30, 68);
             buttonLOGIN.BackgroundImageLayout = ImageLayout.Zoom;
+            buttonLOGIN.FlatAppearance.BorderSize = 0;
+            buttonLOGIN.FlatStyle = FlatStyle.Flat;
+            buttonLOGIN.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            buttonLOGIN.ForeColor = SystemColors.Control;
             buttonLOGIN.Location = new Point(836, 408);
             buttonLOGIN.Margin = new Padding(2);
             buttonLOGIN.Name = "buttonLOGIN";
             buttonLOGIN.Size = new Size(131, 25);
             buttonLOGIN.TabIndex = 5;
+            buttonLOGIN.Text = "Login";
             buttonLOGIN.UseVisualStyleBackColor = false;
             buttonLOGIN.Click += buttonLOGIN_Click_1;
             // 
