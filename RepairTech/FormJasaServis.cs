@@ -47,5 +47,26 @@ namespace PROJECT_PBO
 
             }
         }
+
+        private void buttonTransaksi_Click(object sender, EventArgs e)
+        {
+            FormAdmin1 formTransaksi = new FormAdmin1();
+            formTransaksi.Show();
+            this.Hide();
+        }
+
+        private void buttonKomponen_Click(object sender, EventArgs e)
+        {
+            FormKomponen formKomponen = new FormKomponen();
+            formKomponen.Show();
+            this.Hide();
+        }
+
+        private void buttonTeknisi_Click(object sender, EventArgs e)
+        {
+            FormTeknisi formTeknisi = new FormTeknisi();
+            formTeknisi.Show();
+            this.Hide();
+        }
     }
 }

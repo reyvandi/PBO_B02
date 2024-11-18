@@ -60,7 +60,9 @@ namespace PROJECT_PBO
 
         private void buttonKomponen_Click(object sender, EventArgs e)
         {
-
+            FormKomponen formKomponen = new FormKomponen();
+            formKomponen.Show();
+            this.Hide();
         }
 
         private void buttonJasa_Click(object sender, EventArgs e)
