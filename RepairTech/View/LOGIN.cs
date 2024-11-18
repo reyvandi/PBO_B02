@@ -37,8 +37,8 @@ namespace PROJECT_PBO
 
                 if (role == "admin")
                 {
-                    FormAdmin formAdmin = new FormAdmin(); // Form khusus untuk Admin
-                    formAdmin.Show();
+                    FormAdmin1 formAdmin1 = new FormAdmin1(); // Form khusus untuk Admin  
+                    formAdmin1.Show();
                 }
                 else if (role == "pelanggan")
                 {

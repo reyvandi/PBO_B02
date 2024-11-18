@@ -116,14 +116,15 @@
             // 
             // buttonRegistrasi
             // 
+            buttonRegistrasi.BackColor = Color.Aqua;
             buttonRegistrasi.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            buttonRegistrasi.Location = new Point(165, 654);
+            buttonRegistrasi.Location = new Point(149, 617);
             buttonRegistrasi.Margin = new Padding(4, 5, 4, 5);
             buttonRegistrasi.Name = "buttonRegistrasi";
-            buttonRegistrasi.Size = new Size(160, 40);
+            buttonRegistrasi.Size = new Size(179, 40);
             buttonRegistrasi.TabIndex = 7;
             buttonRegistrasi.Text = "Registrasi";
-            buttonRegistrasi.UseVisualStyleBackColor = true;
+            buttonRegistrasi.UseVisualStyleBackColor = false;
             buttonRegistrasi.Click += buttonRegistrasi_Click;
             // 
             // buttonBack
@@ -166,7 +167,6 @@
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
-            Cursor = Cursors.Default;
             FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(4, 5, 4, 5);
             Name = "FormRegister";
