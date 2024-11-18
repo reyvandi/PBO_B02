@@ -73,7 +73,9 @@ namespace PROJECT_PBO.View
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            LOGIN login = new LOGIN();
+            login.Show();
+            this.Hide();
         }
 
         private void FormRegister_Load(object sender, EventArgs e)

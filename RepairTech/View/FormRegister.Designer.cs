@@ -166,6 +166,8 @@
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
+            Cursor = Cursors.Default;
+            FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(4, 5, 4, 5);
             Name = "FormRegister";
             StartPosition = FormStartPosition.CenterScreen;
