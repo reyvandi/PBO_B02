@@ -63,22 +63,23 @@
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(257, 187);
-            dataGridView1.Margin = new Padding(4, 5, 4, 5);
+            dataGridView1.Location = new Point(206, 150);
+            dataGridView1.Margin = new Padding(3, 4, 3, 4);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 62;
-            dataGridView1.Size = new Size(1304, 758);
+            dataGridView1.Size = new Size(1043, 606);
             dataGridView1.TabIndex = 12;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
             // panelSidebar
             // 
             panelSidebar.BackColor = Color.FromArgb(31, 30, 68);
             panelSidebar.Controls.Add(label1);
             panelSidebar.Controls.Add(buttonMenu);
-            panelSidebar.Location = new Point(4, 5);
-            panelSidebar.Margin = new Padding(4, 5, 4, 5);
+            panelSidebar.Location = new Point(3, 4);
+            panelSidebar.Margin = new Padding(3, 4, 3, 4);
             panelSidebar.Name = "panelSidebar";
-            panelSidebar.Size = new Size(271, 167);
+            panelSidebar.Size = new Size(217, 134);
             panelSidebar.TabIndex = 0;
             // 
             // label1
@@ -86,10 +87,9 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = SystemColors.Control;
-            label1.Location = new Point(90, 58);
-            label1.Margin = new Padding(4, 0, 4, 0);
+            label1.Location = new Point(72, 46);
             label1.Name = "label1";
-            label1.Size = new Size(80, 32);
+            label1.Size = new Size(66, 28);
             label1.TabIndex = 2;
             label1.Text = "Menu";
             // 
@@ -97,10 +97,10 @@
             // 
             buttonMenu.Cursor = Cursors.Hand;
             buttonMenu.Image = Properties.Resources.menu;
-            buttonMenu.Location = new Point(4, 43);
-            buttonMenu.Margin = new Padding(4, 5, 4, 5);
+            buttonMenu.Location = new Point(3, 34);
+            buttonMenu.Margin = new Padding(3, 4, 3, 4);
             buttonMenu.Name = "buttonMenu";
-            buttonMenu.Size = new Size(54, 67);
+            buttonMenu.Size = new Size(43, 54);
             buttonMenu.SizeMode = PictureBoxSizeMode.StretchImage;
             buttonMenu.TabIndex = 1;
             buttonMenu.TabStop = false;
@@ -108,10 +108,10 @@
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.rpimg;
-            pictureBox1.Location = new Point(1091, 0);
-            pictureBox1.Margin = new Padding(4, 5, 4, 5);
+            pictureBox1.Location = new Point(873, 0);
+            pictureBox1.Margin = new Padding(3, 4, 3, 4);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(251, 95);
+            pictureBox1.Size = new Size(201, 76);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 7;
             pictureBox1.TabStop = false;
@@ -120,10 +120,10 @@
             // 
             panel1.BackColor = Color.FromArgb(31, 30, 68);
             panel1.Controls.Add(buttonTransaksi);
-            panel1.Location = new Point(4, 182);
-            panel1.Margin = new Padding(4, 5, 4, 5);
+            panel1.Location = new Point(3, 146);
+            panel1.Margin = new Padding(3, 4, 3, 4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(231, 85);
+            panel1.Size = new Size(185, 68);
             panel1.TabIndex = 5;
             // 
             // buttonTransaksi
@@ -138,10 +138,10 @@
             buttonTransaksi.IconFont = FontAwesome.Sharp.IconFont.Auto;
             buttonTransaksi.IconSize = 32;
             buttonTransaksi.ImageAlign = ContentAlignment.MiddleLeft;
-            buttonTransaksi.Location = new Point(-1, 5);
-            buttonTransaksi.Margin = new Padding(4, 5, 4, 5);
+            buttonTransaksi.Location = new Point(-1, 4);
+            buttonTransaksi.Margin = new Padding(3, 4, 3, 4);
             buttonTransaksi.Name = "buttonTransaksi";
-            buttonTransaksi.Size = new Size(233, 68);
+            buttonTransaksi.Size = new Size(186, 54);
             buttonTransaksi.TabIndex = 1;
             buttonTransaksi.Text = "Transaksi";
             buttonTransaksi.TextAlign = ContentAlignment.MiddleRight;
@@ -155,10 +155,10 @@
             panel5.Controls.Add(iconButton1);
             panel5.Controls.Add(pictureBox1);
             panel5.Dock = DockStyle.Top;
-            panel5.Location = new Point(236, 0);
-            panel5.Margin = new Padding(4, 5, 4, 5);
+            panel5.Location = new Point(189, 0);
+            panel5.Margin = new Padding(3, 4, 3, 4);
             panel5.Name = "panel5";
-            panel5.Size = new Size(1343, 100);
+            panel5.Size = new Size(1074, 80);
             panel5.TabIndex = 11;
             // 
             // iconButton1
@@ -173,10 +173,10 @@
             iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconButton1.IconSize = 50;
             iconButton1.ImageAlign = ContentAlignment.MiddleLeft;
-            iconButton1.Location = new Point(21, 20);
-            iconButton1.Margin = new Padding(4, 5, 4, 5);
+            iconButton1.Location = new Point(17, 16);
+            iconButton1.Margin = new Padding(3, 4, 3, 4);
             iconButton1.Name = "iconButton1";
-            iconButton1.Size = new Size(209, 68);
+            iconButton1.Size = new Size(167, 54);
             iconButton1.TabIndex = 8;
             iconButton1.Text = "Teknisi";
             iconButton1.TextAlign = ContentAlignment.MiddleRight;
@@ -186,10 +186,10 @@
             // 
             panel2.BackColor = Color.FromArgb(31, 30, 68);
             panel2.Controls.Add(buttonKomponen);
-            panel2.Location = new Point(4, 277);
-            panel2.Margin = new Padding(4, 5, 4, 5);
+            panel2.Location = new Point(3, 222);
+            panel2.Margin = new Padding(3, 4, 3, 4);
             panel2.Name = "panel2";
-            panel2.Size = new Size(231, 85);
+            panel2.Size = new Size(185, 68);
             panel2.TabIndex = 5;
             panel2.Paint += panel2_Paint;
             // 
@@ -205,10 +205,10 @@
             buttonKomponen.IconFont = FontAwesome.Sharp.IconFont.Auto;
             buttonKomponen.IconSize = 32;
             buttonKomponen.ImageAlign = ContentAlignment.MiddleLeft;
-            buttonKomponen.Location = new Point(0, 8);
-            buttonKomponen.Margin = new Padding(4, 5, 4, 5);
+            buttonKomponen.Location = new Point(0, 6);
+            buttonKomponen.Margin = new Padding(3, 4, 3, 4);
             buttonKomponen.Name = "buttonKomponen";
-            buttonKomponen.Size = new Size(231, 68);
+            buttonKomponen.Size = new Size(185, 54);
             buttonKomponen.TabIndex = 2;
             buttonKomponen.Text = "Komponen";
             buttonKomponen.TextAlign = ContentAlignment.MiddleRight;
@@ -219,9 +219,9 @@
             // 
             panel6.BackColor = Color.Cyan;
             panel6.Location = new Point(0, 0);
-            panel6.Margin = new Padding(4, 5, 4, 5);
+            panel6.Margin = new Padding(3, 4, 3, 4);
             panel6.Name = "panel6";
-            panel6.Size = new Size(7, 85);
+            panel6.Size = new Size(6, 68);
             panel6.TabIndex = 3;
             // 
             // timerSidebar
@@ -240,10 +240,10 @@
             buttonJasa.IconFont = FontAwesome.Sharp.IconFont.Auto;
             buttonJasa.IconSize = 32;
             buttonJasa.ImageAlign = ContentAlignment.MiddleLeft;
-            buttonJasa.Location = new Point(0, 5);
-            buttonJasa.Margin = new Padding(4, 5, 4, 5);
+            buttonJasa.Location = new Point(0, 4);
+            buttonJasa.Margin = new Padding(3, 4, 3, 4);
             buttonJasa.Name = "buttonJasa";
-            buttonJasa.Size = new Size(227, 68);
+            buttonJasa.Size = new Size(182, 54);
             buttonJasa.TabIndex = 1;
             buttonJasa.Text = "Jasa Servis";
             buttonJasa.TextAlign = ContentAlignment.MiddleRight;
@@ -253,20 +253,20 @@
             // panel3
             // 
             panel3.Controls.Add(buttonJasa);
-            panel3.Location = new Point(4, 372);
-            panel3.Margin = new Padding(4, 5, 4, 5);
+            panel3.Location = new Point(3, 298);
+            panel3.Margin = new Padding(3, 4, 3, 4);
             panel3.Name = "panel3";
-            panel3.Size = new Size(231, 85);
+            panel3.Size = new Size(185, 68);
             panel3.TabIndex = 5;
             // 
             // panel4
             // 
             panel4.Controls.Add(panel6);
             panel4.Controls.Add(buttonTeknisi);
-            panel4.Location = new Point(4, 467);
-            panel4.Margin = new Padding(4, 5, 4, 5);
+            panel4.Location = new Point(3, 374);
+            panel4.Margin = new Padding(3, 4, 3, 4);
             panel4.Name = "panel4";
-            panel4.Size = new Size(231, 85);
+            panel4.Size = new Size(185, 68);
             panel4.TabIndex = 5;
             // 
             // buttonTeknisi
@@ -281,10 +281,10 @@
             buttonTeknisi.IconFont = FontAwesome.Sharp.IconFont.Auto;
             buttonTeknisi.IconSize = 36;
             buttonTeknisi.ImageAlign = ContentAlignment.MiddleRight;
-            buttonTeknisi.Location = new Point(13, 5);
-            buttonTeknisi.Margin = new Padding(4, 5, 4, 5);
+            buttonTeknisi.Location = new Point(10, 4);
+            buttonTeknisi.Margin = new Padding(3, 4, 3, 4);
             buttonTeknisi.Name = "buttonTeknisi";
-            buttonTeknisi.Size = new Size(219, 68);
+            buttonTeknisi.Size = new Size(175, 54);
             buttonTeknisi.TabIndex = 1;
             buttonTeknisi.Text = "Teknisi";
             buttonTeknisi.TextAlign = ContentAlignment.MiddleLeft;
@@ -302,14 +302,15 @@
             buttonTambah.IconFont = FontAwesome.Sharp.IconFont.Auto;
             buttonTambah.IconSize = 17;
             buttonTambah.ImageAlign = ContentAlignment.MiddleRight;
-            buttonTambah.Location = new Point(821, 963);
-            buttonTambah.Margin = new Padding(4, 5, 4, 5);
+            buttonTambah.Location = new Point(657, 770);
+            buttonTambah.Margin = new Padding(3, 4, 3, 4);
             buttonTambah.Name = "buttonTambah";
-            buttonTambah.Size = new Size(261, 50);
+            buttonTambah.Size = new Size(209, 40);
             buttonTambah.TabIndex = 13;
             buttonTambah.Text = "Tambah Komponen";
             buttonTambah.TextAlign = ContentAlignment.MiddleLeft;
             buttonTambah.UseVisualStyleBackColor = false;
+            buttonTambah.Click += buttonTambah_Click;
             // 
             // sidebar
             // 
@@ -321,25 +322,25 @@
             sidebar.Controls.Add(panel4);
             sidebar.Dock = DockStyle.Left;
             sidebar.Location = new Point(0, 0);
-            sidebar.Margin = new Padding(4, 5, 4, 5);
-            sidebar.MaximumSize = new Size(236, 1033);
-            sidebar.MinimumSize = new Size(76, 1033);
+            sidebar.Margin = new Padding(3, 4, 3, 4);
+            sidebar.MaximumSize = new Size(189, 826);
+            sidebar.MinimumSize = new Size(61, 826);
             sidebar.Name = "sidebar";
-            sidebar.Size = new Size(236, 1033);
+            sidebar.Size = new Size(189, 826);
             sidebar.TabIndex = 10;
             // 
             // FormTeknisi
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(46, 51, 73);
-            ClientSize = new Size(1579, 1033);
+            ClientSize = new Size(1263, 826);
             Controls.Add(dataGridView1);
             Controls.Add(panel5);
             Controls.Add(buttonTambah);
             Controls.Add(sidebar);
             FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(4, 5, 4, 5);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "FormTeknisi";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FormTeknisi";

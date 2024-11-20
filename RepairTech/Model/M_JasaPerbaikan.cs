@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace PROJECT_PBO.Model
 {
-    internal class M_JasaPerbaikan
+    public class M_JasaPerbaikan
     {
         [Key]
         public int id_jasa_perbaikan { get; set; }

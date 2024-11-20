@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using FontAwesome.Sharp;
+using PROJECT_PBO;
 
 namespace PROJECT_PBO
 {
@@ -75,6 +76,12 @@ namespace PROJECT_PBO
             formKomponen.Show();
             this.Hide();
         }
+
+        private void FormKomponen_Load(object sender, EventArgs e)
+        {
+            
+        }
+
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {

@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace PROJECT_PBO.Model
 {
-    internal class M_Teknisi
+    public class M_Teknisi
     {
         [Key]
         public int id_teknisi { get; set; }
         [Required]
-        public string teknisi { get; set; }
+        public string nama { get; set; }
         [Required]
         public string keahlian { get; set; }
         [Required]
