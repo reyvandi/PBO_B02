@@ -93,6 +93,16 @@ namespace PROJECT_PBO.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Frame_4b {
+            get {
+                object obj = ResourceManager.GetObject("Frame 4b", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Frame_5 {
             get {
                 object obj = ResourceManager.GetObject("Frame 5", resourceCulture);

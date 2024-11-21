@@ -31,7 +31,7 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = Properties.Resources.Frame_4a;
+            pictureBox1.Image = Properties.Resources.Frame_4b;
             pictureBox1.Location = new Point(0, 0);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(653, 621);
@@ -55,7 +55,7 @@
             labelLOGIN.AutoSize = true;
             labelLOGIN.BackColor = Color.Transparent;
             labelLOGIN.Font = new Font("Hanson", 21.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            labelLOGIN.ForeColor = Color.Magenta;
+            labelLOGIN.ForeColor = Color.DeepPink;
             labelLOGIN.Location = new Point(836, 169);
             labelLOGIN.Margin = new Padding(2, 0, 2, 0);
             labelLOGIN.Name = "labelLOGIN";
