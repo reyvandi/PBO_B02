@@ -79,7 +79,7 @@ namespace PROJECT_PBO
 
         private void FormKomponen_Load(object sender, EventArgs e)
         {
-            
+
         }
 
 
@@ -110,6 +110,11 @@ namespace PROJECT_PBO
             FormTeknisi formTeknisi = new FormTeknisi();
             formTeknisi.Show();
             this.Hide();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

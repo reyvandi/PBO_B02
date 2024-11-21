@@ -193,5 +193,10 @@ namespace PROJECT_PBO
 
             this.Show();
         }
+
+        private void FormJasaServis_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
