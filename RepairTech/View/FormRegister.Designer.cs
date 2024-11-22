@@ -30,98 +30,87 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormRegister));
             label1 = new Label();
-            label2 = new Label();
             label3 = new Label();
             label4 = new Label();
-            textBoxEmail = new TextBox();
             textBoxUsername = new TextBox();
             textBoxPassword = new TextBox();
             buttonRegistrasi = new Button();
             buttonBack = new Button();
             pictureBox1 = new PictureBox();
+            panel1 = new Panel();
+            panel6 = new Panel();
+            panel5 = new Panel();
+            panel4 = new Panel();
+            panel3 = new Panel();
+            label2 = new Label();
+            textBoxEmail = new TextBox();
+            panel2 = new Panel();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            panel1.SuspendLayout();
+            panel6.SuspendLayout();
+            panel5.SuspendLayout();
+            panel4.SuspendLayout();
+            panel3.SuspendLayout();
+            panel2.SuspendLayout();
             SuspendLayout();
             // 
             // label1
             // 
-            label1.AutoSize = true;
+            label1.Dock = DockStyle.Fill;
             label1.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = SystemColors.Control;
-            label1.Location = new Point(128, 254);
-            label1.Margin = new Padding(4, 0, 4, 0);
+            label1.Location = new Point(0, 0);
+            label1.Margin = new Padding(0);
             label1.Name = "label1";
-            label1.Size = new Size(248, 65);
+            label1.Size = new Size(666, 159);
             label1.TabIndex = 0;
             label1.Text = "Registrasi";
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.ForeColor = SystemColors.Control;
-            label2.Location = new Point(128, 366);
-            label2.Margin = new Padding(4, 0, 4, 0);
-            label2.Name = "label2";
-            label2.Size = new Size(58, 25);
-            label2.TabIndex = 1;
-            label2.Text = "Email";
+            label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label3
             // 
-            label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ForeColor = SystemColors.Control;
-            label3.Location = new Point(128, 436);
-            label3.Margin = new Padding(4, 0, 4, 0);
+            label3.Location = new Point(200, 3);
             label3.Name = "label3";
-            label3.Size = new Size(97, 25);
+            label3.Size = new Size(64, 15);
             label3.TabIndex = 2;
             label3.Text = "Username";
             // 
             // label4
             // 
-            label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label4.ForeColor = SystemColors.Control;
-            label4.Location = new Point(128, 511);
-            label4.Margin = new Padding(4, 0, 4, 0);
+            label4.Location = new Point(200, 3);
             label4.Name = "label4";
-            label4.Size = new Size(92, 25);
+            label4.Size = new Size(59, 15);
             label4.TabIndex = 3;
             label4.Text = "Password";
             // 
-            // textBoxEmail
-            // 
-            textBoxEmail.Location = new Point(128, 396);
-            textBoxEmail.Margin = new Padding(4, 5, 4, 5);
-            textBoxEmail.Name = "textBoxEmail";
-            textBoxEmail.Size = new Size(243, 31);
-            textBoxEmail.TabIndex = 4;
-            // 
             // textBoxUsername
             // 
-            textBoxUsername.Location = new Point(128, 466);
-            textBoxUsername.Margin = new Padding(4, 5, 4, 5);
+            textBoxUsername.Dock = DockStyle.Fill;
+            textBoxUsername.Location = new Point(200, 20);
             textBoxUsername.Name = "textBoxUsername";
-            textBoxUsername.Size = new Size(243, 31);
+            textBoxUsername.Size = new Size(266, 23);
             textBoxUsername.TabIndex = 5;
             // 
             // textBoxPassword
             // 
-            textBoxPassword.Location = new Point(128, 541);
-            textBoxPassword.Margin = new Padding(4, 5, 4, 5);
+            textBoxPassword.Dock = DockStyle.Fill;
+            textBoxPassword.Location = new Point(200, 20);
             textBoxPassword.Name = "textBoxPassword";
-            textBoxPassword.Size = new Size(243, 31);
+            textBoxPassword.Size = new Size(266, 23);
             textBoxPassword.TabIndex = 6;
             // 
             // buttonRegistrasi
             // 
             buttonRegistrasi.BackColor = Color.Aqua;
+            buttonRegistrasi.Dock = DockStyle.Fill;
             buttonRegistrasi.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            buttonRegistrasi.Location = new Point(149, 617);
-            buttonRegistrasi.Margin = new Padding(4, 5, 4, 5);
+            buttonRegistrasi.Location = new Point(150, 20);
             buttonRegistrasi.Name = "buttonRegistrasi";
-            buttonRegistrasi.Size = new Size(179, 40);
+            buttonRegistrasi.Size = new Size(366, 40);
             buttonRegistrasi.TabIndex = 7;
             buttonRegistrasi.Text = "Registrasi";
             buttonRegistrasi.UseVisualStyleBackColor = false;
@@ -129,12 +118,14 @@
             // 
             // buttonBack
             // 
+            buttonBack.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             buttonBack.BackColor = Color.Red;
             buttonBack.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             buttonBack.ForeColor = SystemColors.Control;
-            buttonBack.Location = new Point(22, 909);
+            buttonBack.Location = new Point(21, 682);
+            buttonBack.Margin = new Padding(10);
             buttonBack.Name = "buttonBack";
-            buttonBack.Size = new Size(150, 47);
+            buttonBack.Size = new Size(105, 28);
             buttonBack.TabIndex = 8;
             buttonBack.Text = "Back";
             buttonBack.UseVisualStyleBackColor = false;
@@ -144,51 +135,144 @@
             // 
             pictureBox1.BackgroundImage = (Image)resources.GetObject("pictureBox1.BackgroundImage");
             pictureBox1.BackgroundImageLayout = ImageLayout.Zoom;
-            pictureBox1.Location = new Point(649, 124);
+            pictureBox1.Dock = DockStyle.Right;
+            pictureBox1.Location = new Point(666, 0);
+            pictureBox1.Margin = new Padding(2);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(807, 645);
+            pictureBox1.Padding = new Padding(20);
+            pictureBox1.Size = new Size(684, 729);
             pictureBox1.TabIndex = 9;
             pictureBox1.TabStop = false;
             // 
+            // panel1
+            // 
+            panel1.Controls.Add(panel6);
+            panel1.Controls.Add(panel5);
+            panel1.Controls.Add(panel4);
+            panel1.Controls.Add(panel3);
+            panel1.Controls.Add(panel2);
+            panel1.Dock = DockStyle.Top;
+            panel1.Location = new Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(666, 583);
+            panel1.TabIndex = 10;
+            // 
+            // panel6
+            // 
+            panel6.Controls.Add(buttonRegistrasi);
+            panel6.Dock = DockStyle.Top;
+            panel6.Location = new Point(0, 339);
+            panel6.Name = "panel6";
+            panel6.Padding = new Padding(150, 20, 150, 40);
+            panel6.Size = new Size(666, 100);
+            panel6.TabIndex = 12;
+            // 
+            // panel5
+            // 
+            panel5.Controls.Add(textBoxPassword);
+            panel5.Controls.Add(label4);
+            panel5.Dock = DockStyle.Top;
+            panel5.Location = new Point(0, 279);
+            panel5.Name = "panel5";
+            panel5.Padding = new Padding(200, 20, 200, 0);
+            panel5.Size = new Size(666, 60);
+            panel5.TabIndex = 11;
+            // 
+            // panel4
+            // 
+            panel4.Controls.Add(textBoxUsername);
+            panel4.Controls.Add(label3);
+            panel4.Dock = DockStyle.Top;
+            panel4.Location = new Point(0, 219);
+            panel4.Name = "panel4";
+            panel4.Padding = new Padding(200, 20, 200, 0);
+            panel4.Size = new Size(666, 60);
+            panel4.TabIndex = 10;
+            // 
+            // panel3
+            // 
+            panel3.Controls.Add(label2);
+            panel3.Controls.Add(textBoxEmail);
+            panel3.Dock = DockStyle.Top;
+            panel3.Location = new Point(0, 159);
+            panel3.Name = "panel3";
+            panel3.Padding = new Padding(200, 20, 200, 0);
+            panel3.Size = new Size(666, 60);
+            panel3.TabIndex = 9;
+            // 
+            // label2
+            // 
+            label2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.ForeColor = SystemColors.Control;
+            label2.Location = new Point(200, 3);
+            label2.Name = "label2";
+            label2.Size = new Size(36, 15);
+            label2.TabIndex = 1;
+            label2.Text = "Email";
+            // 
+            // textBoxEmail
+            // 
+            textBoxEmail.Dock = DockStyle.Fill;
+            textBoxEmail.Location = new Point(200, 20);
+            textBoxEmail.Name = "textBoxEmail";
+            textBoxEmail.Size = new Size(266, 23);
+            textBoxEmail.TabIndex = 4;
+            // 
+            // panel2
+            // 
+            panel2.Controls.Add(label1);
+            panel2.Dock = DockStyle.Top;
+            panel2.Location = new Point(0, 0);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(666, 159);
+            panel2.TabIndex = 8;
+            // 
             // FormRegister
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(31, 30, 68);
             BackgroundImageLayout = ImageLayout.None;
-            ClientSize = new Size(1557, 977);
+            ClientSize = new Size(1350, 729);
+            Controls.Add(panel1);
             Controls.Add(pictureBox1);
             Controls.Add(buttonBack);
-            Controls.Add(buttonRegistrasi);
-            Controls.Add(textBoxPassword);
-            Controls.Add(textBoxUsername);
-            Controls.Add(textBoxEmail);
-            Controls.Add(label4);
-            Controls.Add(label3);
-            Controls.Add(label2);
-            Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
-            Margin = new Padding(4, 5, 4, 5);
             Name = "FormRegister";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FormRegister";
+            WindowState = FormWindowState.Maximized;
             Load += FormRegister_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            panel1.ResumeLayout(false);
+            panel6.ResumeLayout(false);
+            panel5.ResumeLayout(false);
+            panel5.PerformLayout();
+            panel4.ResumeLayout(false);
+            panel4.PerformLayout();
+            panel3.ResumeLayout(false);
+            panel3.PerformLayout();
+            panel2.ResumeLayout(false);
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
 
         private Label label1;
-        private Label label2;
         private Label label3;
         private Label label4;
-        private TextBox textBoxEmail;
         private TextBox textBoxUsername;
         private TextBox textBoxPassword;
         private Button buttonRegistrasi;
         private Button buttonBack;
         private PictureBox pictureBox1;
+        private Panel panel1;
+        private Panel panel2;
+        private Panel panel4;
+        private Panel panel6;
+        private Panel panel5;
+        private TextBox textBoxEmail;
+        private Label label2;
+        private Panel panel3;
     }
 }

@@ -19,6 +19,7 @@ namespace PROJECT_PBO
         {
             InitializeComponent();
             this.Load += MainForm_Load;
+            this.Resize += FormTeknisi_Resize;
         }
         private void MainForm_Load(object sender, EventArgs e)
         {
@@ -31,7 +32,7 @@ namespace PROJECT_PBO
             {
                 dataGridView1.AllowUserToAddRows = false;
 
-                DataTable teknisiData =TeknisiContext.All();
+                DataTable teknisiData = TeknisiContext.All();
                 if (teknisiData == null || teknisiData.Rows.Count == 0)
                 {
                     MessageBox.Show("Tidak ada data yang ditemukan!");
@@ -171,6 +172,62 @@ namespace PROJECT_PBO
             }
 
             this.Show();
+        }
+
+        private void buttonMenu_Click(object sender, EventArgs e)
+        {
+            timerSidebar.Start();
+        }
+
+        bool sidebarExpand;
+        private void timerSidebar_Tick(object sender, EventArgs e)
+        {
+            {
+                if (sidebarExpand)
+                {
+                    sidebar.Width -= 10;
+                    if (sidebar.Width == sidebar.MinimumSize.Width)
+                    {
+                        sidebarExpand = false;
+                        timerSidebar.Stop();
+                    }
+                }
+                else
+                {
+                    sidebar.Width += 10;
+                    if (sidebar.Width == sidebar.MaximumSize.Width)
+                    {
+                        sidebarExpand = true;
+                        timerSidebar.Stop();
+                    }
+                }
+
+            }
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FormTeknisi_Resize(object sender, EventArgs e)
+        {
+            // Tentukan margin dari kanan dan bawah
+            int marginRight = 0; // Misalnya 10px dari kanan
+            int marginBottom = 0; // Misalnya 10px dari bawah
+
+            // Atur lokasi tombol logout
+            panel7.Location = new Point(
+                this.ClientSize.Width - panel7.Width - marginRight,
+                this.ClientSize.Height - panel7.Height - marginBottom
+            );
+        }
+
+        private void buttonLogout_Click(object sender, EventArgs e)
+        {
+            LOGIN formLogin = new LOGIN();
+            formLogin.Show();
+            this.Hide();
         }
     }
 }

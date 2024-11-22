@@ -33,7 +33,7 @@ namespace PROJECT_PBO
             string role = ValidateLogin(username, password);
             if (!string.IsNullOrEmpty(role))
             {
-                MessageBox.Show($"Login berhasil sebagai {role}", "Login Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //MessageBox.Show($"Login berhasil sebagai {role}", "Login Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 if (role == "admin")
                 {
@@ -105,6 +105,15 @@ namespace PROJECT_PBO
         private void LOGIN_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void textBoxPASSWORD_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter) // Jika tombol Enter ditekan
+            {
+                buttonLOGIN.PerformClick(); // Klik tombol Login
+                e.SuppressKeyPress = true; // Mencegah bunyi 'ding' dari tombol Enter
+            }
         }
     }
 }
