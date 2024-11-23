@@ -250,5 +250,12 @@ namespace PROJECT_PBO
             formLogin.Show();
             this.Hide();
         }
+
+        private void buttonLogout_Click_1(object sender, EventArgs e)
+        {
+            LOGIN formLogin = new LOGIN();
+            formLogin.Show();
+            this.Hide();
+        }
     }
 }

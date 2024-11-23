@@ -139,5 +139,19 @@ namespace PROJECT_PBO
 
         }
 
+        private void buttonLogout_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonTambah_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel9_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
