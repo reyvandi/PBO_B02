@@ -45,25 +45,29 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(66, 65);
+            label1.Location = new Point(146, 340);
+            label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(49, 20);
+            label1.Size = new Size(59, 25);
             label1.TabIndex = 0;
             label1.Text = "Nama";
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(63, 88);
+            textBox1.Location = new Point(143, 369);
+            textBox1.Margin = new Padding(4, 4, 4, 4);
+            textBox1.Multiline = true;
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(224, 27);
+            textBox1.Size = new Size(274, 43);
             textBox1.TabIndex = 1;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(63, 142);
+            label2.Location = new Point(143, 437);
+            label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
-            label2.Size = new Size(66, 20);
+            label2.Size = new Size(77, 25);
             label2.TabIndex = 2;
             label2.Text = "Keahlian";
             // 
@@ -71,17 +75,19 @@
             // 
             comboBox1.FormattingEnabled = true;
             comboBox1.Items.AddRange(new object[] { "Software", "Hardware" });
-            comboBox1.Location = new Point(60, 165);
+            comboBox1.Location = new Point(139, 465);
+            comboBox1.Margin = new Padding(4, 4, 4, 4);
             comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(227, 28);
+            comboBox1.Size = new Size(283, 33);
             comboBox1.TabIndex = 3;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(60, 205);
+            label3.Location = new Point(139, 515);
+            label3.Margin = new Padding(4, 0, 4, 0);
             label3.Name = "label3";
-            label3.Size = new Size(71, 20);
+            label3.Size = new Size(85, 25);
             label3.TabIndex = 4;
             label3.Text = "Jam kerja";
             label3.Click += label3_Click;
@@ -90,48 +96,54 @@
             // 
             comboBox2.FormattingEnabled = true;
             comboBox2.Items.AddRange(new object[] { "07.00 - 12.00", "12.00 -17.00" });
-            comboBox2.Location = new Point(60, 239);
+            comboBox2.Location = new Point(139, 558);
+            comboBox2.Margin = new Padding(4, 4, 4, 4);
             comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(223, 28);
+            comboBox2.Size = new Size(278, 33);
             comboBox2.TabIndex = 5;
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(60, 290);
+            label4.Location = new Point(139, 621);
+            label4.Margin = new Padding(4, 0, 4, 0);
             label4.Name = "label4";
-            label4.Size = new Size(57, 20);
+            label4.Size = new Size(68, 25);
             label4.TabIndex = 6;
             label4.Text = "Alamat";
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(60, 323);
+            textBox2.Location = new Point(139, 663);
+            textBox2.Margin = new Padding(4, 4, 4, 4);
             textBox2.Name = "textBox2";
-            textBox2.Size = new Size(220, 27);
+            textBox2.Size = new Size(274, 31);
             textBox2.TabIndex = 7;
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(59, 374);
+            label5.Location = new Point(138, 727);
+            label5.Margin = new Padding(4, 0, 4, 0);
             label5.Name = "label5";
-            label5.Size = new Size(86, 20);
+            label5.Size = new Size(102, 25);
             label5.TabIndex = 8;
             label5.Text = "No Telepon";
             // 
             // textBox3
             // 
-            textBox3.Location = new Point(60, 409);
+            textBox3.Location = new Point(139, 770);
+            textBox3.Margin = new Padding(4, 4, 4, 4);
             textBox3.Name = "textBox3";
-            textBox3.Size = new Size(220, 27);
+            textBox3.Size = new Size(274, 31);
             textBox3.TabIndex = 9;
             // 
             // buttonCancel
             // 
-            buttonCancel.Location = new Point(553, 407);
+            buttonCancel.Location = new Point(1520, 1110);
+            buttonCancel.Margin = new Padding(4, 4, 4, 4);
             buttonCancel.Name = "buttonCancel";
-            buttonCancel.Size = new Size(94, 29);
+            buttonCancel.Size = new Size(172, 47);
             buttonCancel.TabIndex = 10;
             buttonCancel.Text = "Cancel";
             buttonCancel.UseVisualStyleBackColor = true;
@@ -139,9 +151,10 @@
             // 
             // buttonAdd
             // 
-            buttonAdd.Location = new Point(674, 407);
+            buttonAdd.Location = new Point(1717, 1111);
+            buttonAdd.Margin = new Padding(4, 4, 4, 4);
             buttonAdd.Name = "buttonAdd";
-            buttonAdd.Size = new Size(94, 29);
+            buttonAdd.Size = new Size(172, 46);
             buttonAdd.TabIndex = 11;
             buttonAdd.Text = "Add";
             buttonAdd.UseVisualStyleBackColor = true;
@@ -149,9 +162,9 @@
             // 
             // AddTeknisiForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1924, 1170);
             Controls.Add(buttonAdd);
             Controls.Add(buttonCancel);
             Controls.Add(textBox3);
@@ -164,6 +177,7 @@
             Controls.Add(label2);
             Controls.Add(textBox1);
             Controls.Add(label1);
+            Margin = new Padding(4, 4, 4, 4);
             Name = "AddTeknisiForm";
             Text = "AddTeknisiForm";
             ResumeLayout(false);
