@@ -76,7 +76,7 @@
             buttonTambah.IconFont = FontAwesome.Sharp.IconFont.Auto;
             buttonTambah.IconSize = 17;
             buttonTambah.ImageAlign = ContentAlignment.MiddleRight;
-            buttonTambah.Location = new Point(817, 1005);
+            buttonTambah.Location = new Point(954, 1020);
             buttonTambah.Margin = new Padding(4, 5, 4, 5);
             buttonTambah.Name = "buttonTambah";
             buttonTambah.Size = new Size(261, 50);
@@ -176,11 +176,11 @@
             dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(317, 205);
+            dataGridView1.Location = new Point(317, 155);
             dataGridView1.Margin = new Padding(4, 5, 4, 5);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 62;
-            dataGridView1.Size = new Size(1304, 758);
+            dataGridView1.Size = new Size(1536, 840);
             dataGridView1.TabIndex = 12;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 

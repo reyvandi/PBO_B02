@@ -38,13 +38,15 @@
             textBox4 = new TextBox();
             label3 = new Label();
             label4 = new Label();
+            label5 = new Label();
             SuspendLayout();
             // 
             // buttonCancel
             // 
-            buttonCancel.Location = new Point(568, 399);
+            buttonCancel.Location = new Point(1398, 1075);
+            buttonCancel.Margin = new Padding(4);
             buttonCancel.Name = "buttonCancel";
-            buttonCancel.Size = new Size(94, 29);
+            buttonCancel.Size = new Size(161, 48);
             buttonCancel.TabIndex = 0;
             buttonCancel.Text = "Cancel";
             buttonCancel.UseVisualStyleBackColor = true;
@@ -52,9 +54,10 @@
             // 
             // buttonAdd
             // 
-            buttonAdd.Location = new Point(682, 399);
+            buttonAdd.Location = new Point(1624, 1075);
+            buttonAdd.Margin = new Padding(4);
             buttonAdd.Name = "buttonAdd";
-            buttonAdd.Size = new Size(94, 29);
+            buttonAdd.Size = new Size(135, 48);
             buttonAdd.TabIndex = 1;
             buttonAdd.Text = "Add";
             buttonAdd.UseVisualStyleBackColor = true;
@@ -63,73 +66,107 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(33, 38);
+            label1.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = SystemColors.Control;
+            label1.Location = new Point(120, 285);
+            label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(109, 20);
+            label1.Size = new Size(161, 28);
             label1.TabIndex = 2;
             label1.Text = "Jenis kerusakan";
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(33, 61);
+            textBox1.Location = new Point(120, 317);
+            textBox1.Margin = new Padding(4);
+            textBox1.Multiline = true;
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(212, 27);
+            textBox1.Size = new Size(302, 45);
             textBox1.TabIndex = 3;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(39, 119);
+            label2.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.ForeColor = SystemColors.Control;
+            label2.Location = new Point(120, 375);
+            label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
             label2.RightToLeft = RightToLeft.Yes;
-            label2.Size = new Size(48, 20);
+            label2.Size = new Size(68, 28);
             label2.TabIndex = 4;
             label2.Text = "Solusi";
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(33, 142);
+            textBox2.Location = new Point(120, 407);
+            textBox2.Margin = new Padding(4);
+            textBox2.Multiline = true;
             textBox2.Name = "textBox2";
-            textBox2.Size = new Size(208, 27);
+            textBox2.Size = new Size(302, 45);
             textBox2.TabIndex = 5;
             // 
             // textBox3
             // 
-            textBox3.Location = new Point(29, 220);
+            textBox3.Location = new Point(120, 501);
+            textBox3.Margin = new Padding(4);
+            textBox3.Multiline = true;
             textBox3.Name = "textBox3";
-            textBox3.Size = new Size(216, 27);
+            textBox3.Size = new Size(302, 45);
             textBox3.TabIndex = 6;
             // 
             // textBox4
             // 
-            textBox4.Location = new Point(28, 307);
+            textBox4.Location = new Point(120, 604);
+            textBox4.Margin = new Padding(4);
+            textBox4.Multiline = true;
             textBox4.Name = "textBox4";
-            textBox4.Size = new Size(223, 27);
+            textBox4.Size = new Size(302, 45);
             textBox4.TabIndex = 7;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(28, 197);
+            label3.BackColor = Color.Transparent;
+            label3.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.ForeColor = SystemColors.Control;
+            label3.Location = new Point(120, 469);
+            label3.Margin = new Padding(4, 0, 4, 0);
             label3.Name = "label3";
-            label3.Size = new Size(45, 20);
+            label3.Size = new Size(64, 28);
             label3.TabIndex = 8;
             label3.Text = "Biaya";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(33, 284);
+            label4.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label4.ForeColor = SystemColors.Control;
+            label4.Location = new Point(120, 572);
+            label4.Margin = new Padding(4, 0, 4, 0);
             label4.Name = "label4";
-            label4.Size = new Size(106, 20);
+            label4.Size = new Size(154, 28);
             label4.TabIndex = 9;
             label4.Text = "Estimasi waktu";
             // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI Historic", 28F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label5.ForeColor = SystemColors.Control;
+            label5.Location = new Point(744, 72);
+            label5.Name = "label5";
+            label5.Size = new Size(398, 74);
+            label5.TabIndex = 10;
+            label5.Text = "Jasa Perbaikan";
+            // 
             // AddJasaPerbaikanForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            BackColor = Color.FromArgb(46, 51, 73);
+            ClientSize = new Size(1823, 1170);
+            Controls.Add(label5);
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(textBox4);
@@ -140,8 +177,12 @@
             Controls.Add(label1);
             Controls.Add(buttonAdd);
             Controls.Add(buttonCancel);
+            FormBorderStyle = FormBorderStyle.FixedToolWindow;
+            Margin = new Padding(4);
             Name = "AddJasaPerbaikanForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "AddJasaPerbaikanForm";
+            WindowState = FormWindowState.Maximized;
             Load += AddJasaPerbaikanForm_Load;
             ResumeLayout(false);
             PerformLayout();
@@ -159,5 +200,6 @@
         private TextBox textBox4;
         private Label label3;
         private Label label4;
+        private Label label5;
     }
 }
