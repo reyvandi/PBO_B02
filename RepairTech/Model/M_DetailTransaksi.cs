@@ -14,9 +14,8 @@ namespace PROJECT_PBO.Model
         public int id_detail_transaksi { get; set; }
         [ForeignKey("M_Transaksi")]
         public int id_transaksi { get; set; }
-        [ForeignKey("M_Teknisi")]
-        public int id_teknisi { get; set; }
         [ForeignKey("M_JasaPerbaikan")]
         public int id_jasa_perbaikan { get; set; }
+        public decimal biaya { get; set; }
     }
 }

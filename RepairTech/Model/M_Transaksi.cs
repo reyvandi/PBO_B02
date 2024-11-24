@@ -12,16 +12,14 @@ namespace PROJECT_PBO.Model
     {
         [Key]
         public int id_transaksi { get; set; }
-        [Required]
-        public int no_faktur {  get; set; }
-        [Required]
-        public string tanggal { get; set; }
-        [Required]
-        public string nama_customer { get; set; }
-        [Required]
+        public DateTime tanggal { get; set; }
         public string laptop { get; set; }
+        public string alamat { get; set; }
+        public string status_transaksi { get; set; }
         [Required]
         [ForeignKey("M_Akun")]
         public int id_akun { get; set; }
+        [ForeignKey("M_Teknisi")]
+        public int id_teknisi { get; set; }
     }
 }

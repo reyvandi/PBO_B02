@@ -12,6 +12,7 @@ namespace PROJECT_PBO
     public partial class LOGIN : Form
     {
         private AkunContext akun;
+        private int id_akun;
 
         public LOGIN()
         {
@@ -42,7 +43,7 @@ namespace PROJECT_PBO
                 }
                 else if (role == "pelanggan")
                 {
-                    FormPelanggan formPelanggan = new FormPelanggan(); // Form khusus untuk User
+                    FormPelanggan formPelanggan = new FormPelanggan(id_akun); // Form khusus untuk User
                     formPelanggan.Show();
                 }
 
@@ -66,6 +67,8 @@ namespace PROJECT_PBO
 
             if (result.Rows.Count > 0)
             {
+                id_akun = Convert.ToInt32(result.Rows[0]["id_akun"]);
+
                 // Ambil data role dari hasil query
                 string role = result.Rows[0]["role"].ToString();
                 return role;
