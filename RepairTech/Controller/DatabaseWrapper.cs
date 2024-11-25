@@ -14,7 +14,7 @@ namespace PROJECT_PBO.Controller
         private static readonly string DB_HOST = "localhost";
         private static readonly string DB_DATABASE = "RepairTech";
         private static readonly string DB_USERNAME = "postgres";
-        private static readonly string DB_PASSWORD = "1";
+        private static readonly string DB_PASSWORD = "M#Anb8nb";
         private static readonly string DB_PORT = "5432";
 
         private static NpgsqlConnection connection;

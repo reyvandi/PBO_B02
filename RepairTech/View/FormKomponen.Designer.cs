@@ -51,6 +51,10 @@
             dataGridView1 = new DataGridView();
             panel7 = new Panel();
             buttonLogout = new Button();
+            panel8 = new Panel();
+            buttonSearch = new FontAwesome.Sharp.IconButton();
+            textBox1 = new TextBox();
+            panel9 = new Panel();
             sidebar.SuspendLayout();
             panelSidebar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)buttonMenu).BeginInit();
@@ -62,6 +66,8 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panel7.SuspendLayout();
+            panel8.SuspendLayout();
+            panel9.SuspendLayout();
             SuspendLayout();
             // 
             // sidebar
@@ -77,7 +83,7 @@
             sidebar.MaximumSize = new Size(170, 800);
             sidebar.MinimumSize = new Size(50, 620);
             sidebar.Name = "sidebar";
-            sidebar.Size = new Size(170, 749);
+            sidebar.Size = new Size(170, 664);
             sidebar.TabIndex = 0;
             sidebar.Paint += sidebar_Paint;
             // 
@@ -279,14 +285,14 @@
             panel5.Dock = DockStyle.Top;
             panel5.Location = new Point(170, 0);
             panel5.Name = "panel5";
-            panel5.Size = new Size(1200, 50);
+            panel5.Size = new Size(1114, 50);
             panel5.TabIndex = 2;
             // 
             // pictureBox1
             // 
             pictureBox1.Dock = DockStyle.Right;
             pictureBox1.Image = Properties.Resources.rpimg;
-            pictureBox1.Location = new Point(1024, 0);
+            pictureBox1.Location = new Point(938, 0);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(176, 50);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -338,14 +344,14 @@
             // 
             // dataGridView1
             // 
-            dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(301, 147);
+            dataGridView1.Dock = DockStyle.Fill;
+            dataGridView1.Location = new Point(35, 0);
             dataGridView1.Margin = new Padding(4, 5, 4, 5);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(1572, 818);
+            dataGridView1.Size = new Size(1044, 490);
             dataGridView1.TabIndex = 8;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
@@ -353,7 +359,7 @@
             // 
             panel7.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             panel7.Controls.Add(buttonLogout);
-            panel7.Location = new Point(1588, 952);
+            panel7.Location = new Point(1973, 1147);
             panel7.Name = "panel7";
             panel7.Size = new Size(170, 50);
             panel7.TabIndex = 14;
@@ -376,15 +382,69 @@
             buttonLogout.UseVisualStyleBackColor = false;
             buttonLogout.Click += buttonLogout_Click_1;
             // 
+            // panel8
+            // 
+            panel8.Controls.Add(buttonSearch);
+            panel8.Controls.Add(textBox1);
+            panel8.Dock = DockStyle.Top;
+            panel8.Location = new Point(170, 50);
+            panel8.Margin = new Padding(2, 2, 2, 2);
+            panel8.Name = "panel8";
+            panel8.Size = new Size(1114, 49);
+            panel8.TabIndex = 15;
+            // 
+            // buttonSearch
+            // 
+            buttonSearch.BackColor = Color.FromArgb(24, 23, 80);
+            buttonSearch.FlatAppearance.BorderSize = 0;
+            buttonSearch.FlatStyle = FlatStyle.Flat;
+            buttonSearch.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            buttonSearch.ForeColor = SystemColors.Control;
+            buttonSearch.IconChar = FontAwesome.Sharp.IconChar.Search;
+            buttonSearch.IconColor = Color.White;
+            buttonSearch.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            buttonSearch.IconSize = 18;
+            buttonSearch.ImageAlign = ContentAlignment.MiddleRight;
+            buttonSearch.Location = new Point(754, 8);
+            buttonSearch.Name = "buttonSearch";
+            buttonSearch.Size = new Size(87, 27);
+            buttonSearch.TabIndex = 17;
+            buttonSearch.Text = "Search";
+            buttonSearch.TextAlign = ContentAlignment.MiddleLeft;
+            buttonSearch.UseVisualStyleBackColor = false;
+            buttonSearch.Click += buttonSearch_Click;
+            // 
+            // textBox1
+            // 
+            textBox1.BackColor = Color.Silver;
+            textBox1.Location = new Point(412, 11);
+            textBox1.Margin = new Padding(0);
+            textBox1.Multiline = true;
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(341, 25);
+            textBox1.TabIndex = 16;
+            // 
+            // panel9
+            // 
+            panel9.Controls.Add(dataGridView1);
+            panel9.Dock = DockStyle.Top;
+            panel9.Location = new Point(170, 99);
+            panel9.Margin = new Padding(2, 2, 2, 2);
+            panel9.Name = "panel9";
+            panel9.Padding = new Padding(35, 0, 35, 0);
+            panel9.Size = new Size(1114, 490);
+            panel9.TabIndex = 16;
+            // 
             // FormKomponen
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(46, 51, 73);
-            ClientSize = new Size(1370, 749);
+            ClientSize = new Size(1284, 664);
+            Controls.Add(panel9);
+            Controls.Add(panel8);
             Controls.Add(panel7);
             Controls.Add(buttonTambah);
-            Controls.Add(dataGridView1);
             Controls.Add(panel5);
             Controls.Add(sidebar);
             ForeColor = SystemColors.ControlText;
@@ -405,6 +465,9 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             panel7.ResumeLayout(false);
+            panel8.ResumeLayout(false);
+            panel8.PerformLayout();
+            panel9.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -431,5 +494,9 @@
         private DataGridView dataGridView1;
         private Panel panel7;
         private Button buttonLogout;
+        private Panel panel8;
+        private TextBox textBox1;
+        private FontAwesome.Sharp.IconButton buttonSearch;
+        private Panel panel9;
     }
 }
