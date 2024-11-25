@@ -79,5 +79,25 @@ namespace PROJECT_PBO.Controller
 
             commandExecutor(query, parameters);
         }
+
+         public static DataTable Search(string keyword)
+        {
+            string query = @"
+            SELECT 
+                m.id_komponen,
+                m.nama_komponen,
+                m.harga,
+                m.stok
+            FROM komponen m
+            WHERE m.nama_komponen ILIKE @keyword";
+
+            var parameters = new[]
+            {
+                new NpgsqlParameter("@keyword", $"%{keyword}%")
+            };
+
+            DataTable dataKomponen = queryExecutor(query, parameters);
+            return dataKomponen;
+        }
     }
 }
