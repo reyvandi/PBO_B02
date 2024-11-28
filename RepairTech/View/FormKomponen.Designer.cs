@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormKomponen));
             sidebar = new FlowLayoutPanel();
             panelSidebar = new Panel();
@@ -333,7 +334,7 @@
             buttonTambah.IconFont = FontAwesome.Sharp.IconFont.Auto;
             buttonTambah.IconSize = 17;
             buttonTambah.ImageAlign = ContentAlignment.MiddleRight;
-            buttonTambah.Location = new Point(685, 601);
+            buttonTambah.Location = new Point(35, 8);
             buttonTambah.Name = "buttonTambah";
             buttonTambah.Size = new Size(183, 30);
             buttonTambah.TabIndex = 9;
@@ -344,9 +345,17 @@
             // 
             // dataGridView1
             // 
-            dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(31, 30, 68);
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridView1.BackgroundColor = SystemColors.Control;
+            dataGridView1.BackgroundColor = Color.FromArgb(46, 51, 73);
+            dataGridView1.CellBorderStyle = DataGridViewCellBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(31, 30, 68);
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Dock = DockStyle.Fill;
             dataGridView1.GridColor = Color.FromArgb(31, 30, 68);
@@ -354,7 +363,7 @@
             dataGridView1.Margin = new Padding(4, 5, 4, 5);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(1044, 490);
+            dataGridView1.Size = new Size(1044, 565);
             dataGridView1.TabIndex = 8;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
@@ -389,6 +398,7 @@
             // 
             panel8.Controls.Add(buttonSearch);
             panel8.Controls.Add(textBox1);
+            panel8.Controls.Add(buttonTambah);
             panel8.Dock = DockStyle.Top;
             panel8.Location = new Point(170, 50);
             panel8.Margin = new Padding(2);
@@ -433,12 +443,12 @@
             // panel9
             // 
             panel9.Controls.Add(dataGridView1);
-            panel9.Dock = DockStyle.Top;
+            panel9.Dock = DockStyle.Fill;
             panel9.Location = new Point(170, 99);
             panel9.Margin = new Padding(2);
             panel9.Name = "panel9";
             panel9.Padding = new Padding(35, 0, 35, 0);
-            panel9.Size = new Size(1114, 490);
+            panel9.Size = new Size(1114, 565);
             panel9.TabIndex = 16;
             panel9.Paint += panel9_Paint;
             // 
@@ -451,7 +461,6 @@
             Controls.Add(panel9);
             Controls.Add(panel8);
             Controls.Add(panel7);
-            Controls.Add(buttonTambah);
             Controls.Add(panel5);
             Controls.Add(sidebar);
             ForeColor = SystemColors.ControlText;

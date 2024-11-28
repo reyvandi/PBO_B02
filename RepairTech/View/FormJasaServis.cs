@@ -197,7 +197,10 @@ namespace PROJECT_PBO
 
         private void FormJasaServis_Load(object sender, EventArgs e)
         {
-
+            dataGridView1.EnableHeadersVisualStyles = false;
+            dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(31, 30, 68);
+            dataGridView1.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
         }
 
         private void FormJasaServis_Resize(object sender, EventArgs e)
