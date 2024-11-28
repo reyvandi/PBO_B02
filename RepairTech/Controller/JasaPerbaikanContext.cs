@@ -80,5 +80,25 @@ namespace PROJECT_PBO.Controller
 
             commandExecutor(query, parameters);
         }
+        public static DataTable Search(string keyword)
+        {
+            string query = @"
+            SELECT 
+                m.id_jasa_perbaikan,
+                m.jenis_kerusakan,
+                m.solusi,
+                m.biaya,
+                m.estimasi_waktu
+            FROM jasa_perbaikan m
+            WHERE m.jenis_kerusakan ILIKE @keyword";
+
+            var parameters = new[]
+            {
+                new NpgsqlParameter("@keyword", $"%{keyword}%")
+            };
+
+            DataTable dataJasaPerbaikan = queryExecutor(query, parameters);
+            return dataJasaPerbaikan;
+        }
     }
 }

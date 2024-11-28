@@ -235,7 +235,7 @@ namespace PROJECT_PBO
             {
                 try
                 {
-                    DataTable searchResults = KomponenContext.Search(keyword);
+                    DataTable searchResults = JasaPerbaikanContext.Search(keyword);
 
                     if (searchResults.Rows.Count == 0)
                     {
