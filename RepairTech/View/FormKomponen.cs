@@ -233,7 +233,7 @@ namespace PROJECT_PBO
 
         private void FormKomponen_Resize(object sender, EventArgs e)
         {
-            // Tentukan margin dari kanan dan bawah
+           /* // Tentukan margin dari kanan dan bawah
             int marginRight = 0; // Misalnya 10px dari kanan
             int marginBottom = 0; // Misalnya 10px dari bawah
 
@@ -241,7 +241,7 @@ namespace PROJECT_PBO
             panel7.Location = new Point(
                 this.ClientSize.Width - panel7.Width - marginRight,
                 this.ClientSize.Height - panel7.Height - marginBottom
-            );
+            );*/
         }
 
         private void buttonLogout_Click(object sender, EventArgs e)
@@ -332,6 +332,11 @@ namespace PROJECT_PBO
         }
 
         private void panel8_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel9_Paint(object sender, PaintEventArgs e)
         {
 
         }

@@ -202,7 +202,7 @@ namespace PROJECT_PBO
 
         private void FormJasaServis_Resize(object sender, EventArgs e)
         {
-            // Tentukan margin dari kanan dan bawah
+/*            // Tentukan margin dari kanan dan bawah
             int marginRight = 0; // Misalnya 10px dari kanan
             int marginBottom = 0; // Misalnya 10px dari bawah
 
@@ -210,7 +210,7 @@ namespace PROJECT_PBO
             panel7.Location = new Point(
                 this.ClientSize.Width - panel7.Width - marginRight,
                 this.ClientSize.Height - panel7.Height - marginBottom
-            );
+            );*/
         }
 
         private void buttonLogout_Click(object sender, EventArgs e)

@@ -336,15 +336,15 @@
             // buttonLogout
             // 
             buttonLogout.BackColor = Color.FromArgb(24, 30, 54);
-            buttonLogout.Dock = DockStyle.Fill;
             buttonLogout.FlatAppearance.BorderSize = 0;
+            buttonLogout.Dock = DockStyle.None;
             buttonLogout.FlatStyle = FlatStyle.Flat;
             buttonLogout.Font = new Font("Nirmala UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             buttonLogout.ForeColor = SystemColors.ButtonHighlight;
             buttonLogout.Image = (Image)resources.GetObject("buttonLogout.Image");
-            buttonLogout.Location = new Point(0, 0);
+            buttonLogout.Location = new Point(170, 50);
             buttonLogout.Name = "buttonLogout";
-            buttonLogout.Size = new Size(170, 50);
+            buttonLogout.Size = new Size(500, 400);
             buttonLogout.TabIndex = 12;
             buttonLogout.Text = "Logout";
             buttonLogout.TextImageRelation = TextImageRelation.TextBeforeImage;

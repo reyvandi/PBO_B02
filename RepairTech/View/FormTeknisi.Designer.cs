@@ -109,7 +109,7 @@
             buttonMenu.Location = new Point(0, 0);
             buttonMenu.Margin = new Padding(0);
             buttonMenu.Name = "buttonMenu";
-            buttonMenu.Padding = new Padding(10, 10, 10, 10);
+            buttonMenu.Padding = new Padding(10);
             buttonMenu.Size = new Size(50, 50);
             buttonMenu.SizeMode = PictureBoxSizeMode.StretchImage;
             buttonMenu.TabIndex = 1;
@@ -152,7 +152,7 @@
             buttonTransaksi.ImageAlign = ContentAlignment.MiddleLeft;
             buttonTransaksi.Location = new Point(0, 0);
             buttonTransaksi.Name = "buttonTransaksi";
-            buttonTransaksi.Padding = new Padding(5, 5, 5, 5);
+            buttonTransaksi.Padding = new Padding(5);
             buttonTransaksi.Size = new Size(170, 50);
             buttonTransaksi.TabIndex = 1;
             buttonTransaksi.Text = "Transaksi";
@@ -219,7 +219,7 @@
             buttonKomponen.ImageAlign = ContentAlignment.MiddleLeft;
             buttonKomponen.Location = new Point(0, 0);
             buttonKomponen.Name = "buttonKomponen";
-            buttonKomponen.Padding = new Padding(5, 5, 5, 5);
+            buttonKomponen.Padding = new Padding(5);
             buttonKomponen.Size = new Size(170, 50);
             buttonKomponen.TabIndex = 2;
             buttonKomponen.Text = "Komponen";
@@ -257,7 +257,7 @@
             buttonJasa.ImageAlign = ContentAlignment.MiddleLeft;
             buttonJasa.Location = new Point(0, 0);
             buttonJasa.Name = "buttonJasa";
-            buttonJasa.Padding = new Padding(5, 5, 5, 5);
+            buttonJasa.Padding = new Padding(5);
             buttonJasa.Size = new Size(170, 50);
             buttonJasa.TabIndex = 1;
             buttonJasa.Text = "Jasa Servis";
@@ -299,7 +299,7 @@
             buttonTeknisi.ImageAlign = ContentAlignment.MiddleLeft;
             buttonTeknisi.Location = new Point(0, 0);
             buttonTeknisi.Name = "buttonTeknisi";
-            buttonTeknisi.Padding = new Padding(5, 5, 5, 5);
+            buttonTeknisi.Padding = new Padding(5);
             buttonTeknisi.Size = new Size(170, 50);
             buttonTeknisi.TabIndex = 1;
             buttonTeknisi.Text = "Teknisi";
@@ -387,6 +387,7 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FormTeknisi";
             WindowState = FormWindowState.Maximized;
+            Load += FormTeknisi_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             panelSidebar.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)buttonMenu).EndInit();

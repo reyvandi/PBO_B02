@@ -212,7 +212,7 @@ namespace PROJECT_PBO
 
         private void FormTeknisi_Resize(object sender, EventArgs e)
         {
-            // Tentukan margin dari kanan dan bawah
+           /* // Tentukan margin dari kanan dan bawah
             int marginRight = 0; // Misalnya 10px dari kanan
             int marginBottom = 0; // Misalnya 10px dari bawah
 
@@ -221,13 +221,18 @@ namespace PROJECT_PBO
                 this.ClientSize.Width - panel7.Width - marginRight,
                 this.ClientSize.Height - panel7.Height - marginBottom
             );
-        }
+        }*/
 
         private void buttonLogout_Click(object sender, EventArgs e)
         {
             LOGIN formLogin = new LOGIN();
             formLogin.Show();
             this.Hide();
+        }
+
+        private void FormTeknisi_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

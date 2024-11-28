@@ -436,6 +436,7 @@
             panel9.Padding = new Padding(35, 0, 35, 0);
             panel9.Size = new Size(1114, 490);
             panel9.TabIndex = 16;
+            panel9.Paint += panel9_Paint;
             // 
             // FormKomponen
             // 
