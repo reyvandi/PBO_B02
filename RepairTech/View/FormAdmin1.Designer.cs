@@ -365,7 +365,7 @@
             buttonTambah.IconFont = FontAwesome.Sharp.IconFont.Auto;
             buttonTambah.IconSize = 17;
             buttonTambah.ImageAlign = ContentAlignment.MiddleRight;
-            buttonTambah.Location = new Point(497, 12);
+            buttonTambah.Location = new Point(817, 15);
             buttonTambah.Name = "buttonTambah";
             buttonTambah.Size = new Size(193, 35);
             buttonTambah.TabIndex = 7;

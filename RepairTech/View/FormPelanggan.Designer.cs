@@ -205,14 +205,14 @@
             buttonTransaksi.IconColor = Color.DeepSkyBlue;
             buttonTransaksi.IconFont = FontAwesome.Sharp.IconFont.Auto;
             buttonTransaksi.IconSize = 32;
-            buttonTransaksi.ImageAlign = ContentAlignment.MiddleRight;
-            buttonTransaksi.Location = new Point(9, 0);
+            buttonTransaksi.ImageAlign = ContentAlignment.MiddleLeft;
+            buttonTransaksi.Location = new Point(0, 0);
             buttonTransaksi.Name = "buttonTransaksi";
             buttonTransaksi.Padding = new Padding(6, 5, 6, 5);
-            buttonTransaksi.Size = new Size(160, 49);
+            buttonTransaksi.Size = new Size(169, 49);
             buttonTransaksi.TabIndex = 1;
             buttonTransaksi.Text = "Transaksi";
-            buttonTransaksi.TextAlign = ContentAlignment.MiddleLeft;
+            buttonTransaksi.TextAlign = ContentAlignment.MiddleRight;
             buttonTransaksi.UseVisualStyleBackColor = false;
             // 
             // panel8
