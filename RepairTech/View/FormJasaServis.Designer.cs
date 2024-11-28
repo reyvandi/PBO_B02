@@ -156,7 +156,8 @@
             // dataGridView1
             // 
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridView1.BackgroundColor = SystemColors.Control;
+            dataGridView1.BackgroundColor = Color.White;
+            dataGridView1.BorderStyle = BorderStyle.None;
             dataGridView1.CellBorderStyle = DataGridViewCellBorderStyle.None;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = Color.FromArgb(31, 30, 68);
@@ -392,7 +393,7 @@
             iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconButton2.IconSize = 17;
             iconButton2.ImageAlign = ContentAlignment.MiddleRight;
-            iconButton2.Location = new Point(1108, 647);
+            iconButton2.Location = new Point(44, 6);
             iconButton2.Name = "iconButton2";
             iconButton2.Size = new Size(193, 35);
             iconButton2.TabIndex = 13;
@@ -403,6 +404,7 @@
             // panel9
             // 
             panel9.Controls.Add(buttonSearch);
+            panel9.Controls.Add(iconButton2);
             panel9.Controls.Add(textBox1);
             panel9.Dock = DockStyle.Top;
             panel9.Location = new Point(170, 50);
@@ -450,7 +452,6 @@
             BackColor = Color.FromArgb(46, 51, 73);
             ClientSize = new Size(1338, 697);
             Controls.Add(panel9);
-            Controls.Add(iconButton2);
             Controls.Add(panel8);
             Controls.Add(panel7);
             Controls.Add(panel5);
