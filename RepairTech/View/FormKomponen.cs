@@ -330,5 +330,10 @@ namespace PROJECT_PBO
         {
 
         }
+
+        private void panel8_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

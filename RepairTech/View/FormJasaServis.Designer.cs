@@ -52,6 +52,9 @@
             buttonLogout = new Button();
             panel8 = new Panel();
             iconButton2 = new FontAwesome.Sharp.IconButton();
+            panel9 = new Panel();
+            buttonSearch = new FontAwesome.Sharp.IconButton();
+            textBox1 = new TextBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel5.SuspendLayout();
             panel4.SuspendLayout();
@@ -64,6 +67,7 @@
             sidebar.SuspendLayout();
             panel7.SuspendLayout();
             panel8.SuspendLayout();
+            panel9.SuspendLayout();
             SuspendLayout();
             // 
             // pictureBox1
@@ -130,7 +134,7 @@
             buttonTeknisi.ImageAlign = ContentAlignment.MiddleLeft;
             buttonTeknisi.Location = new Point(0, 0);
             buttonTeknisi.Name = "buttonTeknisi";
-            buttonTeknisi.Padding = new Padding(5, 5, 5, 5);
+            buttonTeknisi.Padding = new Padding(5);
             buttonTeknisi.Size = new Size(170, 50);
             buttonTeknisi.TabIndex = 1;
             buttonTeknisi.Text = "Teknisi";
@@ -175,7 +179,7 @@
             buttonJasa.ImageAlign = ContentAlignment.MiddleLeft;
             buttonJasa.Location = new Point(0, 0);
             buttonJasa.Name = "buttonJasa";
-            buttonJasa.Padding = new Padding(5, 5, 5, 5);
+            buttonJasa.Padding = new Padding(5);
             buttonJasa.Size = new Size(170, 50);
             buttonJasa.TabIndex = 1;
             buttonJasa.Text = "Jasa Servis";
@@ -197,7 +201,7 @@
             buttonKomponen.ImageAlign = ContentAlignment.MiddleLeft;
             buttonKomponen.Location = new Point(0, 0);
             buttonKomponen.Name = "buttonKomponen";
-            buttonKomponen.Padding = new Padding(5, 5, 5, 5);
+            buttonKomponen.Padding = new Padding(5);
             buttonKomponen.Size = new Size(170, 50);
             buttonKomponen.TabIndex = 1;
             buttonKomponen.Text = "Komponen";
@@ -220,7 +224,7 @@
             panel1.Location = new Point(0, 50);
             panel1.Margin = new Padding(0);
             panel1.Name = "panel1";
-            panel1.Padding = new Padding(5, 5, 5, 5);
+            panel1.Padding = new Padding(5);
             panel1.Size = new Size(170, 50);
             panel1.TabIndex = 5;
             // 
@@ -266,7 +270,7 @@
             buttonMenu.Location = new Point(0, 0);
             buttonMenu.Margin = new Padding(0);
             buttonMenu.Name = "buttonMenu";
-            buttonMenu.Padding = new Padding(10, 10, 10, 10);
+            buttonMenu.Padding = new Padding(10);
             buttonMenu.Size = new Size(50, 50);
             buttonMenu.SizeMode = PictureBoxSizeMode.StretchImage;
             buttonMenu.TabIndex = 1;
@@ -350,8 +354,8 @@
             // panel8
             // 
             panel8.Controls.Add(dataGridView1);
-            panel8.Location = new Point(214, 71);
-            panel8.Margin = new Padding(2, 2, 2, 2);
+            panel8.Location = new Point(214, 104);
+            panel8.Margin = new Padding(2);
             panel8.Name = "panel8";
             panel8.Size = new Size(1087, 538);
             panel8.TabIndex = 15;
@@ -368,7 +372,7 @@
             iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconButton2.IconSize = 17;
             iconButton2.ImageAlign = ContentAlignment.MiddleRight;
-            iconButton2.Location = new Point(672, 636);
+            iconButton2.Location = new Point(1108, 647);
             iconButton2.Name = "iconButton2";
             iconButton2.Size = new Size(193, 35);
             iconButton2.TabIndex = 13;
@@ -376,12 +380,55 @@
             iconButton2.TextAlign = ContentAlignment.MiddleLeft;
             iconButton2.UseVisualStyleBackColor = false;
             // 
+            // panel9
+            // 
+            panel9.Controls.Add(buttonSearch);
+            panel9.Controls.Add(textBox1);
+            panel9.Dock = DockStyle.Top;
+            panel9.Location = new Point(170, 50);
+            panel9.Name = "panel9";
+            panel9.Size = new Size(1168, 49);
+            panel9.TabIndex = 16;
+            // 
+            // buttonSearch
+            // 
+            buttonSearch.BackColor = Color.FromArgb(24, 23, 80);
+            buttonSearch.FlatAppearance.BorderSize = 0;
+            buttonSearch.FlatStyle = FlatStyle.Flat;
+            buttonSearch.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            buttonSearch.ForeColor = SystemColors.Control;
+            buttonSearch.IconChar = FontAwesome.Sharp.IconChar.Search;
+            buttonSearch.IconColor = Color.White;
+            buttonSearch.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            buttonSearch.IconSize = 18;
+            buttonSearch.ImageAlign = ContentAlignment.MiddleRight;
+            buttonSearch.Location = new Point(712, 10);
+            buttonSearch.Name = "buttonSearch";
+            buttonSearch.Size = new Size(87, 27);
+            buttonSearch.TabIndex = 19;
+            buttonSearch.Text = "Search";
+            buttonSearch.TextAlign = ContentAlignment.MiddleLeft;
+            buttonSearch.UseVisualStyleBackColor = false;
+            buttonSearch.Click += buttonSearch_Click_1;
+            // 
+            // textBox1
+            // 
+            textBox1.BackColor = Color.Silver;
+            textBox1.Location = new Point(370, 13);
+            textBox1.Margin = new Padding(0);
+            textBox1.Multiline = true;
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(341, 25);
+            textBox1.TabIndex = 18;
+            textBox1.TextChanged += textBox1_TextChanged;
+            // 
             // FormJasaServis
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(46, 51, 73);
             ClientSize = new Size(1338, 697);
+            Controls.Add(panel9);
             Controls.Add(iconButton2);
             Controls.Add(panel8);
             Controls.Add(panel7);
@@ -406,6 +453,8 @@
             sidebar.ResumeLayout(false);
             panel7.ResumeLayout(false);
             panel8.ResumeLayout(false);
+            panel9.ResumeLayout(false);
+            panel9.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -434,5 +483,8 @@
         private Button buttonLogout;
         private Panel panel8;
         private FontAwesome.Sharp.IconButton iconButton2;
+        private Panel panel9;
+        private FontAwesome.Sharp.IconButton buttonSearch;
+        private TextBox textBox1;
     }
 }

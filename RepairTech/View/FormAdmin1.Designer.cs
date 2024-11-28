@@ -356,7 +356,7 @@
             // buttonTambah
             // 
             buttonTambah.Anchor = AnchorStyles.None;
-            buttonTambah.BackColor = Color.Green;
+            buttonTambah.BackColor = Color.FromArgb(24, 23, 80);
             buttonTambah.FlatAppearance.BorderSize = 0;
             buttonTambah.FlatStyle = FlatStyle.Flat;
             buttonTambah.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);

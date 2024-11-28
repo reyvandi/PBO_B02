@@ -202,7 +202,7 @@
             buttonKomponen.ImageAlign = ContentAlignment.MiddleLeft;
             buttonKomponen.Location = new Point(-6, 0);
             buttonKomponen.Name = "buttonKomponen";
-            buttonKomponen.Padding = new Padding(5, 5, 5, 5);
+            buttonKomponen.Padding = new Padding(5);
             buttonKomponen.Size = new Size(175, 50);
             buttonKomponen.TabIndex = 1;
             buttonKomponen.Text = "Servis Laptop";
