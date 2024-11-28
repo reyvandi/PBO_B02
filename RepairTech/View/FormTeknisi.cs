@@ -220,8 +220,8 @@ namespace PROJECT_PBO
             panel7.Location = new Point(
                 this.ClientSize.Width - panel7.Width - marginRight,
                 this.ClientSize.Height - panel7.Height - marginBottom
-            );
-        }*/
+            );*/
+        }
 
         private void buttonLogout_Click(object sender, EventArgs e)
         {

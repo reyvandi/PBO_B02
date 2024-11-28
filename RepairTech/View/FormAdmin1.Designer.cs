@@ -43,6 +43,9 @@
             buttonJasa = new FontAwesome.Sharp.IconButton();
             panel4 = new Panel();
             buttonTeknisi = new FontAwesome.Sharp.IconButton();
+            panel11 = new Panel();
+            panel13 = new Panel();
+            iconButton2 = new FontAwesome.Sharp.IconButton();
             panel7 = new Panel();
             buttonLogout = new Button();
             panel5 = new Panel();
@@ -53,12 +56,9 @@
             timerSidebar = new System.Windows.Forms.Timer(components);
             panelSearch = new Panel();
             panel8 = new Panel();
-            panel9 = new Panel();
             panel10 = new Panel();
-            panel11 = new Panel();
+            panel9 = new Panel();
             panel12 = new Panel();
-            panel13 = new Panel();
-            iconButton2 = new FontAwesome.Sharp.IconButton();
             sidebar.SuspendLayout();
             panelSidebar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)buttonMenu).BeginInit();
@@ -277,6 +277,44 @@
             buttonTeknisi.UseVisualStyleBackColor = false;
             buttonTeknisi.Click += buttonTeknisi_Click;
             // 
+            // panel11
+            // 
+            panel11.Dock = DockStyle.Fill;
+            panel11.Location = new Point(3, 248);
+            panel11.Name = "panel11";
+            panel11.Size = new Size(163, 49);
+            panel11.TabIndex = 8;
+            // 
+            // panel13
+            // 
+            panel13.Dock = DockStyle.Fill;
+            panel13.Location = new Point(3, 303);
+            panel13.Name = "panel13";
+            panel13.Size = new Size(163, 290);
+            panel13.TabIndex = 9;
+            // 
+            // iconButton2
+            // 
+            iconButton2.BackColor = Color.FromArgb(31, 30, 68);
+            iconButton2.Dock = DockStyle.Left;
+            iconButton2.FlatAppearance.BorderSize = 0;
+            iconButton2.FlatStyle = FlatStyle.Flat;
+            iconButton2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            iconButton2.ForeColor = SystemColors.Control;
+            iconButton2.IconChar = FontAwesome.Sharp.IconChar.ArrowUpRightFromSquare;
+            iconButton2.IconColor = Color.Red;
+            iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconButton2.IconSize = 32;
+            iconButton2.ImageAlign = ContentAlignment.MiddleLeft;
+            iconButton2.Location = new Point(3, 599);
+            iconButton2.Name = "iconButton2";
+            iconButton2.Size = new Size(163, 49);
+            iconButton2.TabIndex = 9;
+            iconButton2.Text = "Logout";
+            iconButton2.TextAlign = ContentAlignment.MiddleRight;
+            iconButton2.UseVisualStyleBackColor = false;
+            iconButton2.Click += iconButton2_Click;
+            // 
             // panel7
             // 
             panel7.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
@@ -349,9 +387,12 @@
             // 
             // dataGridView1
             // 
+            dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(31, 30, 68);
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView1.BackgroundColor = SystemColors.Control;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Dock = DockStyle.Fill;
+            dataGridView1.GridColor = Color.FromArgb(31, 30, 68);
             dataGridView1.Location = new Point(28, 0);
             dataGridView1.Margin = new Padding(4, 5, 4, 5);
             dataGridView1.Name = "dataGridView1";
@@ -405,6 +446,14 @@
             panel8.Padding = new Padding(28, 0, 28, 0);
             panel8.Size = new Size(1038, 499);
             panel8.TabIndex = 15;
+            panel8.Paint += panel8_Paint;
+            // 
+            // panel10
+            // 
+            panel10.Location = new Point(142, 322);
+            panel10.Name = "panel10";
+            panel10.Size = new Size(200, 100);
+            panel10.TabIndex = 6;
             // 
             // panel9
             // 
@@ -418,58 +467,12 @@
             panel9.TabIndex = 16;
             panel9.Paint += panel9_Paint;
             // 
-            // panel10
-            // 
-            panel10.Location = new Point(142, 322);
-            panel10.Name = "panel10";
-            panel10.Size = new Size(200, 100);
-            panel10.TabIndex = 6;
-            // 
-            // panel11
-            // 
-            panel11.Dock = DockStyle.Fill;
-            panel11.Location = new Point(3, 248);
-            panel11.Name = "panel11";
-            panel11.Size = new Size(163, 49);
-            panel11.TabIndex = 8;
-            // 
             // panel12
             // 
             panel12.Location = new Point(137, 30);
             panel12.Name = "panel12";
             panel12.Size = new Size(0, 0);
             panel12.TabIndex = 8;
-            // 
-            // panel13
-            // 
-            panel13.Dock = DockStyle.Fill;
-            panel13.Location = new Point(3, 303);
-            panel13.Name = "panel13";
-            panel13.Size = new Size(163, 290);
-            panel13.TabIndex = 9;
-            // 
-            // iconButton2
-            // 
-            iconButton2.BackColor = Color.FromArgb(31, 30, 68);
-            iconButton2.Dock = DockStyle.Left;
-            iconButton2.FlatAppearance.BorderSize = 0;
-            iconButton2.FlatStyle = FlatStyle.Flat;
-            iconButton2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            iconButton2.ForeColor = SystemColors.Control;
-            iconButton2.IconChar = FontAwesome.Sharp.IconChar.ArrowUpRightFromSquare;
-            iconButton2.IconColor = Color.Red;
-            iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton2.IconSize = 32;
-            iconButton2.ImageAlign = ContentAlignment.MiddleLeft;
-            iconButton2.Location = new Point(3, 599);
-            iconButton2.Name = "iconButton2";
-            iconButton2.Size = new Size(163, 49);
-            iconButton2.TabIndex = 9;
-            iconButton2.Text = "Logout";
-            iconButton2.TextAlign = ContentAlignment.MiddleRight;
-            iconButton2.TextImageRelation = TextImageRelation.TextBeforeImage;
-            iconButton2.UseVisualStyleBackColor = false;
-            iconButton2.Click += iconButton2_Click;
             // 
             // FormAdmin1
             // 

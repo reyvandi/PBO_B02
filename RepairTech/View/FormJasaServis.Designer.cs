@@ -153,9 +153,13 @@
             // 
             // dataGridView1
             // 
+            dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
+            dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(31, 30, 68);
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView1.BackgroundColor = SystemColors.Control;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Dock = DockStyle.Fill;
+            dataGridView1.GridColor = Color.FromArgb(31, 30, 68);
+            dataGridView1.ImeMode = ImeMode.On;
             dataGridView1.Location = new Point(0, 0);
             dataGridView1.Margin = new Padding(4, 5, 4, 5);
             dataGridView1.Name = "dataGridView1";
@@ -337,7 +341,6 @@
             // 
             buttonLogout.BackColor = Color.FromArgb(24, 30, 54);
             buttonLogout.FlatAppearance.BorderSize = 0;
-            buttonLogout.Dock = DockStyle.None;
             buttonLogout.FlatStyle = FlatStyle.Flat;
             buttonLogout.Font = new Font("Nirmala UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             buttonLogout.ForeColor = SystemColors.ButtonHighlight;
@@ -413,7 +416,8 @@
             // 
             // textBox1
             // 
-            textBox1.BackColor = Color.Silver;
+            textBox1.BackColor = Color.White;
+            textBox1.BorderStyle = BorderStyle.None;
             textBox1.Location = new Point(370, 13);
             textBox1.Margin = new Padding(0);
             textBox1.Multiline = true;
