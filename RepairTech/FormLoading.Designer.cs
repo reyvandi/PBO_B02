@@ -40,13 +40,14 @@
             // 
             // progressBar1
             // 
-            progressBar1.BackColor = Color.FromArgb(24, 23, 80);
+            progressBar1.BackColor = Color.DarkBlue;
             progressBar1.Dock = DockStyle.Bottom;
             progressBar1.ForeColor = Color.FromArgb(24, 23, 80);
             progressBar1.Location = new Point(0, 646);
             progressBar1.Name = "progressBar1";
             progressBar1.Size = new Size(1237, 30);
             progressBar1.TabIndex = 1;
+            progressBar1.Click += progressBar1_Click;
             // 
             // label1
             // 
