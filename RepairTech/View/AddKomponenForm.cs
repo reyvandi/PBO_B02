@@ -14,12 +14,19 @@ namespace PROJECT_PBO.View
 {
     public partial class AddKomponenForm : Form
     {
+        private ErrorProvider errorProvider;
+
         public bool IsEditMode { get; set; } = false;
         public int KomponenId { get; set; }
         public AddKomponenForm()
         {
             InitializeComponent();
             UpdateButtonText();
+
+            errorProvider = new ErrorProvider();
+
+            textBoxHARGA.TextChanged += textBoxHARGA_TextChanged;
+            textBoxSTOK.TextChanged += textBoxSTOK_TextChanged;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -37,9 +44,9 @@ namespace PROJECT_PBO.View
 
             M_Komponen komponen = new M_Komponen
             {
-                nama_komponen = textBox1.Text,
-                harga = decimal.Parse(textBox2.Text),
-                stok = int.Parse(textBox3.Text),
+                nama_komponen = textBoxNAMAKOMPONEN.Text,
+                harga = decimal.Parse(textBoxHARGA.Text),
+                stok = int.Parse(textBoxSTOK.Text),
             };
             if (IsEditMode)
             {
@@ -61,19 +68,41 @@ namespace PROJECT_PBO.View
 
         private bool ValidateInput()
         {
-            if (string.IsNullOrWhiteSpace(textBox1.Text) ||
-                !decimal.TryParse(textBox2.Text, out _) ||
-                !int.TryParse(textBox3.Text, out _))
+            bool isValid = true;
+
+            if (string.IsNullOrWhiteSpace(textBoxNAMAKOMPONEN.Text))
             {
-                return false;
+                isValid = false;
             }
-            return true;
+
+            if (!decimal.TryParse(textBoxHARGA.Text, out _))
+            {
+                errorProvider.SetError(textBoxHARGA, "Harga harus berupa angka.");
+                isValid = false;
+            }
+            else
+            {
+                errorProvider.SetError(textBoxHARGA, string.Empty);
+            }
+
+            if (!int.TryParse(textBoxSTOK.Text, out _))
+            {
+                errorProvider.SetError(textBoxSTOK, "Stok harus berupa angka.");
+                isValid = false;
+            }
+            else
+            {
+                errorProvider.SetError(textBoxSTOK, string.Empty);
+            }
+
+            return isValid;
         }
+
         private void ClearFields()
         {
-            textBox1.Clear();
-            textBox2.Clear();
-            textBox3.Clear();
+            textBoxNAMAKOMPONEN.Clear();
+            textBoxHARGA.Clear();
+            textBoxSTOK.Clear();
         }
 
         private void buttonCancel_Click(object sender, EventArgs e)
@@ -84,10 +113,9 @@ namespace PROJECT_PBO.View
 
         public void PopulateForm(M_Komponen komponen)
         {
-
-            textBox1.Text = komponen.nama_komponen;
-            textBox2.Text = komponen.harga.ToString();
-            textBox3.Text = komponen.stok.ToString();
+            textBoxNAMAKOMPONEN.Text = komponen.nama_komponen;
+            textBoxHARGA.Text = komponen.harga.ToString();
+            textBoxSTOK.Text = komponen.stok.ToString();
             IsEditMode = true;
             KomponenId = komponen.id_komponen;
             UpdateButtonText();
@@ -96,6 +124,30 @@ namespace PROJECT_PBO.View
         private void UpdateButtonText()
         {
             buttonAdd.Text = IsEditMode ? "Update" : "Add";
+        }
+
+        private void textBoxHARGA_TextChanged(object sender, EventArgs e)
+        {
+            if (!decimal.TryParse(textBoxHARGA.Text, out _))
+            {
+                errorProvider.SetError(textBoxHARGA, "Harga harus berupa angka.");
+            }
+            else
+            {
+                errorProvider.SetError(textBoxHARGA, string.Empty);
+            }
+        }
+
+        private void textBoxSTOK_TextChanged(object sender, EventArgs e)
+        {
+            if (!int.TryParse(textBoxSTOK.Text, out _))
+            {
+                errorProvider.SetError(textBoxSTOK, "Stok harus berupa angka.");
+            }
+            else
+            {
+                errorProvider.SetError(textBoxSTOK, string.Empty);
+            }
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)

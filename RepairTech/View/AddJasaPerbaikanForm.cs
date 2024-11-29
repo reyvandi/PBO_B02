@@ -56,9 +56,12 @@ namespace PROJECT_PBO.View
 
             ClearFields();
 
-            this.DialogResult = DialogResult.OK;
+            // Show FormJasaServis with updated data
+            FormJasaServis formJasaServis = new FormJasaServis();
+            formJasaServis.Show();
             this.Hide();
         }
+
         private bool ValidateInput()
         {
             if (string.IsNullOrWhiteSpace(textBox1.Text) ||
@@ -75,16 +78,17 @@ namespace PROJECT_PBO.View
             textBox1.Clear();
             textBox2.Clear();
             textBox3.Clear();
+            textBox4.Clear();
         }
 
         private void buttonCancel_Click(object sender, EventArgs e)
         {
-            this.DialogResult = DialogResult.Cancel;
+            FormJasaServis formJasaServis = new FormJasaServis();
+            formJasaServis.Show();
             this.Hide();
         }
         public void PopulateForm(M_JasaPerbaikan jasaperbaikan)
         {
-
             textBox1.Text = jasaperbaikan.jenis_kerusakan;
             textBox2.Text = jasaperbaikan.solusi;
             textBox3.Text = jasaperbaikan.biaya.ToString();
