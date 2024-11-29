@@ -29,24 +29,34 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            panel1 = new Panel();
             timer1 = new System.Windows.Forms.Timer(components);
+            progressBar1 = new ProgressBar();
+            label1 = new Label();
             SuspendLayout();
-            // 
-            // panel1
-            // 
-            panel1.BackColor = Color.FromArgb(24, 23, 80);
-            panel1.BackgroundImage = Properties.Resources.Group_341;
-            panel1.BackgroundImageLayout = ImageLayout.Zoom;
-            panel1.Location = new Point(0, 646);
-            panel1.MaximumSize = new Size(1237, 30);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(17, 30);
-            panel1.TabIndex = 0;
             // 
             // timer1
             // 
             timer1.Tick += timer1_Tick;
+            // 
+            // progressBar1
+            // 
+            progressBar1.BackColor = Color.FromArgb(24, 23, 80);
+            progressBar1.Dock = DockStyle.Bottom;
+            progressBar1.ForeColor = Color.FromArgb(24, 23, 80);
+            progressBar1.Location = new Point(0, 646);
+            progressBar1.Name = "progressBar1";
+            progressBar1.Size = new Size(1237, 30);
+            progressBar1.TabIndex = 1;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(566, 646);
+            label1.Name = "label1";
+            label1.Size = new Size(83, 32);
+            label1.TabIndex = 2;
+            label1.Text = "label1";
             // 
             // FormLoading
             // 
@@ -55,18 +65,20 @@
             BackgroundImage = Properties.Resources.Frame_12;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1237, 676);
-            Controls.Add(panel1);
+            Controls.Add(label1);
+            Controls.Add(progressBar1);
             DoubleBuffered = true;
             FormBorderStyle = FormBorderStyle.None;
             Name = "FormLoading";
             Text = "FormLoading";
             Load += FormLoading_Load;
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
-
-        private Panel panel1;
         private System.Windows.Forms.Timer timer1;
+        private ProgressBar progressBar1;
+        private Label label1;
     }
 }

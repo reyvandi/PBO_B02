@@ -30,6 +30,7 @@
         {
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAdmin1));
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             sidebar = new FlowLayoutPanel();
             panelSidebar = new Panel();
             label1 = new Label();
@@ -290,7 +291,7 @@
             panel13.Dock = DockStyle.Fill;
             panel13.Location = new Point(3, 303);
             panel13.Name = "panel13";
-            panel13.Size = new Size(163, 290);
+            panel13.Size = new Size(163, 550);
             panel13.TabIndex = 9;
             // 
             // iconButton2
@@ -306,7 +307,7 @@
             iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconButton2.IconSize = 32;
             iconButton2.ImageAlign = ContentAlignment.MiddleLeft;
-            iconButton2.Location = new Point(3, 599);
+            iconButton2.Location = new Point(3, 859);
             iconButton2.Name = "iconButton2";
             iconButton2.Size = new Size(163, 49);
             iconButton2.TabIndex = 9;
@@ -387,9 +388,16 @@
             // 
             // dataGridView1
             // 
-            dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(31, 30, 68);
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.BackgroundColor = SystemColors.Control;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(31, 30, 68);
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Dock = DockStyle.Fill;
             dataGridView1.GridColor = Color.FromArgb(31, 30, 68);
