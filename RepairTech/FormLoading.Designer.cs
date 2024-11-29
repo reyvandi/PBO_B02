@@ -53,11 +53,13 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(566, 646);
+            label1.ForeColor = Color.Black;
+            label1.Location = new Point(561, 646);
             label1.Name = "label1";
             label1.Size = new Size(83, 32);
             label1.TabIndex = 2;
             label1.Text = "label1";
+            label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // FormLoading
             // 
@@ -73,7 +75,6 @@
             Name = "FormLoading";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FormLoading";
-            WindowState = FormWindowState.Maximized;
             Load += FormLoading_Load;
             ResumeLayout(false);
             PerformLayout();
