@@ -22,7 +22,7 @@ namespace PROJECT_PBO
 
             if (progressBar1.Value < 100)
             {
-                progressBar1.Value =+ 5;
+                progressBar1.Value += 5;
                 label1.Text = progressBar1.Value.ToString() + "%";
 
             }
