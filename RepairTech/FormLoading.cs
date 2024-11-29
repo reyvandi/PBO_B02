@@ -68,7 +68,12 @@ namespace PROJECT_PBO
             e.Graphics.FillRectangle(new SolidBrush(Color.FromArgb(24, 23, 80)), rect);
         }
 
-            private void progressBar1_Click(object sender, EventArgs e)
+        private void progressBar1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
         {
 
         }
