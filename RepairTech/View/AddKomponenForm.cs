@@ -62,7 +62,8 @@ namespace PROJECT_PBO.View
 
             ClearFields();
 
-            this.DialogResult = DialogResult.OK;
+            FormKomponen formKomponen = new FormKomponen();
+            formKomponen.Show();
             this.Hide();
         }
 
@@ -107,8 +108,9 @@ namespace PROJECT_PBO.View
 
         private void buttonCancel_Click(object sender, EventArgs e)
         {
-            this.DialogResult = DialogResult.Cancel;
-            this.Hide();
+            FormKomponen formKomponen = new FormKomponen();
+            formKomponen.Show();
+            this.Hide();    
         }
 
         public void PopulateForm(M_Komponen komponen)

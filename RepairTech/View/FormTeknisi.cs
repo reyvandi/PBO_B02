@@ -163,15 +163,9 @@ namespace PROJECT_PBO
 
         private void buttonTambah_Click(object sender, EventArgs e)
         {
-            this.Hide();
             AddTeknisiForm addTeknisiForm = new AddTeknisiForm();
-
-            if (addTeknisiForm.ShowDialog() == DialogResult.OK)
-            {
-                LoadDataKomponen();
-            }
-
-            this.Show();
+            addTeknisiForm.Show();
+            this.Hide();
         }
 
         private void buttonMenu_Click(object sender, EventArgs e)
@@ -212,15 +206,15 @@ namespace PROJECT_PBO
 
         private void FormTeknisi_Resize(object sender, EventArgs e)
         {
-           /* // Tentukan margin dari kanan dan bawah
-            int marginRight = 0; // Misalnya 10px dari kanan
-            int marginBottom = 0; // Misalnya 10px dari bawah
+            /* // Tentukan margin dari kanan dan bawah
+             int marginRight = 0; // Misalnya 10px dari kanan
+             int marginBottom = 0; // Misalnya 10px dari bawah
 
-            // Atur lokasi tombol logout
-            panel7.Location = new Point(
-                this.ClientSize.Width - panel7.Width - marginRight,
-                this.ClientSize.Height - panel7.Height - marginBottom
-            );*/
+             // Atur lokasi tombol logout
+             panel7.Location = new Point(
+                 this.ClientSize.Width - panel7.Width - marginRight,
+                 this.ClientSize.Height - panel7.Height - marginBottom
+             );*/
         }
 
         private void buttonLogout_Click(object sender, EventArgs e)
@@ -236,6 +230,11 @@ namespace PROJECT_PBO
             dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(31, 30, 68);
             dataGridView1.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 12, FontStyle.Bold);
             dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+        }
+
+        private void panel9_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

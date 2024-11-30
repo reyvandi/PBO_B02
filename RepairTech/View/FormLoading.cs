@@ -32,7 +32,6 @@ namespace PROJECT_PBO
                 this.Hide();
                 FormAdmin1 formadmin = new FormAdmin1();
                 formadmin.Show();
-                MessageBox.Show("Selamat datang Admin RepairTech");
             }
 
         }

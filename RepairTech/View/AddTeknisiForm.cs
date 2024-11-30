@@ -57,7 +57,8 @@ namespace PROJECT_PBO.View
 
             ClearFields();
 
-            this.DialogResult = DialogResult.OK;
+            FormTeknisi formTeknisi = new FormTeknisi();
+            formTeknisi.Show();
             this.Hide();
         }
         private bool ValidateInput()
@@ -81,7 +82,8 @@ namespace PROJECT_PBO.View
 
         private void buttonCancel_Click(object sender, EventArgs e)
         {
-            this.DialogResult = DialogResult.Cancel;
+            FormTeknisi formTeknisi = new FormTeknisi();
+            formTeknisi.Show();
             this.Hide();
         }
         public void PopulateForm(M_Teknisi teknisi)
@@ -99,6 +101,21 @@ namespace PROJECT_PBO.View
         private void UpdateButtonText()
         {
             buttonAdd.Text = IsEditMode ? "Update" : "Add";
+        }
+
+        private void AddTeknisiForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

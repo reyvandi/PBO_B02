@@ -224,15 +224,9 @@ namespace PROJECT_PBO
 
         private void buttonTambah_Click(object sender, EventArgs e)
         {
-            this.Hide();
             AddKomponenForm addKomponenForm = new AddKomponenForm();
-
-            if (addKomponenForm.ShowDialog() == DialogResult.OK)
-            {
-                LoadDataKomponen();
-            }
-
-            this.Show();
+            addKomponenForm.Show();
+            this.Hide();
         }
 
         private void FormKomponen_Resize(object sender, EventArgs e)

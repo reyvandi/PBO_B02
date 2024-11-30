@@ -120,25 +120,6 @@
   <metadata name="timerSidebar.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="buttonLogout.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
-        4wAAAOMBD+bfpwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAKbSURBVFhHtZfZ
-        ahRBFIb/e7cnUG9cXsgVt+C+TUxMnEm6Bqb1al5AIniliIigiCQxiogowhhEs2jccEniJNPVJA+QITly
-        uqczTFX3TFdl5odz01V9vr+qT3VVAXEa9PdAeNfhyHEIWYGQaxCSDIPfqUB474NcnLOl3KWtEPI2hKzG
-        JNxoVOF4t5D1t6jYUGJhJ4T/OebFdsc0css7GuHsSsipmM6dihnklrfVDYTTrnbqcPhDITzv7+3QN28V
-        VeTlbiDv3YhpJBvhQknL0zTynotwmeiNNsKRR4SL41quxHD8En9/qTXYGjj6mHDsCeHyRy1fQlTYwGpM
-        g5o7lQL48aeEE8OETCoTq2xAfRhrAPvuEPbfJRy4Rzh4n3DogdqlDu8aJXSNETITWl4ttAdJBhQ4Dj9U
-        u6zDiyO/CSdfEE69JHRPabntDCjwoOCib66MnFUc/Us4/Ypw5jWh54uW39xASjiPPFLx2Rzh7BvCubeE
-        3q8aw8xAwrS3UnFsnnD+XfiPuPpd46Q3UBu5jYrPy+H/4dIHQt8PSwO1abdRYfhfCOf/Q+YTof+XhYHa
-        NzeVBu+eJFyZJlz7Y2ggoeCCpRZVe63gIiXCe2YIvd8I2VkDAynhXHCp4FyQfT8NDMTAVUXV7o6U08G5
-        FlRwooGYkasKllpU7WngXAdt3YxM4dnZYDPyVLi1ATM4ITfH23EbDyRG8HnCwEKJj2SuCrc2YAIfLBMc
-        r1C7BcUcSnkvb7LUrAquAb64ggG5KzwZ841FNcDByToDJwjvZv1e4MrNiRcT3kbbD59Af2VT3QCLr0vN
-        TLQPPgmxtL0RHim4ovlDsTXBiTcGXwmmnWe7pfjG4viF4Nwu5OL69Zz38vTwtWCd81JzPLdecI36DwvV
-        MWCugFdbAAAAAElFTkSuQmCC
-</value>
-  </data>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>25</value>
   </metadata>
