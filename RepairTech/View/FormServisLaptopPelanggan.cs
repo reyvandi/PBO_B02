@@ -21,6 +21,7 @@ namespace PROJECT_PBO.View
             InitializeComponent();
             this.id_akun = id_akun;
             LoadUsername();
+
         }
         private void FormServisLaptopPelanggan_Load(object sender, EventArgs e)
         {
@@ -144,6 +145,8 @@ namespace PROJECT_PBO.View
                 string namaLaptop = textBoxNamaLaptop.Text;
                 string alamat = textBoxAlamat.Text;
                 int idTeknisi = Convert.ToInt32(comboBoxTeknisi.SelectedValue);
+                string username = labelUsername.Text; // Pastikan labelUsername sudah diisi dengan username
+
 
                 // Validasi input
                 if (string.IsNullOrEmpty(namaLaptop) || string.IsNullOrEmpty(alamat) || listBoxKerusakan.Items.Count == 0)
@@ -152,47 +155,20 @@ namespace PROJECT_PBO.View
                     return;
                 }
 
-                // Insert ke tabel transaksi
-                string insertTransaksiQuery = "INSERT INTO transaksi (id_akun, laptop, alamat, id_teknisi, tanggal) VALUES (@id_akun, @laptop, @alamat, @id_teknisi, @tanggal) RETURNING id_transaksi";
-                NpgsqlParameter[] transaksiParams = {
-                    new NpgsqlParameter("@id_akun", id_akun),
-                    new NpgsqlParameter("@laptop", namaLaptop),
-                    new NpgsqlParameter("@alamat", alamat),
-                    new NpgsqlParameter("@id_teknisi", idTeknisi),
-                    new NpgsqlParameter("@tanggal", DateTime.Now)
-                };
+                // Tambahkan transaksi
+                int idTransaksi = TransaksiContext.AddTransaksi(username, namaLaptop, alamat, idTeknisi);
 
-                DataTable transaksiResult = DatabaseWrapper.queryExecutor(insertTransaksiQuery, transaksiParams);
-
-                if (transaksiResult.Rows.Count > 0)
+                if (idTransaksi > 0)
                 {
-                    int idTransaksi = Convert.ToInt32(transaksiResult.Rows[0]["id_transaksi"]);
-
-                    // Insert ke tabel detail_transaksi
+                    // Tambahkan detail transaksi
                     foreach (string kerusakan in listBoxKerusakan.Items)
                     {
-                        // Ambil ID dan biaya kerusakan berdasarkan deskripsi
-                        string selectKerusakanQuery = "SELECT id_jasa_perbaikan, biaya FROM jasa_perbaikan WHERE jenis_kerusakan = @jenis_kerusakan";
-                        NpgsqlParameter[] kerusakanParams = {
-                            new NpgsqlParameter("@jenis_kerusakan", kerusakan)
-                        };
+                        var detailKerusakan = DetailTransaksiContext.GetKerusakanByDeskripsi(kerusakan);
 
-                        DataTable kerusakanResult = DatabaseWrapper.queryExecutor(selectKerusakanQuery, kerusakanParams);
-
-                        if (kerusakanResult.Rows.Count > 0)
+                        if (detailKerusakan != null)
                         {
-                            int idKerusakan = Convert.ToInt32(kerusakanResult.Rows[0]["id_jasa_perbaikan"]);
-                            decimal biaya = Convert.ToDecimal(kerusakanResult.Rows[0]["biaya"]);
-
-                            // Insert data ke tabel detail_transaksi
-                            string insertDetailQuery = "INSERT INTO detail_transaksi (id_transaksi, id_jasa_perbaikan, biaya) VALUES (@id_transaksi, @id_jasa_perbaikan, @biaya)";
-                            NpgsqlParameter[] detailParams = {
-                                new NpgsqlParameter("@id_transaksi", idTransaksi),
-                                new NpgsqlParameter("@id_jasa_perbaikan", idKerusakan),
-                                new NpgsqlParameter("@biaya", biaya)
-                            };
-
-                            DatabaseWrapper.queryExecutor(insertDetailQuery, detailParams);
+                            detailKerusakan.id_transaksi = idTransaksi;
+                            DetailTransaksiContext.AddDetailTransaksi(detailKerusakan);
                         }
                     }
 
@@ -211,6 +187,7 @@ namespace PROJECT_PBO.View
                 MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
 
         private void btnTambahKerusakan_Click(object sender, EventArgs e)
         {

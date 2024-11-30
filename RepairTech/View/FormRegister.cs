@@ -34,6 +34,12 @@ namespace PROJECT_PBO.View
                 return;
             }
 
+            if (!email.EndsWith("@gmail.com"))
+            {
+                MessageBox.Show("Email harus diakhiri dengan @gmail.com", "Invalid Email", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             // Check if email or username already exists
             if (AkunContext.IsUsernameExist(username))
             {

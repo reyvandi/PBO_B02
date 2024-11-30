@@ -88,10 +88,11 @@
             Controls.Add(label1);
             Controls.Add(progressBar1);
             DoubleBuffered = true;
+            Enabled = false;
             FormBorderStyle = FormBorderStyle.None;
             Name = "FormLoading";
-            StartPosition = FormStartPosition.CenterScreen;
             Text = "FormLoading";
+            WindowState = FormWindowState.Maximized;
             Load += FormLoading_Load;
             ResumeLayout(false);
             PerformLayout();

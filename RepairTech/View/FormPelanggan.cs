@@ -35,23 +35,49 @@ namespace PROJECT_PBO
         {
             try
             {
-                // Mengambil data transaksi berdasarkan id_akun
-                DataTable result = TransaksiContext.GetTransaksiByAkun(id_akun);
+                // Mengambil data transaksi berdasarkan username (nama_pelanggan)
+                string username = labelUsername.Text; // Assuming the username is displayed in the label
+                DataTable result = TransaksiContext.GetTransaksiByUsername(username);
 
-                // Set the result to DataGridView
-                dataGridViewTransaksi.DataSource = result;
+                if (result.Rows.Count > 0)
+                {
+                    // Menambahkan kolom "Nomor" secara manual
+                    DataTable formattedResult = new DataTable();
+                    formattedResult.Columns.Add("Nomor", typeof(int));
+                    formattedResult.Columns.Add("Tanggal Transaksi", typeof(string));
+                    formattedResult.Columns.Add("Nama Laptop", typeof(string));
+                    formattedResult.Columns.Add("Nama Teknisi", typeof(string));
+                    formattedResult.Columns.Add("Alamat", typeof(string));
+                    formattedResult.Columns.Add("Status Transaksi", typeof(string));
 
-                dataGridViewTransaksi.Columns["tanggal"].HeaderText = "Tanggal Transaksi";
-                dataGridViewTransaksi.Columns["laptop"].HeaderText = "Nama Laptop";
-                dataGridViewTransaksi.Columns["teknisi"].HeaderText = "Nama Teknisi";
-                dataGridViewTransaksi.Columns["alamat"].HeaderText = "Alamat";
-                dataGridViewTransaksi.Columns["status_transaksi"].HeaderText = "Status Transaksi";
+                    // Menyalin data dari hasil query ke dalam DataTable baru dengan kolom yang sesuai
+                    for (int i = 0; i < result.Rows.Count; i++)
+                    {
+                        DataRow row = formattedResult.NewRow();
+                        row["Nomor"] = i + 1; // Nomor urut
+                        row["Tanggal Transaksi"] = Convert.ToDateTime(result.Rows[i]["tanggal"]).ToString("yyyy-MM-dd");
+                        row["Nama Laptop"] = result.Rows[i]["laptop"];
+                        row["Nama Teknisi"] = result.Rows[i]["teknisi"];
+                        row["Alamat"] = result.Rows[i]["alamat"];
+                        row["Status Transaksi"] = result.Rows[i]["status_transaksi"];
+                        formattedResult.Rows.Add(row);
+                    }
+
+                    // Mengatur data ke DataGridView
+                    dataGridViewTransaksi.DataSource = formattedResult;
+                }
+                //else
+                //{
+                //    MessageBox.Show("Tidak ada data transaksi untuk pengguna ini.");
+                //    dataGridViewTransaksi.DataSource = null;
+                //}
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error: " + ex.Message);
             }
         }
+
 
         public void LoadUsername()
         {
@@ -101,12 +127,6 @@ namespace PROJECT_PBO
             this.Hide();
             FormServisLaptopPelanggan formServisLaptopPelanggan = new FormServisLaptopPelanggan(id_akun);
             formServisLaptopPelanggan.Show();
-            //if (formServisLaptopPelanggan.ShowDialog() == DialogResult.OK)
-            //{
-            //    LoadDataTransaksi();
-            //}
-
-            //this.Show();
         }
 
         private void buttonLogout_Click(object sender, EventArgs e)

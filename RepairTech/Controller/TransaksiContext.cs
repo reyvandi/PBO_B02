@@ -9,55 +9,115 @@ namespace PROJECT_PBO.Controller
     {
         private static string table = "transaksi";
 
-        public static DataTable GetTransaksiByAkun(int id_akun)
+        // Menambahkan transaksi baru
+        public static int AddTransaksi(string username, string namaLaptop, string alamat, int idTeknisi)
         {
-            string query = @"
-                SELECT 
-                    t.tanggal, 
-                    t.laptop, 
-                    k.nama AS teknisi, 
-                    t.alamat, 
-                    t.status_transaksi 
-                FROM transaksi t
-                JOIN teknisi k ON t.id_teknisi = k.id_teknisi
-                WHERE t.id_akun = @id_akun
-                ORDER BY t.tanggal DESC";
+            // Query untuk memasukkan transaksi baru
+            string query = $@"
+                INSERT INTO {table} (nama_pelanggan, laptop, alamat, id_teknisi, tanggal)
+                VALUES (@nama_pelanggan, @laptop, @alamat, @id_teknisi, @tanggal)
+                RETURNING id_transaksi";
 
-            NpgsqlParameter[] parameters = {
-                new NpgsqlParameter("@id_akun", id_akun)
+                    NpgsqlParameter[] parameters =
+                    {
+                new NpgsqlParameter("@nama_pelanggan", username),  // Gunakan langsung username
+                new NpgsqlParameter("@laptop", namaLaptop),
+                new NpgsqlParameter("@alamat", alamat),
+                new NpgsqlParameter("@id_teknisi", idTeknisi),
+                new NpgsqlParameter("@tanggal", DateTime.Now)
+            };
+
+            return executeScalar(query, parameters); // Return the ID of the newly added transaction
+        }
+
+
+
+        // Mengambil semua transaksi berdasarkan username
+        public static DataTable GetTransaksiByUsername(string username)
+        {
+            string query = $@"
+                SELECT t.tanggal, t.laptop, t.alamat, t.status_transaksi, 
+                       te.nama AS teknisi
+                FROM {table} t
+                JOIN teknisi te ON t.id_teknisi = te.id_teknisi
+                JOIN akun a ON t.nama_pelanggan = a.username
+                WHERE a.username = @username";
+
+            NpgsqlParameter[] parameters =
+            {
+                new NpgsqlParameter("@username", username)
             };
 
             return queryExecutor(query, parameters);
         }
 
-        // Method untuk menambahkan transaksi baru
-        public static int AddTransaksi(M_Transaksi transaksiBaru)
+
+        // Memperbarui status transaksi berdasarkan ID transaksi
+        public static bool UpdateStatusTransaksi(int id_transaksi, string statusBaru)
         {
             string query = $@"
-                INSERT INTO {table} (tanggal, laptop, id_akun, id_teknisi, alamat, status_transaksi)
-                VALUES (@tanggal, @laptop, @id_akun, @id_teknisi, @alamat, @status_transaksi)
-                RETURNING id_transaksi";
+                UPDATE {table}
+                SET status_transaksi = @statusBaru
+                WHERE id_transaksi = @id_transaksi";
 
             NpgsqlParameter[] parameters =
             {
-                new NpgsqlParameter("@tanggal", transaksiBaru.tanggal),
-                new NpgsqlParameter("@laptop", transaksiBaru.laptop),
-                new NpgsqlParameter("@id_akun", transaksiBaru.id_akun),
-                new NpgsqlParameter("@id_teknisi", transaksiBaru.id_teknisi),
-                new NpgsqlParameter("@alamat", transaksiBaru.alamat),
-                new NpgsqlParameter("@status_transaksi", transaksiBaru.status_transaksi)
+                new NpgsqlParameter("@statusBaru", statusBaru),
+                new NpgsqlParameter("@id_transaksi", id_transaksi)
             };
 
-            // Eksekusi query dan kembalikan ID transaksi
-            return executeScalar(query, parameters);
+            try
+            {
+                DatabaseWrapper.commandExecutor(query, parameters);
+                return true;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine($"Error saat memperbarui status transaksi: {e.Message}");
+                return false;
+            }
         }
 
-        // Method untuk mengambil semua transaksi
-        public static DataTable All()
+
+
+        // Mengambil detail transaksi berdasarkan ID transaksi
+        public static DataRow GetTransaksiById(int id_transaksi)
         {
             string query = $@"
-                SELECT * FROM {table}
-                ORDER BY tanggal DESC";
+                SELECT t.id_transaksi, t.laptop, t.alamat, t.tanggal, t.status_transaksi,
+                       t.nama_pelanggan, te.nama AS teknisi
+                FROM {table} t
+                JOIN teknisi te ON t.id_teknisi = te.id_teknisi
+                WHERE t.id_transaksi = @id_transaksi";
+
+            NpgsqlParameter[] parameters =
+            {
+                new NpgsqlParameter("@id_transaksi", id_transaksi)
+            };
+
+            DataTable result = queryExecutor(query, parameters);
+            return result.Rows.Count > 0 ? result.Rows[0] : null;
+        }
+
+        public static DataTable GetAllTransaksiWithDetails()
+        {
+            string query = @"
+                SELECT 
+                    t.id_transaksi,
+                    t.tanggal,
+                    t.nama_pelanggan,
+                    t.laptop AS merk_laptop,
+                    STRING_AGG(jp.jenis_kerusakan, ', ') AS kerusakan,
+                    t.alamat,
+                    t.status_transaksi
+                FROM 
+                    transaksi t
+                LEFT JOIN 
+                    detail_transaksi dt ON t.id_transaksi = dt.id_transaksi
+                LEFT JOIN 
+                    jasa_perbaikan jp ON dt.id_jasa_perbaikan = jp.id_jasa_perbaikan
+                GROUP BY 
+                    t.id_transaksi, t.tanggal, t.nama_pelanggan, t.laptop, t.alamat, t.status_transaksi";
 
             return queryExecutor(query);
         }

@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using FontAwesome.Sharp;
 using PROJECT_PBO;
+using PROJECT_PBO.Controller;
 
 namespace PROJECT_PBO
 {
@@ -19,21 +20,129 @@ namespace PROJECT_PBO
         public FormAdmin1()
         {
             InitializeComponent();
-            this.Resize += FormAdmin1_Resize;
-        }
 
-        private void FormAdmin1_Resize(object sender, EventArgs e)
+        }
+        private void FormAdmin1_Load(object sender, EventArgs e)
         {
-            //// Tentukan margin dari kanan dan bawah
-            //int marginRight = 0; // Misalnya 10px dari kanan
-            //int marginBottom = 0; // Misalnya 10px dari bawah
-
-            //// Atur lokasi tombol logout
-            //panel7.Location = new Point(
-            //    this.ClientSize.Width - panel7.Width - marginRight,
-            ////    this.ClientSize.Height - panel7.Height - marginBottom
-            //);
+            LoadDataToDataGridView();
+            dataGridView1.SortCompare += DataGridView1_SortCompare;
+            dataGridView1.CellValueChanged += DataGridView1_CellValueChanged;
         }
+
+        private void AddStatusComboBoxColumn()
+        {
+            // Periksa apakah kolom 'status_transaksi' ada sebelum menghapus
+            if (dataGridView1.Columns.Contains("status_transaksi"))
+            {
+                dataGridView1.Columns.Remove("status_transaksi");
+            }
+
+            // Tambahkan ComboBox untuk kolom Status Transaksi
+            DataGridViewComboBoxColumn comboBoxColumn = new DataGridViewComboBoxColumn
+            {
+                HeaderText = "Status Transaksi",
+                Name = "StatusTransaksiComboBox",
+                DataPropertyName = "status_transaksi", // Sesuaikan dengan nama kolom database
+                DataSource = new string[] { "Belum Selesai", "Telah Selesai" },
+                FlatStyle = FlatStyle.Flat
+            };
+
+            dataGridView1.Columns.Add(comboBoxColumn);
+        }
+
+
+        private void DataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && dataGridView1.Columns[e.ColumnIndex].Name == "StatusTransaksiComboBox")
+            {
+                // Validasi keberadaan kolom
+                if (!dataGridView1.Columns.Contains("id_transaksi"))
+                {
+                    MessageBox.Show("Kolom 'id_transaksi' tidak ditemukan di DataGridView.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                // Validasi nilai
+                if (dataGridView1.Rows[e.RowIndex].Cells["id_transaksi"].Value == null)
+                {
+                    MessageBox.Show("ID Transaksi tidak boleh kosong.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                int idTransaksi = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["id_transaksi"].Value);
+                string statusBaru = dataGridView1.Rows[e.RowIndex].Cells["StatusTransaksiComboBox"].Value?.ToString();
+
+                if (!string.IsNullOrEmpty(statusBaru))
+                {
+                    bool isUpdated = TransaksiContext.UpdateStatusTransaksi(idTransaksi, statusBaru);
+
+                    if (isUpdated)
+                    {
+                        MessageBox.Show("Status transaksi berhasil diperbarui.", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Gagal memperbarui status transaksi.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+        }
+
+        private void LoadDataToDataGridView()
+        {
+            try
+            {
+                DataTable dataTable = TransaksiContext.GetAllTransaksiWithDetails();
+
+                // Tambahkan kolom tersembunyi untuk penyortiran
+                if (!dataTable.Columns.Contains("status_transaksi_sort"))
+                {
+                    dataTable.Columns.Add("status_transaksi_sort", typeof(int));
+                    foreach (DataRow row in dataTable.Rows)
+                    {
+                        row["status_transaksi_sort"] = row["status_transaksi"].ToString() == "Belum Selesai" ? 1 : 2;
+                    }
+                }
+
+                dataGridView1.DataSource = dataTable;
+
+                // Atur header kolom
+                dataGridView1.Columns["id_transaksi"].Visible = false;
+                dataGridView1.Columns["tanggal"].HeaderText = "Tanggal";
+                dataGridView1.Columns["nama_pelanggan"].HeaderText = "Nama Pelanggan";
+                dataGridView1.Columns["merk_laptop"].HeaderText = "Merk Laptop";
+                dataGridView1.Columns["kerusakan"].HeaderText = "Kerusakan";
+                dataGridView1.Columns["alamat"].HeaderText = "Alamat";
+
+                // Sembunyikan kolom penyortiran
+                dataGridView1.Columns["status_transaksi_sort"].Visible = false;
+
+                // Tambahkan ComboBox untuk kolom Status Transaksi
+                AddStatusComboBoxColumn();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void DataGridView1_SortCompare(object sender, DataGridViewSortCompareEventArgs e)
+        {
+            // Jika kolom adalah StatusTransaksiComboBox
+            if (e.Column.Name == "StatusTransaksiComboBox")
+            {
+                // Ambil nilai kolom penyortiran
+                int value1 = Convert.ToInt32(dataGridView1.Rows[e.RowIndex1].Cells["status_transaksi_sort"].Value);
+                int value2 = Convert.ToInt32(dataGridView1.Rows[e.RowIndex2].Cells["status_transaksi_sort"].Value);
+
+                // Bandingkan nilai
+                e.SortResult = value1.CompareTo(value2);
+
+                // Tentukan event sudah ditangani
+                e.Handled = true;
+            }
+        }
+
 
         private void buttonLogout_Click(object sender, EventArgs e)
         {
@@ -57,10 +166,6 @@ namespace PROJECT_PBO
 
         }
 
-        private void FormAdmin1_Load(object sender, EventArgs e)
-        {
-
-        }
 
         private void buttonKomponen_Click(object sender, EventArgs e)
         {

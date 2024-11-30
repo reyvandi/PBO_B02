@@ -1,20 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Data;
 using Npgsql;
-using PROJECT_PBO.Controller;
 using PROJECT_PBO.Model;
 
 namespace PROJECT_PBO.Controller
 {
-    internal class DetailTransaksiContext:DatabaseWrapper
+    internal class DetailTransaksiContext : DatabaseWrapper
     {
         private static string table = "detail_transaksi";
 
-        // Method untuk menambahkan detail transaksi
+        // Menambahkan detail transaksi
         public static int AddDetailTransaksi(M_DetailTransaksi detailTransaksiBaru)
         {
             string query = $@"
@@ -29,11 +23,10 @@ namespace PROJECT_PBO.Controller
                 new NpgsqlParameter("@biaya", detailTransaksiBaru.biaya)
             };
 
-            // Eksekusi query dan kembalikan ID detail transaksi
             return executeScalar(query, parameters);
         }
 
-        // Method untuk mendapatkan semua detail transaksi berdasarkan id_transaksi
+        // Mendapatkan semua detail transaksi berdasarkan id_transaksi
         public static DataTable GetDetailTransaksiByIdTransaksi(int id_transaksi)
         {
             string query = $@"
@@ -51,19 +44,27 @@ namespace PROJECT_PBO.Controller
             return queryExecutor(query, parameters);
         }
 
-        // Method untuk menghapus detail transaksi berdasarkan id_detail_transaksi
-        //public static int DeleteDetailTransaksi(int id_detail_transaksi)
-        //{
-        //    string query = $@"
-        //        DELETE FROM {table}
-        //        WHERE id_detail_transaksi = @id_detail_transaksi";
+        // Mendapatkan biaya dan ID jasa perbaikan berdasarkan deskripsi kerusakan
+        public static M_DetailTransaksi GetKerusakanByDeskripsi(string jenis_kerusakan)
+        {
+            string query = "SELECT id_jasa_perbaikan, biaya FROM jasa_perbaikan WHERE jenis_kerusakan = @jenis_kerusakan";
 
-        //    NpgsqlParameter[] parameters =
-        //    {
-        //        new NpgsqlParameter("@id_detail_transaksi", id_detail_transaksi)
-        //    };
+            NpgsqlParameter[] parameters =
+            {
+                new NpgsqlParameter("@jenis_kerusakan", jenis_kerusakan)
+            };
 
-        //    return executeNonQuery(query, parameters);
-        //}
+            DataTable result = queryExecutor(query, parameters);
+
+            if (result.Rows.Count > 0)
+            {
+                return new M_DetailTransaksi
+                {
+                    id_jasa_perbaikan = Convert.ToInt32(result.Rows[0]["id_jasa_perbaikan"]),
+                    biaya = Convert.ToDecimal(result.Rows[0]["biaya"])
+                };
+            }
+            return null;
+        }
     }
 }

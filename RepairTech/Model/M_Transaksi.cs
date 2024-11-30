@@ -18,7 +18,7 @@ namespace PROJECT_PBO.Model
         public string status_transaksi { get; set; }
         [Required]
         [ForeignKey("M_Akun")]
-        public int id_akun { get; set; }
+        public string nama_pelanggan { get; set; }
         [ForeignKey("M_Teknisi")]
         public int id_teknisi { get; set; }
     }
