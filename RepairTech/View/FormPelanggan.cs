@@ -45,7 +45,7 @@ namespace PROJECT_PBO
                     DataTable formattedResult = new DataTable();
                     formattedResult.Columns.Add("Nomor", typeof(int));
                     formattedResult.Columns.Add("Tanggal Transaksi", typeof(string));
-                    formattedResult.Columns.Add("Nama Laptop", typeof(string));
+                    formattedResult.Columns.Add("Merk Laptop", typeof(string));
                     formattedResult.Columns.Add("Nama Teknisi", typeof(string));
                     formattedResult.Columns.Add("Alamat", typeof(string));
                     formattedResult.Columns.Add("Status Transaksi", typeof(string));
@@ -56,7 +56,7 @@ namespace PROJECT_PBO
                         DataRow row = formattedResult.NewRow();
                         row["Nomor"] = i + 1; // Nomor urut
                         row["Tanggal Transaksi"] = Convert.ToDateTime(result.Rows[i]["tanggal"]).ToString("yyyy-MM-dd");
-                        row["Nama Laptop"] = result.Rows[i]["laptop"];
+                        row["Merk Laptop"] = result.Rows[i]["laptop"];
                         row["Nama Teknisi"] = result.Rows[i]["teknisi"];
                         row["Alamat"] = result.Rows[i]["alamat"];
                         row["Status Transaksi"] = result.Rows[i]["status_transaksi"];
@@ -177,6 +177,11 @@ namespace PROJECT_PBO
             this.Hide();
             FormServisLaptopPelanggan formServisLaptopPelanggan = new FormServisLaptopPelanggan(id_akun);
             formServisLaptopPelanggan.Show();
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

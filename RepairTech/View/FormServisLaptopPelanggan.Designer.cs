@@ -91,7 +91,7 @@
             sidebar.MaximumSize = new Size(169, 799);
             sidebar.MinimumSize = new Size(50, 49);
             sidebar.Name = "sidebar";
-            sidebar.Size = new Size(169, 449);
+            sidebar.Size = new Size(169, 624);
             sidebar.TabIndex = 1;
             sidebar.WrapContents = false;
             // 
@@ -218,14 +218,14 @@
             panel9.Dock = DockStyle.Top;
             panel9.Location = new Point(169, 0);
             panel9.Name = "panel9";
-            panel9.Size = new Size(790, 70);
+            panel9.Size = new Size(1048, 70);
             panel9.TabIndex = 16;
             // 
             // pictureBox1
             // 
             pictureBox1.Dock = DockStyle.Right;
             pictureBox1.Image = Properties.Resources.rpimg;
-            pictureBox1.Location = new Point(570, 0);
+            pictureBox1.Location = new Point(828, 0);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(220, 70);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -262,7 +262,7 @@
             label3.Anchor = AnchorStyles.None;
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.Location = new Point(300, 35);
+            label3.Location = new Point(429, 35);
             label3.Name = "label3";
             label3.Size = new Size(189, 30);
             label3.TabIndex = 17;
@@ -274,7 +274,7 @@
             panel3.Dock = DockStyle.Top;
             panel3.Location = new Point(169, 70);
             panel3.Name = "panel3";
-            panel3.Size = new Size(790, 100);
+            panel3.Size = new Size(1048, 100);
             panel3.TabIndex = 18;
             // 
             // tableLayoutPanel1
@@ -287,32 +287,29 @@
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 1;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel1.Size = new Size(790, 100);
+            tableLayoutPanel1.Size = new Size(1048, 100);
             tableLayoutPanel1.TabIndex = 19;
             // 
             // label4
             // 
-            label4.Anchor = AnchorStyles.None;
             label4.AutoSize = true;
-            label4.Location = new Point(300, 1);
+            label4.Location = new Point(429, 1);
             label4.Name = "label4";
-            label4.Size = new Size(79, 15);
+            label4.Size = new Size(74, 15);
             label4.TabIndex = 20;
-            label4.Text = "Nama Laptop";
+            label4.Text = "Merk Laptop";
             // 
             // textBoxNamaLaptop
             // 
-            textBoxNamaLaptop.Anchor = AnchorStyles.None;
-            textBoxNamaLaptop.Location = new Point(300, 19);
+            textBoxNamaLaptop.Location = new Point(429, 19);
             textBoxNamaLaptop.Name = "textBoxNamaLaptop";
             textBoxNamaLaptop.Size = new Size(185, 23);
             textBoxNamaLaptop.TabIndex = 0;
             // 
             // label5
             // 
-            label5.Anchor = AnchorStyles.None;
             label5.AutoSize = true;
-            label5.Location = new Point(300, 9);
+            label5.Location = new Point(429, 9);
             label5.Name = "label5";
             label5.Size = new Size(61, 15);
             label5.TabIndex = 21;
@@ -320,18 +317,17 @@
             // 
             // comboBoxKerusakan
             // 
-            comboBoxKerusakan.Anchor = AnchorStyles.None;
             comboBoxKerusakan.FormattingEnabled = true;
-            comboBoxKerusakan.Location = new Point(300, 27);
+            comboBoxKerusakan.Location = new Point(429, 27);
             comboBoxKerusakan.Name = "comboBoxKerusakan";
             comboBoxKerusakan.Size = new Size(185, 23);
             comboBoxKerusakan.TabIndex = 0;
+            comboBoxKerusakan.SelectedIndexChanged += comboBoxKerusakan_SelectedIndexChanged;
             // 
             // label6
             // 
-            label6.Anchor = AnchorStyles.None;
             label6.AutoSize = true;
-            label6.Location = new Point(300, 6);
+            label6.Location = new Point(429, 6);
             label6.Name = "label6";
             label6.Size = new Size(42, 15);
             label6.TabIndex = 22;
@@ -339,17 +335,15 @@
             // 
             // comboBoxTeknisi
             // 
-            comboBoxTeknisi.Anchor = AnchorStyles.None;
             comboBoxTeknisi.FormattingEnabled = true;
-            comboBoxTeknisi.Location = new Point(300, 24);
+            comboBoxTeknisi.Location = new Point(429, 24);
             comboBoxTeknisi.Name = "comboBoxTeknisi";
             comboBoxTeknisi.Size = new Size(185, 23);
             comboBoxTeknisi.TabIndex = 0;
             // 
             // textBoxAlamat
             // 
-            textBoxAlamat.Anchor = AnchorStyles.None;
-            textBoxAlamat.Location = new Point(300, 24);
+            textBoxAlamat.Location = new Point(429, 24);
             textBoxAlamat.Name = "textBoxAlamat";
             textBoxAlamat.Size = new Size(185, 23);
             textBoxAlamat.TabIndex = 22;
@@ -357,9 +351,8 @@
             // 
             // label7
             // 
-            label7.Anchor = AnchorStyles.None;
             label7.AutoSize = true;
-            label7.Location = new Point(300, 6);
+            label7.Location = new Point(429, 6);
             label7.Name = "label7";
             label7.Size = new Size(45, 15);
             label7.TabIndex = 23;
@@ -371,7 +364,6 @@
             // 
             // buttonTambahTransaksi
             // 
-            buttonTambahTransaksi.Anchor = AnchorStyles.None;
             buttonTambahTransaksi.BackColor = Color.Blue;
             buttonTambahTransaksi.FlatAppearance.BorderSize = 0;
             buttonTambahTransaksi.FlatStyle = FlatStyle.Flat;
@@ -382,7 +374,7 @@
             buttonTambahTransaksi.IconFont = FontAwesome.Sharp.IconFont.Auto;
             buttonTambahTransaksi.IconSize = 17;
             buttonTambahTransaksi.ImageAlign = ContentAlignment.MiddleRight;
-            buttonTambahTransaksi.Location = new Point(294, 32);
+            buttonTambahTransaksi.Location = new Point(423, 32);
             buttonTambahTransaksi.Name = "buttonTambahTransaksi";
             buttonTambahTransaksi.Size = new Size(200, 35);
             buttonTambahTransaksi.TabIndex = 24;
@@ -395,7 +387,7 @@
             // 
             listBoxKerusakan.FormattingEnabled = true;
             listBoxKerusakan.ItemHeight = 15;
-            listBoxKerusakan.Location = new Point(494, 67);
+            listBoxKerusakan.Location = new Point(429, 65);
             listBoxKerusakan.Name = "listBoxKerusakan";
             listBoxKerusakan.Size = new Size(185, 49);
             listBoxKerusakan.TabIndex = 25;
@@ -408,7 +400,7 @@
             panel4.Dock = DockStyle.Top;
             panel4.Location = new Point(169, 170);
             panel4.Name = "panel4";
-            panel4.Size = new Size(790, 50);
+            panel4.Size = new Size(1048, 50);
             panel4.TabIndex = 28;
             // 
             // panel5
@@ -421,15 +413,15 @@
             panel5.Dock = DockStyle.Top;
             panel5.Location = new Point(169, 220);
             panel5.Name = "panel5";
-            panel5.Size = new Size(790, 138);
+            panel5.Size = new Size(1048, 138);
             panel5.TabIndex = 29;
             // 
             // btnHapusKerusakan
             // 
             btnHapusKerusakan.AutoSize = true;
-            btnHapusKerusakan.Location = new Point(712, 75);
+            btnHapusKerusakan.Location = new Point(648, 75);
             btnHapusKerusakan.Name = "btnHapusKerusakan";
-            btnHapusKerusakan.Size = new Size(158, 39);
+            btnHapusKerusakan.Size = new Size(169, 39);
             btnHapusKerusakan.TabIndex = 27;
             btnHapusKerusakan.Text = "Hapus Kerusakan";
             btnHapusKerusakan.UseVisualStyleBackColor = true;
@@ -438,7 +430,7 @@
             // btnTambahKerusakan
             // 
             btnTambahKerusakan.AutoSize = true;
-            btnTambahKerusakan.Location = new Point(712, 18);
+            btnTambahKerusakan.Location = new Point(648, 18);
             btnTambahKerusakan.Name = "btnTambahKerusakan";
             btnTambahKerusakan.Size = new Size(169, 39);
             btnTambahKerusakan.TabIndex = 26;
@@ -453,7 +445,7 @@
             panel6.Dock = DockStyle.Top;
             panel6.Location = new Point(169, 358);
             panel6.Name = "panel6";
-            panel6.Size = new Size(790, 50);
+            panel6.Size = new Size(1048, 50);
             panel6.TabIndex = 30;
             // 
             // panel7
@@ -463,7 +455,7 @@
             panel7.Dock = DockStyle.Top;
             panel7.Location = new Point(169, 408);
             panel7.Name = "panel7";
-            panel7.Size = new Size(790, 50);
+            panel7.Size = new Size(1048, 50);
             panel7.TabIndex = 31;
             // 
             // panel10
@@ -472,14 +464,14 @@
             panel10.Dock = DockStyle.Top;
             panel10.Location = new Point(169, 458);
             panel10.Name = "panel10";
-            panel10.Size = new Size(790, 70);
+            panel10.Size = new Size(1048, 70);
             panel10.TabIndex = 32;
             // 
             // FormServisLaptopPelanggan
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(959, 449);
+            ClientSize = new Size(1217, 624);
             Controls.Add(panel10);
             Controls.Add(panel7);
             Controls.Add(panel6);

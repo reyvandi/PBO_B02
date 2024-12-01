@@ -99,5 +99,30 @@ namespace PROJECT_PBO.Controller
             DataTable dataKomponen = queryExecutor(query, parameters);
             return dataKomponen;
         }
+
+        public static M_Komponen GetByNamaKomponen(string namaKomponen)
+        {
+            string query = "SELECT * FROM komponen WHERE nama_komponen = @namaKomponen;";
+            NpgsqlParameter[] parameters = new NpgsqlParameter[]
+            {
+                new NpgsqlParameter("@namaKomponen", namaKomponen)
+            };
+
+            DataTable result = DatabaseWrapper.queryExecutor(query, parameters);
+
+            if (result.Rows.Count > 0)
+            {
+                DataRow row = result.Rows[0];
+                return new M_Komponen
+                {
+                    id_komponen = Convert.ToInt32(row["id_komponen"]),
+                    nama_komponen = row["nama_komponen"].ToString(),
+                    harga = Convert.ToDecimal(row["harga"]),
+                    stok = Convert.ToInt32(row["stok"])
+                };
+            }
+
+            return null; // Data tidak ditemukan
+        }
     }
 }

@@ -12,6 +12,9 @@ namespace PROJECT_PBO.Model
     {
         [Key]
         public int id_detail_komponen { get; set; }
+        public decimal harga { get; set; }
+        public int jumlah { get; set; }
+
         [ForeignKey("M_Transaksi")]
         public int id_transaksi { get; set; }
         [ForeignKey("M_Komponen")]

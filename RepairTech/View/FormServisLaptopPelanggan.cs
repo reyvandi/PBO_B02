@@ -231,5 +231,10 @@ namespace PROJECT_PBO.View
         {
 
         }
+
+        private void comboBoxKerusakan_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

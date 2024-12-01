@@ -261,7 +261,11 @@
             // 
             // dataGridViewTransaksi
             // 
+            dataGridViewTransaksi.AllowUserToAddRows = false;
             dataGridViewTransaksi.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewTransaksi.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            dataGridViewTransaksi.BackgroundColor = SystemColors.Control;
+            dataGridViewTransaksi.BorderStyle = BorderStyle.None;
             dataGridViewTransaksi.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewTransaksi.Dock = DockStyle.Fill;
             dataGridViewTransaksi.Location = new Point(30, 30);
@@ -278,6 +282,7 @@
             panel1.Padding = new Padding(30);
             panel1.Size = new Size(815, 497);
             panel1.TabIndex = 16;
+            panel1.Paint += panel1_Paint;
             // 
             // tableLayoutPanel1
             // 

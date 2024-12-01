@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using FontAwesome.Sharp;
 using PROJECT_PBO;
 using PROJECT_PBO.Controller;
+using PROJECT_PBO.View;
 
 namespace PROJECT_PBO
 {
@@ -92,6 +93,7 @@ namespace PROJECT_PBO
         {
             try
             {
+                // Ambil data transaksi dengan detailnya
                 DataTable dataTable = TransaksiContext.GetAllTransaksiWithDetails();
 
                 // Tambahkan kolom tersembunyi untuk penyortiran
@@ -104,6 +106,7 @@ namespace PROJECT_PBO
                     }
                 }
 
+                // Set DataSource untuk DataGridView
                 dataGridView1.DataSource = dataTable;
 
                 // Atur header kolom
@@ -113,6 +116,8 @@ namespace PROJECT_PBO
                 dataGridView1.Columns["merk_laptop"].HeaderText = "Merk Laptop";
                 dataGridView1.Columns["kerusakan"].HeaderText = "Kerusakan";
                 dataGridView1.Columns["alamat"].HeaderText = "Alamat";
+                dataGridView1.Columns["komponen"].HeaderText = "Komponen Yang Dibeli";  // Kolom Komponen
+                dataGridView1.Columns["total_harga"].HeaderText = "Total Harga";  // Kolom Total Harga
 
                 // Sembunyikan kolom penyortiran
                 dataGridView1.Columns["status_transaksi_sort"].Visible = false;
@@ -251,7 +256,9 @@ namespace PROJECT_PBO
 
         private void buttonTambah_Click(object sender, EventArgs e)
         {
-
+            AddTransaksiForm addTransaksiForm = new AddTransaksiForm();
+            addTransaksiForm.Show();
+            this.Hide();
         }
 
         private void panel9_Paint(object sender, PaintEventArgs e)

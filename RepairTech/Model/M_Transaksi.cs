@@ -20,6 +20,6 @@ namespace PROJECT_PBO.Model
         [ForeignKey("M_Akun")]
         public string nama_pelanggan { get; set; }
         [ForeignKey("M_Teknisi")]
-        public int id_teknisi { get; set; }
+        public int? id_teknisi { get; set; }
     }
 }

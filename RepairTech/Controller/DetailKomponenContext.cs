@@ -9,5 +9,6 @@ namespace PROJECT_PBO.Controller
 {
     internal class DetailKomponenContext : DatabaseWrapper
     {
+
     }
 }

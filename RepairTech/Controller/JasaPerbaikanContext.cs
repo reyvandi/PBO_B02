@@ -100,5 +100,29 @@ namespace PROJECT_PBO.Controller
             DataTable dataJasaPerbaikan = queryExecutor(query, parameters);
             return dataJasaPerbaikan;
         }
+
+        public static M_JasaPerbaikan GetByJenisKerusakan(string jenisKerusakan)
+        {
+            string query = "SELECT * FROM jasa_perbaikan WHERE jenis_kerusakan = @jenisKerusakan;";
+            NpgsqlParameter[] parameters = new NpgsqlParameter[]
+            {
+        new NpgsqlParameter("@jenisKerusakan", jenisKerusakan)
+            };
+
+            DataTable result = DatabaseWrapper.queryExecutor(query, parameters);
+
+            if (result.Rows.Count > 0)
+            {
+                DataRow row = result.Rows[0];
+                return new M_JasaPerbaikan
+                {
+                    id_jasa_perbaikan = Convert.ToInt32(row["id_jasa_perbaikan"]),
+                    jenis_kerusakan = row["jenis_kerusakan"].ToString(),
+                    biaya = Convert.ToDecimal(row["biaya"])
+                };
+            }
+
+            return null; // Data tidak ditemukan
+        }
     }
 }
