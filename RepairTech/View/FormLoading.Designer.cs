@@ -52,6 +52,7 @@
             // 
             // label1
             // 
+            label1.Anchor = AnchorStyles.Bottom;
             label1.AutoSize = true;
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -65,6 +66,7 @@
             // 
             // label2
             // 
+            label2.Anchor = AnchorStyles.Bottom;
             label2.AutoSize = true;
             label2.BackColor = Color.Transparent;
             label2.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);

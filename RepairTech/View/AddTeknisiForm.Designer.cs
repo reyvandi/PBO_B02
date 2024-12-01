@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddTeknisiForm));
             label1 = new Label();
             textBox1 = new TextBox();
             label2 = new Label();
@@ -180,7 +179,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(24, 23, 80);
-            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImage = Properties.Resources.Frame_14;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1347, 637);
             Controls.Add(buttonAdd);
