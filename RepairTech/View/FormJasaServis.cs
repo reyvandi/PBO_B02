@@ -37,6 +37,8 @@ namespace PROJECT_PBO
                     MessageBox.Show("Tidak ada data yang ditemukan!");
                     return;
                 }
+                //agar hilang bagian samping kiri nya
+                dataGridView1.RowHeadersVisible = false;
 
 
                 dataGridView1.Columns.Clear();
@@ -45,7 +47,9 @@ namespace PROJECT_PBO
                 DataGridViewTextBoxColumn nomorColumn = new DataGridViewTextBoxColumn
                 {
                     HeaderText = "No",
-                    Name = "nomor"
+                    Name = "nomor",
+                    Width = 50,
+                    AutoSizeMode = DataGridViewAutoSizeColumnMode.None
                 };
                 dataGridView1.Columns.Add(nomorColumn);
 

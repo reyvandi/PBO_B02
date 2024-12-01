@@ -44,11 +44,14 @@ namespace PROJECT_PBO
 
                 dataGridView1.Columns.Clear();
 
+                dataGridView1.RowHeadersVisible = false;
 
                 DataGridViewTextBoxColumn nomorColumn = new DataGridViewTextBoxColumn
                 {
                     HeaderText = "No",
-                    Name = "nomor"
+                    Name = "nomor",
+                    Width = 50,
+                    AutoSizeMode = DataGridViewAutoSizeColumnMode.None
                 };
                 dataGridView1.Columns.Add(nomorColumn);
 

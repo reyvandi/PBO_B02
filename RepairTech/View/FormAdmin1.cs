@@ -30,64 +30,80 @@ namespace PROJECT_PBO
             dataGridView1.CellValueChanged += DataGridView1_CellValueChanged;
         }
 
+
         private void AddStatusComboBoxColumn()
         {
-            // Periksa apakah kolom 'status_transaksi' ada sebelum menghapus
-            if (dataGridView1.Columns.Contains("status_transaksi"))
+            if (!dataGridView1.Columns.Contains("StatusTransaksiComboBox"))
             {
-                dataGridView1.Columns.Remove("status_transaksi");
+                DataGridViewComboBoxColumn comboBoxColumn = new DataGridViewComboBoxColumn
+                {
+                    Name = "StatusTransaksiComboBox",
+                    HeaderText = "Status Transaksi",
+                    DataSource = new string[] { "Belum Selesai", "Telah Selesai" },
+                    ValueType = typeof(string)
+                };
+
+                dataGridView1.Columns.Add(comboBoxColumn);
+
+                // Sinkronkan nilai default dengan kolom status_transaksi
+                foreach (DataGridViewRow row in dataGridView1.Rows)
+                {
+                    row.Cells["StatusTransaksiComboBox"].Value = row.Cells["status_transaksi"].Value?.ToString();
+                }
             }
-
-            // Tambahkan ComboBox untuk kolom Status Transaksi
-            DataGridViewComboBoxColumn comboBoxColumn = new DataGridViewComboBoxColumn
-            {
-                HeaderText = "Status Transaksi",
-                Name = "StatusTransaksiComboBox",
-                DataPropertyName = "status_transaksi", // Sesuaikan dengan nama kolom database
-                DataSource = new string[] { "Belum Selesai", "Telah Selesai" },
-                FlatStyle = FlatStyle.Flat
-            };
-
-            dataGridView1.Columns.Add(comboBoxColumn);
         }
 
 
         private void DataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0 && dataGridView1.Columns[e.ColumnIndex].Name == "StatusTransaksiComboBox")
+            try
             {
-                // Validasi keberadaan kolom
-                if (!dataGridView1.Columns.Contains("id_transaksi"))
+                // Pastikan bahwa baris dan kolom yang dipilih valid
+                if (e.RowIndex < 0 || e.ColumnIndex < 0) return;
+
+                // Pastikan kolom adalah "StatusTransaksiComboBox"
+                if (dataGridView1.Columns[e.ColumnIndex].Name == "StatusTransaksiComboBox")
                 {
-                    MessageBox.Show("Kolom 'id_transaksi' tidak ditemukan di DataGridView.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-
-                // Validasi nilai
-                if (dataGridView1.Rows[e.RowIndex].Cells["id_transaksi"].Value == null)
-                {
-                    MessageBox.Show("ID Transaksi tidak boleh kosong.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-
-                int idTransaksi = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["id_transaksi"].Value);
-                string statusBaru = dataGridView1.Rows[e.RowIndex].Cells["StatusTransaksiComboBox"].Value?.ToString();
-
-                if (!string.IsNullOrEmpty(statusBaru))
-                {
-                    bool isUpdated = TransaksiContext.UpdateStatusTransaksi(idTransaksi, statusBaru);
-
-                    if (isUpdated)
+                    // Validasi keberadaan kolom "id_transaksi"
+                    if (!dataGridView1.Columns.Contains("id_transaksi"))
                     {
-                        MessageBox.Show("Status transaksi berhasil diperbarui.", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Kolom 'id_transaksi' tidak ditemukan di DataGridView.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
                     }
-                    else
+
+                    // Validasi bahwa nilai ID transaksi tidak kosong
+                    var idTransaksiValue = dataGridView1.Rows[e.RowIndex].Cells["id_transaksi"].Value;
+                    if (idTransaksiValue == null || string.IsNullOrEmpty(idTransaksiValue.ToString()))
                     {
-                        MessageBox.Show("Gagal memperbarui status transaksi.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("ID Transaksi tidak boleh kosong.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+
+                    int idTransaksi = Convert.ToInt32(idTransaksiValue);
+                    string statusBaru = dataGridView1.Rows[e.RowIndex].Cells["StatusTransaksiComboBox"].Value?.ToString();
+
+                    // Perbarui status transaksi jika nilainya valid
+                    if (!string.IsNullOrEmpty(statusBaru))
+                    {
+                        bool isUpdated = TransaksiContext.UpdateStatusTransaksi(idTransaksi, statusBaru);
+
+                        if (isUpdated)
+                        {
+                            MessageBox.Show("Status transaksi berhasil diperbarui.", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Gagal memperbarui status transaksi.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                     }
                 }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
+
 
         private void LoadDataToDataGridView()
         {
@@ -106,20 +122,41 @@ namespace PROJECT_PBO
                     }
                 }
 
-                // Set DataSource untuk DataGridView
+                dataGridView1.Columns.Clear();
+                dataGridView1.DataSource = null;
+
+                // Atur DataSource untuk DataGridView
                 dataGridView1.DataSource = dataTable;
 
-                // Atur header kolom
+                // Tambahkan kolom nomor (jika belum ada)
+                if (!dataGridView1.Columns.Contains("No"))
+                {
+                    DataGridViewTextBoxColumn nomorColumn = new DataGridViewTextBoxColumn
+                    {
+                        HeaderText = "No",
+                        Name = "No",
+                        ReadOnly = true,// Kolom ini hanya untuk display
+                        Width = 50,
+                        AutoSizeMode = DataGridViewAutoSizeColumnMode.None
+                    };
+                    dataGridView1.Columns.Insert(0, nomorColumn);
+                }
+
+                // Set nomor urut di kolom "No"
+                for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                {
+                    dataGridView1.Rows[i].Cells["No"].Value = i + 1; // Mulai dari 1
+                }
+
+                // Atur header kolom lainnya
                 dataGridView1.Columns["id_transaksi"].Visible = false;
                 dataGridView1.Columns["tanggal"].HeaderText = "Tanggal";
                 dataGridView1.Columns["nama_pelanggan"].HeaderText = "Nama Pelanggan";
                 dataGridView1.Columns["merk_laptop"].HeaderText = "Merk Laptop";
                 dataGridView1.Columns["kerusakan"].HeaderText = "Kerusakan";
                 dataGridView1.Columns["alamat"].HeaderText = "Alamat";
-                dataGridView1.Columns["komponen"].HeaderText = "Komponen Yang Dibeli";  // Kolom Komponen
-                dataGridView1.Columns["total_harga"].HeaderText = "Total Harga";  // Kolom Total Harga
-
-                // Sembunyikan kolom penyortiran
+                dataGridView1.Columns["komponen"].HeaderText = "Komponen Yang Dibeli";
+                dataGridView1.Columns["total_harga"].HeaderText = "Total Harga";
                 dataGridView1.Columns["status_transaksi_sort"].Visible = false;
 
                 // Tambahkan ComboBox untuk kolom Status Transaksi
@@ -130,6 +167,8 @@ namespace PROJECT_PBO
                 MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+
 
         private void DataGridView1_SortCompare(object sender, DataGridViewSortCompareEventArgs e)
         {
