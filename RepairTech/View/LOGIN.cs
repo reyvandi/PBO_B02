@@ -38,7 +38,7 @@ namespace PROJECT_PBO
 
                 if (role == "admin")
                 {
-                    FormLoading formAdmin1 = new FormLoading(); // Form khusus untuk Admin  
+                    FormAdmin1 formAdmin1 = new FormAdmin1(); // Form khusus untuk Admin  
                     formAdmin1.Show();
                 }
                 else if (role == "pelanggan")
@@ -117,6 +117,11 @@ namespace PROJECT_PBO
                 buttonLOGIN.PerformClick(); // Klik tombol Login
                 e.SuppressKeyPress = true; // Mencegah bunyi 'ding' dari tombol Enter
             }
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            Opacity = +.2;
         }
     }
 }

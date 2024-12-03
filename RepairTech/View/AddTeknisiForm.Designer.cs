@@ -45,8 +45,9 @@
             // label1
             // 
             label1.AutoSize = true;
+            label1.BackColor = Color.White;
             label1.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = SystemColors.Control;
+            label1.ForeColor = Color.Black;
             label1.Location = new Point(858, 113);
             label1.Name = "label1";
             label1.Size = new Size(51, 20);
@@ -65,8 +66,9 @@
             // label2
             // 
             label2.AutoSize = true;
+            label2.BackColor = Color.White;
             label2.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.ForeColor = SystemColors.Control;
+            label2.ForeColor = Color.Black;
             label2.Location = new Point(858, 202);
             label2.Name = "label2";
             label2.Size = new Size(69, 20);
@@ -87,8 +89,9 @@
             // label3
             // 
             label3.AutoSize = true;
+            label3.BackColor = Color.White;
             label3.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.ForeColor = SystemColors.Control;
+            label3.ForeColor = Color.Black;
             label3.Location = new Point(858, 291);
             label3.Name = "label3";
             label3.Size = new Size(76, 20);
@@ -109,8 +112,9 @@
             // label4
             // 
             label4.AutoSize = true;
+            label4.BackColor = Color.White;
             label4.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.ForeColor = SystemColors.Control;
+            label4.ForeColor = Color.Black;
             label4.Location = new Point(858, 379);
             label4.Name = "label4";
             label4.Size = new Size(60, 20);
@@ -129,8 +133,9 @@
             // label5
             // 
             label5.AutoSize = true;
+            label5.BackColor = Color.White;
             label5.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.ForeColor = SystemColors.Control;
+            label5.ForeColor = Color.Black;
             label5.Location = new Point(858, 473);
             label5.Name = "label5";
             label5.Size = new Size(89, 20);
@@ -162,7 +167,9 @@
             // 
             // buttonAdd
             // 
-            buttonAdd.BackColor = Color.DarkBlue;
+            buttonAdd.BackColor = Color.FromArgb(192, 0, 192);
+            buttonAdd.FlatAppearance.BorderSize = 0;
+            buttonAdd.FlatStyle = FlatStyle.Flat;
             buttonAdd.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
             buttonAdd.ForeColor = SystemColors.Control;
             buttonAdd.Location = new Point(927, 568);
@@ -179,7 +186,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(24, 23, 80);
-            BackgroundImage = Properties.Resources.Frame_14;
+            BackgroundImage = Properties.Resources.Frame_13a;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1347, 637);
             Controls.Add(buttonAdd);

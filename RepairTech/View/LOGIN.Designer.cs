@@ -17,6 +17,7 @@
 
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             pictureBox1 = new PictureBox();
             showPasswordCheckBox = new CheckBox();
             labelLOGIN = new Label();
@@ -26,6 +27,7 @@
             textBoxPASSWORD = new TextBox();
             buttonLOGIN = new Button();
             linkLabel1 = new LinkLabel();
+            timer1 = new System.Windows.Forms.Timer(components);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -55,12 +57,12 @@
             // 
             labelLOGIN.AutoSize = true;
             labelLOGIN.BackColor = Color.Transparent;
-            labelLOGIN.Font = new Font("Segoe UI", 21.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelLOGIN.Font = new Font("Tahoma", 27.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             labelLOGIN.ForeColor = Color.DarkOrchid;
-            labelLOGIN.Location = new Point(904, 183);
+            labelLOGIN.Location = new Point(886, 152);
             labelLOGIN.Margin = new Padding(2, 0, 2, 0);
             labelLOGIN.Name = "labelLOGIN";
-            labelLOGIN.Size = new Size(94, 40);
+            labelLOGIN.Size = new Size(122, 45);
             labelLOGIN.TabIndex = 0;
             labelLOGIN.Text = "Login";
             // 
@@ -93,7 +95,7 @@
             textBoxUSERNAME.BorderStyle = BorderStyle.FixedSingle;
             textBoxUSERNAME.ForeColor = Color.Black;
             textBoxUSERNAME.Location = new Point(811, 265);
-            textBoxUSERNAME.Margin = new Padding(2, 2, 2, 2);
+            textBoxUSERNAME.Margin = new Padding(2);
             textBoxUSERNAME.Multiline = true;
             textBoxUSERNAME.Name = "textBoxUSERNAME";
             textBoxUSERNAME.Size = new Size(272, 24);
@@ -105,7 +107,7 @@
             textBoxPASSWORD.BorderStyle = BorderStyle.FixedSingle;
             textBoxPASSWORD.ForeColor = Color.Black;
             textBoxPASSWORD.Location = new Point(811, 329);
-            textBoxPASSWORD.Margin = new Padding(2, 2, 2, 2);
+            textBoxPASSWORD.Margin = new Padding(2);
             textBoxPASSWORD.Multiline = true;
             textBoxPASSWORD.Name = "textBoxPASSWORD";
             textBoxPASSWORD.Size = new Size(272, 23);
@@ -122,7 +124,7 @@
             buttonLOGIN.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             buttonLOGIN.ForeColor = SystemColors.Control;
             buttonLOGIN.Location = new Point(886, 417);
-            buttonLOGIN.Margin = new Padding(2, 2, 2, 2);
+            buttonLOGIN.Margin = new Padding(2);
             buttonLOGIN.Name = "buttonLOGIN";
             buttonLOGIN.Size = new Size(131, 25);
             buttonLOGIN.TabIndex = 5;
@@ -142,6 +144,10 @@
             linkLabel1.Text = "Register";
             linkLabel1.LinkClicked += linkLabel1_LinkClicked;
             // 
+            // timer1
+            // 
+            timer1.Tick += timer1_Tick;
+            // 
             // LOGIN
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -160,8 +166,9 @@
             Controls.Add(labelUSERNAME);
             ForeColor = Color.Transparent;
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
-            Margin = new Padding(2, 2, 2, 2);
+            Margin = new Padding(2);
             Name = "LOGIN";
+            Opacity = 0D;
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
             WindowState = FormWindowState.Maximized;
@@ -181,5 +188,6 @@
         private TextBox textBoxPASSWORD;
         private Button buttonLOGIN;
         private LinkLabel linkLabel1;
+        private System.Windows.Forms.Timer timer1;
     }
 }
