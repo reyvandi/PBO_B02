@@ -121,7 +121,7 @@ namespace PROJECT_PBO
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            Opacity = +.2;
+            Opacity 2;
         }
     }
 }

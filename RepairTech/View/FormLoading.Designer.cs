@@ -86,8 +86,8 @@
             BackgroundImage = Properties.Resources.Frame_12;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1237, 676);
-            Controls.Add(label2);
             Controls.Add(label1);
+            Controls.Add(label2);
             Controls.Add(progressBar1);
             DoubleBuffered = true;
             Enabled = false;
