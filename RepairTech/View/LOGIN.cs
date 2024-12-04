@@ -9,11 +9,22 @@ using System.Data;
 
 namespace PROJECT_PBO
 {
-    public partial class LOGIN : Form
+    public partial class LOGIN : Form , IMessageBoxBase
     {
         private AkunContext akun;
         private int id_akun;
 
+      
+        public void MessageBoxAdmin()
+        {
+            MessageBox.Show("Selamat datang Admin", "Login Berhasil", MessageBoxButtons.OK);
+        }
+
+        public void  MessageBoxPelanggan()
+        {
+            MessageBox.Show("Selamat datang tod", "Login Gagal", MessageBoxButtons.OK);
+        }
+        
         public LOGIN()
         {
             InitializeComponent();
@@ -38,11 +49,13 @@ namespace PROJECT_PBO
 
                 if (role == "admin")
                 {
+                    MessageBoxAdmin();
                     FormAdmin1 formAdmin1 = new FormAdmin1(); // Form khusus untuk Admin  
                     formAdmin1.Show();
                 }
                 else if (role == "pelanggan")
                 {
+                    MessageBoxPelanggan();
                     FormPelanggan formPelanggan = new FormPelanggan(id_akun); // Form khusus untuk User
                     formPelanggan.Show();
                 }
