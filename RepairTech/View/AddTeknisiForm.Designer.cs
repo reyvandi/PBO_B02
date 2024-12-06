@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             label1 = new Label();
-            textBox1 = new TextBox();
+            textBoxNama = new TextBox();
             label2 = new Label();
-            comboBox1 = new ComboBox();
+            comboBoxKeahlian = new ComboBox();
             label3 = new Label();
-            comboBox2 = new ComboBox();
+            comboBoxJamKerja = new ComboBox();
             label4 = new Label();
-            textBox2 = new TextBox();
+            textBoxAlamat = new TextBox();
             label5 = new Label();
-            textBox3 = new TextBox();
+            textBoxNoTelepon = new TextBox();
             buttonCancel = new Button();
             buttonAdd = new Button();
             SuspendLayout();
@@ -54,14 +54,14 @@
             label1.TabIndex = 0;
             label1.Text = "Nama";
             // 
-            // textBox1
+            // textBoxNama
             // 
-            textBox1.Location = new Point(858, 145);
-            textBox1.Margin = new Padding(3, 2, 3, 2);
-            textBox1.Multiline = true;
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(233, 22);
-            textBox1.TabIndex = 1;
+            textBoxNama.Location = new Point(858, 145);
+            textBoxNama.Margin = new Padding(3, 2, 3, 2);
+            textBoxNama.Multiline = true;
+            textBoxNama.Name = "textBoxNama";
+            textBoxNama.Size = new Size(233, 22);
+            textBoxNama.TabIndex = 1;
             // 
             // label2
             // 
@@ -76,15 +76,15 @@
             label2.Text = "Keahlian";
             label2.Click += label2_Click;
             // 
-            // comboBox1
+            // comboBoxKeahlian
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Software", "Hardware" });
-            comboBox1.Location = new Point(858, 237);
-            comboBox1.Margin = new Padding(3, 2, 3, 2);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(236, 23);
-            comboBox1.TabIndex = 3;
+            comboBoxKeahlian.FormattingEnabled = true;
+            comboBoxKeahlian.Items.AddRange(new object[] { "Software", "Hardware" });
+            comboBoxKeahlian.Location = new Point(858, 237);
+            comboBoxKeahlian.Margin = new Padding(3, 2, 3, 2);
+            comboBoxKeahlian.Name = "comboBoxKeahlian";
+            comboBoxKeahlian.Size = new Size(236, 23);
+            comboBoxKeahlian.TabIndex = 3;
             // 
             // label3
             // 
@@ -99,15 +99,15 @@
             label3.Text = "Jam kerja";
             label3.Click += label3_Click;
             // 
-            // comboBox2
+            // comboBoxJamKerja
             // 
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Items.AddRange(new object[] { "07.00 - 12.00", "12.00 -17.00" });
-            comboBox2.Location = new Point(858, 325);
-            comboBox2.Margin = new Padding(3, 2, 3, 2);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(236, 23);
-            comboBox2.TabIndex = 5;
+            comboBoxJamKerja.FormattingEnabled = true;
+            comboBoxJamKerja.Items.AddRange(new object[] { "07.00 - 12.00", "12.00 -17.00" });
+            comboBoxJamKerja.Location = new Point(858, 325);
+            comboBoxJamKerja.Margin = new Padding(3, 2, 3, 2);
+            comboBoxJamKerja.Name = "comboBoxJamKerja";
+            comboBoxJamKerja.Size = new Size(236, 23);
+            comboBoxJamKerja.TabIndex = 5;
             // 
             // label4
             // 
@@ -122,13 +122,13 @@
             label4.Text = "Alamat";
             label4.Click += label4_Click;
             // 
-            // textBox2
+            // textBoxAlamat
             // 
-            textBox2.Location = new Point(858, 416);
-            textBox2.Margin = new Padding(3, 2, 3, 2);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(236, 23);
-            textBox2.TabIndex = 7;
+            textBoxAlamat.Location = new Point(858, 416);
+            textBoxAlamat.Margin = new Padding(3, 2, 3, 2);
+            textBoxAlamat.Name = "textBoxAlamat";
+            textBoxAlamat.Size = new Size(236, 23);
+            textBoxAlamat.TabIndex = 7;
             // 
             // label5
             // 
@@ -142,14 +142,14 @@
             label5.TabIndex = 8;
             label5.Text = "No Telepon";
             // 
-            // textBox3
+            // textBoxNoTelepon
             // 
-            textBox3.Location = new Point(858, 508);
-            textBox3.Margin = new Padding(3, 2, 3, 2);
-            textBox3.Multiline = true;
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(236, 24);
-            textBox3.TabIndex = 9;
+            textBoxNoTelepon.Location = new Point(858, 508);
+            textBoxNoTelepon.Margin = new Padding(3, 2, 3, 2);
+            textBoxNoTelepon.Multiline = true;
+            textBoxNoTelepon.Name = "textBoxNoTelepon";
+            textBoxNoTelepon.Size = new Size(236, 24);
+            textBoxNoTelepon.TabIndex = 9;
             // 
             // buttonCancel
             // 
@@ -191,15 +191,15 @@
             ClientSize = new Size(1347, 637);
             Controls.Add(buttonAdd);
             Controls.Add(buttonCancel);
-            Controls.Add(textBox3);
+            Controls.Add(textBoxNoTelepon);
             Controls.Add(label5);
-            Controls.Add(textBox2);
+            Controls.Add(textBoxAlamat);
             Controls.Add(label4);
-            Controls.Add(comboBox2);
+            Controls.Add(comboBoxJamKerja);
             Controls.Add(label3);
-            Controls.Add(comboBox1);
+            Controls.Add(comboBoxKeahlian);
             Controls.Add(label2);
-            Controls.Add(textBox1);
+            Controls.Add(textBoxNama);
             Controls.Add(label1);
             DoubleBuffered = true;
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
@@ -216,15 +216,15 @@
         #endregion
 
         private Label label1;
-        private TextBox textBox1;
+        private TextBox textBoxNama;
         private Label label2;
-        private ComboBox comboBox1;
+        private ComboBox comboBoxKeahlian;
         private Label label3;
-        private ComboBox comboBox2;
+        private ComboBox comboBoxJamKerja;
         private Label label4;
-        private TextBox textBox2;
+        private TextBox textBoxAlamat;
         private Label label5;
-        private TextBox textBox3;
+        private TextBox textBoxNoTelepon;
         private Button buttonCancel;
         private Button buttonAdd;
     }

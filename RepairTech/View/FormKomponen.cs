@@ -21,7 +21,6 @@ namespace PROJECT_PBO
         {
             InitializeComponent();
             this.Load += MainForm_Load;
-            this.Resize += FormKomponen_Resize;
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -144,7 +143,7 @@ namespace PROJECT_PBO
 
         private void buttonJasa_Click(object sender, EventArgs e)
         {
-            FormJasaServis formJasa = new FormJasaServis();
+            FormJasaPerbaikan formJasa = new FormJasaPerbaikan();
             formJasa.Show();
             this.Hide();
         }
@@ -230,19 +229,6 @@ namespace PROJECT_PBO
             AddKomponenForm addKomponenForm = new AddKomponenForm();
             addKomponenForm.Show();
             this.Hide();
-        }
-
-        private void FormKomponen_Resize(object sender, EventArgs e)
-        {
-           /* // Tentukan margin dari kanan dan bawah
-            int marginRight = 0; // Misalnya 10px dari kanan
-            int marginBottom = 0; // Misalnya 10px dari bawah
-
-            // Atur lokasi tombol logout
-            panel7.Location = new Point(
-                this.ClientSize.Width - panel7.Width - marginRight,
-                this.ClientSize.Height - panel7.Height - marginBottom
-            );*/
         }
 
         private void buttonLogout_Click(object sender, EventArgs e)

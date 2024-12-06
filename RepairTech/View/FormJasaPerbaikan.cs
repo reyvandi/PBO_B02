@@ -13,13 +13,12 @@ using System.Windows.Forms;
 
 namespace PROJECT_PBO
 {
-    public partial class FormJasaServis : Form
+    public partial class FormJasaPerbaikan : Form
     {
-        public FormJasaServis()
+        public FormJasaPerbaikan()
         {
             InitializeComponent();
             this.Load += MainForm_Load;
-            this.Resize += FormJasaServis_Resize;
         }
         private void MainForm_Load(object sender, EventArgs e)
         {
@@ -205,19 +204,6 @@ namespace PROJECT_PBO
             dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(31, 30, 68);
             dataGridView1.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 12, FontStyle.Bold);
             dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
-        }
-
-        private void FormJasaServis_Resize(object sender, EventArgs e)
-        {
-            /*            // Tentukan margin dari kanan dan bawah
-                        int marginRight = 0; // Misalnya 10px dari kanan
-                        int marginBottom = 0; // Misalnya 10px dari bawah
-
-                        // Atur lokasi tombol logout
-                        panel7.Location = new Point(
-                            this.ClientSize.Width - panel7.Width - marginRight,
-                            this.ClientSize.Height - panel7.Height - marginBottom
-                        );*/
         }
 
         private void buttonLogout_Click(object sender, EventArgs e)

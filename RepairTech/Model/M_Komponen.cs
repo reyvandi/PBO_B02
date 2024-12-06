@@ -17,5 +17,22 @@ namespace PROJECT_PBO.Model
         public decimal harga { get; set; }
         [Required]
         public int stok {  get; set; }
+
+        public M_Komponen(string nama_komponen, decimal harga, int stok)
+        {
+            this.nama_komponen = nama_komponen;
+            this.harga = harga;
+            this.stok = stok;
+        }
+
+        public M_Komponen(int id_komponen, string nama_komponen, decimal harga, int stok)
+        : this(nama_komponen, harga, stok)
+        {
+            this.id_komponen = id_komponen;
+        }
+
+        public M_Komponen()
+        {
+        }
     }
 }

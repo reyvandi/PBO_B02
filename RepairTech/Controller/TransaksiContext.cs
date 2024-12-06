@@ -25,58 +25,58 @@ namespace PROJECT_PBO.Controller
 
             // Query untuk menambahkan transaksi
             string queryTransaksi = @"
-        INSERT INTO transaksi (nama_pelanggan, laptop, id_teknisi, tanggal, status_transaksi) 
-        VALUES (@nama_pelanggan, @laptop, @id_teknisi, NOW(), 'Telah Selesai') RETURNING id_transaksi;";
+                INSERT INTO transaksi (nama_pelanggan, laptop, id_teknisi, tanggal, status_transaksi) 
+                VALUES (@nama_pelanggan, @laptop, @id_teknisi, NOW(), 'Telah Selesai') RETURNING id_transaksi;";
 
             DatabaseWrapper.openConnection();
             try
             {
                 // Menambahkan transaksi dan mendapatkan id_transaksi
                 int idTransaksi = DatabaseWrapper.executeScalar(queryTransaksi, new NpgsqlParameter[] {
-            new NpgsqlParameter("@nama_pelanggan", namaPelanggan),
-            new NpgsqlParameter("@laptop", merkLaptop ?? (object)DBNull.Value),
-            new NpgsqlParameter("@id_teknisi", idTeknisi ?? (object)DBNull.Value)
-        });
+                    new NpgsqlParameter("@nama_pelanggan", namaPelanggan),
+                    new NpgsqlParameter("@laptop", merkLaptop ?? (object)DBNull.Value),
+                    new NpgsqlParameter("@id_teknisi", idTeknisi ?? (object)DBNull.Value)
+                });
 
                 // Menambahkan detail transaksi
                 foreach (var detail in detailTransaksi)
                 {
                     string queryDetail = @"
-                INSERT INTO detail_transaksi (id_transaksi, id_kerusakan, biaya)
-                VALUES (@id_transaksi, @id_kerusakan, @biaya);";
+                        INSERT INTO detail_transaksi (id_transaksi, id_jasa_perbaikan, biaya)
+                        VALUES (@id_transaksi, @id_jasa_perbaikan, @biaya);";
 
                     DatabaseWrapper.commandExecutor(queryDetail, new NpgsqlParameter[] {
-                new NpgsqlParameter("@id_transaksi", idTransaksi),
-                new NpgsqlParameter("@id_kerusakan", detail.id_jasa_perbaikan),
-                new NpgsqlParameter("@biaya", detail.biaya)
-            });
+                        new NpgsqlParameter("@id_transaksi", idTransaksi),
+                        new NpgsqlParameter("@id_jasa_perbaikan", detail.id_jasa_perbaikan),
+                        new NpgsqlParameter("@biaya", detail.biaya)
+                    });
                 }
 
                 // Menambahkan detail komponen dan mengurangi stok
                 foreach (var detail in detailKomponens)
                 {
                     string queryKomponen = @"
-                INSERT INTO detail_komponen (id_transaksi, id_komponen, harga, jumlah)
-                VALUES (@id_transaksi, @id_komponen, @harga, @jumlah);";
+                        INSERT INTO detail_komponen (id_transaksi, id_komponen, harga, jumlah)
+                        VALUES (@id_transaksi, @id_komponen, @harga, @jumlah);";
 
                     // Update stok komponen setelah transaksi
                     string queryUpdateStok = @"
-                UPDATE komponen 
-                SET stok = stok - @jumlah
-                WHERE id_komponen = @id_komponen;";
+                        UPDATE komponen 
+                        SET stok = stok - @jumlah
+                        WHERE id_komponen = @id_komponen;";
 
                     DatabaseWrapper.commandExecutor(queryKomponen, new NpgsqlParameter[] {
-                new NpgsqlParameter("@id_transaksi", idTransaksi),
-                new NpgsqlParameter("@id_komponen", detail.id_komponen),
-                new NpgsqlParameter("@harga", detail.harga),
-                new NpgsqlParameter("@jumlah", detail.jumlah)
-            });
+                        new NpgsqlParameter("@id_transaksi", idTransaksi),
+                        new NpgsqlParameter("@id_komponen", detail.id_komponen),
+                        new NpgsqlParameter("@harga", detail.harga),
+                        new NpgsqlParameter("@jumlah", detail.jumlah)
+                    });
 
                     // Update stok komponen
                     DatabaseWrapper.commandExecutor(queryUpdateStok, new NpgsqlParameter[] {
-                new NpgsqlParameter("@jumlah", detail.jumlah),
-                new NpgsqlParameter("@id_komponen", detail.id_komponen)
-            });
+                        new NpgsqlParameter("@jumlah", detail.jumlah),
+                        new NpgsqlParameter("@id_komponen", detail.id_komponen)
+                    });
                 }
             }
             catch (Exception ex)
@@ -98,8 +98,8 @@ namespace PROJECT_PBO.Controller
                 VALUES (@nama_pelanggan, @laptop, @alamat, @id_teknisi, @tanggal)
                 RETURNING id_transaksi";
 
-                    NpgsqlParameter[] parameters =
-                    {
+            NpgsqlParameter[] parameters =
+            {
                 new NpgsqlParameter("@nama_pelanggan", username),  // Gunakan langsung username
                 new NpgsqlParameter("@laptop", namaLaptop),
                 new NpgsqlParameter("@alamat", alamat),
@@ -182,25 +182,30 @@ namespace PROJECT_PBO.Controller
                 t.tanggal,
                 t.nama_pelanggan,
                 t.laptop AS merk_laptop,
-                STRING_AGG(jp.jenis_kerusakan, ', ') AS kerusakan,
+                -- Gabungkan kerusakan
+                COALESCE(STRING_AGG(DISTINCT jp.jenis_kerusakan, ', '), '') AS kerusakan,
                 t.alamat,
-                t.status_transaksi,
-                -- Menampilkan komponen yang dibeli
-                STRING_AGG(k.nama_komponen, ', ') AS komponen,
-                -- Menghitung total harga komponen dan biaya
-                COALESCE(SUM(dc.harga * dc.jumlah), 0) + COALESCE(SUM(dt.biaya), 0) AS total_harga
+                -- Gabungkan komponen
+                COALESCE(STRING_AGG(DISTINCT k.nama_komponen, ', '), '') AS komponen,
+                -- Hitung total harga
+                COALESCE(SUM(DISTINCT dt.biaya), 0) + COALESCE(SUM(DISTINCT dc.harga * dc.jumlah), 0) AS total_harga,
+                t.status_transaksi
             FROM 
                 transaksi t
+            -- Gabungkan detail transaksi dan jasa perbaikan
             LEFT JOIN 
                 detail_transaksi dt ON t.id_transaksi = dt.id_transaksi
             LEFT JOIN 
                 jasa_perbaikan jp ON dt.id_jasa_perbaikan = jp.id_jasa_perbaikan
+            -- Gabungkan detail komponen dan komponen
             LEFT JOIN 
                 detail_komponen dc ON t.id_transaksi = dc.id_transaksi
             LEFT JOIN 
                 komponen k ON dc.id_komponen = k.id_komponen
             GROUP BY 
-                t.id_transaksi, t.tanggal, t.nama_pelanggan, t.laptop, t.alamat, t.status_transaksi";
+                t.id_transaksi, t.tanggal, t.nama_pelanggan, t.laptop, t.alamat, t.status_transaksi
+            ORDER BY 
+                t.tanggal DESC";
 
             return queryExecutor(query);
         }

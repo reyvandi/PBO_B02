@@ -35,21 +35,30 @@ namespace PROJECT_PBO.View
                 return;
             }
 
-            M_JasaPerbaikan jasaperbaikan = new M_JasaPerbaikan
-            {
-                jenis_kerusakan = textBox1.Text,
-                solusi = textBox2.Text,
-                biaya = decimal.Parse(textBox3.Text),
-                estimasi_waktu = int.Parse(textBox4.Text),
-            };
+            M_JasaPerbaikan jasaperbaikan;
+
             if (IsEditMode)
             {
-                jasaperbaikan.id_jasa_perbaikan = JasaPerbaikanId;
+                jasaperbaikan = new M_JasaPerbaikan(
+                    JasaPerbaikanId,
+                    textBoxJenisKerusakan.Text,
+                    textBoxSolusi.Text,
+                    decimal.Parse(textBoxBiaya.Text),
+                    int.Parse(textBoxEstimasiWaktu.Text)
+                    );
+
                 JasaPerbaikanContext.UpdateJasaPerbaikan(jasaperbaikan);
                 MessageBox.Show("Jasa perbaikan berhasil diupdate");
             }
             else
             {
+                jasaperbaikan = new M_JasaPerbaikan(
+                    textBoxJenisKerusakan.Text,
+                    textBoxSolusi.Text,
+                    decimal.Parse(textBoxBiaya.Text),
+                    int.Parse(textBoxEstimasiWaktu.Text)
+                    );
+
                 JasaPerbaikanContext.AddJasaPerbaikan(jasaperbaikan);
                 MessageBox.Show("Jasa perbaikan baru berhasil ditambahkan");
             }
@@ -57,17 +66,17 @@ namespace PROJECT_PBO.View
             ClearFields();
 
             // Show FormJasaServis with updated data
-            FormJasaServis formJasaServis = new FormJasaServis();
+            FormJasaPerbaikan formJasaServis = new FormJasaPerbaikan();
             formJasaServis.Show();
             this.Hide();
         }
 
         private bool ValidateInput()
         {
-            if (string.IsNullOrWhiteSpace(textBox1.Text) ||
-                string.IsNullOrWhiteSpace(textBox2.Text) ||
-                !decimal.TryParse(textBox3.Text, out _) ||
-                !int.TryParse(textBox4.Text, out _))
+            if (string.IsNullOrWhiteSpace(textBoxJenisKerusakan.Text) ||
+                string.IsNullOrWhiteSpace(textBoxSolusi.Text) ||
+                !decimal.TryParse(textBoxBiaya.Text, out _) ||
+                !int.TryParse(textBoxEstimasiWaktu.Text, out _))
             {
                 return false;
             }
@@ -75,24 +84,24 @@ namespace PROJECT_PBO.View
         }
         private void ClearFields()
         {
-            textBox1.Clear();
-            textBox2.Clear();
-            textBox3.Clear();
-            textBox4.Clear();
+            textBoxJenisKerusakan.Clear();
+            textBoxSolusi.Clear();
+            textBoxBiaya.Clear();
+            textBoxEstimasiWaktu.Clear();
         }
 
         private void buttonCancel_Click(object sender, EventArgs e)
         {
-            FormJasaServis formJasaServis = new FormJasaServis();
+            FormJasaPerbaikan formJasaServis = new FormJasaPerbaikan();
             formJasaServis.Show();
             this.Hide();
         }
         public void PopulateForm(M_JasaPerbaikan jasaperbaikan)
         {
-            textBox1.Text = jasaperbaikan.jenis_kerusakan;
-            textBox2.Text = jasaperbaikan.solusi;
-            textBox3.Text = jasaperbaikan.biaya.ToString();
-            textBox4.Text = jasaperbaikan.estimasi_waktu.ToString();
+            textBoxJenisKerusakan.Text = jasaperbaikan.jenis_kerusakan;
+            textBoxSolusi.Text = jasaperbaikan.solusi;
+            textBoxBiaya.Text = jasaperbaikan.biaya.ToString();
+            textBoxEstimasiWaktu.Text = jasaperbaikan.estimasi_waktu.ToString();
             IsEditMode = true;
             JasaPerbaikanId = jasaperbaikan.id_jasa_perbaikan;
             UpdateButtonText();

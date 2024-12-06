@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace PROJECT_PBO.Controller
 {
-    public interface   IMessageBoxBase
+    public interface IMessageBoxBase
     {
-       public void MessageBoxAdmin();
-       public void MessageBoxPelanggan();
+       void MessageBoxAdmin();
+       void MessageBoxPelanggan(string username);
     }
 }

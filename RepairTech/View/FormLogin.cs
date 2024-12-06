@@ -20,9 +20,9 @@ namespace PROJECT_PBO
             MessageBox.Show("Selamat datang Admin", "Login Berhasil", MessageBoxButtons.OK);
         }
 
-        public void  MessageBoxPelanggan()
+        public void MessageBoxPelanggan(string username)
         {
-            MessageBox.Show("Selamat datang tod", "Login Gagal", MessageBoxButtons.OK);
+            MessageBox.Show($"Selamat datang {username}", "Login Berhasil", MessageBoxButtons.OK);
         }
         
         public LOGIN()
@@ -55,7 +55,7 @@ namespace PROJECT_PBO
                 }
                 else if (role == "pelanggan")
                 {
-                    MessageBoxPelanggan();
+                    MessageBoxPelanggan(username);
                     FormPelanggan formPelanggan = new FormPelanggan(id_akun); // Form khusus untuk User
                     formPelanggan.Show();
                 }

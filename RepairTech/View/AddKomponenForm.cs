@@ -42,20 +42,28 @@ namespace PROJECT_PBO.View
                 return;
             }
 
-            M_Komponen komponen = new M_Komponen
-            {
-                nama_komponen = textBoxNAMAKOMPONEN.Text,
-                harga = decimal.Parse(textBoxHARGA.Text),
-                stok = int.Parse(textBoxSTOK.Text),
-            };
+            M_Komponen komponen;
+
             if (IsEditMode)
             {
-                komponen.id_komponen = KomponenId;
+                komponen = new M_Komponen(
+                    KomponenId,
+                    textBoxNAMAKOMPONEN.Text,
+                    decimal.Parse(textBoxHARGA.Text),
+                    int.Parse(textBoxSTOK.Text)
+                );
+
                 KomponenContext.UpdateKomponen(komponen);
                 MessageBox.Show("Komponen berhasil diupdate");
             }
             else
             {
+                komponen = new M_Komponen(
+                    textBoxNAMAKOMPONEN.Text,
+                    decimal.Parse(textBoxHARGA.Text),
+                    int.Parse(textBoxSTOK.Text)
+                );
+
                 KomponenContext.AddKomponen(komponen);
                 MessageBox.Show("Komponen baru berhasil ditambahkan");
             }

@@ -35,22 +35,32 @@ namespace PROJECT_PBO.View
                 return;
             }
 
-            M_Teknisi teknisi = new M_Teknisi
-            {
-                nama = textBox1.Text,
-                keahlian = comboBox1.Text,
-                jam_kerja = comboBox2.Text,
-                alamat = textBox2.Text,
-                no_telepon = textBox3.Text,
-            };
+            M_Teknisi teknisi;
+
             if (IsEditMode)
             {
-                teknisi.id_teknisi = TeknisiId;
+                teknisi = new M_Teknisi(
+                    TeknisiId,
+                    textBoxNama.Text,
+                    comboBoxKeahlian.Text,
+                    comboBoxJamKerja.Text,
+                    textBoxAlamat.Text,
+                    textBoxNoTelepon.Text
+                    );
+
                 TeknisiContext.UpdateTeknisi(teknisi);
                 MessageBox.Show("Teknisi berhasil diupdate");
             }
             else
             {
+                teknisi = new M_Teknisi(
+                    textBoxNama.Text,
+                    comboBoxKeahlian.Text,
+                    comboBoxJamKerja.Text,
+                    textBoxAlamat.Text,
+                    textBoxNoTelepon.Text
+                    );
+
                 TeknisiContext.AddTeknisi(teknisi);
                 MessageBox.Show("Teknisi baru berhasil ditambahkan");
             }
@@ -63,11 +73,11 @@ namespace PROJECT_PBO.View
         }
         private bool ValidateInput()
         {
-            if (string.IsNullOrWhiteSpace(textBox1.Text) ||
-                string.IsNullOrWhiteSpace(comboBox1.Text) ||
-                string.IsNullOrWhiteSpace(comboBox2.Text) ||
-                string.IsNullOrWhiteSpace(textBox2.Text) ||
-                string.IsNullOrWhiteSpace(textBox3.Text))
+            if (string.IsNullOrWhiteSpace(textBoxNama.Text) ||
+                string.IsNullOrWhiteSpace(comboBoxKeahlian.Text) ||
+                string.IsNullOrWhiteSpace(comboBoxJamKerja.Text) ||
+                string.IsNullOrWhiteSpace(textBoxAlamat.Text) ||
+                string.IsNullOrWhiteSpace(textBoxNoTelepon.Text))
             {
                 return false;
             }
@@ -75,9 +85,9 @@ namespace PROJECT_PBO.View
         }
         private void ClearFields()
         {
-            textBox1.Clear();
-            textBox2.Clear();
-            textBox3.Clear();
+            textBoxNama.Clear();
+            textBoxAlamat.Clear();
+            textBoxNoTelepon.Clear();
         }
 
         private void buttonCancel_Click(object sender, EventArgs e)
@@ -89,11 +99,11 @@ namespace PROJECT_PBO.View
         public void PopulateForm(M_Teknisi teknisi)
         {
 
-            textBox1.Text = teknisi.nama;
-            comboBox1.Text = teknisi.keahlian;
-            comboBox2.Text = teknisi.jam_kerja;
-            textBox2.Text = teknisi.alamat;
-            textBox3.Text = teknisi.no_telepon;
+            textBoxNama.Text = teknisi.nama;
+            comboBoxKeahlian.Text = teknisi.keahlian;
+            comboBoxJamKerja.Text = teknisi.jam_kerja;
+            textBoxAlamat.Text = teknisi.alamat;
+            textBoxNoTelepon.Text = teknisi.no_telepon;
             IsEditMode = true;
             TeknisiId = teknisi.id_teknisi;
             UpdateButtonText();

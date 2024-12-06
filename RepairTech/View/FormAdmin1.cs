@@ -26,10 +26,8 @@ namespace PROJECT_PBO
         private void FormAdmin1_Load(object sender, EventArgs e)
         {
             LoadDataToDataGridView();
-            dataGridView1.SortCompare += DataGridView1_SortCompare;
             dataGridView1.CellValueChanged += DataGridView1_CellValueChanged;
         }
-
 
         private void AddStatusComboBoxColumn()
         {
@@ -53,74 +51,28 @@ namespace PROJECT_PBO
             }
         }
 
-
         private void DataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
-            try
+            if (e.RowIndex < 0 || e.ColumnIndex < 0) return;
+
+            if (dataGridView1.Columns[e.ColumnIndex].Name == "StatusTransaksiComboBox")
             {
-                // Pastikan bahwa baris dan kolom yang dipilih valid
-                if (e.RowIndex < 0 || e.ColumnIndex < 0) return;
+                int idTransaksi = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["id_transaksi"].Value);
+                string statusBaru = dataGridView1.Rows[e.RowIndex].Cells["StatusTransaksiComboBox"].Value?.ToString();
 
-                // Pastikan kolom adalah "StatusTransaksiComboBox"
-                if (dataGridView1.Columns[e.ColumnIndex].Name == "StatusTransaksiComboBox")
+                if (!string.IsNullOrEmpty(statusBaru))
                 {
-                    // Validasi keberadaan kolom "id_transaksi"
-                    if (!dataGridView1.Columns.Contains("id_transaksi"))
-                    {
-                        MessageBox.Show("Kolom 'id_transaksi' tidak ditemukan di DataGridView.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
-                    }
-
-                    // Validasi bahwa nilai ID transaksi tidak kosong
-                    var idTransaksiValue = dataGridView1.Rows[e.RowIndex].Cells["id_transaksi"].Value;
-                    if (idTransaksiValue == null || string.IsNullOrEmpty(idTransaksiValue.ToString()))
-                    {
-                        MessageBox.Show("ID Transaksi tidak boleh kosong.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
-                    }
-
-                    int idTransaksi = Convert.ToInt32(idTransaksiValue);
-                    string statusBaru = dataGridView1.Rows[e.RowIndex].Cells["StatusTransaksiComboBox"].Value?.ToString();
-
-                    // Perbarui status transaksi jika nilainya valid
-                    if (!string.IsNullOrEmpty(statusBaru))
-                    {
-                        bool isUpdated = TransaksiContext.UpdateStatusTransaksi(idTransaksi, statusBaru);
-
-                        if (isUpdated)
-                        {
-                            MessageBox.Show("Status transaksi berhasil diperbarui.", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
-                        else
-                        {
-                            MessageBox.Show("Gagal memperbarui status transaksi.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
-                    }
+                    TransaksiContext.UpdateStatusTransaksi(idTransaksi, statusBaru);
                 }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
         }
-
 
         private void LoadDataToDataGridView()
         {
             try
             {
-                // Ambil data transaksi dengan detailnya
+                // Ambil data transaksi dari context
                 DataTable dataTable = TransaksiContext.GetAllTransaksiWithDetails();
-
-                // Tambahkan kolom tersembunyi untuk penyortiran
-                if (!dataTable.Columns.Contains("status_transaksi_sort"))
-                {
-                    dataTable.Columns.Add("status_transaksi_sort", typeof(int));
-                    foreach (DataRow row in dataTable.Rows)
-                    {
-                        row["status_transaksi_sort"] = row["status_transaksi"].ToString() == "Belum Selesai" ? 1 : 2;
-                    }
-                }
 
                 dataGridView1.Columns.Clear();
                 dataGridView1.DataSource = null;
@@ -135,17 +87,47 @@ namespace PROJECT_PBO
                     {
                         HeaderText = "No",
                         Name = "No",
-                        ReadOnly = true,// Kolom ini hanya untuk display
+                        ReadOnly = true,
                         Width = 50,
                         AutoSizeMode = DataGridViewAutoSizeColumnMode.None
                     };
                     dataGridView1.Columns.Insert(0, nomorColumn);
                 }
 
+                DataGridViewCellStyle headerStyle = new DataGridViewCellStyle
+                {
+                    BackColor = Color.FromArgb(31, 31, 68),
+                    ForeColor = Color.White,
+                    Font = new Font("Arial", 10, FontStyle.Bold),
+                    Alignment = DataGridViewContentAlignment.MiddleCenter
+                };
+                dataGridView1.ColumnHeadersDefaultCellStyle = headerStyle;
+                dataGridView1.EnableHeadersVisualStyles = false;
+
                 // Set nomor urut di kolom "No"
                 for (int i = 0; i < dataGridView1.Rows.Count; i++)
                 {
                     dataGridView1.Rows[i].Cells["No"].Value = i + 1; // Mulai dari 1
+                }
+
+                // Tambahkan ComboBox langsung ke kolom status_transaksi
+                if (dataGridView1.Columns.Contains("status_transaksi"))
+                {
+                    // Hapus kolom status_transaksi sebelumnya
+                    int index = dataGridView1.Columns["status_transaksi"].Index;
+                    dataGridView1.Columns.Remove("status_transaksi");
+
+                    // Tambahkan ComboBoxColumn yang terhubung ke DataSource
+                    DataGridViewComboBoxColumn comboBoxColumn = new DataGridViewComboBoxColumn
+                    {
+                        DataPropertyName = "status_transaksi", // Terhubung ke kolom sumber data
+                        HeaderText = "Status Transaksi",
+                        DataSource = new string[] { "Belum Selesai", "Telah Selesai" },
+                        ValueType = typeof(string),
+                        Name = "StatusTransaksiComboBox",
+                        SortMode = DataGridViewColumnSortMode.Automatic // Aktifkan sorting otomatis
+                    };
+                    dataGridView1.Columns.Insert(index, comboBoxColumn);
                 }
 
                 // Atur header kolom lainnya
@@ -157,10 +139,6 @@ namespace PROJECT_PBO
                 dataGridView1.Columns["alamat"].HeaderText = "Alamat";
                 dataGridView1.Columns["komponen"].HeaderText = "Komponen Yang Dibeli";
                 dataGridView1.Columns["total_harga"].HeaderText = "Total Harga";
-                dataGridView1.Columns["status_transaksi_sort"].Visible = false;
-
-                // Tambahkan ComboBox untuk kolom Status Transaksi
-                AddStatusComboBoxColumn();
             }
             catch (Exception ex)
             {
@@ -168,24 +146,6 @@ namespace PROJECT_PBO
             }
         }
 
-
-
-        private void DataGridView1_SortCompare(object sender, DataGridViewSortCompareEventArgs e)
-        {
-            // Jika kolom adalah StatusTransaksiComboBox
-            if (e.Column.Name == "StatusTransaksiComboBox")
-            {
-                // Ambil nilai kolom penyortiran
-                int value1 = Convert.ToInt32(dataGridView1.Rows[e.RowIndex1].Cells["status_transaksi_sort"].Value);
-                int value2 = Convert.ToInt32(dataGridView1.Rows[e.RowIndex2].Cells["status_transaksi_sort"].Value);
-
-                // Bandingkan nilai
-                e.SortResult = value1.CompareTo(value2);
-
-                // Tentukan event sudah ditangani
-                e.Handled = true;
-            }
-        }
 
 
         private void buttonLogout_Click(object sender, EventArgs e)
@@ -271,7 +231,7 @@ namespace PROJECT_PBO
 
         private void buttonJasa_Click(object sender, EventArgs e)
         {
-            FormJasaServis formJasa = new FormJasaServis();
+            FormJasaPerbaikan formJasa = new FormJasaPerbaikan();
             formJasa.Show();
             this.Hide();
         }

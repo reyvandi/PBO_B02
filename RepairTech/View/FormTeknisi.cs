@@ -118,7 +118,7 @@ namespace PROJECT_PBO
 
         private void buttonJasa_Click(object sender, EventArgs e)
         {
-            FormJasaServis formJasa = new FormJasaServis();
+            FormJasaPerbaikan formJasa = new FormJasaPerbaikan();
             formJasa.Show();
             this.Hide();
         }
