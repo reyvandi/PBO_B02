@@ -46,6 +46,7 @@
             labelTeknisi = new Label();
             buttonTambahTransaksi = new FontAwesome.Sharp.IconButton();
             numericUpDownJumlah = new NumericUpDown();
+            button1 = new Button();
             ((System.ComponentModel.ISupportInitialize)numericUpDownJumlah).BeginInit();
             SuspendLayout();
             // 
@@ -53,9 +54,12 @@
             // 
             textBoxPelanggan.BackColor = Color.White;
             textBoxPelanggan.BorderStyle = BorderStyle.None;
-            textBoxPelanggan.Location = new Point(677, 103);
+            textBoxPelanggan.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            textBoxPelanggan.Location = new Point(1256, 198);
+            textBoxPelanggan.Margin = new Padding(4, 5, 4, 5);
+            textBoxPelanggan.Multiline = true;
             textBoxPelanggan.Name = "textBoxPelanggan";
-            textBoxPelanggan.Size = new Size(247, 16);
+            textBoxPelanggan.Size = new Size(451, 36);
             textBoxPelanggan.TabIndex = 1;
             // 
             // labelMerkLaptop
@@ -63,9 +67,10 @@
             labelMerkLaptop.AutoSize = true;
             labelMerkLaptop.BackColor = Color.White;
             labelMerkLaptop.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            labelMerkLaptop.Location = new Point(677, 137);
+            labelMerkLaptop.Location = new Point(1256, 266);
+            labelMerkLaptop.Margin = new Padding(4, 0, 4, 0);
             labelMerkLaptop.Name = "labelMerkLaptop";
-            labelMerkLaptop.Size = new Size(86, 17);
+            labelMerkLaptop.Size = new Size(132, 28);
             labelMerkLaptop.TabIndex = 21;
             labelMerkLaptop.Text = "Merk Laptop";
             // 
@@ -74,9 +79,10 @@
             labelNamaPelanggan.AutoSize = true;
             labelNamaPelanggan.BackColor = Color.White;
             labelNamaPelanggan.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            labelNamaPelanggan.Location = new Point(677, 78);
+            labelNamaPelanggan.Location = new Point(1256, 149);
+            labelNamaPelanggan.Margin = new Padding(4, 0, 4, 0);
             labelNamaPelanggan.Name = "labelNamaPelanggan";
-            labelNamaPelanggan.Size = new Size(113, 17);
+            labelNamaPelanggan.Size = new Size(172, 28);
             labelNamaPelanggan.TabIndex = 22;
             labelNamaPelanggan.Text = "Nama Pelanggan";
             // 
@@ -84,17 +90,22 @@
             // 
             textBoxMerkLaptop.BackColor = Color.White;
             textBoxMerkLaptop.BorderStyle = BorderStyle.None;
-            textBoxMerkLaptop.Location = new Point(677, 160);
+            textBoxMerkLaptop.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            textBoxMerkLaptop.Location = new Point(1267, 308);
+            textBoxMerkLaptop.Margin = new Padding(4, 5, 4, 5);
+            textBoxMerkLaptop.Multiline = true;
             textBoxMerkLaptop.Name = "textBoxMerkLaptop";
-            textBoxMerkLaptop.Size = new Size(247, 16);
+            textBoxMerkLaptop.Size = new Size(441, 45);
             textBoxMerkLaptop.TabIndex = 23;
             // 
             // comboBoxKerusakan
             // 
+            comboBoxKerusakan.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxKerusakan.FormattingEnabled = true;
-            comboBoxKerusakan.Location = new Point(670, 221);
+            comboBoxKerusakan.Location = new Point(1274, 489);
+            comboBoxKerusakan.Margin = new Padding(4, 5, 4, 5);
             comboBoxKerusakan.Name = "comboBoxKerusakan";
-            comboBoxKerusakan.Size = new Size(262, 23);
+            comboBoxKerusakan.Size = new Size(423, 33);
             comboBoxKerusakan.TabIndex = 24;
             // 
             // labelKerusakan
@@ -102,20 +113,23 @@
             labelKerusakan.AutoSize = true;
             labelKerusakan.BackColor = Color.White;
             labelKerusakan.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            labelKerusakan.Location = new Point(677, 201);
+            labelKerusakan.Location = new Point(1256, 456);
+            labelKerusakan.Margin = new Padding(4, 0, 4, 0);
             labelKerusakan.Name = "labelKerusakan";
-            labelKerusakan.Size = new Size(71, 17);
+            labelKerusakan.Size = new Size(110, 28);
             labelKerusakan.TabIndex = 25;
             labelKerusakan.Text = "Kerusakan";
             // 
             // listBoxKerusakan
             // 
             listBoxKerusakan.BorderStyle = BorderStyle.None;
+            listBoxKerusakan.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             listBoxKerusakan.FormattingEnabled = true;
-            listBoxKerusakan.ItemHeight = 15;
-            listBoxKerusakan.Location = new Point(678, 259);
+            listBoxKerusakan.ItemHeight = 28;
+            listBoxKerusakan.Location = new Point(1274, 532);
+            listBoxKerusakan.Margin = new Padding(4, 5, 4, 5);
             listBoxKerusakan.Name = "listBoxKerusakan";
-            listBoxKerusakan.Size = new Size(243, 75);
+            listBoxKerusakan.Size = new Size(433, 112);
             listBoxKerusakan.TabIndex = 26;
             // 
             // btnTambahKerusakan
@@ -124,10 +138,11 @@
             btnTambahKerusakan.BackColor = Color.FromArgb(255, 192, 255);
             btnTambahKerusakan.FlatAppearance.BorderSize = 0;
             btnTambahKerusakan.FlatStyle = FlatStyle.Flat;
-            btnTambahKerusakan.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnTambahKerusakan.Location = new Point(949, 221);
+            btnTambahKerusakan.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnTambahKerusakan.Location = new Point(1764, 494);
+            btnTambahKerusakan.Margin = new Padding(4, 5, 4, 5);
             btnTambahKerusakan.Name = "btnTambahKerusakan";
-            btnTambahKerusakan.Size = new Size(62, 27);
+            btnTambahKerusakan.Size = new Size(89, 45);
             btnTambahKerusakan.TabIndex = 27;
             btnTambahKerusakan.Text = "Tambah";
             btnTambahKerusakan.UseVisualStyleBackColor = false;
@@ -139,9 +154,11 @@
             btnHapusKerusakan.BackColor = Color.FromArgb(255, 192, 255);
             btnHapusKerusakan.FlatAppearance.BorderSize = 0;
             btnHapusKerusakan.FlatStyle = FlatStyle.Flat;
-            btnHapusKerusakan.Location = new Point(949, 282);
+            btnHapusKerusakan.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnHapusKerusakan.Location = new Point(1764, 586);
+            btnHapusKerusakan.Margin = new Padding(4, 5, 4, 5);
             btnHapusKerusakan.Name = "btnHapusKerusakan";
-            btnHapusKerusakan.Size = new Size(62, 27);
+            btnHapusKerusakan.Size = new Size(89, 45);
             btnHapusKerusakan.TabIndex = 28;
             btnHapusKerusakan.Text = "Hapus";
             btnHapusKerusakan.UseVisualStyleBackColor = false;
@@ -149,10 +166,13 @@
             // 
             // comboBoxKomponen
             // 
+            comboBoxKomponen.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBoxKomponen.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             comboBoxKomponen.FormattingEnabled = true;
-            comboBoxKomponen.Location = new Point(669, 375);
+            comboBoxKomponen.Location = new Point(1274, 772);
+            comboBoxKomponen.Margin = new Padding(4, 5, 4, 5);
             comboBoxKomponen.Name = "comboBoxKomponen";
-            comboBoxKomponen.Size = new Size(263, 23);
+            comboBoxKomponen.Size = new Size(423, 36);
             comboBoxKomponen.TabIndex = 29;
             // 
             // labelKomponen
@@ -160,21 +180,25 @@
             labelKomponen.AutoSize = true;
             labelKomponen.BackColor = Color.White;
             labelKomponen.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            labelKomponen.Location = new Point(677, 355);
+            labelKomponen.Location = new Point(1267, 739);
+            labelKomponen.Margin = new Padding(4, 0, 4, 0);
             labelKomponen.Name = "labelKomponen";
-            labelKomponen.Size = new Size(75, 17);
+            labelKomponen.Size = new Size(114, 28);
             labelKomponen.TabIndex = 30;
             labelKomponen.Text = "Komponen";
             // 
             // listBoxKomponen
             // 
             listBoxKomponen.BorderStyle = BorderStyle.None;
+            listBoxKomponen.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             listBoxKomponen.FormattingEnabled = true;
-            listBoxKomponen.ItemHeight = 15;
-            listBoxKomponen.Location = new Point(678, 414);
+            listBoxKomponen.ItemHeight = 28;
+            listBoxKomponen.Location = new Point(1274, 816);
+            listBoxKomponen.Margin = new Padding(4, 5, 4, 5);
             listBoxKomponen.Name = "listBoxKomponen";
-            listBoxKomponen.Size = new Size(243, 75);
+            listBoxKomponen.Size = new Size(423, 112);
             listBoxKomponen.TabIndex = 31;
+            listBoxKomponen.SelectedIndexChanged += listBoxKomponen_SelectedIndexChanged;
             // 
             // btnTambahKomponen
             // 
@@ -182,9 +206,11 @@
             btnTambahKomponen.BackColor = Color.FromArgb(255, 192, 255);
             btnTambahKomponen.FlatAppearance.BorderSize = 0;
             btnTambahKomponen.FlatStyle = FlatStyle.Flat;
-            btnTambahKomponen.Location = new Point(949, 375);
+            btnTambahKomponen.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnTambahKomponen.Location = new Point(1764, 797);
+            btnTambahKomponen.Margin = new Padding(4, 5, 4, 5);
             btnTambahKomponen.Name = "btnTambahKomponen";
-            btnTambahKomponen.Size = new Size(62, 27);
+            btnTambahKomponen.Size = new Size(89, 45);
             btnTambahKomponen.TabIndex = 32;
             btnTambahKomponen.Text = "Tambah";
             btnTambahKomponen.UseVisualStyleBackColor = false;
@@ -196,9 +222,11 @@
             btnHapusKomponen.BackColor = Color.FromArgb(255, 192, 255);
             btnHapusKomponen.FlatAppearance.BorderSize = 0;
             btnHapusKomponen.FlatStyle = FlatStyle.Flat;
-            btnHapusKomponen.Location = new Point(949, 436);
+            btnHapusKomponen.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnHapusKomponen.Location = new Point(1764, 879);
+            btnHapusKomponen.Margin = new Padding(4, 5, 4, 5);
             btnHapusKomponen.Name = "btnHapusKomponen";
-            btnHapusKomponen.Size = new Size(62, 27);
+            btnHapusKomponen.Size = new Size(89, 45);
             btnHapusKomponen.TabIndex = 33;
             btnHapusKomponen.Text = "Hapus";
             btnHapusKomponen.UseVisualStyleBackColor = false;
@@ -207,9 +235,10 @@
             // comboBoxTeknisi
             // 
             comboBoxTeknisi.FormattingEnabled = true;
-            comboBoxTeknisi.Location = new Point(669, 527);
+            comboBoxTeknisi.Location = new Point(806, 808);
+            comboBoxTeknisi.Margin = new Padding(4, 5, 4, 5);
             comboBoxTeknisi.Name = "comboBoxTeknisi";
-            comboBoxTeknisi.Size = new Size(263, 23);
+            comboBoxTeknisi.Size = new Size(374, 33);
             comboBoxTeknisi.TabIndex = 34;
             // 
             // labelTeknisi
@@ -217,9 +246,10 @@
             labelTeknisi.AutoSize = true;
             labelTeknisi.BackColor = Color.White;
             labelTeknisi.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            labelTeknisi.Location = new Point(677, 507);
+            labelTeknisi.Location = new Point(956, 775);
+            labelTeknisi.Margin = new Padding(4, 0, 4, 0);
             labelTeknisi.Name = "labelTeknisi";
-            labelTeknisi.Size = new Size(51, 17);
+            labelTeknisi.Size = new Size(77, 28);
             labelTeknisi.TabIndex = 35;
             labelTeknisi.Text = "Teknisi";
             // 
@@ -235,9 +265,10 @@
             buttonTambahTransaksi.IconFont = FontAwesome.Sharp.IconFont.Auto;
             buttonTambahTransaksi.IconSize = 17;
             buttonTambahTransaksi.ImageAlign = ContentAlignment.MiddleRight;
-            buttonTambahTransaksi.Location = new Point(712, 574);
+            buttonTambahTransaksi.Location = new Point(1335, 980);
+            buttonTambahTransaksi.Margin = new Padding(4, 5, 4, 5);
             buttonTambahTransaksi.Name = "buttonTambahTransaksi";
-            buttonTambahTransaksi.Size = new Size(200, 35);
+            buttonTambahTransaksi.Size = new Size(286, 58);
             buttonTambahTransaksi.TabIndex = 36;
             buttonTambahTransaksi.Text = "Tambah Transaksi";
             buttonTambahTransaksi.TextAlign = ContentAlignment.MiddleLeft;
@@ -246,18 +277,33 @@
             // 
             // numericUpDownJumlah
             // 
-            numericUpDownJumlah.Location = new Point(533, 376);
+            numericUpDownJumlah.Location = new Point(1526, 654);
+            numericUpDownJumlah.Margin = new Padding(4, 5, 4, 5);
             numericUpDownJumlah.Name = "numericUpDownJumlah";
-            numericUpDownJumlah.Size = new Size(120, 23);
+            numericUpDownJumlah.Size = new Size(171, 31);
             numericUpDownJumlah.TabIndex = 37;
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.Red;
+            button1.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.ForeColor = SystemColors.Control;
+            button1.Location = new Point(25, 1112);
+            button1.Name = "button1";
+            button1.Size = new Size(147, 42);
+            button1.TabIndex = 38;
+            button1.Text = "Cancel";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // AddTransaksiForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.Frame_13b1;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(1034, 621);
+            ClientSize = new Size(1924, 1170);
+            Controls.Add(button1);
             Controls.Add(numericUpDownJumlah);
             Controls.Add(buttonTambahTransaksi);
             Controls.Add(labelTeknisi);
@@ -277,8 +323,10 @@
             Controls.Add(labelMerkLaptop);
             Controls.Add(textBoxPelanggan);
             DoubleBuffered = true;
-            FormBorderStyle = FormBorderStyle.FixedToolWindow;
+            FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(4, 5, 4, 5);
             Name = "AddTransaksiForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "AddTransaksiForm";
             WindowState = FormWindowState.Maximized;
             Load += AddTransaksiForm_Load;
@@ -306,5 +354,6 @@
         private Label labelTeknisi;
         private FontAwesome.Sharp.IconButton buttonTambahTransaksi;
         private NumericUpDown numericUpDownJumlah;
+        private Button button1;
     }
 }

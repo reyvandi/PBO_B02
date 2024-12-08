@@ -281,5 +281,12 @@ namespace PROJECT_PBO
         {
 
         }
+
+        private void buttonTambah_Click_1(object sender, EventArgs e)
+        {
+            AddTransaksiForm addTransaksiForm = new AddTransaksiForm();
+            addTransaksiForm.Show();
+            this.Hide();
+        }
     }
 }

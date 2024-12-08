@@ -147,6 +147,38 @@ namespace PROJECT_PBO
                             alamat = row["alamat"].ToString(),
                             no_telepon = row["no_telepon"].ToString()
                         };
+                        FormTeknisi formTeknisi = new FormTeknisi();
+                        formTeknisi.Show();
+                        this.Hide();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
+                }
+            }
+            if (e.RowIndex < 0) return;
+
+            if (e.ColumnIndex == dataGridView1.Columns["Update"].Index)
+            {
+                try
+                {
+                    int teknisiId = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["id_teknisi"].Value);
+
+                    DataTable teknisiData = TeknisiContext.getTeknisiById(teknisiId);
+
+                    if (teknisiData.Rows.Count > 0)
+                    {
+                        DataRow row = teknisiData.Rows[0];
+                        M_Teknisi teknisi = new M_Teknisi
+                        {
+                            id_teknisi = (int)row["id_teknisi"],
+                            nama = row["nama"].ToString(),
+                            keahlian = row["keahlian"].ToString(),
+                            jam_kerja = row["jam_kerja"].ToString(),
+                            alamat = row["alamat"].ToString(),
+                            no_telepon = row["no_telepon"].ToString()
+                        };
 
                         this.Hide();
                         AddTeknisiForm addTeknisiForm = new AddTeknisiForm();

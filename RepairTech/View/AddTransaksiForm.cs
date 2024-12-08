@@ -239,5 +239,16 @@ namespace PROJECT_PBO.View
             }
         }
 
+        private void listBoxKomponen_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FormAdmin1 formAdmin1 = new FormAdmin1();
+            formAdmin1.Show();
+            this.Hide();
+        }
     }
 }

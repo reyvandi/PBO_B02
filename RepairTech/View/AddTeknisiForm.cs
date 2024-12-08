@@ -127,5 +127,17 @@ namespace PROJECT_PBO.View
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FormTeknisi formTeknisi = new FormTeknisi();
+            formTeknisi.Show();
+            this.Hide();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

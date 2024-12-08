@@ -305,5 +305,12 @@ namespace PROJECT_PBO
             addJasaPerbaikanForm.Show();
             this.Hide();
         }
+
+        private void buttonTambah_Click_1(object sender, EventArgs e)
+        {
+            AddJasaPerbaikanForm addJasaPerbaikanForm = new AddJasaPerbaikanForm();
+            addJasaPerbaikanForm.Show();
+            this.Hide();
+        }
     }
 }
