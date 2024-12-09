@@ -272,5 +272,12 @@ namespace PROJECT_PBO
         {
 
         }
-    }
+
+        private void iconButton3_Click(object sender, EventArgs e)
+        {
+            LOGIN formLogin = new LOGIN();
+            formLogin.Show();
+            this.Hide();
+        }
+    } 
 }

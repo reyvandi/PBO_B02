@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormKomponen));
             sidebar = new FlowLayoutPanel();
             panelSidebar = new Panel();
@@ -44,6 +44,8 @@
             buttonJasa = new FontAwesome.Sharp.IconButton();
             panel4 = new Panel();
             buttonTeknisi = new FontAwesome.Sharp.IconButton();
+            panel13 = new Panel();
+            iconButton3 = new FontAwesome.Sharp.IconButton();
             timerSidebar = new System.Windows.Forms.Timer(components);
             panel5 = new Panel();
             pictureBox1 = new PictureBox();
@@ -63,6 +65,7 @@
             panel2.SuspendLayout();
             panel3.SuspendLayout();
             panel4.SuspendLayout();
+            panel13.SuspendLayout();
             panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -79,6 +82,7 @@
             sidebar.Controls.Add(panel2);
             sidebar.Controls.Add(panel3);
             sidebar.Controls.Add(panel4);
+            sidebar.Controls.Add(panel13);
             sidebar.Dock = DockStyle.Left;
             sidebar.Location = new Point(0, 0);
             sidebar.Margin = new Padding(4, 5, 4, 5);
@@ -278,6 +282,39 @@
             buttonTeknisi.UseVisualStyleBackColor = false;
             buttonTeknisi.Click += buttonTeknisi_Click;
             // 
+            // panel13
+            // 
+            panel13.Controls.Add(iconButton3);
+            panel13.Location = new Point(4, 420);
+            panel13.Margin = new Padding(4, 5, 4, 5);
+            panel13.Name = "panel13";
+            panel13.Padding = new Padding(0, 100, 0, 0);
+            panel13.Size = new Size(239, 745);
+            panel13.TabIndex = 13;
+            // 
+            // iconButton3
+            // 
+            iconButton3.BackColor = Color.FromArgb(31, 30, 68);
+            iconButton3.Dock = DockStyle.Bottom;
+            iconButton3.FlatAppearance.BorderSize = 0;
+            iconButton3.FlatStyle = FlatStyle.Flat;
+            iconButton3.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            iconButton3.ForeColor = SystemColors.Control;
+            iconButton3.IconChar = FontAwesome.Sharp.IconChar.ArrowUpRightFromSquare;
+            iconButton3.IconColor = Color.Red;
+            iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconButton3.IconSize = 32;
+            iconButton3.ImageAlign = ContentAlignment.MiddleLeft;
+            iconButton3.Location = new Point(0, 663);
+            iconButton3.Margin = new Padding(4, 5, 4, 5);
+            iconButton3.Name = "iconButton3";
+            iconButton3.Size = new Size(239, 82);
+            iconButton3.TabIndex = 10;
+            iconButton3.Text = "Logout";
+            iconButton3.TextAlign = ContentAlignment.MiddleRight;
+            iconButton3.UseVisualStyleBackColor = false;
+            iconButton3.Click += iconButton3_Click;
+            // 
             // timerSidebar
             // 
             timerSidebar.Interval = 10;
@@ -360,14 +397,14 @@
             dataGridView1.BackgroundColor = Color.FromArgb(46, 51, 73);
             dataGridView1.BorderStyle = BorderStyle.None;
             dataGridView1.CellBorderStyle = DataGridViewCellBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(31, 30, 68);
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(31, 30, 68);
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Dock = DockStyle.Fill;
             dataGridView1.GridColor = Color.FromArgb(31, 30, 68);
@@ -491,6 +528,7 @@
             panel2.ResumeLayout(false);
             panel3.ResumeLayout(false);
             panel4.ResumeLayout(false);
+            panel13.ResumeLayout(false);
             panel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
@@ -528,5 +566,7 @@
         private TextBox textBox1;
         private FontAwesome.Sharp.IconButton buttonSearch;
         private Panel panel9;
+        private Panel panel13;
+        private FontAwesome.Sharp.IconButton iconButton3;
     }
 }

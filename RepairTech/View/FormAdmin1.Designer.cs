@@ -45,7 +45,6 @@
             buttonJasa = new FontAwesome.Sharp.IconButton();
             panel4 = new Panel();
             buttonTeknisi = new FontAwesome.Sharp.IconButton();
-            panel11 = new Panel();
             panel13 = new Panel();
             iconButton2 = new FontAwesome.Sharp.IconButton();
             panel7 = new Panel();
@@ -56,11 +55,11 @@
             dataGridView1 = new DataGridView();
             timerSidebar = new System.Windows.Forms.Timer(components);
             panelSearch = new Panel();
+            buttonTambah = new FontAwesome.Sharp.IconButton();
             panel8 = new Panel();
             panel10 = new Panel();
             panel9 = new Panel();
             panel12 = new Panel();
-            buttonTambah = new FontAwesome.Sharp.IconButton();
             sidebar.SuspendLayout();
             panelSidebar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)buttonMenu).BeginInit();
@@ -85,7 +84,6 @@
             sidebar.Controls.Add(panel2);
             sidebar.Controls.Add(panel3);
             sidebar.Controls.Add(panel4);
-            sidebar.Controls.Add(panel11);
             sidebar.Controls.Add(panel13);
             sidebar.Controls.Add(iconButton2);
             sidebar.Dock = DockStyle.Left;
@@ -95,7 +93,7 @@
             sidebar.MaximumSize = new Size(241, 1332);
             sidebar.MinimumSize = new Size(71, 82);
             sidebar.Name = "sidebar";
-            sidebar.Size = new Size(241, 1062);
+            sidebar.Size = new Size(241, 1170);
             sidebar.TabIndex = 0;
             sidebar.WrapContents = false;
             sidebar.Paint += flowLayoutPanel1_Paint;
@@ -286,22 +284,13 @@
             buttonTeknisi.UseVisualStyleBackColor = false;
             buttonTeknisi.Click += buttonTeknisi_Click;
             // 
-            // panel11
-            // 
-            panel11.Dock = DockStyle.Fill;
-            panel11.Location = new Point(4, 415);
-            panel11.Margin = new Padding(4, 5, 4, 5);
-            panel11.Name = "panel11";
-            panel11.Size = new Size(233, 82);
-            panel11.TabIndex = 8;
-            // 
             // panel13
             // 
-            panel13.Location = new Point(4, 507);
+            panel13.Location = new Point(4, 415);
             panel13.Margin = new Padding(4, 5, 4, 5);
             panel13.Name = "panel13";
             panel13.Padding = new Padding(0, 100, 0, 0);
-            panel13.Size = new Size(233, 950);
+            panel13.Size = new Size(233, 661);
             panel13.TabIndex = 9;
             // 
             // iconButton2
@@ -317,7 +306,7 @@
             iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconButton2.IconSize = 32;
             iconButton2.ImageAlign = ContentAlignment.MiddleLeft;
-            iconButton2.Location = new Point(4, 1467);
+            iconButton2.Location = new Point(4, 1086);
             iconButton2.Margin = new Padding(4, 5, 4, 5);
             iconButton2.Name = "iconButton2";
             iconButton2.Size = new Size(233, 82);
@@ -331,7 +320,7 @@
             // 
             panel7.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             panel7.Controls.Add(buttonLogout);
-            panel7.Location = new Point(4254, 2820);
+            panel7.Location = new Point(4254, 2928);
             panel7.Margin = new Padding(4, 5, 4, 5);
             panel7.Name = "panel7";
             panel7.Size = new Size(251, 82);
@@ -453,6 +442,28 @@
             panelSearch.Size = new Size(1683, 99);
             panelSearch.TabIndex = 14;
             // 
+            // buttonTambah
+            // 
+            buttonTambah.Anchor = AnchorStyles.None;
+            buttonTambah.BackColor = Color.Green;
+            buttonTambah.FlatAppearance.BorderSize = 0;
+            buttonTambah.FlatStyle = FlatStyle.Flat;
+            buttonTambah.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            buttonTambah.IconChar = FontAwesome.Sharp.IconChar.Add;
+            buttonTambah.IconColor = Color.White;
+            buttonTambah.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            buttonTambah.IconSize = 17;
+            buttonTambah.ImageAlign = ContentAlignment.MiddleRight;
+            buttonTambah.Location = new Point(40, 24);
+            buttonTambah.Margin = new Padding(4, 5, 4, 5);
+            buttonTambah.Name = "buttonTambah";
+            buttonTambah.Size = new Size(236, 58);
+            buttonTambah.TabIndex = 8;
+            buttonTambah.Text = "Tambah Transaksi";
+            buttonTambah.TextAlign = ContentAlignment.MiddleLeft;
+            buttonTambah.UseVisualStyleBackColor = false;
+            buttonTambah.Click += buttonTambah_Click_1;
+            // 
             // panel8
             // 
             panel8.Controls.Add(dataGridView1);
@@ -495,34 +506,12 @@
             panel12.Size = new Size(0, 0);
             panel12.TabIndex = 8;
             // 
-            // buttonTambah
-            // 
-            buttonTambah.Anchor = AnchorStyles.None;
-            buttonTambah.BackColor = Color.Green;
-            buttonTambah.FlatAppearance.BorderSize = 0;
-            buttonTambah.FlatStyle = FlatStyle.Flat;
-            buttonTambah.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            buttonTambah.IconChar = FontAwesome.Sharp.IconChar.Add;
-            buttonTambah.IconColor = Color.White;
-            buttonTambah.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            buttonTambah.IconSize = 17;
-            buttonTambah.ImageAlign = ContentAlignment.MiddleRight;
-            buttonTambah.Location = new Point(40, 24);
-            buttonTambah.Margin = new Padding(4, 5, 4, 5);
-            buttonTambah.Name = "buttonTambah";
-            buttonTambah.Size = new Size(236, 58);
-            buttonTambah.TabIndex = 8;
-            buttonTambah.Text = "Tambah Transaksi";
-            buttonTambah.TextAlign = ContentAlignment.MiddleLeft;
-            buttonTambah.UseVisualStyleBackColor = false;
-            buttonTambah.Click += buttonTambah_Click_1;
-            // 
             // FormAdmin1
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(46, 51, 73);
-            ClientSize = new Size(1924, 1062);
+            ClientSize = new Size(1924, 1170);
             Controls.Add(panel9);
             Controls.Add(panel8);
             Controls.Add(panelSearch);
@@ -579,7 +568,6 @@
         private Panel panel8;
         private Panel panel9;
         private Button buttonLogout;
-        private Panel panel11;
         private Panel panel10;
         private Panel panel13;
         private FontAwesome.Sharp.IconButton iconButton2;

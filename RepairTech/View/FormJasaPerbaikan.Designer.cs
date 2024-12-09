@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormJasaPerbaikan));
             pictureBox1 = new PictureBox();
             panel5 = new Panel();
@@ -54,10 +54,12 @@
             buttonLogout = new Button();
             iconButton2 = new FontAwesome.Sharp.IconButton();
             panel9 = new Panel();
+            buttonTambah = new FontAwesome.Sharp.IconButton();
             buttonSearch = new FontAwesome.Sharp.IconButton();
             textBox1 = new TextBox();
             panel10 = new Panel();
-            buttonTambah = new FontAwesome.Sharp.IconButton();
+            panel13 = new Panel();
+            iconButton3 = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel5.SuspendLayout();
             panel4.SuspendLayout();
@@ -71,6 +73,7 @@
             panel7.SuspendLayout();
             panel9.SuspendLayout();
             panel10.SuspendLayout();
+            panel13.SuspendLayout();
             SuspendLayout();
             // 
             // pictureBox1
@@ -164,23 +167,23 @@
             dataGridView1.BackgroundColor = Color.FromArgb(46, 51, 73);
             dataGridView1.BorderStyle = BorderStyle.None;
             dataGridView1.CellBorderStyle = DataGridViewCellBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = Color.FromArgb(31, 30, 68);
-            dataGridViewCellStyle5.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle5.ForeColor = Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
-            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(31, 30, 68);
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = SystemColors.Window;
-            dataGridViewCellStyle6.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle6.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
-            dataGridView1.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = SystemColors.Window;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
             dataGridView1.Dock = DockStyle.Fill;
             dataGridView1.GridColor = Color.FromArgb(31, 30, 68);
             dataGridView1.ImeMode = ImeMode.On;
@@ -348,6 +351,7 @@
             sidebar.Controls.Add(panel2);
             sidebar.Controls.Add(panel3);
             sidebar.Controls.Add(panel4);
+            sidebar.Controls.Add(panel13);
             sidebar.Dock = DockStyle.Left;
             sidebar.Location = new Point(0, 0);
             sidebar.Margin = new Padding(4, 5, 4, 5);
@@ -419,6 +423,28 @@
             panel9.Size = new Size(1683, 82);
             panel9.TabIndex = 16;
             // 
+            // buttonTambah
+            // 
+            buttonTambah.BackColor = Color.Green;
+            buttonTambah.FlatAppearance.BorderSize = 0;
+            buttonTambah.FlatStyle = FlatStyle.Flat;
+            buttonTambah.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            buttonTambah.ForeColor = SystemColors.Control;
+            buttonTambah.IconChar = FontAwesome.Sharp.IconChar.Add;
+            buttonTambah.IconColor = Color.White;
+            buttonTambah.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            buttonTambah.IconSize = 17;
+            buttonTambah.ImageAlign = ContentAlignment.MiddleRight;
+            buttonTambah.Location = new Point(60, 16);
+            buttonTambah.Margin = new Padding(4, 5, 4, 5);
+            buttonTambah.Name = "buttonTambah";
+            buttonTambah.Size = new Size(261, 50);
+            buttonTambah.TabIndex = 20;
+            buttonTambah.Text = "Tambah Jasa Servis";
+            buttonTambah.TextAlign = ContentAlignment.MiddleLeft;
+            buttonTambah.UseVisualStyleBackColor = false;
+            buttonTambah.Click += buttonTambah_Click_1;
+            // 
             // buttonSearch
             // 
             buttonSearch.BackColor = Color.FromArgb(24, 23, 80);
@@ -464,27 +490,38 @@
             panel10.Size = new Size(1683, 842);
             panel10.TabIndex = 17;
             // 
-            // buttonTambah
+            // panel13
             // 
-            buttonTambah.BackColor = Color.Green;
-            buttonTambah.FlatAppearance.BorderSize = 0;
-            buttonTambah.FlatStyle = FlatStyle.Flat;
-            buttonTambah.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            buttonTambah.ForeColor = SystemColors.Control;
-            buttonTambah.IconChar = FontAwesome.Sharp.IconChar.Add;
-            buttonTambah.IconColor = Color.White;
-            buttonTambah.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            buttonTambah.IconSize = 17;
-            buttonTambah.ImageAlign = ContentAlignment.MiddleRight;
-            buttonTambah.Location = new Point(60, 16);
-            buttonTambah.Margin = new Padding(4, 5, 4, 5);
-            buttonTambah.Name = "buttonTambah";
-            buttonTambah.Size = new Size(261, 50);
-            buttonTambah.TabIndex = 20;
-            buttonTambah.Text = "Tambah Jasa Servis";
-            buttonTambah.TextAlign = ContentAlignment.MiddleLeft;
-            buttonTambah.UseVisualStyleBackColor = false;
-            buttonTambah.Click += buttonTambah_Click_1;
+            panel13.Controls.Add(iconButton3);
+            panel13.Location = new Point(4, 420);
+            panel13.Margin = new Padding(4, 5, 4, 5);
+            panel13.Name = "panel13";
+            panel13.Padding = new Padding(0, 100, 0, 0);
+            panel13.Size = new Size(239, 740);
+            panel13.TabIndex = 13;
+            // 
+            // iconButton3
+            // 
+            iconButton3.BackColor = Color.FromArgb(31, 30, 68);
+            iconButton3.Dock = DockStyle.Bottom;
+            iconButton3.FlatAppearance.BorderSize = 0;
+            iconButton3.FlatStyle = FlatStyle.Flat;
+            iconButton3.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            iconButton3.ForeColor = SystemColors.Control;
+            iconButton3.IconChar = FontAwesome.Sharp.IconChar.ArrowUpRightFromSquare;
+            iconButton3.IconColor = Color.Red;
+            iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconButton3.IconSize = 32;
+            iconButton3.ImageAlign = ContentAlignment.MiddleLeft;
+            iconButton3.Location = new Point(0, 658);
+            iconButton3.Margin = new Padding(4, 5, 4, 5);
+            iconButton3.Name = "iconButton3";
+            iconButton3.Size = new Size(239, 82);
+            iconButton3.TabIndex = 10;
+            iconButton3.Text = "Logout";
+            iconButton3.TextAlign = ContentAlignment.MiddleRight;
+            iconButton3.UseVisualStyleBackColor = false;
+            iconButton3.Click += iconButton3_Click;
             // 
             // FormJasaPerbaikan
             // 
@@ -520,6 +557,7 @@
             panel9.ResumeLayout(false);
             panel9.PerformLayout();
             panel10.ResumeLayout(false);
+            panel13.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -551,5 +589,7 @@
         private FontAwesome.Sharp.IconButton buttonSearch;
         private TextBox textBox1;
         private Panel panel10;
+        private Panel panel13;
+        private FontAwesome.Sharp.IconButton iconButton3;
     }
 }
