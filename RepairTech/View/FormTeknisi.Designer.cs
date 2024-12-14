@@ -41,10 +41,11 @@
             buttonTambah = new FontAwesome.Sharp.IconButton();
             panel9 = new Panel();
             panel13 = new Panel();
+            iconButton3 = new FontAwesome.Sharp.IconButton();
             iconButton2 = new FontAwesome.Sharp.IconButton();
             panel4 = new Panel();
-            buttonTeknisi = new FontAwesome.Sharp.IconButton();
             panel6 = new Panel();
+            buttonTeknisi = new FontAwesome.Sharp.IconButton();
             panel3 = new Panel();
             buttonJasa = new FontAwesome.Sharp.IconButton();
             panel2 = new Panel();
@@ -52,10 +53,11 @@
             panel1 = new Panel();
             buttonTransaksi = new FontAwesome.Sharp.IconButton();
             panelSidebar = new Panel();
-            buttonMenu = new PictureBox();
             label1 = new Label();
+            buttonMenu = new PictureBox();
             sidebar = new FlowLayoutPanel();
-            iconButton3 = new FontAwesome.Sharp.IconButton();
+            panel7 = new Panel();
+            iconButton4 = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel5.SuspendLayout();
@@ -69,6 +71,7 @@
             panelSidebar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)buttonMenu).BeginInit();
             sidebar.SuspendLayout();
+            panel7.SuspendLayout();
             SuspendLayout();
             // 
             // dataGridView1
@@ -99,7 +102,7 @@
             dataGridView1.Margin = new Padding(4, 5, 4, 5);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 62;
-            dataGridView1.Size = new Size(1501, 720);
+            dataGridView1.Size = new Size(1501, 791);
             dataGridView1.TabIndex = 12;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
@@ -170,7 +173,7 @@
             panel8.Location = new Point(243, 83);
             panel8.Name = "panel8";
             panel8.Padding = new Padding(30, 35, 30, 0);
-            panel8.Size = new Size(1561, 755);
+            panel8.Size = new Size(1561, 826);
             panel8.TabIndex = 15;
             // 
             // buttonTambah
@@ -185,7 +188,7 @@
             buttonTambah.IconFont = FontAwesome.Sharp.IconFont.Auto;
             buttonTambah.IconSize = 17;
             buttonTambah.ImageAlign = ContentAlignment.MiddleRight;
-            buttonTambah.Location = new Point(733, 82);
+            buttonTambah.Location = new Point(1270, 173);
             buttonTambah.Margin = new Padding(4, 5, 4, 5);
             buttonTambah.Name = "buttonTambah";
             buttonTambah.Size = new Size(261, 50);
@@ -198,9 +201,9 @@
             // panel9
             // 
             panel9.Controls.Add(buttonTambah);
-            panel9.Location = new Point(243, 853);
+            panel9.Location = new Point(243, 915);
             panel9.Name = "panel9";
-            panel9.Size = new Size(1681, 305);
+            panel9.Size = new Size(1681, 243);
             panel9.TabIndex = 16;
             panel9.Paint += panel9_Paint;
             // 
@@ -213,6 +216,29 @@
             panel13.Padding = new Padding(0, 100, 0, 0);
             panel13.Size = new Size(239, 740);
             panel13.TabIndex = 12;
+            // 
+            // iconButton3
+            // 
+            iconButton3.BackColor = Color.FromArgb(31, 30, 68);
+            iconButton3.Dock = DockStyle.Bottom;
+            iconButton3.FlatAppearance.BorderSize = 0;
+            iconButton3.FlatStyle = FlatStyle.Flat;
+            iconButton3.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            iconButton3.ForeColor = SystemColors.Control;
+            iconButton3.IconChar = FontAwesome.Sharp.IconChar.ArrowUpRightFromSquare;
+            iconButton3.IconColor = Color.Red;
+            iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconButton3.IconSize = 32;
+            iconButton3.ImageAlign = ContentAlignment.MiddleLeft;
+            iconButton3.Location = new Point(0, 658);
+            iconButton3.Margin = new Padding(4, 5, 4, 5);
+            iconButton3.Name = "iconButton3";
+            iconButton3.Size = new Size(239, 82);
+            iconButton3.TabIndex = 10;
+            iconButton3.Text = "Logout";
+            iconButton3.TextAlign = ContentAlignment.MiddleRight;
+            iconButton3.UseVisualStyleBackColor = false;
+            iconButton3.Click += iconButton3_Click;
             // 
             // iconButton2
             // 
@@ -246,6 +272,16 @@
             panel4.Size = new Size(243, 83);
             panel4.TabIndex = 5;
             // 
+            // panel6
+            // 
+            panel6.BackColor = Color.Cyan;
+            panel6.Dock = DockStyle.Left;
+            panel6.Location = new Point(0, 0);
+            panel6.Margin = new Padding(0);
+            panel6.Name = "panel6";
+            panel6.Size = new Size(9, 83);
+            panel6.TabIndex = 3;
+            // 
             // buttonTeknisi
             // 
             buttonTeknisi.BackColor = Color.FromArgb(31, 30, 68);
@@ -268,16 +304,6 @@
             buttonTeknisi.Text = "Teknisi";
             buttonTeknisi.TextAlign = ContentAlignment.MiddleRight;
             buttonTeknisi.UseVisualStyleBackColor = false;
-            // 
-            // panel6
-            // 
-            panel6.BackColor = Color.Cyan;
-            panel6.Dock = DockStyle.Left;
-            panel6.Location = new Point(0, 0);
-            panel6.Margin = new Padding(0);
-            panel6.Name = "panel6";
-            panel6.Size = new Size(9, 83);
-            panel6.TabIndex = 3;
             // 
             // panel3
             // 
@@ -384,6 +410,7 @@
             // panelSidebar
             // 
             panelSidebar.BackColor = Color.FromArgb(31, 30, 68);
+            panelSidebar.Controls.Add(panel7);
             panelSidebar.Controls.Add(label1);
             panelSidebar.Controls.Add(buttonMenu);
             panelSidebar.Location = new Point(0, 0);
@@ -391,6 +418,20 @@
             panelSidebar.Name = "panelSidebar";
             panelSidebar.Size = new Size(243, 83);
             panelSidebar.TabIndex = 0;
+            // 
+            // label1
+            // 
+            label1.Dock = DockStyle.Fill;
+            label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = SystemColors.Control;
+            label1.Location = new Point(71, 0);
+            label1.Margin = new Padding(0);
+            label1.Name = "label1";
+            label1.Size = new Size(172, 83);
+            label1.TabIndex = 2;
+            label1.Text = "Menu";
+            label1.TextAlign = ContentAlignment.MiddleCenter;
+            label1.Click += label1_Click;
             // 
             // buttonMenu
             // 
@@ -406,20 +447,6 @@
             buttonMenu.TabIndex = 1;
             buttonMenu.TabStop = false;
             buttonMenu.Click += buttonMenu_Click;
-            // 
-            // label1
-            // 
-            label1.Dock = DockStyle.Fill;
-            label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = SystemColors.Control;
-            label1.Location = new Point(71, 0);
-            label1.Margin = new Padding(0);
-            label1.Name = "label1";
-            label1.Size = new Size(172, 83);
-            label1.TabIndex = 2;
-            label1.Text = "Menu";
-            label1.TextAlign = ContentAlignment.MiddleCenter;
-            label1.Click += label1_Click;
             // 
             // sidebar
             // 
@@ -440,28 +467,34 @@
             sidebar.Size = new Size(243, 1170);
             sidebar.TabIndex = 10;
             // 
-            // iconButton3
+            // panel7
             // 
-            iconButton3.BackColor = Color.FromArgb(31, 30, 68);
-            iconButton3.Dock = DockStyle.Bottom;
-            iconButton3.FlatAppearance.BorderSize = 0;
-            iconButton3.FlatStyle = FlatStyle.Flat;
-            iconButton3.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            iconButton3.ForeColor = SystemColors.Control;
-            iconButton3.IconChar = FontAwesome.Sharp.IconChar.ArrowUpRightFromSquare;
-            iconButton3.IconColor = Color.Red;
-            iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton3.IconSize = 32;
-            iconButton3.ImageAlign = ContentAlignment.MiddleLeft;
-            iconButton3.Location = new Point(0, 658);
-            iconButton3.Margin = new Padding(4, 5, 4, 5);
-            iconButton3.Name = "iconButton3";
-            iconButton3.Size = new Size(239, 82);
-            iconButton3.TabIndex = 10;
-            iconButton3.Text = "Logout";
-            iconButton3.TextAlign = ContentAlignment.MiddleRight;
-            iconButton3.UseVisualStyleBackColor = false;
-            iconButton3.Click += iconButton3_Click;
+            panel7.Controls.Add(iconButton4);
+            panel7.Location = new Point(243, 66);
+            panel7.Name = "panel7";
+            panel7.Size = new Size(1681, 243);
+            panel7.TabIndex = 17;
+            // 
+            // iconButton4
+            // 
+            iconButton4.BackColor = Color.Green;
+            iconButton4.FlatAppearance.BorderSize = 0;
+            iconButton4.FlatStyle = FlatStyle.Flat;
+            iconButton4.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            iconButton4.ForeColor = SystemColors.Control;
+            iconButton4.IconChar = FontAwesome.Sharp.IconChar.Add;
+            iconButton4.IconColor = Color.White;
+            iconButton4.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconButton4.IconSize = 17;
+            iconButton4.ImageAlign = ContentAlignment.MiddleRight;
+            iconButton4.Location = new Point(733, 82);
+            iconButton4.Margin = new Padding(4, 5, 4, 5);
+            iconButton4.Name = "iconButton4";
+            iconButton4.Size = new Size(261, 50);
+            iconButton4.TabIndex = 13;
+            iconButton4.Text = "Tambah Teknisi";
+            iconButton4.TextAlign = ContentAlignment.MiddleLeft;
+            iconButton4.UseVisualStyleBackColor = false;
             // 
             // FormTeknisi
             // 
@@ -494,6 +527,7 @@
             panelSidebar.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)buttonMenu).EndInit();
             sidebar.ResumeLayout(false);
+            panel7.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -524,5 +558,7 @@
         private Label label1;
         private PictureBox buttonMenu;
         private FlowLayoutPanel sidebar;
+        private Panel panel7;
+        private FontAwesome.Sharp.IconButton iconButton4;
     }
 }

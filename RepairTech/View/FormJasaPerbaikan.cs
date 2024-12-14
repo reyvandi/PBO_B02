@@ -319,5 +319,10 @@ namespace PROJECT_PBO
             formLogin.Show();
             this.Hide();
         }
+
+        private void panel13_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

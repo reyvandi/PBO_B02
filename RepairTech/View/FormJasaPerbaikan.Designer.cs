@@ -50,6 +50,8 @@
             panel3 = new Panel();
             panel6 = new Panel();
             sidebar = new FlowLayoutPanel();
+            panel13 = new Panel();
+            iconButton3 = new FontAwesome.Sharp.IconButton();
             panel7 = new Panel();
             buttonLogout = new Button();
             iconButton2 = new FontAwesome.Sharp.IconButton();
@@ -58,8 +60,6 @@
             buttonSearch = new FontAwesome.Sharp.IconButton();
             textBox1 = new TextBox();
             panel10 = new Panel();
-            panel13 = new Panel();
-            iconButton3 = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel5.SuspendLayout();
             panel4.SuspendLayout();
@@ -70,10 +70,10 @@
             panelSidebar.SuspendLayout();
             panel3.SuspendLayout();
             sidebar.SuspendLayout();
+            panel13.SuspendLayout();
             panel7.SuspendLayout();
             panel9.SuspendLayout();
             panel10.SuspendLayout();
-            panel13.SuspendLayout();
             SuspendLayout();
             // 
             // pictureBox1
@@ -361,6 +361,40 @@
             sidebar.Size = new Size(241, 1170);
             sidebar.TabIndex = 0;
             // 
+            // panel13
+            // 
+            panel13.Controls.Add(iconButton3);
+            panel13.Location = new Point(4, 420);
+            panel13.Margin = new Padding(4, 5, 4, 5);
+            panel13.Name = "panel13";
+            panel13.Padding = new Padding(0, 100, 0, 0);
+            panel13.Size = new Size(239, 740);
+            panel13.TabIndex = 13;
+            panel13.Paint += panel13_Paint;
+            // 
+            // iconButton3
+            // 
+            iconButton3.BackColor = Color.FromArgb(31, 30, 68);
+            iconButton3.Dock = DockStyle.Bottom;
+            iconButton3.FlatAppearance.BorderSize = 0;
+            iconButton3.FlatStyle = FlatStyle.Flat;
+            iconButton3.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            iconButton3.ForeColor = SystemColors.Control;
+            iconButton3.IconChar = FontAwesome.Sharp.IconChar.ArrowUpRightFromSquare;
+            iconButton3.IconColor = Color.Red;
+            iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconButton3.IconSize = 32;
+            iconButton3.ImageAlign = ContentAlignment.MiddleLeft;
+            iconButton3.Location = new Point(0, 658);
+            iconButton3.Margin = new Padding(4, 5, 4, 5);
+            iconButton3.Name = "iconButton3";
+            iconButton3.Size = new Size(239, 82);
+            iconButton3.TabIndex = 10;
+            iconButton3.Text = "Logout";
+            iconButton3.TextAlign = ContentAlignment.MiddleRight;
+            iconButton3.UseVisualStyleBackColor = false;
+            iconButton3.Click += iconButton3_Click;
+            // 
             // panel7
             // 
             panel7.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
@@ -490,39 +524,6 @@
             panel10.Size = new Size(1683, 842);
             panel10.TabIndex = 17;
             // 
-            // panel13
-            // 
-            panel13.Controls.Add(iconButton3);
-            panel13.Location = new Point(4, 420);
-            panel13.Margin = new Padding(4, 5, 4, 5);
-            panel13.Name = "panel13";
-            panel13.Padding = new Padding(0, 100, 0, 0);
-            panel13.Size = new Size(239, 740);
-            panel13.TabIndex = 13;
-            // 
-            // iconButton3
-            // 
-            iconButton3.BackColor = Color.FromArgb(31, 30, 68);
-            iconButton3.Dock = DockStyle.Bottom;
-            iconButton3.FlatAppearance.BorderSize = 0;
-            iconButton3.FlatStyle = FlatStyle.Flat;
-            iconButton3.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            iconButton3.ForeColor = SystemColors.Control;
-            iconButton3.IconChar = FontAwesome.Sharp.IconChar.ArrowUpRightFromSquare;
-            iconButton3.IconColor = Color.Red;
-            iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton3.IconSize = 32;
-            iconButton3.ImageAlign = ContentAlignment.MiddleLeft;
-            iconButton3.Location = new Point(0, 658);
-            iconButton3.Margin = new Padding(4, 5, 4, 5);
-            iconButton3.Name = "iconButton3";
-            iconButton3.Size = new Size(239, 82);
-            iconButton3.TabIndex = 10;
-            iconButton3.Text = "Logout";
-            iconButton3.TextAlign = ContentAlignment.MiddleRight;
-            iconButton3.UseVisualStyleBackColor = false;
-            iconButton3.Click += iconButton3_Click;
-            // 
             // FormJasaPerbaikan
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
@@ -553,11 +554,11 @@
             panelSidebar.ResumeLayout(false);
             panel3.ResumeLayout(false);
             sidebar.ResumeLayout(false);
+            panel13.ResumeLayout(false);
             panel7.ResumeLayout(false);
             panel9.ResumeLayout(false);
             panel9.PerformLayout();
             panel10.ResumeLayout(false);
-            panel13.ResumeLayout(false);
             ResumeLayout(false);
         }
 

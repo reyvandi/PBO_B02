@@ -105,9 +105,10 @@ namespace PROJECT_PBO.View
 
         private void buttonTransaksi_Click(object sender, EventArgs e)
         {
-            this.Hide();
+
             FormPelanggan formPelanggan = new FormPelanggan(id_akun);
             formPelanggan.Show();
+            this.Hide();
         }
         private void buttonMenu_Click(object sender, EventArgs e)
         {
@@ -246,6 +247,13 @@ namespace PROJECT_PBO.View
         private void comboBoxKerusakan_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void iconButton3_Click(object sender, EventArgs e)
+        {
+            LOGIN login = new LOGIN();
+            login.ShowDialog();
+            this.Hide();
         }
     }
 }

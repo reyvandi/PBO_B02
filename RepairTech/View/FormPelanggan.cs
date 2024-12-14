@@ -174,14 +174,21 @@ namespace PROJECT_PBO
 
         private void buttonServis_Click(object sender, EventArgs e)
         {
-            this.Hide();
             FormServisLaptopPelanggan formServisLaptopPelanggan = new FormServisLaptopPelanggan(id_akun);
             formServisLaptopPelanggan.Show();
+            this.Hide();
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void iconButton3_Click(object sender, EventArgs e)
+        {
+            LOGIN login = new LOGIN();
+            login.ShowDialog();
+            this.Hide();
         }
     }
 }
