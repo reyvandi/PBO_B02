@@ -184,12 +184,18 @@ namespace PROJECT_PBO.View
         {
             try
             {
-                // Ambil data dari form
-                string namaPelanggan = textBoxPelanggan.Text;
-                string merkLaptop = string.IsNullOrWhiteSpace(textBoxMerkLaptop.Text) ? null : textBoxMerkLaptop.Text;
-                int? idTeknisi = comboBoxTeknisi.SelectedItem != null
-                    ? (int?)((DataRowView)comboBoxTeknisi.SelectedItem)["id_teknisi"]
-                    : null;
+                // Buat objek transaksi utama
+                M_Transaksi transaksi = new M_Transaksi
+                {
+                    nama_pelanggan = textBoxPelanggan.Text,
+                    laptop = string.IsNullOrWhiteSpace(textBoxMerkLaptop.Text) ? null : textBoxMerkLaptop.Text,
+                    id_teknisi = comboBoxTeknisi.SelectedItem != null
+                        ? (int?)((DataRowView)comboBoxTeknisi.SelectedItem)["id_teknisi"]
+                        : null,
+                    tanggal = DateTime.Now,
+                    status_transaksi = "Telah Selesai", // Status default
+                    alamat = null 
+                };
 
                 // Ambil data detail transaksi (kerusakan)
                 List<M_DetailTransaksi> detailTransaksi = new List<M_DetailTransaksi>();
@@ -225,7 +231,7 @@ namespace PROJECT_PBO.View
                 }
 
                 // Simpan transaksi
-                TransaksiContext.TambahTransaksi(namaPelanggan, merkLaptop, idTeknisi, detailTransaksi, detailKomponens);
+                TransaksiContext.TambahTransaksi(transaksi, detailTransaksi, detailKomponens);
 
                 // Pesan sukses
                 MessageBox.Show("Transaksi berhasil ditambahkan!", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information);

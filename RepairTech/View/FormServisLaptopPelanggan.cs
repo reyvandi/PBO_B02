@@ -1,5 +1,6 @@
 ﻿using Npgsql;
 using PROJECT_PBO.Controller;
+using PROJECT_PBO.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -147,7 +148,6 @@ namespace PROJECT_PBO.View
                 int idTeknisi = Convert.ToInt32(comboBoxTeknisi.SelectedValue);
                 string username = labelUsername.Text; // Pastikan labelUsername sudah diisi dengan username
 
-
                 // Validasi input
                 if (string.IsNullOrEmpty(namaLaptop) || string.IsNullOrEmpty(alamat) || listBoxKerusakan.Items.Count == 0)
                 {
@@ -155,8 +155,19 @@ namespace PROJECT_PBO.View
                     return;
                 }
 
+                // Buat objek M_Transaksi
+                M_Transaksi transaksi = new M_Transaksi
+                {
+                    nama_pelanggan = username,
+                    laptop = namaLaptop,
+                    alamat = alamat,
+                    id_teknisi = idTeknisi,
+                    tanggal = DateTime.Now,
+                    status_transaksi = "Belum Selesai"
+                };
+
                 // Tambahkan transaksi
-                int idTransaksi = TransaksiContext.AddTransaksi(username, namaLaptop, alamat, idTeknisi);
+                int idTransaksi = TransaksiContext.AddTransaksi(transaksi);
 
                 if (idTransaksi > 0)
                 {

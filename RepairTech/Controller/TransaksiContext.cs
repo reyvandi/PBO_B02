@@ -11,14 +11,12 @@ namespace PROJECT_PBO.Controller
 
 
         public static void TambahTransaksi(
-            string namaPelanggan,
-            string merkLaptop,
-            int? idTeknisi,
+            M_Transaksi transaksi,
             List<M_DetailTransaksi> detailTransaksi,
             List<M_DetailKomponen> detailKomponens)
         {
-            // Validasi input nama pelanggan
-            if (string.IsNullOrWhiteSpace(namaPelanggan))
+            // Validasi input transaksi utama
+            if (string.IsNullOrWhiteSpace(transaksi.nama_pelanggan))
             {
                 throw new Exception("Nama pelanggan tidak boleh kosong.");
             }
@@ -26,16 +24,18 @@ namespace PROJECT_PBO.Controller
             // Query untuk menambahkan transaksi
             string queryTransaksi = @"
                 INSERT INTO transaksi (nama_pelanggan, laptop, id_teknisi, tanggal, status_transaksi) 
-                VALUES (@nama_pelanggan, @laptop, @id_teknisi, NOW(), 'Telah Selesai') RETURNING id_transaksi;";
+                VALUES (@nama_pelanggan, @laptop, @id_teknisi, @tanggal, @status_transaksi) RETURNING id_transaksi;";
 
             DatabaseWrapper.openConnection();
             try
             {
                 // Menambahkan transaksi dan mendapatkan id_transaksi
                 int idTransaksi = DatabaseWrapper.executeScalar(queryTransaksi, new NpgsqlParameter[] {
-                    new NpgsqlParameter("@nama_pelanggan", namaPelanggan),
-                    new NpgsqlParameter("@laptop", merkLaptop ?? (object)DBNull.Value),
-                    new NpgsqlParameter("@id_teknisi", idTeknisi ?? (object)DBNull.Value)
+                    new NpgsqlParameter("@nama_pelanggan", transaksi.nama_pelanggan),
+                    new NpgsqlParameter("@laptop", transaksi.laptop ?? (object)DBNull.Value),
+                    new NpgsqlParameter("@id_teknisi", transaksi.id_teknisi ?? (object)DBNull.Value),
+                    new NpgsqlParameter("@tanggal", transaksi.tanggal),
+                    new NpgsqlParameter("@status_transaksi", transaksi.status_transaksi)
                 });
 
                 // Menambahkan detail transaksi
@@ -59,7 +59,6 @@ namespace PROJECT_PBO.Controller
                         INSERT INTO detail_komponen (id_transaksi, id_komponen, harga, jumlah)
                         VALUES (@id_transaksi, @id_komponen, @harga, @jumlah);";
 
-                    // Update stok komponen setelah transaksi
                     string queryUpdateStok = @"
                         UPDATE komponen 
                         SET stok = stok - @jumlah
@@ -72,7 +71,6 @@ namespace PROJECT_PBO.Controller
                         new NpgsqlParameter("@jumlah", detail.jumlah)
                     });
 
-                    // Update stok komponen
                     DatabaseWrapper.commandExecutor(queryUpdateStok, new NpgsqlParameter[] {
                         new NpgsqlParameter("@jumlah", detail.jumlah),
                         new NpgsqlParameter("@id_komponen", detail.id_komponen)
@@ -90,21 +88,22 @@ namespace PROJECT_PBO.Controller
         }
 
         // Menambahkan transaksi baru untuk pelanggan yang melakukan servis secara online
-        public static int AddTransaksi(string username, string namaLaptop, string alamat, int idTeknisi)
+        public static int AddTransaksi(M_Transaksi transaksi)
         {
             // Query untuk memasukkan transaksi baru
             string query = $@"
-                INSERT INTO {table} (nama_pelanggan, laptop, alamat, id_teknisi, tanggal)
-                VALUES (@nama_pelanggan, @laptop, @alamat, @id_teknisi, @tanggal)
+                INSERT INTO {table} (nama_pelanggan, laptop, alamat, id_teknisi, tanggal, status_transaksi)
+                VALUES (@nama_pelanggan, @laptop, @alamat, @id_teknisi, @tanggal, @status_transaksi)
                 RETURNING id_transaksi";
 
             NpgsqlParameter[] parameters =
             {
-                new NpgsqlParameter("@nama_pelanggan", username),  // Gunakan langsung username
-                new NpgsqlParameter("@laptop", namaLaptop),
-                new NpgsqlParameter("@alamat", alamat),
-                new NpgsqlParameter("@id_teknisi", idTeknisi),
-                new NpgsqlParameter("@tanggal", DateTime.Now)
+                new NpgsqlParameter("@nama_pelanggan", transaksi.nama_pelanggan),
+                new NpgsqlParameter("@laptop", transaksi.laptop),
+                new NpgsqlParameter("@alamat", transaksi.alamat),
+                new NpgsqlParameter("@id_teknisi", transaksi.id_teknisi),
+                new NpgsqlParameter("@tanggal", transaksi.tanggal),
+                new NpgsqlParameter("@status_transaksi", transaksi.status_transaksi)
             };
 
             return executeScalar(query, parameters); // Return the ID of the newly added transaction
@@ -182,22 +181,17 @@ namespace PROJECT_PBO.Controller
                 t.tanggal,
                 t.nama_pelanggan,
                 t.laptop AS merk_laptop,
-                -- Gabungkan kerusakan
                 COALESCE(STRING_AGG(DISTINCT jp.jenis_kerusakan, ', '), '') AS kerusakan,
                 t.alamat,
-                -- Gabungkan komponen
                 COALESCE(STRING_AGG(DISTINCT k.nama_komponen, ', '), '') AS komponen,
-                -- Hitung total harga
                 COALESCE(SUM(DISTINCT dt.biaya), 0) + COALESCE(SUM(DISTINCT dc.harga * dc.jumlah), 0) AS total_harga,
                 t.status_transaksi
             FROM 
                 transaksi t
-            -- Gabungkan detail transaksi dan jasa perbaikan
             LEFT JOIN 
                 detail_transaksi dt ON t.id_transaksi = dt.id_transaksi
             LEFT JOIN 
                 jasa_perbaikan jp ON dt.id_jasa_perbaikan = jp.id_jasa_perbaikan
-            -- Gabungkan detail komponen dan komponen
             LEFT JOIN 
                 detail_komponen dc ON t.id_transaksi = dc.id_transaksi
             LEFT JOIN 
@@ -207,7 +201,7 @@ namespace PROJECT_PBO.Controller
             ORDER BY 
                 t.tanggal DESC";
 
-            return queryExecutor(query);
+            return DatabaseWrapper.queryExecutor(query);
         }
     }
 }

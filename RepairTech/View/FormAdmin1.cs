@@ -94,16 +94,6 @@ namespace PROJECT_PBO
                     dataGridView1.Columns.Insert(0, nomorColumn);
                 }
 
-                DataGridViewCellStyle headerStyle = new DataGridViewCellStyle
-                {
-                    BackColor = Color.FromArgb(31, 31, 68),
-                    ForeColor = Color.White,
-                    Font = new Font("Arial", 10, FontStyle.Bold),
-                    Alignment = DataGridViewContentAlignment.MiddleCenter
-                };
-                dataGridView1.ColumnHeadersDefaultCellStyle = headerStyle;
-                dataGridView1.EnableHeadersVisualStyles = false;
-
                 // Set nomor urut di kolom "No"
                 for (int i = 0; i < dataGridView1.Rows.Count; i++)
                 {
@@ -113,19 +103,17 @@ namespace PROJECT_PBO
                 // Tambahkan ComboBox langsung ke kolom status_transaksi
                 if (dataGridView1.Columns.Contains("status_transaksi"))
                 {
-                    // Hapus kolom status_transaksi sebelumnya
                     int index = dataGridView1.Columns["status_transaksi"].Index;
                     dataGridView1.Columns.Remove("status_transaksi");
 
-                    // Tambahkan ComboBoxColumn yang terhubung ke DataSource
                     DataGridViewComboBoxColumn comboBoxColumn = new DataGridViewComboBoxColumn
                     {
-                        DataPropertyName = "status_transaksi", // Terhubung ke kolom sumber data
+                        DataPropertyName = "status_transaksi",
                         HeaderText = "Status Transaksi",
                         DataSource = new string[] { "Belum Selesai", "Telah Selesai" },
                         ValueType = typeof(string),
                         Name = "StatusTransaksiComboBox",
-                        SortMode = DataGridViewColumnSortMode.Automatic // Aktifkan sorting otomatis
+                        SortMode = DataGridViewColumnSortMode.Automatic
                     };
                     dataGridView1.Columns.Insert(index, comboBoxColumn);
                 }
@@ -139,6 +127,17 @@ namespace PROJECT_PBO
                 dataGridView1.Columns["alamat"].HeaderText = "Alamat";
                 dataGridView1.Columns["komponen"].HeaderText = "Komponen Yang Dibeli";
                 dataGridView1.Columns["total_harga"].HeaderText = "Total Harga";
+
+                // Tambahkan gaya header kolom
+                DataGridViewCellStyle headerStyle = new DataGridViewCellStyle
+                {
+                    BackColor = Color.FromArgb(31, 31, 68),
+                    ForeColor = Color.White,
+                    Font = new Font("Arial", 10, FontStyle.Bold),
+                    Alignment = DataGridViewContentAlignment.MiddleCenter
+                };
+                dataGridView1.ColumnHeadersDefaultCellStyle = headerStyle;
+                dataGridView1.EnableHeadersVisualStyles = false;
             }
             catch (Exception ex)
             {
