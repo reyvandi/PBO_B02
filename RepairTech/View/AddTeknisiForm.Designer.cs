@@ -45,13 +45,12 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.BackColor = Color.White;
+            label1.BackColor = Color.Transparent;
             label1.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.Black;
-            label1.Location = new Point(1240, 218);
-            label1.Margin = new Padding(4, 0, 4, 0);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(868, 131);
             label1.Name = "label1";
-            label1.Size = new Size(74, 30);
+            label1.Size = new Size(51, 20);
             label1.TabIndex = 0;
             label1.Text = "Nama";
             label1.Click += label1_Click;
@@ -59,23 +58,22 @@
             // textBoxNama
             // 
             textBoxNama.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBoxNama.Location = new Point(1233, 273);
-            textBoxNama.Margin = new Padding(4, 3, 4, 3);
+            textBoxNama.Location = new Point(863, 164);
+            textBoxNama.Margin = new Padding(3, 2, 3, 2);
             textBoxNama.Multiline = true;
             textBoxNama.Name = "textBoxNama";
-            textBoxNama.Size = new Size(427, 39);
+            textBoxNama.Size = new Size(300, 25);
             textBoxNama.TabIndex = 1;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.BackColor = Color.White;
+            label2.BackColor = Color.Transparent;
             label2.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.ForeColor = Color.Black;
-            label2.Location = new Point(1238, 376);
-            label2.Margin = new Padding(4, 0, 4, 0);
+            label2.ForeColor = Color.White;
+            label2.Location = new Point(867, 226);
             label2.Name = "label2";
-            label2.Size = new Size(101, 30);
+            label2.Size = new Size(69, 20);
             label2.TabIndex = 2;
             label2.Text = "Keahlian";
             label2.Click += label2_Click;
@@ -86,22 +84,21 @@
             comboBoxKeahlian.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
             comboBoxKeahlian.FormattingEnabled = true;
             comboBoxKeahlian.Items.AddRange(new object[] { "Software", "Hardware" });
-            comboBoxKeahlian.Location = new Point(1238, 437);
-            comboBoxKeahlian.Margin = new Padding(4, 3, 4, 3);
+            comboBoxKeahlian.Location = new Point(867, 262);
+            comboBoxKeahlian.Margin = new Padding(3, 2, 3, 2);
             comboBoxKeahlian.Name = "comboBoxKeahlian";
-            comboBoxKeahlian.Size = new Size(422, 36);
+            comboBoxKeahlian.Size = new Size(297, 25);
             comboBoxKeahlian.TabIndex = 3;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.BackColor = Color.White;
+            label3.BackColor = Color.Transparent;
             label3.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.ForeColor = Color.Black;
-            label3.Location = new Point(1238, 548);
-            label3.Margin = new Padding(4, 0, 4, 0);
+            label3.ForeColor = Color.White;
+            label3.Location = new Point(867, 329);
             label3.Name = "label3";
-            label3.Size = new Size(112, 30);
+            label3.Size = new Size(76, 20);
             label3.TabIndex = 4;
             label3.Text = "Jam kerja";
             label3.Click += label3_Click;
@@ -112,22 +109,21 @@
             comboBoxJamKerja.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             comboBoxJamKerja.FormattingEnabled = true;
             comboBoxJamKerja.Items.AddRange(new object[] { "07.00 - 12.00", "12.00 -17.00" });
-            comboBoxJamKerja.Location = new Point(1238, 601);
-            comboBoxJamKerja.Margin = new Padding(4, 3, 4, 3);
+            comboBoxJamKerja.Location = new Point(867, 361);
+            comboBoxJamKerja.Margin = new Padding(3, 2, 3, 2);
             comboBoxJamKerja.Name = "comboBoxJamKerja";
-            comboBoxJamKerja.Size = new Size(422, 36);
+            comboBoxJamKerja.Size = new Size(297, 25);
             comboBoxJamKerja.TabIndex = 5;
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.BackColor = Color.White;
+            label4.BackColor = Color.Transparent;
             label4.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.ForeColor = Color.Black;
-            label4.Location = new Point(1240, 712);
-            label4.Margin = new Padding(4, 0, 4, 0);
+            label4.ForeColor = Color.White;
+            label4.Location = new Point(868, 427);
             label4.Name = "label4";
-            label4.Size = new Size(87, 30);
+            label4.Size = new Size(60, 20);
             label4.TabIndex = 6;
             label4.Text = "Alamat";
             label4.Click += label4_Click;
@@ -135,44 +131,44 @@
             // textBoxAlamat
             // 
             textBoxAlamat.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBoxAlamat.Location = new Point(1238, 766);
-            textBoxAlamat.Margin = new Padding(4, 3, 4, 3);
+            textBoxAlamat.Location = new Point(867, 460);
+            textBoxAlamat.Margin = new Padding(3, 2, 3, 2);
             textBoxAlamat.Name = "textBoxAlamat";
-            textBoxAlamat.Size = new Size(422, 34);
+            textBoxAlamat.Size = new Size(297, 25);
             textBoxAlamat.TabIndex = 7;
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.BackColor = Color.White;
+            label5.BackColor = Color.Transparent;
             label5.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.ForeColor = Color.Black;
-            label5.Location = new Point(1238, 866);
-            label5.Margin = new Padding(4, 0, 4, 0);
+            label5.ForeColor = Color.White;
+            label5.Location = new Point(867, 520);
             label5.Name = "label5";
-            label5.Size = new Size(130, 30);
+            label5.Size = new Size(89, 20);
             label5.TabIndex = 8;
             label5.Text = "No Telepon";
             // 
             // textBoxNoTelepon
             // 
             textBoxNoTelepon.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBoxNoTelepon.Location = new Point(1238, 927);
-            textBoxNoTelepon.Margin = new Padding(4, 3, 4, 3);
+            textBoxNoTelepon.Location = new Point(867, 556);
+            textBoxNoTelepon.Margin = new Padding(3, 2, 3, 2);
             textBoxNoTelepon.Multiline = true;
             textBoxNoTelepon.Name = "textBoxNoTelepon";
-            textBoxNoTelepon.Size = new Size(422, 37);
+            textBoxNoTelepon.Size = new Size(297, 24);
             textBoxNoTelepon.TabIndex = 9;
             // 
             // buttonCancel
             // 
             buttonCancel.BackColor = Color.Red;
+            buttonCancel.FlatStyle = FlatStyle.Flat;
             buttonCancel.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             buttonCancel.ForeColor = SystemColors.Control;
-            buttonCancel.Location = new Point(13, 1092);
-            buttonCancel.Margin = new Padding(4, 3, 4, 3);
+            buttonCancel.Location = new Point(952, 657);
+            buttonCancel.Margin = new Padding(3, 2, 3, 2);
             buttonCancel.Name = "buttonCancel";
-            buttonCancel.Size = new Size(181, 53);
+            buttonCancel.Size = new Size(127, 32);
             buttonCancel.TabIndex = 10;
             buttonCancel.Text = "Cancel";
             buttonCancel.UseVisualStyleBackColor = false;
@@ -180,15 +176,14 @@
             // 
             // buttonAdd
             // 
-            buttonAdd.BackColor = Color.FromArgb(192, 0, 192);
-            buttonAdd.FlatAppearance.BorderSize = 0;
+            buttonAdd.BackColor = Color.SeaGreen;
             buttonAdd.FlatStyle = FlatStyle.Flat;
             buttonAdd.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
             buttonAdd.ForeColor = SystemColors.Control;
-            buttonAdd.Location = new Point(1326, 1046);
-            buttonAdd.Margin = new Padding(4, 3, 4, 3);
+            buttonAdd.Location = new Point(922, 604);
+            buttonAdd.Margin = new Padding(3, 2, 3, 2);
             buttonAdd.Name = "buttonAdd";
-            buttonAdd.Size = new Size(273, 53);
+            buttonAdd.Size = new Size(191, 32);
             buttonAdd.TabIndex = 11;
             buttonAdd.Text = "Submit";
             buttonAdd.UseVisualStyleBackColor = false;
@@ -196,12 +191,12 @@
             // 
             // AddTeknisiForm
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(24, 23, 80);
-            BackgroundImage = Properties.Resources.Frame_13a;
+            BackgroundImage = Properties.Resources.Frame_18;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(1917, 1170);
+            ClientSize = new Size(1342, 723);
             ControlBox = false;
             Controls.Add(buttonAdd);
             Controls.Add(buttonCancel);
@@ -216,8 +211,8 @@
             Controls.Add(textBoxNama);
             Controls.Add(label1);
             DoubleBuffered = true;
-            FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(4, 3, 4, 3);
+            FormBorderStyle = FormBorderStyle.FixedToolWindow;
+            Margin = new Padding(3, 2, 3, 2);
             Name = "AddTeknisiForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "AddTeknisiForm";

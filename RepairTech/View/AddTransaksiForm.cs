@@ -250,5 +250,10 @@ namespace PROJECT_PBO.View
             formAdmin1.Show();
             this.Hide();
         }
+
+        private void comboBoxTeknisi_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

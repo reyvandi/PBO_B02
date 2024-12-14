@@ -110,5 +110,12 @@ namespace PROJECT_PBO.View
         {
             buttonAdd.Text = IsEditMode ? "Update" : "Add";
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FormJasaPerbaikan formJasPer = new FormJasaPerbaikan();
+            formJasPer.Show();
+            this.Hide();
+        }
     }
 }

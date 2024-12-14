@@ -34,20 +34,17 @@
             label2 = new Label();
             label3 = new Label();
             textBoxSTOK = new TextBox();
-            buttonCancel = new Button();
             buttonAdd = new Button();
-            panel1 = new Panel();
-            label6 = new Label();
-            panel1.SuspendLayout();
+            buttonCancel = new Button();
             SuspendLayout();
             // 
             // textBoxNAMAKOMPONEN
             // 
-            textBoxNAMAKOMPONEN.Location = new Point(786, 430);
-            textBoxNAMAKOMPONEN.Margin = new Padding(4);
+            textBoxNAMAKOMPONEN.Location = new Point(993, 128);
+            textBoxNAMAKOMPONEN.Margin = new Padding(3, 2, 3, 2);
             textBoxNAMAKOMPONEN.Multiline = true;
             textBoxNAMAKOMPONEN.Name = "textBoxNAMAKOMPONEN";
-            textBoxNAMAKOMPONEN.Size = new Size(380, 40);
+            textBoxNAMAKOMPONEN.Size = new Size(267, 26);
             textBoxNAMAKOMPONEN.TabIndex = 0;
             textBoxNAMAKOMPONEN.TextChanged += textBox1_TextChanged;
             // 
@@ -57,21 +54,20 @@
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = SystemColors.Control;
-            label1.Location = new Point(786, 396);
-            label1.Margin = new Padding(4, 0, 4, 0);
+            label1.Location = new Point(993, 106);
             label1.Name = "label1";
-            label1.Size = new Size(192, 30);
+            label1.Size = new Size(132, 20);
             label1.TabIndex = 1;
             label1.Text = "Nama Komponen";
             label1.Click += label1_Click;
             // 
             // textBoxHARGA
             // 
-            textBoxHARGA.Location = new Point(786, 526);
-            textBoxHARGA.Margin = new Padding(4);
+            textBoxHARGA.Location = new Point(993, 227);
+            textBoxHARGA.Margin = new Padding(3, 2, 3, 2);
             textBoxHARGA.Multiline = true;
             textBoxHARGA.Name = "textBoxHARGA";
-            textBoxHARGA.Size = new Size(380, 43);
+            textBoxHARGA.Size = new Size(267, 27);
             textBoxHARGA.TabIndex = 2;
             textBoxHARGA.TextChanged += textBox2_TextChanged;
             // 
@@ -80,10 +76,9 @@
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = SystemColors.Control;
-            label2.Location = new Point(786, 492);
-            label2.Margin = new Padding(4, 0, 4, 0);
+            label2.Location = new Point(993, 205);
             label2.Name = "label2";
-            label2.Size = new Size(77, 30);
+            label2.Size = new Size(51, 20);
             label2.TabIndex = 3;
             label2.Text = "Harga";
             // 
@@ -92,95 +87,75 @@
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ForeColor = SystemColors.Control;
-            label3.Location = new Point(786, 590);
-            label3.Margin = new Padding(4, 0, 4, 0);
+            label3.Location = new Point(993, 286);
             label3.Name = "label3";
-            label3.Size = new Size(58, 30);
+            label3.Size = new Size(40, 20);
             label3.TabIndex = 4;
             label3.Text = "Stok";
             // 
             // textBoxSTOK
             // 
-            textBoxSTOK.Location = new Point(786, 624);
-            textBoxSTOK.Margin = new Padding(4);
+            textBoxSTOK.Location = new Point(993, 308);
+            textBoxSTOK.Margin = new Padding(3, 2, 3, 2);
             textBoxSTOK.Multiline = true;
             textBoxSTOK.Name = "textBoxSTOK";
-            textBoxSTOK.Size = new Size(380, 40);
+            textBoxSTOK.Size = new Size(267, 26);
             textBoxSTOK.TabIndex = 5;
             textBoxSTOK.TextChanged += textBox3_TextChanged;
             // 
-            // buttonCancel
-            // 
-            buttonCancel.BackColor = Color.Red;
-            buttonCancel.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            buttonCancel.ForeColor = Color.White;
-            buttonCancel.Location = new Point(29, 113);
-            buttonCancel.Margin = new Padding(4);
-            buttonCancel.Name = "buttonCancel";
-            buttonCancel.Size = new Size(182, 54);
-            buttonCancel.TabIndex = 6;
-            buttonCancel.Text = "Cancel";
-            buttonCancel.UseVisualStyleBackColor = false;
-            buttonCancel.Click += buttonCancel_Click;
-            // 
             // buttonAdd
             // 
-            buttonAdd.BackColor = Color.DarkBlue;
+            buttonAdd.BackColor = Color.SeaGreen;
+            buttonAdd.FlatStyle = FlatStyle.Flat;
             buttonAdd.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
             buttonAdd.ForeColor = SystemColors.Control;
-            buttonAdd.Location = new Point(835, 723);
-            buttonAdd.Margin = new Padding(4);
+            buttonAdd.Location = new Point(1038, 378);
+            buttonAdd.Margin = new Padding(3, 2, 3, 2);
             buttonAdd.Name = "buttonAdd";
-            buttonAdd.Size = new Size(264, 56);
+            buttonAdd.Size = new Size(185, 34);
             buttonAdd.TabIndex = 7;
             buttonAdd.Text = "Submit";
             buttonAdd.UseVisualStyleBackColor = false;
             buttonAdd.Click += button2_Click;
             // 
-            // panel1
+            // buttonCancel
             // 
-            panel1.BackgroundImageLayout = ImageLayout.Center;
-            panel1.Controls.Add(buttonCancel);
-            panel1.Dock = DockStyle.Bottom;
-            panel1.Location = new Point(0, 969);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(1924, 201);
-            panel1.TabIndex = 8;
-            // 
-            // label6
-            // 
-            label6.BackColor = Color.DarkBlue;
-            label6.Font = new Font("Segoe UI", 20F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label6.ForeColor = SystemColors.Control;
-            label6.Location = new Point(0, -1);
-            label6.Name = "label6";
-            label6.Size = new Size(1929, 108);
-            label6.TabIndex = 13;
-            label6.Text = "Tambah Komponen";
-            label6.TextAlign = ContentAlignment.MiddleCenter;
+            buttonCancel.BackColor = Color.Red;
+            buttonCancel.FlatStyle = FlatStyle.Flat;
+            buttonCancel.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            buttonCancel.ForeColor = Color.White;
+            buttonCancel.Location = new Point(1071, 439);
+            buttonCancel.Margin = new Padding(3, 2, 3, 2);
+            buttonCancel.Name = "buttonCancel";
+            buttonCancel.Size = new Size(127, 32);
+            buttonCancel.TabIndex = 6;
+            buttonCancel.Text = "Cancel";
+            buttonCancel.UseVisualStyleBackColor = false;
+            buttonCancel.Click += buttonCancel_Click;
             // 
             // AddKomponenForm
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(24, 23, 80);
-            ClientSize = new Size(1924, 1170);
+            BackgroundImage = Properties.Resources.Frame_17;
+            BackgroundImageLayout = ImageLayout.Stretch;
+            ClientSize = new Size(1347, 637);
+            Controls.Add(buttonCancel);
             Controls.Add(buttonAdd);
-            Controls.Add(label6);
-            Controls.Add(panel1);
             Controls.Add(textBoxSTOK);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(textBoxHARGA);
             Controls.Add(label1);
             Controls.Add(textBoxNAMAKOMPONEN);
+            DoubleBuffered = true;
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
-            Margin = new Padding(4);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "AddKomponenForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "AddKomponenForm";
             WindowState = FormWindowState.Maximized;
-            panel1.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -193,9 +168,7 @@
         private Label label2;
         private Label label3;
         private TextBox textBoxSTOK;
-        private Button buttonCancel;
         private Button buttonAdd;
-        private Panel panel1;
-        private Label label6;
+        private Button buttonCancel;
     }
 }
