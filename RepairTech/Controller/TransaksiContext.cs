@@ -183,8 +183,16 @@ namespace PROJECT_PBO.Controller
                 t.laptop AS merk_laptop,
                 COALESCE(STRING_AGG(DISTINCT jp.jenis_kerusakan, ', '), '') AS kerusakan,
                 t.alamat,
-                COALESCE(STRING_AGG(DISTINCT k.nama_komponen, ', '), '') AS komponen,
-                COALESCE(SUM(DISTINCT dt.biaya), 0) + COALESCE(SUM(DISTINCT dc.harga * dc.jumlah), 0) AS total_harga,
+                COALESCE(kd.komponen, '') AS komponen,
+                COALESCE(
+                    'Rp. ' || REPLACE(
+                        TO_CHAR(
+                            COALESCE(SUM(dt.biaya), 0) + COALESCE(SUM(dc.harga * dc.jumlah), 0), 
+                            'FM999,999,999'
+                        ), ',', '.'
+                    ), 
+                    'Rp. 0'
+                ) AS total_harga,
                 t.status_transaksi
             FROM 
                 transaksi t
@@ -194,13 +202,21 @@ namespace PROJECT_PBO.Controller
                 jasa_perbaikan jp ON dt.id_jasa_perbaikan = jp.id_jasa_perbaikan
             LEFT JOIN 
                 detail_komponen dc ON t.id_transaksi = dc.id_transaksi
-            LEFT JOIN 
-                komponen k ON dc.id_komponen = k.id_komponen
+            LEFT JOIN (
+                SELECT 
+                    dc.id_transaksi,
+                    STRING_AGG(k.nama_komponen || ', Jumlah: ' || dc.jumlah, E'\n') AS komponen
+                FROM 
+                    detail_komponen dc
+                JOIN 
+                    komponen k ON dc.id_komponen = k.id_komponen
+                GROUP BY 
+                    dc.id_transaksi
+            ) AS kd ON t.id_transaksi = kd.id_transaksi
             GROUP BY 
-                t.id_transaksi, t.tanggal, t.nama_pelanggan, t.laptop, t.alamat, t.status_transaksi
+                t.id_transaksi, t.tanggal, t.nama_pelanggan, t.laptop, t.alamat, t.status_transaksi, kd.komponen
             ORDER BY 
                 t.tanggal DESC";
-
             return DatabaseWrapper.queryExecutor(query);
         }
     }
