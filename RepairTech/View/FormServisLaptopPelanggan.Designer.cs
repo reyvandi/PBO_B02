@@ -92,11 +92,10 @@
             sidebar.Dock = DockStyle.Left;
             sidebar.FlowDirection = FlowDirection.TopDown;
             sidebar.Location = new Point(0, 0);
-            sidebar.Margin = new Padding(4, 5, 4, 5);
-            sidebar.MaximumSize = new Size(241, 1332);
-            sidebar.MinimumSize = new Size(71, 82);
+            sidebar.MaximumSize = new Size(169, 799);
+            sidebar.MinimumSize = new Size(50, 49);
             sidebar.Name = "sidebar";
-            sidebar.Size = new Size(241, 1170);
+            sidebar.Size = new Size(169, 449);
             sidebar.TabIndex = 1;
             sidebar.WrapContents = false;
             // 
@@ -109,7 +108,7 @@
             panelSidebar.Location = new Point(0, 0);
             panelSidebar.Margin = new Padding(0);
             panelSidebar.Name = "panelSidebar";
-            panelSidebar.Size = new Size(241, 82);
+            panelSidebar.Size = new Size(169, 49);
             panelSidebar.TabIndex = 0;
             // 
             // label2
@@ -117,10 +116,10 @@
             label2.Dock = DockStyle.Fill;
             label2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = SystemColors.Control;
-            label2.Location = new Point(71, 0);
+            label2.Location = new Point(50, 0);
             label2.Margin = new Padding(0);
             label2.Name = "label2";
-            label2.Size = new Size(170, 82);
+            label2.Size = new Size(119, 49);
             label2.TabIndex = 2;
             label2.Text = "Menu";
             label2.TextAlign = ContentAlignment.MiddleCenter;
@@ -133,8 +132,8 @@
             buttonMenu.Location = new Point(0, 0);
             buttonMenu.Margin = new Padding(0);
             buttonMenu.Name = "buttonMenu";
-            buttonMenu.Padding = new Padding(14, 18, 14, 18);
-            buttonMenu.Size = new Size(71, 82);
+            buttonMenu.Padding = new Padding(10, 11, 10, 11);
+            buttonMenu.Size = new Size(50, 49);
             buttonMenu.SizeMode = PictureBoxSizeMode.StretchImage;
             buttonMenu.TabIndex = 1;
             buttonMenu.TabStop = false;
@@ -143,10 +142,10 @@
             // panel8
             // 
             panel8.Controls.Add(buttonTransaksi);
-            panel8.Location = new Point(0, 82);
+            panel8.Location = new Point(0, 49);
             panel8.Margin = new Padding(0);
             panel8.Name = "panel8";
-            panel8.Size = new Size(241, 82);
+            panel8.Size = new Size(169, 49);
             panel8.TabIndex = 5;
             // 
             // buttonTransaksi
@@ -163,9 +162,8 @@
             buttonTransaksi.IconSize = 32;
             buttonTransaksi.ImageAlign = ContentAlignment.MiddleLeft;
             buttonTransaksi.Location = new Point(0, 0);
-            buttonTransaksi.Margin = new Padding(4, 5, 4, 5);
             buttonTransaksi.Name = "buttonTransaksi";
-            buttonTransaksi.Size = new Size(241, 82);
+            buttonTransaksi.Size = new Size(169, 49);
             buttonTransaksi.TabIndex = 3;
             buttonTransaksi.Text = "Transaksi";
             buttonTransaksi.TextAlign = ContentAlignment.MiddleRight;
@@ -178,10 +176,10 @@
             panel2.Controls.Add(panel1);
             panel2.Controls.Add(buttonKomponen);
             panel2.Dock = DockStyle.Top;
-            panel2.Location = new Point(0, 164);
+            panel2.Location = new Point(0, 98);
             panel2.Margin = new Padding(0);
             panel2.Name = "panel2";
-            panel2.Size = new Size(241, 83);
+            panel2.Size = new Size(169, 50);
             panel2.TabIndex = 6;
             // 
             // panel1
@@ -189,9 +187,8 @@
             panel1.BackColor = Color.FromArgb(255, 128, 255);
             panel1.Dock = DockStyle.Left;
             panel1.Location = new Point(0, 0);
-            panel1.Margin = new Padding(4, 5, 4, 5);
             panel1.Name = "panel1";
-            panel1.Size = new Size(9, 83);
+            panel1.Size = new Size(6, 50);
             panel1.TabIndex = 3;
             // 
             // buttonKomponen
@@ -207,11 +204,10 @@
             buttonKomponen.IconFont = FontAwesome.Sharp.IconFont.Auto;
             buttonKomponen.IconSize = 36;
             buttonKomponen.ImageAlign = ContentAlignment.MiddleLeft;
-            buttonKomponen.Location = new Point(-9, 0);
-            buttonKomponen.Margin = new Padding(4, 5, 4, 5);
+            buttonKomponen.Location = new Point(-6, 0);
             buttonKomponen.Name = "buttonKomponen";
-            buttonKomponen.Padding = new Padding(7, 8, 7, 8);
-            buttonKomponen.Size = new Size(250, 83);
+            buttonKomponen.Padding = new Padding(5, 5, 5, 5);
+            buttonKomponen.Size = new Size(175, 50);
             buttonKomponen.TabIndex = 1;
             buttonKomponen.Text = "Servis Laptop";
             buttonKomponen.TextAlign = ContentAlignment.MiddleRight;
@@ -219,11 +215,10 @@
             // 
             // panel13
             // 
-            panel13.Location = new Point(4, 252);
-            panel13.Margin = new Padding(4, 5, 4, 5);
+            panel13.Location = new Point(3, 151);
             panel13.Name = "panel13";
-            panel13.Padding = new Padding(0, 100, 0, 0);
-            panel13.Size = new Size(233, 823);
+            panel13.Padding = new Padding(0, 60, 0, 0);
+            panel13.Size = new Size(163, 494);
             panel13.TabIndex = 11;
             // 
             // iconButton3
@@ -239,10 +234,9 @@
             iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconButton3.IconSize = 32;
             iconButton3.ImageAlign = ContentAlignment.MiddleLeft;
-            iconButton3.Location = new Point(4, 1085);
-            iconButton3.Margin = new Padding(4, 5, 4, 5);
+            iconButton3.Location = new Point(3, 651);
             iconButton3.Name = "iconButton3";
-            iconButton3.Size = new Size(233, 82);
+            iconButton3.Size = new Size(163, 49);
             iconButton3.TabIndex = 12;
             iconButton3.Text = "Logout";
             iconButton3.TextAlign = ContentAlignment.MiddleRight;
@@ -256,20 +250,18 @@
             panel9.Controls.Add(labelUsername);
             panel9.Controls.Add(label1);
             panel9.Dock = DockStyle.Top;
-            panel9.Location = new Point(241, 0);
-            panel9.Margin = new Padding(4, 5, 4, 5);
+            panel9.Location = new Point(169, 0);
             panel9.Name = "panel9";
-            panel9.Size = new Size(1683, 117);
+            panel9.Size = new Size(790, 70);
             panel9.TabIndex = 16;
             // 
             // pictureBox1
             // 
             pictureBox1.Dock = DockStyle.Right;
             pictureBox1.Image = Properties.Resources.rpimg;
-            pictureBox1.Location = new Point(1369, 0);
-            pictureBox1.Margin = new Padding(4, 5, 4, 5);
+            pictureBox1.Location = new Point(570, 0);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(314, 117);
+            pictureBox1.Size = new Size(220, 70);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 9;
             pictureBox1.TabStop = false;
@@ -280,11 +272,10 @@
             labelUsername.Dock = DockStyle.Left;
             labelUsername.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             labelUsername.ForeColor = SystemColors.Control;
-            labelUsername.Location = new Point(119, 0);
-            labelUsername.Margin = new Padding(4, 0, 4, 0);
+            labelUsername.Location = new Point(83, 0);
             labelUsername.Name = "labelUsername";
-            labelUsername.Padding = new Padding(0, 33, 0, 0);
-            labelUsername.Size = new Size(83, 78);
+            labelUsername.Padding = new Padding(0, 20, 0, 0);
+            labelUsername.Size = new Size(55, 50);
             labelUsername.TabIndex = 1;
             labelUsername.Text = "       ";
             // 
@@ -294,10 +285,9 @@
             label1.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.ForeColor = SystemColors.Control;
             label1.Location = new Point(0, 0);
-            label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Padding = new Padding(29, 33, 0, 0);
-            label1.Size = new Size(119, 117);
+            label1.Padding = new Padding(20, 20, 0, 0);
+            label1.Size = new Size(83, 70);
             label1.TabIndex = 1;
             label1.Text = "Halo";
             // 
@@ -306,10 +296,9 @@
             label3.Anchor = AnchorStyles.None;
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.Location = new Point(695, 61);
-            label3.Margin = new Padding(4, 0, 4, 0);
+            label3.Location = new Point(300, 35);
             label3.Name = "label3";
-            label3.Size = new Size(293, 45);
+            label3.Size = new Size(189, 30);
             label3.TabIndex = 17;
             label3.Text = "Form Servis Laptop";
             // 
@@ -317,10 +306,9 @@
             // 
             panel3.Controls.Add(tableLayoutPanel1);
             panel3.Dock = DockStyle.Top;
-            panel3.Location = new Point(241, 117);
-            panel3.Margin = new Padding(4, 5, 4, 5);
+            panel3.Location = new Point(169, 70);
             panel3.Name = "panel3";
-            panel3.Size = new Size(1683, 167);
+            panel3.Size = new Size(790, 100);
             panel3.TabIndex = 18;
             // 
             // tableLayoutPanel1
@@ -330,86 +318,77 @@
             tableLayoutPanel1.Controls.Add(label3, 0, 0);
             tableLayoutPanel1.Dock = DockStyle.Fill;
             tableLayoutPanel1.Location = new Point(0, 0);
-            tableLayoutPanel1.Margin = new Padding(4, 5, 4, 5);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 1;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel1.Size = new Size(1683, 167);
+            tableLayoutPanel1.Size = new Size(790, 100);
             tableLayoutPanel1.TabIndex = 19;
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(613, 2);
-            label4.Margin = new Padding(4, 0, 4, 0);
+            label4.Location = new Point(429, 1);
             label4.Name = "label4";
-            label4.Size = new Size(113, 25);
+            label4.Size = new Size(74, 15);
             label4.TabIndex = 20;
             label4.Text = "Merk Laptop";
             // 
             // textBoxNamaLaptop
             // 
-            textBoxNamaLaptop.Location = new Point(613, 32);
-            textBoxNamaLaptop.Margin = new Padding(4, 5, 4, 5);
+            textBoxNamaLaptop.Location = new Point(429, 19);
             textBoxNamaLaptop.Name = "textBoxNamaLaptop";
-            textBoxNamaLaptop.Size = new Size(263, 31);
+            textBoxNamaLaptop.Size = new Size(185, 23);
             textBoxNamaLaptop.TabIndex = 0;
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(613, 15);
-            label5.Margin = new Padding(4, 0, 4, 0);
+            label5.Location = new Point(429, 9);
             label5.Name = "label5";
-            label5.Size = new Size(92, 25);
+            label5.Size = new Size(61, 15);
             label5.TabIndex = 21;
             label5.Text = "Kerusakan";
             // 
             // comboBoxKerusakan
             // 
             comboBoxKerusakan.FormattingEnabled = true;
-            comboBoxKerusakan.Location = new Point(613, 45);
-            comboBoxKerusakan.Margin = new Padding(4, 5, 4, 5);
+            comboBoxKerusakan.Location = new Point(429, 27);
             comboBoxKerusakan.Name = "comboBoxKerusakan";
-            comboBoxKerusakan.Size = new Size(263, 33);
+            comboBoxKerusakan.Size = new Size(185, 23);
             comboBoxKerusakan.TabIndex = 0;
             comboBoxKerusakan.SelectedIndexChanged += comboBoxKerusakan_SelectedIndexChanged;
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(613, 10);
-            label6.Margin = new Padding(4, 0, 4, 0);
+            label6.Location = new Point(429, 6);
             label6.Name = "label6";
-            label6.Size = new Size(63, 25);
+            label6.Size = new Size(42, 15);
             label6.TabIndex = 22;
             label6.Text = "Teknisi";
             // 
             // comboBoxTeknisi
             // 
             comboBoxTeknisi.FormattingEnabled = true;
-            comboBoxTeknisi.Location = new Point(613, 40);
-            comboBoxTeknisi.Margin = new Padding(4, 5, 4, 5);
+            comboBoxTeknisi.Location = new Point(429, 24);
             comboBoxTeknisi.Name = "comboBoxTeknisi";
-            comboBoxTeknisi.Size = new Size(263, 33);
+            comboBoxTeknisi.Size = new Size(185, 23);
             comboBoxTeknisi.TabIndex = 0;
             // 
             // textBoxAlamat
             // 
-            textBoxAlamat.Location = new Point(613, 40);
-            textBoxAlamat.Margin = new Padding(4, 5, 4, 5);
+            textBoxAlamat.Location = new Point(429, 24);
             textBoxAlamat.Name = "textBoxAlamat";
-            textBoxAlamat.Size = new Size(263, 31);
+            textBoxAlamat.Size = new Size(185, 23);
             textBoxAlamat.TabIndex = 22;
             textBoxAlamat.TextChanged += textBoxAlamat_TextChanged;
             // 
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(613, 10);
-            label7.Margin = new Padding(4, 0, 4, 0);
+            label7.Location = new Point(429, 6);
             label7.Name = "label7";
-            label7.Size = new Size(68, 25);
+            label7.Size = new Size(45, 15);
             label7.TabIndex = 23;
             label7.Text = "Alamat";
             // 
@@ -429,10 +408,9 @@
             buttonTambahTransaksi.IconFont = FontAwesome.Sharp.IconFont.Auto;
             buttonTambahTransaksi.IconSize = 17;
             buttonTambahTransaksi.ImageAlign = ContentAlignment.MiddleRight;
-            buttonTambahTransaksi.Location = new Point(604, 53);
-            buttonTambahTransaksi.Margin = new Padding(4, 5, 4, 5);
+            buttonTambahTransaksi.Location = new Point(423, 32);
             buttonTambahTransaksi.Name = "buttonTambahTransaksi";
-            buttonTambahTransaksi.Size = new Size(286, 58);
+            buttonTambahTransaksi.Size = new Size(200, 35);
             buttonTambahTransaksi.TabIndex = 24;
             buttonTambahTransaksi.Text = "Tambah Transaksi";
             buttonTambahTransaksi.TextAlign = ContentAlignment.MiddleLeft;
@@ -442,11 +420,10 @@
             // listBoxKerusakan
             // 
             listBoxKerusakan.FormattingEnabled = true;
-            listBoxKerusakan.ItemHeight = 25;
-            listBoxKerusakan.Location = new Point(613, 108);
-            listBoxKerusakan.Margin = new Padding(4, 5, 4, 5);
+            listBoxKerusakan.ItemHeight = 15;
+            listBoxKerusakan.Location = new Point(429, 65);
             listBoxKerusakan.Name = "listBoxKerusakan";
-            listBoxKerusakan.Size = new Size(263, 79);
+            listBoxKerusakan.Size = new Size(185, 49);
             listBoxKerusakan.TabIndex = 25;
             listBoxKerusakan.SelectedIndexChanged += listBoxKerusakan_SelectedIndexChanged;
             // 
@@ -455,10 +432,9 @@
             panel4.Controls.Add(label4);
             panel4.Controls.Add(textBoxNamaLaptop);
             panel4.Dock = DockStyle.Top;
-            panel4.Location = new Point(241, 284);
-            panel4.Margin = new Padding(4, 5, 4, 5);
+            panel4.Location = new Point(169, 170);
             panel4.Name = "panel4";
-            panel4.Size = new Size(1683, 83);
+            panel4.Size = new Size(790, 50);
             panel4.TabIndex = 28;
             // 
             // panel5
@@ -469,19 +445,17 @@
             panel5.Controls.Add(comboBoxKerusakan);
             panel5.Controls.Add(label5);
             panel5.Dock = DockStyle.Top;
-            panel5.Location = new Point(241, 367);
-            panel5.Margin = new Padding(4, 5, 4, 5);
+            panel5.Location = new Point(169, 220);
             panel5.Name = "panel5";
-            panel5.Size = new Size(1683, 230);
+            panel5.Size = new Size(790, 138);
             panel5.TabIndex = 29;
             // 
             // btnHapusKerusakan
             // 
             btnHapusKerusakan.AutoSize = true;
-            btnHapusKerusakan.Location = new Point(926, 125);
-            btnHapusKerusakan.Margin = new Padding(4, 5, 4, 5);
+            btnHapusKerusakan.Location = new Point(648, 75);
             btnHapusKerusakan.Name = "btnHapusKerusakan";
-            btnHapusKerusakan.Size = new Size(241, 65);
+            btnHapusKerusakan.Size = new Size(169, 39);
             btnHapusKerusakan.TabIndex = 27;
             btnHapusKerusakan.Text = "Hapus Kerusakan";
             btnHapusKerusakan.UseVisualStyleBackColor = true;
@@ -490,10 +464,9 @@
             // btnTambahKerusakan
             // 
             btnTambahKerusakan.AutoSize = true;
-            btnTambahKerusakan.Location = new Point(926, 30);
-            btnTambahKerusakan.Margin = new Padding(4, 5, 4, 5);
+            btnTambahKerusakan.Location = new Point(648, 18);
             btnTambahKerusakan.Name = "btnTambahKerusakan";
-            btnTambahKerusakan.Size = new Size(241, 65);
+            btnTambahKerusakan.Size = new Size(169, 39);
             btnTambahKerusakan.TabIndex = 26;
             btnTambahKerusakan.Text = "Tambah Kerusakan";
             btnTambahKerusakan.UseVisualStyleBackColor = true;
@@ -504,10 +477,9 @@
             panel6.Controls.Add(comboBoxTeknisi);
             panel6.Controls.Add(label6);
             panel6.Dock = DockStyle.Top;
-            panel6.Location = new Point(241, 597);
-            panel6.Margin = new Padding(4, 5, 4, 5);
+            panel6.Location = new Point(169, 358);
             panel6.Name = "panel6";
-            panel6.Size = new Size(1683, 83);
+            panel6.Size = new Size(790, 50);
             panel6.TabIndex = 30;
             // 
             // panel7
@@ -515,27 +487,25 @@
             panel7.Controls.Add(textBoxAlamat);
             panel7.Controls.Add(label7);
             panel7.Dock = DockStyle.Top;
-            panel7.Location = new Point(241, 680);
-            panel7.Margin = new Padding(4, 5, 4, 5);
+            panel7.Location = new Point(169, 408);
             panel7.Name = "panel7";
-            panel7.Size = new Size(1683, 83);
+            panel7.Size = new Size(790, 50);
             panel7.TabIndex = 31;
             // 
             // panel10
             // 
             panel10.Controls.Add(buttonTambahTransaksi);
             panel10.Dock = DockStyle.Top;
-            panel10.Location = new Point(241, 763);
-            panel10.Margin = new Padding(4, 5, 4, 5);
+            panel10.Location = new Point(169, 458);
             panel10.Name = "panel10";
-            panel10.Size = new Size(1683, 117);
+            panel10.Size = new Size(790, 70);
             panel10.TabIndex = 32;
             // 
             // FormServisLaptopPelanggan
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1924, 1170);
+            ClientSize = new Size(959, 449);
             Controls.Add(panel10);
             Controls.Add(panel7);
             Controls.Add(panel6);
@@ -545,7 +515,6 @@
             Controls.Add(panel9);
             Controls.Add(sidebar);
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
-            Margin = new Padding(4, 5, 4, 5);
             Name = "FormServisLaptopPelanggan";
             Text = "FormServisLaptopPelanggan";
             WindowState = FormWindowState.Maximized;

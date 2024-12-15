@@ -36,7 +36,7 @@ namespace PROJECT_PBO
             try
             {
                 // Mengambil data transaksi berdasarkan username (nama_pelanggan)
-                string username = labelUsername.Text; // Assuming the username is displayed in the label
+                string username = labelUsername.Text;
                 DataTable result = TransaksiContext.GetTransaksiByUsername(username);
 
                 if (result.Rows.Count > 0)
@@ -66,11 +66,6 @@ namespace PROJECT_PBO
                     // Mengatur data ke DataGridView
                     dataGridViewTransaksi.DataSource = formattedResult;
                 }
-                //else
-                //{
-                //    MessageBox.Show("Tidak ada data transaksi untuk pengguna ini.");
-                //    dataGridViewTransaksi.DataSource = null;
-                //}
             }
             catch (Exception ex)
             {

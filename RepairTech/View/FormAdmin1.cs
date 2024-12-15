@@ -29,28 +29,6 @@ namespace PROJECT_PBO
             dataGridView1.CellValueChanged += DataGridView1_CellValueChanged;
         }
 
-        private void AddStatusComboBoxColumn()
-        {
-            if (!dataGridView1.Columns.Contains("StatusTransaksiComboBox"))
-            {
-                DataGridViewComboBoxColumn comboBoxColumn = new DataGridViewComboBoxColumn
-                {
-                    Name = "StatusTransaksiComboBox",
-                    HeaderText = "Status Transaksi",
-                    DataSource = new string[] { "Belum Selesai", "Telah Selesai" },
-                    ValueType = typeof(string)
-                };
-
-                dataGridView1.Columns.Add(comboBoxColumn);
-
-                // Sinkronkan nilai default dengan kolom status_transaksi
-                foreach (DataGridViewRow row in dataGridView1.Rows)
-                {
-                    row.Cells["StatusTransaksiComboBox"].Value = row.Cells["status_transaksi"].Value?.ToString();
-                }
-            }
-        }
-
         private void DataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0 || e.ColumnIndex < 0) return;
