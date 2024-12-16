@@ -17,7 +17,6 @@
 
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
             pictureBox1 = new PictureBox();
             showPasswordCheckBox = new CheckBox();
             labelLOGIN = new Label();
@@ -27,7 +26,6 @@
             textBoxPASSWORD = new TextBox();
             buttonLOGIN = new Button();
             linkLabel1 = new LinkLabel();
-            timer1 = new System.Windows.Forms.Timer(components);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -144,10 +142,6 @@
             linkLabel1.Text = "Register";
             linkLabel1.LinkClicked += linkLabel1_LinkClicked;
             // 
-            // timer1
-            // 
-            timer1.Tick += timer1_Tick;
-            // 
             // LOGIN
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -168,7 +162,6 @@
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
             Margin = new Padding(2);
             Name = "LOGIN";
-            Opacity = 0D;
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
             WindowState = FormWindowState.Maximized;
@@ -188,6 +181,5 @@
         private TextBox textBoxPASSWORD;
         private Button buttonLOGIN;
         private LinkLabel linkLabel1;
-        private System.Windows.Forms.Timer timer1;
     }
 }

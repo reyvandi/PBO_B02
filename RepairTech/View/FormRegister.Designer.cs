@@ -96,10 +96,10 @@
             label1.AutoSize = true;
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Segoe UI", 20F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = SystemColors.Control;
+            label1.ForeColor = Color.Black;
             label1.Location = new Point(253, 307);
             label1.Name = "label1";
-            label1.Size = new Size(207, 54);
+            label1.Size = new Size(143, 37);
             label1.TabIndex = 2;
             label1.Text = "Registrasi";
             // 
@@ -108,10 +108,10 @@
             label2.AutoSize = true;
             label2.BackColor = Color.Transparent;
             label2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.ForeColor = SystemColors.Control;
+            label2.ForeColor = Color.Black;
             label2.Location = new Point(215, 398);
             label2.Name = "label2";
-            label2.Size = new Size(97, 25);
+            label2.Size = new Size(64, 15);
             label2.TabIndex = 3;
             label2.Text = "Username";
             // 
@@ -120,10 +120,10 @@
             label5.AutoSize = true;
             label5.BackColor = Color.Transparent;
             label5.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.ForeColor = SystemColors.Control;
+            label5.ForeColor = Color.Black;
             label5.Location = new Point(215, 495);
             label5.Name = "label5";
-            label5.Size = new Size(58, 25);
+            label5.Size = new Size(36, 15);
             label5.TabIndex = 4;
             label5.Text = "Email";
             // 
@@ -132,10 +132,10 @@
             label6.AutoSize = true;
             label6.BackColor = Color.Transparent;
             label6.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label6.ForeColor = SystemColors.Control;
+            label6.ForeColor = Color.Black;
             label6.Location = new Point(215, 596);
             label6.Name = "label6";
-            label6.Size = new Size(92, 25);
+            label6.Size = new Size(59, 15);
             label6.TabIndex = 6;
             label6.Text = "Password";
             // 
@@ -143,21 +143,21 @@
             // 
             textBoxUsername.Location = new Point(215, 442);
             textBoxUsername.Name = "textBoxUsername";
-            textBoxUsername.Size = new Size(282, 31);
+            textBoxUsername.Size = new Size(282, 23);
             textBoxUsername.TabIndex = 7;
             // 
             // textBoxEmail
             // 
             textBoxEmail.Location = new Point(215, 536);
             textBoxEmail.Name = "textBoxEmail";
-            textBoxEmail.Size = new Size(282, 31);
+            textBoxEmail.Size = new Size(282, 23);
             textBoxEmail.TabIndex = 8;
             // 
             // textBoxPassword
             // 
             textBoxPassword.Location = new Point(215, 633);
             textBoxPassword.Name = "textBoxPassword";
-            textBoxPassword.Size = new Size(282, 31);
+            textBoxPassword.Size = new Size(282, 23);
             textBoxPassword.TabIndex = 9;
             // 
             // pictureBox1
@@ -173,7 +173,9 @@
             // FormRegister
             // 
             BackColor = Color.FromArgb(24, 23, 80);
-            ClientSize = new Size(1744, 1115);
+            BackgroundImage = Properties.Resources.Frame_20;
+            BackgroundImageLayout = ImageLayout.Stretch;
+            ClientSize = new Size(1744, 1061);
             Controls.Add(pictureBox1);
             Controls.Add(textBoxPassword);
             Controls.Add(textBoxEmail);

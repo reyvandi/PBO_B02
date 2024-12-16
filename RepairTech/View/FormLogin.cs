@@ -120,7 +120,7 @@ namespace PROJECT_PBO
 
         private void LOGIN_Load(object sender, EventArgs e)
         {
-            timer1.Start();
+           
         }
 
         private void textBoxPASSWORD_KeyDown(object sender, KeyEventArgs e)
@@ -132,9 +132,6 @@ namespace PROJECT_PBO
             }
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            Opacity += .2;
-        }
+        
     }
 }
