@@ -78,21 +78,12 @@ namespace PROJECT_PBO
         {
             try
             {
-                // Query untuk mengambil username berdasarkan id
-                string query = "SELECT username FROM akun WHERE id_akun = @id_akun";
-                NpgsqlParameter[] parameters = {
-                new NpgsqlParameter("@id_akun", id_akun)
-            };
+                // Memanfaatkan metode GetUsernameById dari AkunContext
+                string username = AkunContext.GetUsernameById(id_akun);
 
-                // Eksekusi query
-                DataTable result = DatabaseWrapper.queryExecutor(query, parameters);
-
-                if (result.Rows.Count > 0)
+                // Tampilkan username pada label
+                if (!string.IsNullOrEmpty(username))
                 {
-                    // Ambil data dari baris pertama
-                    string username = result.Rows[0]["username"].ToString();
-
-                    // Tampilkan pada label
                     labelUsername.Text = username;
                     labelUsername.AutoSize = true; // Label menyesuaikan ukuran teks
                 }

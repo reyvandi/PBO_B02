@@ -243,7 +243,7 @@
             buttonServis.ImageAlign = ContentAlignment.MiddleLeft;
             buttonServis.Location = new Point(0, 0);
             buttonServis.Name = "buttonServis";
-            buttonServis.Padding = new Padding(5, 5, 5, 5);
+            buttonServis.Padding = new Padding(5);
             buttonServis.Size = new Size(169, 49);
             buttonServis.TabIndex = 2;
             buttonServis.Text = "Servis Laptop";
@@ -314,7 +314,7 @@
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(169, 70);
             panel1.Name = "panel1";
-            panel1.Padding = new Padding(30, 30, 30, 30);
+            panel1.Padding = new Padding(30);
             panel1.Size = new Size(790, 497);
             panel1.TabIndex = 16;
             panel1.Paint += panel1_Paint;

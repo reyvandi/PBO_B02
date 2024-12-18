@@ -34,17 +34,10 @@ namespace PROJECT_PBO.View
         {
             try
             {
-                string query = "SELECT username FROM akun WHERE id_akun = @id_akun";
-                NpgsqlParameter[] parameters = {
-                new NpgsqlParameter("@id_akun", id_akun)
-            };
+                string username = AkunContext.GetUsernameById(id_akun);
 
-                DataTable result = DatabaseWrapper.queryExecutor(query, parameters);
-
-                if (result.Rows.Count > 0)
+                if (!string.IsNullOrEmpty(username))
                 {
-                    string username = result.Rows[0]["username"].ToString();
-
                     labelUsername.Text = username;
                 }
                 else
@@ -62,14 +55,14 @@ namespace PROJECT_PBO.View
         {
             try
             {
-                string query = "SELECT id_jasa_perbaikan, jenis_kerusakan FROM jasa_perbaikan";
+                // Mengambil data jenis kerusakan dari JasaPerbaikanContext
+                DataTable jasaPerbaikanList = JasaPerbaikanContext.All();
 
-                DataTable result = DatabaseWrapper.queryExecutor(query);
-
-                comboBoxKerusakan.DataSource = result; // Set DataTable sebagai sumber data
-                comboBoxKerusakan.DisplayMember = "jenis_kerusakan"; // Jenis kerusakan ditampilkan
-                comboBoxKerusakan.ValueMember = "id_jasa_perbaikan"; // id_jasa_perbaikan digunakan sebagai value
-                comboBoxKerusakan.SelectedIndex = -1; // Tidak ada item yang dipilih
+                // Binding data ke ComboBox
+                comboBoxKerusakan.DataSource = jasaPerbaikanList;
+                comboBoxKerusakan.DisplayMember = "jenis_kerusakan";  // Jenis kerusakan yang akan ditampilkan
+                comboBoxKerusakan.ValueMember = "id_jasa_perbaikan";  // ID jenis kerusakan sebagai nilai yang digunakan
+                comboBoxKerusakan.SelectedIndex = -1;  // Agar tidak ada item yang terpilih saat pertama kali
             }
             catch (Exception ex)
             {
@@ -82,14 +75,14 @@ namespace PROJECT_PBO.View
         {
             try
             {
-                string query = "SELECT id_teknisi, nama FROM teknisi";
+                // Mengambil data teknisi dari TeknisiContext
+                DataTable teknisiList = TeknisiContext.All();
 
-                DataTable result = DatabaseWrapper.queryExecutor(query);
-
-                comboBoxTeknisi.DataSource = result; // Set DataTable sebagai sumber data
-                comboBoxTeknisi.DisplayMember = "nama"; // Nama teknisi ditampilkan di combobox
-                comboBoxTeknisi.ValueMember = "id_teknisi"; // id_teknisi disimpan sebagai ValueMember
-                comboBoxTeknisi.SelectedIndex = -1; // Tidak ada item yang dipilih
+                // Binding data ke ComboBox
+                comboBoxTeknisi.DataSource = teknisiList;
+                comboBoxTeknisi.DisplayMember = "nama";  // Nama teknisi yang akan ditampilkan
+                comboBoxTeknisi.ValueMember = "id_teknisi";  // ID teknisi sebagai nilai yang digunakan
+                comboBoxTeknisi.SelectedIndex = -1;  // Agar tidak ada item yang terpilih saat pertama kali
             }
             catch (Exception ex)
             {
@@ -144,50 +137,25 @@ namespace PROJECT_PBO.View
             try
             {
                 // Ambil data dari form
-                string namaLaptop = textBoxNamaLaptop.Text;
-                string alamat = textBoxAlamat.Text;
-                int idTeknisi = Convert.ToInt32(comboBoxTeknisi.SelectedValue);
-                string username = labelUsername.Text; // Pastikan labelUsername sudah diisi dengan username
+                var transaksi = AmbilDataTransaksi();
 
-                // Validasi input
-                if (string.IsNullOrEmpty(namaLaptop) || string.IsNullOrEmpty(alamat) || listBoxKerusakan.Items.Count == 0)
+                // Validasi data
+                if (!ValidasiInput(transaksi))
                 {
                     MessageBox.Show("Mohon lengkapi semua data.", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 
-                // Buat objek M_Transaksi
-                M_Transaksi transaksi = new M_Transaksi
-                {
-                    nama_pelanggan = username,
-                    laptop = namaLaptop,
-                    alamat = alamat,
-                    id_teknisi = idTeknisi,
-                    tanggal = DateTime.Now,
-                    status_transaksi = "Belum Selesai"
-                };
-
-                // Tambahkan transaksi
-                int idTransaksi = TransaksiContext.AddTransaksi(transaksi);
+                // Tambahkan transaksi ke database
+                int idTransaksi = SimpanTransaksi(transaksi);
 
                 if (idTransaksi > 0)
                 {
-                    // Tambahkan detail transaksi
-                    foreach (string kerusakan in listBoxKerusakan.Items)
-                    {
-                        var detailKerusakan = DetailTransaksiContext.GetKerusakanByDeskripsi(kerusakan);
-
-                        if (detailKerusakan != null)
-                        {
-                            detailKerusakan.id_transaksi = idTransaksi;
-                            DetailTransaksiContext.AddDetailTransaksi(detailKerusakan);
-                        }
-                    }
-
+                    TambahkanDetailTransaksi(idTransaksi);
                     MessageBox.Show("Transaksi berhasil ditambahkan!", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    this.Hide();
-                    FormPelanggan formPelanggan = new FormPelanggan(id_akun);
-                    formPelanggan.Show();
+
+                    // Alihkan ke form pelanggan
+                    BukaFormPelanggan();
                 }
                 else
                 {
@@ -198,6 +166,56 @@ namespace PROJECT_PBO.View
             {
                 MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        // Metode untuk mengambil data transaksi dari form
+        private M_Transaksi AmbilDataTransaksi()
+        {
+            return new M_Transaksi
+            {
+                nama_pelanggan = labelUsername.Text,
+                laptop = textBoxNamaLaptop.Text,
+                alamat = textBoxAlamat.Text,
+                id_teknisi = Convert.ToInt32(comboBoxTeknisi.SelectedValue),
+                tanggal = DateTime.Now,
+                status_transaksi = "Belum Selesai"
+            };
+        }
+
+        // Metode untuk validasi input
+        private bool ValidasiInput(M_Transaksi transaksi)
+        {
+            return !string.IsNullOrEmpty(transaksi.laptop) &&
+                   !string.IsNullOrEmpty(transaksi.alamat) &&
+                   listBoxKerusakan.Items.Count > 0;
+        }
+
+        // Metode untuk menyimpan transaksi ke database
+        private int SimpanTransaksi(M_Transaksi transaksi)
+        {
+            return TransaksiContext.AddTransaksi(transaksi);
+        }
+
+        // Metode untuk menambahkan detail transaksi
+        private void TambahkanDetailTransaksi(int idTransaksi)
+        {
+            foreach (string kerusakan in listBoxKerusakan.Items)
+            {
+                var detailKerusakan = DetailTransaksiContext.GetKerusakanByDeskripsi(kerusakan);
+                if (detailKerusakan != null)
+                {
+                    detailKerusakan.id_transaksi = idTransaksi;
+                    DetailTransaksiContext.AddDetailTransaksi(detailKerusakan);
+                }
+            }
+        }
+
+        // Metode untuk membuka form pelanggan
+        private void BukaFormPelanggan()
+        {
+            this.Hide();
+            FormPelanggan formPelanggan = new FormPelanggan(id_akun);
+            formPelanggan.Show();
         }
 
 

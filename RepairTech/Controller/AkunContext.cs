@@ -31,6 +31,24 @@ namespace PROJECT_PBO.Controller
             return dataMahasiswa;
         }
 
+        public static string GetUsernameById(int id_akun)
+        {
+            string query = "SELECT username FROM akun WHERE id_akun = @id_akun";
+                    NpgsqlParameter[] parameters = {
+                new NpgsqlParameter("@id_akun", id_akun)
+            };
+
+            DataTable result = queryExecutor(query, parameters);
+
+            if (result.Rows.Count > 0)
+            {
+                return result.Rows[0]["username"].ToString();
+            }
+
+            return null; // Jika tidak ditemukan
+        }
+
+
         public void RegisterAkun(M_Akun newAkun)
         {
             string query = $"INSERT INTO {table} (username, password, role, email) VALUES(@username, @password, 'pelanggan', @email)";

@@ -33,14 +33,14 @@ namespace PROJECT_PBO.View
         {
             try
             {
-                string query = "SELECT id_teknisi, nama FROM teknisi";
+                // Mengambil data teknisi dari TeknisiContext
+                DataTable teknisiList = TeknisiContext.All();
 
-                DataTable result = DatabaseWrapper.queryExecutor(query);
-
-                comboBoxTeknisi.DataSource = result; // Set DataTable sebagai sumber data
-                comboBoxTeknisi.DisplayMember = "nama"; // Nama teknisi ditampilkan di combobox
-                comboBoxTeknisi.ValueMember = "id_teknisi"; // id_teknisi disimpan sebagai ValueMember
-                comboBoxTeknisi.SelectedIndex = -1; // Tidak ada item yang dipilih
+                // Binding data ke ComboBox
+                comboBoxTeknisi.DataSource = teknisiList;
+                comboBoxTeknisi.DisplayMember = "nama";  // Nama teknisi yang akan ditampilkan
+                comboBoxTeknisi.ValueMember = "id_teknisi";  // ID teknisi sebagai nilai yang digunakan
+                comboBoxTeknisi.SelectedIndex = -1;  // Agar tidak ada item yang terpilih saat pertama kali
             }
             catch (Exception ex)
             {
@@ -52,14 +52,14 @@ namespace PROJECT_PBO.View
         {
             try
             {
-                string query = "SELECT id_komponen, nama_komponen FROM komponen";
+                // Mengambil data komponen dari KomponenContext
+                DataTable komponenList = KomponenContext.All();
 
-                DataTable result = DatabaseWrapper.queryExecutor(query);
-
-                comboBoxKomponen.DataSource = result; // Set DataTable sebagai sumber data
-                comboBoxKomponen.DisplayMember = "nama_komponen"; // Jenis kerusakan ditampilkan
-                comboBoxKomponen.ValueMember = "id_komponen"; // id_jasa_perbaikan digunakan sebagai value
-                comboBoxKomponen.SelectedIndex = -1; // Tidak ada item yang dipilih
+                // Binding data ke ComboBox
+                comboBoxKomponen.DataSource = komponenList;
+                comboBoxKomponen.DisplayMember = "nama_komponen";  // Nama komponen yang akan ditampilkan
+                comboBoxKomponen.ValueMember = "id_komponen";  // ID komponen sebagai nilai yang digunakan
+                comboBoxKomponen.SelectedIndex = -1;  // Agar tidak ada item yang terpilih saat pertama kali
             }
             catch (Exception ex)
             {
@@ -71,14 +71,14 @@ namespace PROJECT_PBO.View
         {
             try
             {
-                string query = "SELECT id_jasa_perbaikan, jenis_kerusakan FROM jasa_perbaikan";
+                // Mengambil data jenis kerusakan dari JasaPerbaikanContext
+                DataTable jasaPerbaikanList = JasaPerbaikanContext.All(); 
 
-                DataTable result = DatabaseWrapper.queryExecutor(query);
-
-                comboBoxKerusakan.DataSource = result; // Set DataTable sebagai sumber data
-                comboBoxKerusakan.DisplayMember = "jenis_kerusakan"; // Jenis kerusakan ditampilkan
-                comboBoxKerusakan.ValueMember = "id_jasa_perbaikan"; // id_jasa_perbaikan digunakan sebagai value
-                comboBoxKerusakan.SelectedIndex = -1; // Tidak ada item yang dipilih
+                // Binding data ke ComboBox
+                comboBoxKerusakan.DataSource = jasaPerbaikanList;
+                comboBoxKerusakan.DisplayMember = "jenis_kerusakan";  // Jenis kerusakan yang akan ditampilkan
+                comboBoxKerusakan.ValueMember = "id_jasa_perbaikan";  // ID jenis kerusakan sebagai nilai yang digunakan
+                comboBoxKerusakan.SelectedIndex = -1;  // Agar tidak ada item yang terpilih saat pertama kali
             }
             catch (Exception ex)
             {
@@ -214,78 +214,104 @@ namespace PROJECT_PBO.View
         {
             try
             {
-                // Validasi: Pastikan salah satu dari listBoxKerusakan atau listBoxKomponen berisi item
-                if (listBoxKerusakan.Items.Count == 0 && listBoxKomponen.Items.Count == 0)
-                {
-                    MessageBox.Show(
-                        "Harap isi salah satu dari list Kerusakan atau Komponen!",
-                        "Peringatan",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Warning
-                    );
-                    return; // Hentikan proses jika kedua ListBox kosong
-                }
+                // Validasi input
+                if (!ValidasiInput())
+                    return;
 
-                // Buat objek transaksi utama
-                M_Transaksi transaksi = new M_Transaksi
-                {
-                    nama_pelanggan = textBoxPelanggan.Text,
-                    laptop = string.IsNullOrWhiteSpace(textBoxMerkLaptop.Text) ? null : textBoxMerkLaptop.Text,
-                    id_teknisi = comboBoxTeknisi.SelectedItem != null
-                        ? (int?)((DataRowView)comboBoxTeknisi.SelectedItem)["id_teknisi"]
-                        : null,
-                    tanggal = DateTime.Now,
-                    status_transaksi = "Telah Selesai", // Status default
-                    alamat = null
-                };
+                // Buat objek transaksi
+                M_Transaksi transaksi = BuatTransaksiUtama();
 
-                // Ambil data detail transaksi (kerusakan)
-                List<M_DetailTransaksi> detailTransaksi = new List<M_DetailTransaksi>();
-                foreach (string kerusakan in listBoxKerusakan.Items)
-                {
-                    var jasaPerbaikan = JasaPerbaikanContext.GetByJenisKerusakan(kerusakan);
-                    detailTransaksi.Add(new M_DetailTransaksi
-                    {
-                        id_jasa_perbaikan = jasaPerbaikan?.id_jasa_perbaikan ?? 0,
-                        biaya = jasaPerbaikan?.biaya ?? 0
-                    });
-                }
-
-                // Ambil data detail komponen
-                List<M_DetailKomponen> detailKomponens = new List<M_DetailKomponen>();
-                foreach (string komponen in listBoxKomponen.Items)
-                {
-                    string[] parts = komponen.Split(new string[] { " - Jumlah: " }, StringSplitOptions.None);
-                    if (parts.Length == 2)
-                    {
-                        string namaKomponen = parts[0].Trim();
-                        int jumlah = int.TryParse(parts[1], out int result) ? result : 0;
-
-                        // Cek komponen di database dan tambah detail komponen
-                        var dataKomponen = KomponenContext.GetByNamaKomponen(namaKomponen);
-                        detailKomponens.Add(new M_DetailKomponen
-                        {
-                            id_komponen = dataKomponen?.id_komponen ?? 0,
-                            harga = dataKomponen?.harga ?? 0,
-                            jumlah = jumlah
-                        });
-                    }
-                }
+                // Ambil detail transaksi
+                var detailTransaksi = AmbilDetailKerusakan();
+                var detailKomponens = AmbilDetailKomponen();
 
                 // Simpan transaksi
                 TransaksiContext.TambahTransaksi(transaksi, detailTransaksi, detailKomponens);
 
-                // Pesan sukses
+                // Berhasil
                 MessageBox.Show("Transaksi berhasil ditambahkan!", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                FormAdmin1 formAdmin1 = new FormAdmin1();
-                formAdmin1.Show();
-                this.Hide();
+                NavigasiKeFormAdmin();
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"Terjadi kesalahan: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private bool ValidasiInput()
+        {
+            if (listBoxKerusakan.Items.Count == 0 && listBoxKomponen.Items.Count == 0)
+            {
+                MessageBox.Show("Harap isi salah satu dari list Kerusakan atau Komponen!", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            return true;
+        }
+
+        private M_Transaksi BuatTransaksiUtama()
+        {
+            return new M_Transaksi
+            {
+                nama_pelanggan = textBoxPelanggan.Text,
+                laptop = string.IsNullOrWhiteSpace(textBoxMerkLaptop.Text) ? null : textBoxMerkLaptop.Text,
+                id_teknisi = comboBoxTeknisi.SelectedItem != null
+                    ? (int?)((DataRowView)comboBoxTeknisi.SelectedItem)["id_teknisi"]
+                    : null,
+                tanggal = DateTime.Now,
+                status_transaksi = "Telah Selesai",
+                alamat = null
+            };
+        }
+
+        private List<M_DetailTransaksi> AmbilDetailKerusakan()
+        {
+            var detailTransaksi = new List<M_DetailTransaksi>();
+
+            foreach (string kerusakan in listBoxKerusakan.Items)
+            {
+                var jasaPerbaikan = JasaPerbaikanContext.GetByJenisKerusakan(kerusakan);
+                detailTransaksi.Add(new M_DetailTransaksi
+                {
+                    id_jasa_perbaikan = jasaPerbaikan?.id_jasa_perbaikan ?? 0,
+                    biaya = jasaPerbaikan?.biaya ?? 0
+                });
+            }
+
+            return detailTransaksi;
+        }
+
+        private List<M_DetailKomponen> AmbilDetailKomponen()
+        {
+            var detailKomponens = new List<M_DetailKomponen>();
+
+            foreach (string komponen in listBoxKomponen.Items)
+            {
+                string[] parts = komponen.Split(new string[] { " - Jumlah: " }, StringSplitOptions.None);
+                if (parts.Length == 2)
+                {
+                    string namaKomponen = parts[0].Trim();
+                    int jumlah = int.TryParse(parts[1], out int result) ? result : 0;
+
+                    var dataKomponen = KomponenContext.GetByNamaKomponen(namaKomponen);
+                    detailKomponens.Add(new M_DetailKomponen
+                    {
+                        id_komponen = dataKomponen?.id_komponen ?? 0,
+                        harga = dataKomponen?.harga ?? 0,
+                        jumlah = jumlah
+                    });
+                }
+            }
+
+            return detailKomponens;
+        }
+
+        private void NavigasiKeFormAdmin()
+        {
+            FormAdmin1 formAdmin1 = new FormAdmin1();
+            formAdmin1.Show();
+            this.Hide();
+        }
+
 
         private void listBoxKomponen_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -294,9 +320,7 @@ namespace PROJECT_PBO.View
 
         private void button1_Click(object sender, EventArgs e)
         {
-            FormAdmin1 formAdmin1 = new FormAdmin1();
-            formAdmin1.Show();
-            this.Hide();
+            NavigasiKeFormAdmin();
         }
 
         private void comboBoxTeknisi_SelectedIndexChanged(object sender, EventArgs e)
