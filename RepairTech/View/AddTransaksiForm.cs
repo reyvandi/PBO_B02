@@ -136,25 +136,46 @@ namespace PROJECT_PBO.View
             if (jumlah <= 0)
             {
                 MessageBox.Show("Jumlah harus lebih besar dari 0.", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return; 
+                return;
             }
 
-            // Check if the selected component is out of stock
+            // Ambil data komponen dari database
             var dataKomponen = KomponenContext.GetByNamaKomponen(selectedKomponen);
-            if (dataKomponen != null || dataKomponen.stok <= 0)
+            if (dataKomponen == null)
+            {
+                MessageBox.Show("Komponen tidak ditemukan.", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (dataKomponen.stok <= 0)
             {
                 MessageBox.Show("Komponen yang anda pilih sudah habis.", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
+            // Hitung jumlah total dari komponen yang sudah ada di ListBox
+            int totalJumlah = jumlah;
             if (jumlahKomponen.ContainsKey(selectedKomponen))
             {
-                MessageBox.Show("Komponen ini sudah ditambahkan. Silakan ubah jumlah jika diperlukan.", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                totalJumlah += jumlahKomponen[selectedKomponen];
+            }
+
+            // Cek apakah jumlah total melebihi stok
+            if (totalJumlah > dataKomponen.stok)
+            {
+                MessageBox.Show($"Jumlah Komponen yang dipilih melebihi stok yang tersedia).", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            // Tambahkan komponen ke dictionary
-            jumlahKomponen[selectedKomponen] = jumlah;
+            // Tambahkan atau update komponen di dictionary
+            if (jumlahKomponen.ContainsKey(selectedKomponen))
+            {
+                jumlahKomponen[selectedKomponen] += jumlah;
+            }
+            else
+            {
+                jumlahKomponen[selectedKomponen] = jumlah;
+            }
 
             // Update ListBox
             UpdateListBoxKomponen();
@@ -162,6 +183,7 @@ namespace PROJECT_PBO.View
             comboBoxKomponen.SelectedIndex = -1;
             numericUpDownJumlah.Value = 1; // Reset jumlah ke 1
         }
+
         private void btnHapusKomponen_Click(object sender, EventArgs e)
         {
             if (listBoxKomponen.SelectedItem != null)
