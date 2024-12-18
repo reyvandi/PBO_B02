@@ -110,7 +110,7 @@ namespace PROJECT_PBO.View
         }
         private void UpdateButtonText()
         {
-            buttonAdd.Text = IsEditMode ? "Update" : "Add";
+            buttonAdd.Text = IsEditMode ? "Update" : "Submit";
         }
 
         private void AddTeknisiForm_Load(object sender, EventArgs e)

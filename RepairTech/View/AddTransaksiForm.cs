@@ -136,6 +136,14 @@ namespace PROJECT_PBO.View
             if (jumlah <= 0)
             {
                 MessageBox.Show("Jumlah harus lebih besar dari 0.", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return; 
+            }
+
+            // Check if the selected component is out of stock
+            var dataKomponen = KomponenContext.GetByNamaKomponen(selectedKomponen);
+            if (dataKomponen != null || dataKomponen.stok <= 0)
+            {
+                MessageBox.Show("Komponen yang anda pilih sudah habis.", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -184,6 +192,18 @@ namespace PROJECT_PBO.View
         {
             try
             {
+                // Validasi: Pastikan salah satu dari listBoxKerusakan atau listBoxKomponen berisi item
+                if (listBoxKerusakan.Items.Count == 0 && listBoxKomponen.Items.Count == 0)
+                {
+                    MessageBox.Show(
+                        "Harap isi salah satu dari list Kerusakan atau Komponen!",
+                        "Peringatan",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Warning
+                    );
+                    return; // Hentikan proses jika kedua ListBox kosong
+                }
+
                 // Buat objek transaksi utama
                 M_Transaksi transaksi = new M_Transaksi
                 {

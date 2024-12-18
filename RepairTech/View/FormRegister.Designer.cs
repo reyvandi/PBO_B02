@@ -95,11 +95,11 @@
             // 
             label1.AutoSize = true;
             label1.BackColor = Color.Transparent;
-            label1.Font = new Font("Segoe UI", 20F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Font = new Font("Segoe UI", 26F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.Black;
-            label1.Location = new Point(253, 307);
+            label1.Location = new Point(240, 286);
             label1.Name = "label1";
-            label1.Size = new Size(143, 37);
+            label1.Size = new Size(268, 70);
             label1.TabIndex = 2;
             label1.Text = "Registrasi";
             // 
@@ -111,7 +111,7 @@
             label2.ForeColor = Color.Black;
             label2.Location = new Point(215, 398);
             label2.Name = "label2";
-            label2.Size = new Size(64, 15);
+            label2.Size = new Size(97, 25);
             label2.TabIndex = 3;
             label2.Text = "Username";
             // 
@@ -123,7 +123,7 @@
             label5.ForeColor = Color.Black;
             label5.Location = new Point(215, 495);
             label5.Name = "label5";
-            label5.Size = new Size(36, 15);
+            label5.Size = new Size(58, 25);
             label5.TabIndex = 4;
             label5.Text = "Email";
             // 
@@ -135,29 +135,32 @@
             label6.ForeColor = Color.Black;
             label6.Location = new Point(215, 596);
             label6.Name = "label6";
-            label6.Size = new Size(59, 15);
+            label6.Size = new Size(92, 25);
             label6.TabIndex = 6;
             label6.Text = "Password";
             // 
             // textBoxUsername
             // 
+            textBoxUsername.BorderStyle = BorderStyle.FixedSingle;
             textBoxUsername.Location = new Point(215, 442);
             textBoxUsername.Name = "textBoxUsername";
-            textBoxUsername.Size = new Size(282, 23);
+            textBoxUsername.Size = new Size(282, 31);
             textBoxUsername.TabIndex = 7;
             // 
             // textBoxEmail
             // 
+            textBoxEmail.BorderStyle = BorderStyle.FixedSingle;
             textBoxEmail.Location = new Point(215, 536);
             textBoxEmail.Name = "textBoxEmail";
-            textBoxEmail.Size = new Size(282, 23);
+            textBoxEmail.Size = new Size(282, 31);
             textBoxEmail.TabIndex = 8;
             // 
             // textBoxPassword
             // 
+            textBoxPassword.BorderStyle = BorderStyle.FixedSingle;
             textBoxPassword.Location = new Point(215, 633);
             textBoxPassword.Name = "textBoxPassword";
-            textBoxPassword.Size = new Size(282, 23);
+            textBoxPassword.Size = new Size(282, 31);
             textBoxPassword.TabIndex = 9;
             // 
             // pictureBox1
@@ -186,6 +189,7 @@
             Controls.Add(label1);
             Controls.Add(ButtonRegistrasi);
             Controls.Add(button1);
+            DoubleBuffered = true;
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
             MinimizeBox = false;
             Name = "FormRegister";

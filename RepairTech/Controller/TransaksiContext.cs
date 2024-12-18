@@ -183,6 +183,7 @@ namespace PROJECT_PBO.Controller
                 t.laptop AS merk_laptop,
                 COALESCE(STRING_AGG(DISTINCT jp.jenis_kerusakan, ', '), '') AS kerusakan,
                 t.alamat,
+                te.nama AS teknisi,
                 COALESCE(kd.komponen, '') AS komponen,
                 COALESCE(
                     'Rp. ' || REPLACE(
@@ -213,10 +214,13 @@ namespace PROJECT_PBO.Controller
                 GROUP BY 
                     dc.id_transaksi
             ) AS kd ON t.id_transaksi = kd.id_transaksi
+            LEFT JOIN 
+                teknisi te ON t.id_teknisi = te.id_teknisi
             GROUP BY 
-                t.id_transaksi, t.tanggal, t.nama_pelanggan, t.laptop, t.alamat, t.status_transaksi, kd.komponen
+                t.id_transaksi, t.tanggal, t.nama_pelanggan, t.laptop, t.alamat, t.status_transaksi, kd.komponen, te.nama
             ORDER BY 
                 t.tanggal DESC";
+
             return DatabaseWrapper.queryExecutor(query);
         }
     }

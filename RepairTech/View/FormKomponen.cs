@@ -13,8 +13,6 @@ using PROJECT_PBO.View;
 
 namespace PROJECT_PBO
 {
-
-
     public partial class FormKomponen : Form
     {
         public FormKomponen()
@@ -176,7 +174,6 @@ namespace PROJECT_PBO
                     timerSidebar.Stop();
                 }
             }
-
         }
 
         private void iconButton1_Click(object sender, EventArgs e)
@@ -231,20 +228,6 @@ namespace PROJECT_PBO
             this.Hide();
         }
 
-        private void buttonLogout_Click(object sender, EventArgs e)
-        {
-            LOGIN formLogin = new LOGIN();
-            formLogin.Show();
-            this.Hide();
-        }
-
-        private void buttonLogout_Click_1(object sender, EventArgs e)
-        {
-            LOGIN formLogin = new LOGIN();
-            formLogin.Show();
-            this.Hide();
-        }
-
         private void buttonSearch_Click(object sender, EventArgs e)
         {
             string keyword = textBox1.Text.Trim();
@@ -263,7 +246,6 @@ namespace PROJECT_PBO
                     dataGridView1.DataSource = null;
                     dataGridView1.Columns.Clear();
 
-                    // Menampilkan hasil pencarian
                     dataGridView1.DataSource = searchResults;
 
                     if (dataGridView1.Columns["id_komponen"] != null) dataGridView1.Columns["id_komponen"].Visible = false;
@@ -277,7 +259,6 @@ namespace PROJECT_PBO
                     if (dataGridView1.Columns["stok"] != null)
                         dataGridView1.Columns["stok"].HeaderText = "Stok";
 
-                    // Tambahkan kolom nomor
                     DataGridViewTextBoxColumn nomorColumn = new DataGridViewTextBoxColumn
                     {
                         HeaderText = "No",
@@ -285,13 +266,12 @@ namespace PROJECT_PBO
                     };
                     dataGridView1.Columns.Insert(0, nomorColumn);
 
-                    // Isi kolom nomor urut
                     for (int i = 0; i < dataGridView1.Rows.Count; i++)
                     {
                         dataGridView1.Rows[i].Cells["nomor"].Value = (i + 1).ToString();
                     }
 
-                    // Tambahkan tombol Update
+
                     DataGridViewButtonColumn updateButtonColumn = new DataGridViewButtonColumn
                     {
                         Name = "Update",

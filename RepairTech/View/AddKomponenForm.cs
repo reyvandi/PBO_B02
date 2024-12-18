@@ -133,7 +133,7 @@ namespace PROJECT_PBO.View
 
         private void UpdateButtonText()
         {
-            buttonAdd.Text = IsEditMode ? "Update" : "Add";
+            buttonAdd.Text = IsEditMode ? "Update" : "Submit";
         }
 
         private void textBoxHARGA_TextChanged(object sender, EventArgs e)

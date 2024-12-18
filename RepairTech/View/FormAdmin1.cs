@@ -21,8 +21,8 @@ namespace PROJECT_PBO
         public FormAdmin1()
         {
             InitializeComponent();
-
         }
+
         private void FormAdmin1_Load(object sender, EventArgs e)
         {
             LoadDataToDataGridView();
@@ -105,6 +105,8 @@ namespace PROJECT_PBO
                 dataGridView1.Columns["alamat"].HeaderText = "Alamat";
                 dataGridView1.Columns["komponen"].HeaderText = "Komponen Yang Dibeli";
                 dataGridView1.Columns["total_harga"].HeaderText = "Total Harga";
+                dataGridView1.Columns["teknisi"].HeaderText = "Teknisi";
+
 
                 // Tambahkan gaya header kolom
                 DataGridViewCellStyle headerStyle = new DataGridViewCellStyle
@@ -122,8 +124,6 @@ namespace PROJECT_PBO
                 MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-
 
         private void buttonLogout_Click(object sender, EventArgs e)
         {
@@ -146,7 +146,6 @@ namespace PROJECT_PBO
         {
 
         }
-
 
         private void buttonKomponen_Click(object sender, EventArgs e)
         {

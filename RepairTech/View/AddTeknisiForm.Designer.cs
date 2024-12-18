@@ -48,7 +48,7 @@
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(1240, 218);
+            label1.Location = new Point(1310, 211);
             label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
             label1.Size = new Size(74, 30);
@@ -59,7 +59,7 @@
             // textBoxNama
             // 
             textBoxNama.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBoxNama.Location = new Point(1233, 273);
+            textBoxNama.Location = new Point(1303, 266);
             textBoxNama.Margin = new Padding(4, 3, 4, 3);
             textBoxNama.Multiline = true;
             textBoxNama.Name = "textBoxNama";
@@ -72,7 +72,7 @@
             label2.BackColor = Color.Transparent;
             label2.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(1233, 332);
+            label2.Location = new Point(1303, 325);
             label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
             label2.Size = new Size(101, 30);
@@ -86,7 +86,7 @@
             comboBoxKeahlian.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
             comboBoxKeahlian.FormattingEnabled = true;
             comboBoxKeahlian.Items.AddRange(new object[] { "Software", "Hardware" });
-            comboBoxKeahlian.Location = new Point(1233, 392);
+            comboBoxKeahlian.Location = new Point(1303, 385);
             comboBoxKeahlian.Margin = new Padding(4, 3, 4, 3);
             comboBoxKeahlian.Name = "comboBoxKeahlian";
             comboBoxKeahlian.Size = new Size(423, 36);
@@ -98,7 +98,7 @@
             label3.BackColor = Color.Transparent;
             label3.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.White;
-            label3.Location = new Point(1233, 441);
+            label3.Location = new Point(1303, 434);
             label3.Margin = new Padding(4, 0, 4, 0);
             label3.Name = "label3";
             label3.Size = new Size(112, 30);
@@ -112,7 +112,7 @@
             comboBoxJamKerja.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             comboBoxJamKerja.FormattingEnabled = true;
             comboBoxJamKerja.Items.AddRange(new object[] { "07.00 - 12.00", "12.00 -17.00" });
-            comboBoxJamKerja.Location = new Point(1233, 495);
+            comboBoxJamKerja.Location = new Point(1303, 488);
             comboBoxJamKerja.Margin = new Padding(4, 3, 4, 3);
             comboBoxJamKerja.Name = "comboBoxJamKerja";
             comboBoxJamKerja.Size = new Size(423, 36);
@@ -124,7 +124,7 @@
             label4.BackColor = Color.Transparent;
             label4.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label4.ForeColor = Color.White;
-            label4.Location = new Point(1233, 550);
+            label4.Location = new Point(1303, 543);
             label4.Margin = new Padding(4, 0, 4, 0);
             label4.Name = "label4";
             label4.Size = new Size(87, 30);
@@ -135,7 +135,7 @@
             // textBoxAlamat
             // 
             textBoxAlamat.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBoxAlamat.Location = new Point(1232, 605);
+            textBoxAlamat.Location = new Point(1302, 598);
             textBoxAlamat.Margin = new Padding(4, 3, 4, 3);
             textBoxAlamat.Multiline = true;
             textBoxAlamat.Name = "textBoxAlamat";
@@ -148,7 +148,7 @@
             label5.BackColor = Color.Transparent;
             label5.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label5.ForeColor = Color.White;
-            label5.Location = new Point(1232, 722);
+            label5.Location = new Point(1302, 715);
             label5.Margin = new Padding(4, 0, 4, 0);
             label5.Name = "label5";
             label5.Size = new Size(130, 30);
@@ -158,7 +158,7 @@
             // textBoxNoTelepon
             // 
             textBoxNoTelepon.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBoxNoTelepon.Location = new Point(1232, 782);
+            textBoxNoTelepon.Location = new Point(1302, 775);
             textBoxNoTelepon.Margin = new Padding(4, 3, 4, 3);
             textBoxNoTelepon.Multiline = true;
             textBoxNoTelepon.Name = "textBoxNoTelepon";
@@ -186,7 +186,7 @@
             buttonAdd.FlatStyle = FlatStyle.Flat;
             buttonAdd.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
             buttonAdd.ForeColor = SystemColors.Control;
-            buttonAdd.Location = new Point(1286, 867);
+            buttonAdd.Location = new Point(1356, 860);
             buttonAdd.Margin = new Padding(4, 3, 4, 3);
             buttonAdd.Name = "buttonAdd";
             buttonAdd.Size = new Size(318, 53);

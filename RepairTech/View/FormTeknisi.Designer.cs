@@ -37,9 +37,7 @@
             iconButton1 = new FontAwesome.Sharp.IconButton();
             timerSidebar = new System.Windows.Forms.Timer(components);
             buttonLogout = new Button();
-            panel8 = new Panel();
             buttonTambah = new FontAwesome.Sharp.IconButton();
-            panel9 = new Panel();
             panel13 = new Panel();
             iconButton3 = new FontAwesome.Sharp.IconButton();
             iconButton2 = new FontAwesome.Sharp.IconButton();
@@ -53,30 +51,33 @@
             panel1 = new Panel();
             buttonTransaksi = new FontAwesome.Sharp.IconButton();
             panelSidebar = new Panel();
+            panel7 = new Panel();
+            iconButton4 = new FontAwesome.Sharp.IconButton();
             label1 = new Label();
             buttonMenu = new PictureBox();
             sidebar = new FlowLayoutPanel();
-            panel7 = new Panel();
-            iconButton4 = new FontAwesome.Sharp.IconButton();
+            panel8 = new Panel();
+            panel9 = new Panel();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel5.SuspendLayout();
-            panel8.SuspendLayout();
-            panel9.SuspendLayout();
             panel13.SuspendLayout();
             panel4.SuspendLayout();
             panel3.SuspendLayout();
             panel2.SuspendLayout();
             panel1.SuspendLayout();
             panelSidebar.SuspendLayout();
+            panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)buttonMenu).BeginInit();
             sidebar.SuspendLayout();
-            panel7.SuspendLayout();
+            panel8.SuspendLayout();
+            panel9.SuspendLayout();
             SuspendLayout();
             // 
             // dataGridView1
             // 
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dataGridView1.BackgroundColor = Color.FromArgb(46, 51, 73);
             dataGridView1.BorderStyle = BorderStyle.None;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
@@ -98,11 +99,11 @@
             dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
             dataGridView1.Dock = DockStyle.Fill;
             dataGridView1.GridColor = Color.FromArgb(31, 30, 68);
-            dataGridView1.Location = new Point(30, 35);
+            dataGridView1.Location = new Point(30, 0);
             dataGridView1.Margin = new Padding(4, 5, 4, 5);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 62;
-            dataGridView1.Size = new Size(1501, 791);
+            dataGridView1.Size = new Size(1501, 634);
             dataGridView1.TabIndex = 12;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
@@ -165,17 +166,6 @@
             buttonLogout.Size = new Size(75, 23);
             buttonLogout.TabIndex = 0;
             // 
-            // panel8
-            // 
-            panel8.Controls.Add(dataGridView1);
-            panel8.Dock = DockStyle.Top;
-            panel8.ForeColor = SystemColors.ControlText;
-            panel8.Location = new Point(243, 83);
-            panel8.Name = "panel8";
-            panel8.Padding = new Padding(30, 35, 30, 0);
-            panel8.Size = new Size(1561, 826);
-            panel8.TabIndex = 15;
-            // 
             // buttonTambah
             // 
             buttonTambah.BackColor = Color.Green;
@@ -188,7 +178,7 @@
             buttonTambah.IconFont = FontAwesome.Sharp.IconFont.Auto;
             buttonTambah.IconSize = 17;
             buttonTambah.ImageAlign = ContentAlignment.MiddleRight;
-            buttonTambah.Location = new Point(1270, 173);
+            buttonTambah.Location = new Point(26, 16);
             buttonTambah.Margin = new Padding(4, 5, 4, 5);
             buttonTambah.Name = "buttonTambah";
             buttonTambah.Size = new Size(261, 50);
@@ -197,15 +187,6 @@
             buttonTambah.TextAlign = ContentAlignment.MiddleLeft;
             buttonTambah.UseVisualStyleBackColor = false;
             buttonTambah.Click += buttonTambah_Click;
-            // 
-            // panel9
-            // 
-            panel9.Controls.Add(buttonTambah);
-            panel9.Location = new Point(243, 915);
-            panel9.Name = "panel9";
-            panel9.Size = new Size(1681, 243);
-            panel9.TabIndex = 16;
-            panel9.Paint += panel9_Paint;
             // 
             // panel13
             // 
@@ -419,6 +400,35 @@
             panelSidebar.Size = new Size(243, 83);
             panelSidebar.TabIndex = 0;
             // 
+            // panel7
+            // 
+            panel7.Controls.Add(iconButton4);
+            panel7.Location = new Point(243, 66);
+            panel7.Name = "panel7";
+            panel7.Size = new Size(1681, 243);
+            panel7.TabIndex = 17;
+            // 
+            // iconButton4
+            // 
+            iconButton4.BackColor = Color.Green;
+            iconButton4.FlatAppearance.BorderSize = 0;
+            iconButton4.FlatStyle = FlatStyle.Flat;
+            iconButton4.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            iconButton4.ForeColor = SystemColors.Control;
+            iconButton4.IconChar = FontAwesome.Sharp.IconChar.Add;
+            iconButton4.IconColor = Color.White;
+            iconButton4.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconButton4.IconSize = 17;
+            iconButton4.ImageAlign = ContentAlignment.MiddleRight;
+            iconButton4.Location = new Point(733, 82);
+            iconButton4.Margin = new Padding(4, 5, 4, 5);
+            iconButton4.Name = "iconButton4";
+            iconButton4.Size = new Size(261, 50);
+            iconButton4.TabIndex = 13;
+            iconButton4.Text = "Tambah Teknisi";
+            iconButton4.TextAlign = ContentAlignment.MiddleLeft;
+            iconButton4.UseVisualStyleBackColor = false;
+            // 
             // label1
             // 
             label1.Dock = DockStyle.Fill;
@@ -467,34 +477,25 @@
             sidebar.Size = new Size(243, 1170);
             sidebar.TabIndex = 10;
             // 
-            // panel7
+            // panel8
             // 
-            panel7.Controls.Add(iconButton4);
-            panel7.Location = new Point(243, 66);
-            panel7.Name = "panel7";
-            panel7.Size = new Size(1681, 243);
-            panel7.TabIndex = 17;
+            panel8.Controls.Add(buttonTambah);
+            panel8.Dock = DockStyle.Top;
+            panel8.Location = new Point(243, 83);
+            panel8.Name = "panel8";
+            panel8.Size = new Size(1561, 83);
+            panel8.TabIndex = 14;
             // 
-            // iconButton4
+            // panel9
             // 
-            iconButton4.BackColor = Color.Green;
-            iconButton4.FlatAppearance.BorderSize = 0;
-            iconButton4.FlatStyle = FlatStyle.Flat;
-            iconButton4.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            iconButton4.ForeColor = SystemColors.Control;
-            iconButton4.IconChar = FontAwesome.Sharp.IconChar.Add;
-            iconButton4.IconColor = Color.White;
-            iconButton4.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton4.IconSize = 17;
-            iconButton4.ImageAlign = ContentAlignment.MiddleRight;
-            iconButton4.Location = new Point(733, 82);
-            iconButton4.Margin = new Padding(4, 5, 4, 5);
-            iconButton4.Name = "iconButton4";
-            iconButton4.Size = new Size(261, 50);
-            iconButton4.TabIndex = 13;
-            iconButton4.Text = "Tambah Teknisi";
-            iconButton4.TextAlign = ContentAlignment.MiddleLeft;
-            iconButton4.UseVisualStyleBackColor = false;
+            panel9.Controls.Add(dataGridView1);
+            panel9.Dock = DockStyle.Top;
+            panel9.ForeColor = SystemColors.ControlText;
+            panel9.Location = new Point(243, 166);
+            panel9.Name = "panel9";
+            panel9.Padding = new Padding(30, 0, 30, 0);
+            panel9.Size = new Size(1561, 634);
+            panel9.TabIndex = 15;
             // 
             // FormTeknisi
             // 
@@ -502,10 +503,10 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(46, 51, 73);
             ClientSize = new Size(1804, 1170);
+            Controls.Add(panel9);
             Controls.Add(panel8);
             Controls.Add(panel5);
             Controls.Add(sidebar);
-            Controls.Add(panel9);
             ForeColor = SystemColors.Control;
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
             Margin = new Padding(4, 5, 4, 5);
@@ -517,17 +518,17 @@
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel5.ResumeLayout(false);
-            panel8.ResumeLayout(false);
-            panel9.ResumeLayout(false);
             panel13.ResumeLayout(false);
             panel4.ResumeLayout(false);
             panel3.ResumeLayout(false);
             panel2.ResumeLayout(false);
             panel1.ResumeLayout(false);
             panelSidebar.ResumeLayout(false);
+            panel7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)buttonMenu).EndInit();
             sidebar.ResumeLayout(false);
-            panel7.ResumeLayout(false);
+            panel8.ResumeLayout(false);
+            panel9.ResumeLayout(false);
             ResumeLayout(false);
         }
 
